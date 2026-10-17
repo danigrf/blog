@@ -2,21 +2,81 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from './FormattedDate.astro';
-import { kachelVariante, vorschauBild } from '../lib/posts';
+import { kachelVariante, themaSlug, vorschauBild } from '../lib/posts';
 
 interface Props {
 	posts: CollectionEntry<'blog'>[];
+	/** Jahres-Zwischentitel einfügen (Beiträge müssen nach Datum sortiert sein). */
+	nachJahr?: boolean;
 }
-const { posts } = Astro.props;
+const { posts, nachJahr = false } = Astro.props;
+
+const jahrVon = (p: CollectionEntry<'blog'>) => p.data.pubDate.getFullYear();
+const gruppen: { jahr: number; items: { post: CollectionEntry<'blog'>; i: number }[] }[] = [];
+if (nachJahr) {
+	posts.forEach((post, i) => {
+		const jahr = jahrVon(post);
+		const letzte = gruppen[gruppen.length - 1];
+		if (letzte && letzte.jahr === jahr) letzte.items.push({ post, i });
+		else gruppen.push({ jahr, items: [{ post, i }] });
+	});
+}
 ---
 
-<ul class="post-list">
-	{
-		posts.map((post, i) => {
-			const bild = vorschauBild(post);
+{
+	nachJahr ? (
+		gruppen.map((g) => (
+			<section class="jahr-gruppe" data-jahr-gruppe={g.jahr} aria-labelledby={`jahr-${g.jahr}`}>
+				<h2 class="jahr-titel" id={`jahr-${g.jahr}`}>{g.jahr}</h2>
+				<ul class="post-list">
+					{g.items.map(({ post, i }) => {
+						const bild = vorschauBild(post);
+						const thema = post.data.tags[0];
+						return (
+							<li data-jahr={post.data.pubDate.getFullYear()} data-themen={post.data.tags.map(themaSlug).join(' ')}>
+								<a href={`/blog/${post.id}/`}>
+									<span class="text">
+										<span class="meta">
+											<FormattedDate date={post.data.pubDate} />
+										</span>
+										<span class="post-title">{post.data.title}</span>
+										<span class="post-desc">{post.data.description}</span>
+									</span>
+									<span class="thumb" aria-hidden="true">
+										{bild ? (
+											<Image
+												src={bild.src}
+												alt=""
+												width={184}
+												height={123}
+												densities={[1, 2]}
+												fit="cover"
+												position="top"
+												format="webp"
+												loading={i < 2 ? 'eager' : 'lazy'}
+												decoding="async"
+											/>
+										) : (
+											<span class={`kachel kachel-${kachelVariante(post.id)}`}>
+												<span class="kachel-jahr">{post.data.pubDate.getFullYear()}</span>
+												{thema && <span class="kachel-thema">{thema}</span>}
+											</span>
+										)}
+									</span>
+								</a>
+							</li>
+						);
+					})}
+				</ul>
+			</section>
+		))
+	) : (
+		<ul class="post-list">
+			{posts.map((post, i) => {
+				const bild = vorschauBild(post);
 			const thema = post.data.tags[0];
 			return (
-				<li>
+				<li data-jahr={post.data.pubDate.getFullYear()} data-themen={post.data.tags.map(themaSlug).join(' ')}>
 					<a href={`/blog/${post.id}/`}>
 						<span class="text">
 							<span class="meta">
@@ -49,6 +109,7 @@ const { posts } = Astro.props;
 					</a>
 				</li>
 			);
-		})
-	}
-</ul>
+			})}
+		</ul>
+	)
+}

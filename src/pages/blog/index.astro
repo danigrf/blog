@@ -3,24 +3,248 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import PostList from '../../components/PostList.astro';
-import { getPosts } from '../../lib/posts';
+import { getPosts, getThemen } from '../../lib/posts';
 import { SITE_DESCRIPTION } from '../../consts';
 
 const posts = await getPosts();
+const themen = [...(await getThemen())].sort((a, b) => a.name.localeCompare(b.name, 'de'));
+const aktuellesJahr = new Date().getFullYear();
+const jahre = Array.from({ length: aktuellesJahr - 2012 + 1 }, (_, i) => 2012 + i);
 ---
 
 <!doctype html>
 <html lang="de-CH">
 	<head>
 		<BaseHead title="Blog – Daniel Graf" description={SITE_DESCRIPTION} />
+		<style>
+			.filter {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: flex-end;
+				gap: 0.75rem 1rem;
+				margin: 1.25rem 0 1.5rem;
+				padding: 1rem;
+				background: var(--surface);
+				border: 1px solid var(--line);
+				border-radius: 6px;
+				font-family: var(--sans);
+			}
+			.filter[hidden] { display: none; }
+			.filter .feld { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+			.filter label { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+			.filter select {
+				font: inherit;
+				font-size: 1rem;
+				color: var(--text);
+				background: var(--bg);
+				border: 1px solid var(--muted);
+				border-radius: 4px;
+				padding: 0.45rem 0.6rem;
+				min-height: 2.5rem;
+				max-width: 100%;
+			}
+			.filter select:focus-visible,
+			.filter button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.filter button {
+				font: inherit;
+				font-size: 0.95rem;
+				min-height: 2.5rem;
+				padding: 0.45rem 0.9rem;
+				color: var(--accent-strong);
+				background: transparent;
+				border: 1px solid var(--accent);
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			.filter button:hover { background: var(--mark); }
+			.filter-status, .filter-hinweis { margin: 0; flex-basis: 100%; }
+			.filter-status { font-variant-numeric: tabular-nums; }
+			.jahr-titel {
+				font-family: var(--mono);
+				font-size: 1.1rem;
+				font-weight: 500;
+				color: var(--muted);
+				margin: 2rem 0 0.5rem;
+			}
+			.jahr-gruppe:first-child .jahr-titel { margin-top: 1rem; }
+			.mehr { margin: 1.5rem 0 0.5rem; text-align: center; }
+			.mehr[hidden] { display: none; }
+			.mehr button {
+				font: inherit;
+				font-family: var(--sans);
+				font-size: 1rem;
+				min-height: 2.75rem;
+				padding: 0.5rem 1.4rem;
+				color: var(--accent-strong);
+				background: transparent;
+				border: 1px solid var(--accent);
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			.mehr button:hover { background: var(--mark); }
+			.mehr button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.jahr-gruppe[hidden], .post-list li[hidden] { display: none; }
+			@media (max-width: 30rem) {
+				.filter .feld:first-child { flex-basis: 100%; }
+				.filter .feld:first-child select { width: 100%; }
+				.filter .feld:nth-child(2), .filter .feld:nth-child(3) { flex: 1; }
+				.filter .feld select { width: 100%; }
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main id="inhalt">
 			<h1>Blog</h1>
 			<p class="meta"><a href="/themen/">Nach Themen stöbern</a></p>
-			<PostList posts={posts} />
+			<form class="filter" id="filter" hidden aria-label="Beiträge filtern">
+				<div class="feld">
+					<label for="f-thema">Thema</label>
+					<select id="f-thema" name="thema">
+						<option value="">Alle Themen</option>
+						{themen.map((t) => <option value={t.slug}>{t.name} ({t.posts.length})</option>)}
+					</select>
+				</div>
+				<div class="feld">
+					<label for="f-von">Von</label>
+					<select id="f-von" name="von">
+						<option value="">Jahr</option>
+						{jahre.map((j) => <option value={j}>{j}</option>)}
+					</select>
+				</div>
+				<div class="feld">
+					<label for="f-bis">Bis</label>
+					<select id="f-bis" name="bis">
+						<option value="">Jahr</option>
+						{[...jahre].reverse().map((j) => <option value={j}>{j}</option>)}
+					</select>
+				</div>
+				<button type="reset" id="f-reset">Zurücksetzen</button>
+				<p class="meta filter-status" id="f-status" role="status" aria-live="polite">
+					{posts.length} Beiträge
+				</p>
+				<p class="meta filter-hinweis" id="f-hinweis" hidden></p>
+			</form>
+			<p class="meta" id="f-leer" hidden>Keine Beiträge für diese Auswahl. Bitte Zeitraum oder Thema anpassen.</p>
+			<div id="liste"><PostList posts={posts} nachJahr /></div>
+			<div class="mehr" id="f-mehr" hidden>
+				<button type="button" id="f-mehr-btn">Mehr anzeigen</button>
+				<div id="f-sentinel" aria-hidden="true"></div>
+			</div>
 		</main>
 		<Footer />
+		<script is:inline>
+			(function () {
+				var form = document.getElementById('filter');
+				if (!form) return;
+				var selT = document.getElementById('f-thema');
+				var selV = document.getElementById('f-von');
+				var selB = document.getElementById('f-bis');
+				var status = document.getElementById('f-status');
+				var hinweis = document.getElementById('f-hinweis');
+				var leer = document.getElementById('f-leer');
+				var items = Array.prototype.slice.call(document.querySelectorAll('#liste li[data-jahr]'));
+				var gruppen = Array.prototype.slice.call(document.querySelectorAll('#liste .jahr-gruppe'));
+				var gueltig = function (sel, v) {
+					return Array.prototype.some.call(sel.options, function (o) { return o.value === v; });
+				};
+
+				function ausUrl() {
+					var q = new URLSearchParams(location.search);
+					var t = q.get('thema') || '', v = q.get('von') || '', b = q.get('bis') || '';
+					selT.value = gueltig(selT, t) ? t : '';
+					selV.value = gueltig(selV, v) ? v : '';
+					selB.value = gueltig(selB, b) ? b : '';
+				}
+
+				var mehr = document.getElementById('f-mehr');
+				var mehrBtn = document.getElementById('f-mehr-btn');
+				var sentinel = document.getElementById('f-sentinel');
+				var mq = window.matchMedia('(max-width: 560px)');
+				var treffer = [];
+				var limit = 0;
+				var paket = function () { return mq.matches ? 10 : 20; };
+
+				function zeichnen(fokusAb) {
+					var gezeigt = 0, ersterNeu = null;
+					treffer.forEach(function (li) {
+						var an = gezeigt < limit;
+						if (an && li.hidden && fokusAb !== undefined && gezeigt >= fokusAb && !ersterNeu) ersterNeu = li;
+						li.hidden = !an;
+						if (an) gezeigt++;
+					});
+					items.forEach(function (li) { if (treffer.indexOf(li) === -1) li.hidden = true; });
+					gruppen.forEach(function (g) {
+						g.hidden = !g.querySelector('li:not([hidden])');
+					});
+					var rest = treffer.length - gezeigt;
+					mehr.hidden = rest <= 0;
+					mehrBtn.textContent = 'Mehr anzeigen (noch ' + rest + ')';
+					return ersterNeu;
+				}
+
+				function anwenden(mitHinweis) {
+					var t = selT.value, v = parseInt(selV.value, 10) || 0, b = parseInt(selB.value, 10) || 0;
+					hinweis.hidden = true;
+					if (v && b && v > b) {
+						var x = v; v = b; b = x;
+						selV.value = String(v); selB.value = String(b);
+						if (mitHinweis) {
+							hinweis.textContent = 'Von und Bis waren vertauscht und wurden getauscht.';
+							hinweis.hidden = false;
+						}
+					}
+					treffer = items.filter(function (li) {
+						var j = parseInt(li.getAttribute('data-jahr'), 10);
+						var themen = ' ' + li.getAttribute('data-themen') + ' ';
+						return (!t || themen.indexOf(' ' + t + ' ') > -1) && (!v || j >= v) && (!b || j <= b);
+					});
+					var n = treffer.length;
+					limit = paket();
+					zeichnen();
+					status.textContent = n === 1 ? '1 Beitrag' : n + ' Beiträge';
+					leer.hidden = n > 0;
+				}
+
+				function weiter(mitFokus) {
+					var vorher = Math.min(limit, treffer.length);
+					limit += paket();
+					var neu = zeichnen(vorher);
+					if (mitFokus && neu) {
+						var a = neu.querySelector('a');
+						if (a) a.focus();
+					}
+				}
+				mehrBtn.addEventListener('click', function () { weiter(true); });
+				if ('IntersectionObserver' in window) {
+					new IntersectionObserver(function (es) {
+						if (es[0].isIntersecting && !mehr.hidden) weiter(false);
+					}, { rootMargin: '0px 0px 200px 0px' }).observe(sentinel);
+				}
+
+				function inUrl() {
+					var q = new URLSearchParams();
+					if (selT.value) q.set('thema', selT.value);
+					if (selV.value) q.set('von', selV.value);
+					if (selB.value) q.set('bis', selB.value);
+					var s = q.toString();
+					var neu = location.pathname + (s ? '?' + s : '');
+					if (neu !== location.pathname + location.search) history.pushState(null, '', neu);
+				}
+
+				function bei() { anwenden(true); inUrl(); }
+				[selT, selV, selB].forEach(function (el) { el.addEventListener('change', bei); });
+				form.addEventListener('reset', function () {
+					setTimeout(function () { anwenden(false); inUrl(); }, 0);
+				});
+				form.addEventListener('submit', function (e) { e.preventDefault(); });
+				window.addEventListener('popstate', function () { ausUrl(); anwenden(false); });
+
+				form.hidden = false;
+				ausUrl();
+				anwenden(true);
+				if (hinweis.textContent && !hinweis.hidden) inUrl();
+			})();
+		</script>
 	</body>
 </html>
