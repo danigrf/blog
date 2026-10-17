@@ -1,0 +1,70 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { getThemen } from '../../lib/posts';
+
+const themen = await getThemen();
+---
+
+<!doctype html>
+<html lang="de-CH">
+	<head>
+		<BaseHead title="Themen – Daniel Graf" description="Alle Beiträge nach Themen geordnet." />
+		<style>
+			.themen {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6rem 0.5rem;
+			}
+			.themen li {
+				margin: 0;
+			}
+			.themen a {
+				display: inline-flex;
+				align-items: baseline;
+				gap: 0.45rem;
+				padding: 0.3rem 0.7rem;
+				border: 1px solid var(--line);
+				border-radius: 999px;
+				font-family: var(--sans);
+				font-size: 0.95rem;
+				font-weight: 500;
+				text-decoration: none;
+				color: var(--text);
+			}
+			.themen a:hover {
+				border-color: var(--accent);
+				color: var(--accent);
+			}
+			.themen .anzahl {
+				font-family: var(--mono);
+				font-size: 0.8rem;
+				font-weight: 400;
+				color: var(--muted);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main id="inhalt">
+			<h1>Themen</h1>
+			<p class="meta">{themen.length} Themen</p>
+			<ul class="themen">
+				{
+					themen.map((t) => (
+						<li>
+							<a href={`/themen/${t.slug}/`}>
+								{t.name} <span class="anzahl">{t.posts.length}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>

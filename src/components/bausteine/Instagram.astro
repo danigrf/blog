@@ -1,0 +1,19 @@
+---
+// <Instagram url="https://www.instagram.com/p/XXXX/" titel="…" text="…" bild="…" />
+import SocialEmbed from './SocialEmbed.astro';
+
+interface Props {
+	url: string;
+	titel?: string;
+	text?: string;
+	bild?: string;
+}
+const { url, ...rest } = Astro.props;
+
+// Beitrags-Adresse (/p/, /reel/, /tv/) ohne Parameter, plus /embed/
+const treffer = url.match(/^https:\/\/(?:www\.)?instagram\.com\/((?:[\w.]+\/)?(?:p|reel|reels|tv)\/[\w-]+)/i);
+if (!treffer) throw new Error(`<Instagram url="${url}">: Adresse nicht erkannt. Erwartet z.B. https://www.instagram.com/p/XXXX/`);
+const embed = `https://www.instagram.com/${treffer[1].replace(/^[\w.]+\/(?=(p|reel|reels|tv)\/)/i, '')}/embed/`;
+---
+
+<SocialEmbed plattform="Instagram" url={url} embed={embed} hoehe={640} {...rest} />

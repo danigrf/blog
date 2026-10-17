@@ -1,0 +1,143 @@
+---
+// Zwei-Klick-Einbettung: Beim Seitenaufruf wird NICHTS von der Plattform geladen.
+// Erst nach Klick auf «Beitrag laden» entsteht ein iframe mit der Embed-Adresse.
+// Ohne JavaScript bleibt die Karte ein einfacher Link zum Beitrag.
+import { Image } from 'astro:assets';
+
+interface Props {
+	plattform: string; // Anzeigename, z.B. «Instagram»
+	url: string; // normale Beitrags-Adresse
+	embed?: string; // Embed-Adresse (wird erst nach Klick geladen)
+	titel?: string;
+	text?: string;
+	bild?: string; // lokales Vorschaubild, relativ zu src/assets/blog/
+	hoehe?: number;
+	breite?: number;
+}
+const { plattform, url, embed, titel, text, bild, hoehe = 560, breite = 540 } = Astro.props;
+
+let vorschau: ImageMetadata | undefined;
+if (bild) {
+	const bilder = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/**/*.{jpg,jpeg,png,webp,avif}');
+	const laden = bilder[`/src/assets/blog/${bild.replace(/^\/+/, '')}`];
+	if (!laden) throw new Error(`Vorschaubild nicht gefunden: src/assets/blog/${bild}`);
+	vorschau = (await laden()).default;
+}
+---
+
+<div class="social" data-embed={embed} data-hoehe={hoehe} data-titel={titel ?? `${plattform}-Beitrag`} style={`--breite:${breite}px`}>
+	<div class="karte">
+		{vorschau && <Image class="vorschau" src={vorschau} alt="" widths={[320, 640]} sizes="(max-width: 640px) 100vw, 540px" loading="lazy" />}
+		<div class="inhalt">
+			<p class="plattform">{plattform}</p>
+			{titel && <p class="titel">{titel}</p>}
+			{text && <p class="text">{text}</p>}
+			{embed && (
+				<p class="hinweis">
+					Beim Laden werden Daten an {plattform} übertragen.
+				</p>
+			)}
+			<p class="aktionen">
+				{embed && <button type="button" class="laden" hidden>Beitrag laden</button>}
+				<a class="extern" href={url} rel="noopener noreferrer">Auf {plattform} öffnen</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<style>
+	.social {
+		margin: 2rem 0;
+		max-width: var(--breite);
+	}
+	.karte {
+		background: var(--surface);
+		border: 1px solid var(--line);
+		border-radius: 4px;
+		overflow: hidden;
+		font-family: var(--sans);
+	}
+	.karte :global(.vorschau) {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0;
+	}
+	.inhalt {
+		padding: 1rem 1.25rem 1.1rem;
+	}
+	.inhalt p {
+		margin: 0 0 0.6rem;
+	}
+	.plattform {
+		font-family: var(--mono);
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--muted);
+	}
+	.titel {
+		font-weight: 600;
+		font-size: 1.05rem;
+		line-height: 1.35;
+	}
+	.text {
+		font-size: 0.95rem;
+		line-height: 1.5;
+	}
+	.hinweis {
+		font-size: 0.875rem;
+		line-height: 1.45;
+		color: var(--muted);
+	}
+	.aktionen {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem 1.2rem;
+		align-items: center;
+		margin: 0.4rem 0 0 !important;
+		font-size: 0.95rem;
+	}
+	.laden {
+		font: inherit;
+		font-weight: 600;
+		padding: 0.55rem 1rem;
+		background: var(--accent);
+		color: var(--bg);
+		border: 0;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	.laden:hover {
+		background: var(--accent-strong);
+	}
+	.social :global(iframe) {
+		display: block;
+		width: 100%;
+		border: 0;
+		border-radius: 4px;
+		background: var(--surface);
+	}
+</style>
+
+<script>
+	// Wird nur ausgeführt, wenn jemand den Knopf drückt. Die Embed-Adresse steht in data-embed.
+	document.querySelectorAll<HTMLElement>('.social').forEach((box) => {
+		const knopf = box.querySelector<HTMLButtonElement>('.laden');
+		const embed = box.dataset.embed;
+		if (!knopf || !embed) return;
+		knopf.hidden = false;
+		knopf.addEventListener('click', () => {
+			const rahmen = document.createElement('iframe');
+			rahmen.src = embed;
+			rahmen.title = box.dataset.titel ?? 'Eingebetteter Beitrag';
+			rahmen.height = box.dataset.hoehe ?? '560';
+			rahmen.loading = 'lazy';
+			rahmen.referrerPolicy = 'strict-origin-when-cross-origin';
+			rahmen.allow = 'encrypted-media; fullscreen';
+			rahmen.setAttribute('allowfullscreen', '');
+			box.replaceChildren(rahmen);
+			rahmen.focus();
+		});
+	});
+</script>

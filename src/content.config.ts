@@ -14,6 +14,10 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			// Schlagwörter; jedes führt zu einer Themenseite unter /themen/.
+			tags: z.array(z.string()).default([]),
+			// Entwurf: wird nicht gebaut und taucht in keiner Liste, im RSS und in der Sitemap nicht auf.
+			draft: z.boolean().default(false),
 		}),
 });
 
