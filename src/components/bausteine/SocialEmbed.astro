@@ -1,8 +1,10 @@
 ---
-// Zwei-Klick-Einbettung: Beim Seitenaufruf wird NICHTS von der Plattform geladen.
-// Erst nach Klick auf «Beitrag laden» entsteht ein iframe mit der Embed-Adresse.
-// Ohne JavaScript bleibt die Karte ein einfacher Link zum Beitrag.
+// Einbettung von Social-Media- und YouTube-Beiträgen. Zwei Modi (Schalter EINBETTUNG_DIREKT in src/consts.ts):
+// - direkt: iframe wird sofort angezeigt (lädt lazy, sobald es in die Nähe des Bildschirms kommt).
+// - Zwei-Klick: Beim Seitenaufruf wird NICHTS von der Plattform geladen, erst nach Klick auf «Beitrag laden».
+// Ohne Embed-Adresse oder ohne JavaScript bleibt die Karte ein einfacher Link zum Beitrag.
 import { Image } from 'astro:assets';
+import { EINBETTUNG_DIREKT } from '../../consts';
 
 interface Props {
 	plattform: string; // Anzeigename, z.B. «Instagram»
@@ -15,6 +17,8 @@ interface Props {
 	breite?: number;
 }
 const { plattform, url, embed, titel, text, bild, hoehe = 560, breite = 540 } = Astro.props;
+const direkt = EINBETTUNG_DIREKT && embed;
+const breitbild = plattform === 'YouTube';
 
 let vorschau: ImageMetadata | undefined;
 if (bild) {
@@ -25,6 +29,21 @@ if (bild) {
 }
 ---
 
+{direkt ? (
+<figure class="social direkt" style={`--breite:${breite}px`}>
+	<iframe
+		src={embed}
+		title={titel ?? `${plattform}-Beitrag`}
+		height={breitbild ? undefined : hoehe}
+		class:list={{ breitbild }}
+		loading="lazy"
+		referrerpolicy="strict-origin-when-cross-origin"
+		allow="encrypted-media; fullscreen; picture-in-picture"
+		allowfullscreen
+	></iframe>
+	<figcaption><a class="extern" href={url} rel="noopener noreferrer">Auf {plattform} öffnen</a></figcaption>
+</figure>
+) : (
 <div class="social" data-embed={embed} data-hoehe={hoehe} data-titel={titel ?? `${plattform}-Beitrag`} style={`--breite:${breite}px`}>
 	<div class="karte">
 		{vorschau && <Image class="vorschau" src={vorschau} alt="" widths={[320, 640]} sizes="(max-width: 640px) 100vw, 540px" loading="lazy" />}
@@ -44,6 +63,7 @@ if (bild) {
 		</div>
 	</div>
 </div>
+)}
 
 <style>
 	.social {
@@ -110,6 +130,15 @@ if (bild) {
 	}
 	.laden:hover {
 		background: var(--accent-strong);
+	}
+	.direkt figcaption {
+		margin-top: 0.4rem;
+		font-family: var(--sans);
+		font-size: 0.9rem;
+	}
+	.social iframe.breitbild {
+		aspect-ratio: 16 / 9;
+		height: auto;
 	}
 	.social :global(iframe) {
 		display: block;

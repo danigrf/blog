@@ -91,7 +91,7 @@ ffmpeg -i clip.mp4 -ss 1 -frames:v 1 clip.jpg
 # Zu gross? crf höher (30 bis 32) oder Breite auf 960 senken. Dateigrösse prüfen: ls -lh clip.mp4
 ```
 
-Ist das Video trotzdem über 25 MiB (lange Aufnahmen): bei YouTube hochladen und so einbinden. Der Baustein lädt erst nach Klick und nutzt die datenärmere Adresse youtube-nocookie.com:
+Ist das Video trotzdem über 25 MiB (lange Aufnahmen): bei YouTube hochladen und so einbinden. Der Baustein nutzt die datenärmere Adresse youtube-nocookie.com (direkt sichtbar oder erst nach Klick, siehe Schalter unten):
 
 ```mdx
 <YouTube id="VIDEO-ID" titel="Titel des Videos" />
@@ -101,7 +101,7 @@ Die ID steht in der YouTube-Adresse nach `v=`.
 
 ## Instagram und LinkedIn
 
-Beim Seitenaufruf wird nichts von Instagram oder LinkedIn geladen. Es erscheint eine Karte mit Hinweis und Knopf «Beitrag laden». Erst nach dem Klick lädt das Original. Ohne JavaScript bleibt ein Link «Auf Instagram öffnen».
+**Schalter:** In `src/consts.ts` steht `EINBETTUNG_DIREKT`. Bei `true` (aktuell) erscheinen Instagram-, LinkedIn- und YouTube-Beiträge direkt im Text (sie laden erst, wenn man in ihre Nähe scrollt). Dabei überträgt der Browser der Lesenden Daten an die Plattform. Bei `false` erscheint stattdessen eine Karte mit Hinweis und Knopf «Beitrag laden», und erst nach dem Klick lädt das Original. Unter jedem Beitrag steht ein Link «Auf … öffnen».
 
 ```mdx
 <Instagram url="https://www.instagram.com/p/XXXXXXXXXXX/" />
@@ -111,7 +111,7 @@ Beim Seitenaufruf wird nichts von Instagram oder LinkedIn geladen. Es erscheint 
 
 Optional für eine reichere Karte: `titel="…"`, `text="…"`, `bild="mein-beitrag/vorschau.jpg"` (Bild aus `src/assets/blog/`, lokal, nicht von der Plattform).
 
-LinkedIn: Die Einbettungsadresse wird aus der normalen Beitrags-Adresse abgeleitet (die Zahl hinter `activity-`, `share-` oder `ugcPost-`). Falls nach dem Klick nur eine leere Fläche erscheint: Beitrag öffnen, `…` → «Beitrag einbetten», die Adresse aus `src="…"` kopieren und so angeben:
+LinkedIn: Die Einbettungsadresse wird aus der normalen Beitrags-Adresse abgeleitet (die Zahl hinter `activity-`, `share-` oder `ugcPost-`). Falls nur eine leere Fläche erscheint: Beitrag öffnen, `…` → «Beitrag einbetten», die Adresse aus `src="…"` kopieren und so angeben:
 
 ```mdx
 <LinkedIn url="https://www.linkedin.com/posts/…" embed="https://www.linkedin.com/embed/feed/update/urn:li:share:123…" />
