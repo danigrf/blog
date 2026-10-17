@@ -55,6 +55,21 @@ const { title, description, pubDate, updatedDate, heroImage, vorschau, vorschauA
 			.tags a:hover {
 				text-decoration: underline;
 			}
+			.zurueck {
+				margin: 0 0 1.25rem;
+				font-family: var(--sans);
+				font-size: 0.95rem;
+			}
+			.zurueck.unten {
+				margin: 2rem 0 0;
+			}
+			.zurueck a {
+				text-decoration: none;
+				color: var(--accent);
+			}
+			.zurueck a:hover {
+				text-decoration: underline;
+			}
 			@media (max-width: 560px) {
 				.title h1 {
 					font-size: 1.85rem;
@@ -66,6 +81,7 @@ const { title, description, pubDate, updatedDate, heroImage, vorschau, vorschauA
 	<body>
 		<Header />
 		<main id="inhalt">
+			<p class="zurueck oben"><a href="/blog/" data-zurueck>← Alle Beiträge</a></p>
 			<article>
 				{heroImage && <div class="hero-image"><Image width={1020} height={510} src={heroImage} alt="" /></div>}
 				<header class="title">
@@ -91,7 +107,33 @@ const { title, description, pubDate, updatedDate, heroImage, vorschau, vorschauA
 					</nav>
 				)}
 			</article>
+			<p class="zurueck unten"><a href="/blog/" data-zurueck>← Alle Beiträge</a></p>
 		</main>
 		<Footer />
+		<script is:inline>
+			(function () {
+				var links = document.querySelectorAll('a[data-zurueck]');
+				if (!links.length) return;
+				var ref;
+				try { ref = document.referrer ? new URL(document.referrer) : null; } catch (e) { ref = null; }
+				if (!ref || ref.origin !== location.origin || ref.pathname === location.pathname) return;
+				var pfad = ref.pathname;
+				var text = '← Zurück';
+				if (/^\/blog\/?$/.test(pfad)) text = '← Zurück zur Übersicht';
+				else if (pfad === '/') text = '← Zurück zur Startseite';
+				else if (/^\/themen\/?$/.test(pfad)) text = '← Zurück zu den Themen';
+				else if (/^\/themen\/[^/]+\/?$/.test(pfad)) {
+					var t = document.querySelector('.tags a[href="' + (pfad.slice(-1) === '/' ? pfad : pfad + '/') + '"]');
+					text = t ? '← Zurück zu ‹' + t.textContent + '›' : '← Zurück zum Thema';
+				}
+				Array.prototype.forEach.call(links, function (a) {
+					a.textContent = text;
+					a.addEventListener('click', function (e) {
+						if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+						if (history.length > 1) { e.preventDefault(); history.back(); }
+					});
+				});
+			})();
+		</script>
 	</body>
 </html>

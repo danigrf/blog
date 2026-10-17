@@ -245,6 +245,26 @@ const jahre = Array.from({ length: aktuellesJahr - 2012 + 1 }, (_, i) => 2012 + 
 				form.hidden = false;
 				ausUrl();
 				anwenden(true);
+
+				// Ansicht merken (Anzahl sichtbar + Scrollposition) und nach «Zurück» wiederherstellen.
+				var key = function () { return 'blogview:' + location.pathname + location.search; };
+				try { history.scrollRestoration = 'manual'; } catch (e) {}
+				var speichern = function () {
+					try { sessionStorage.setItem(key(), JSON.stringify({ limit: limit, y: Math.round(window.scrollY) })); } catch (e) {}
+				};
+				window.addEventListener('pagehide', speichern);
+				document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') speichern(); });
+				var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+				if (nav && nav.type === 'back_forward') {
+					try {
+						var alt = JSON.parse(sessionStorage.getItem(key()) || 'null');
+						if (alt && alt.limit) {
+							limit = alt.limit;
+							zeichnen();
+							window.scrollTo(0, alt.y || 0);
+						}
+					} catch (e) {}
+				}
 				if (hinweis.textContent && !hinweis.hidden) inUrl();
 			})();
 		</script>
