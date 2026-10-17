@@ -3,7 +3,7 @@ title: "Bundesrat sagt Nein zu E-Collecting. Braucht es jetzt eine Volksinitiati
 description: "Heute ist ein schlechter Tag für die direkte Demokratie. Der Bundesrat hat entschieden, E-Collecting definitiv auf Eis zu legen."
 pubDate: '2017-04-05'
 heroImage: '../../assets/blog/bundesrat-sagt-nein-zu-e-collecting-braucht-es-jetzt-eine-volksinitiative-fuer-digitale-demokratie/now.png'
-tags: ["Digitale Demokratie"]
+tags: ['E-Collecting', 'Digitale Demokratie']
 ---
 
 Heute ist ein schlechter Tag für die direkte Demokratie. [Der Bundesrat hat entschieden, E-Collecting definitiv auf Eis zu legen.](https://www.nzz.ch/schweiz/e-voting-abstimmen-per-klick-soll-2019-in-den-meisten-kantonen-moeglich-sein-ld.155526) Damit ist es in den nächsten Jahren, vielleicht gar Jahrzehnten, nicht möglich, eidgenössische Volksinitiativen und fakultative Referenden im Internet zu unterzeichnen.

@@ -2,7 +2,7 @@
 title: "Community-Kampagnen auf Social Media: Erfolgsfaktoren aus der Praxis"
 description: "Das Zauberwort heisst Community. Unternehmen und Organisationen setzt auf den viralen Mitmach-Effekt von Social Media, um hohe Reichweite zu erzielen, bestehende Kontakte zu binden und neue Zielgruppen anzusprechen."
 pubDate: '2014-05-23'
-tags: ["Campaigning Summit", "Email", "Facebook", "Hacking", "Kampagne", "Social Media", "Strategie", "Twitter", "Campaigning", "Medien"]
+tags: ['Campaigning', 'Social Media']
 ---
 
 Das Zauberwort heisst Community. Unternehmen und Organisationen setzt auf den viralen Mitmach-Effekt von Social Media, um hohe Reichweite zu erzielen, bestehende Kontakte zu binden und neue Zielgruppen anzusprechen. Aber wenn alle eine Community haben, wie bleibt man selbst auf Social Media relevant und sichtbar?

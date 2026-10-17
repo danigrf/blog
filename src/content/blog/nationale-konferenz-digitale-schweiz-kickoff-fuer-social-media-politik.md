@@ -3,7 +3,7 @@ title: "Nationale Konferenz «Digitale Schweiz»: Kickoff für Social Media-Poli
 description: "Anti-Facebook ist im Trend. Die Demokratie sei bedroht, warnt jetzt selbst der Economist. Die laufende Debatte ist ein guter Zeitpunkt für eine Standortbestimmung."
 pubDate: '2017-11-05'
 heroImage: '../../assets/blog/nationale-konferenz-digitale-schweiz-kickoff-fuer-social-media-politik/20171104_ldd001_0.jpg'
-tags: ["Demokratie", "Digitale Demokratie", "Direkte Demokratie", "Politik", "Schweiz", "Social Media", "Wahlkampf", "Campaigning", "Netzpolitik"]
+tags: ['Netzpolitik', 'Social Media']
 ---
 
 **Anti-Facebook ist im Trend. Die Demokratie sei bedroht, warnt jetzt** **selbst** **der Economist. Die laufende Debatte ist ein guter Zeitpunkt für eine Standortbestimmung. Im November 2017 organisiert das Bundesamt für Kommunikation die erste Konferenz «Digitale Schweiz». Nutzt der Bundesrat die Chance, neue Spielregeln für Social Media zu fordern und eine «digitale Tradition» der Schweiz zu begründen?**

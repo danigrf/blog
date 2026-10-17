@@ -3,7 +3,7 @@ title: "Lang lebe die Republik!"
 description: "Seit gestern hat die Schweiz ein Sprachrohr der Rebellion: die Republik. Knapp 6000 Menschen haben sich hinter einem Projekt versammelt, das noch ein Luftschloss ist, aber bald seine Mauern hochziehen wird."
 pubDate: '2017-04-27'
 heroImage: '../../assets/blog/lang-lebe-die-republik-warum-die-rebellion-jetzt-beginnt/startschuss_crowdfunding.jpeg'
-tags: ["Campaigning", "Digitale Demokratie", "Fundraising", "Medien", "Netzpolitik"]
+tags: ['Medien', 'Fundraising']
 ---
 
 Seit gestern hat die Schweiz ein Sprachrohr der Rebellion: die [Republik](https://www.republik.ch/). Knapp 6000 Menschen haben sich hinter einem Projekt versammelt, das noch ein Luftschloss ist, aber bald seine Mauern hochziehen wird.

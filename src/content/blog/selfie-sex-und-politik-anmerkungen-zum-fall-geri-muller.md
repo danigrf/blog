@@ -2,7 +2,7 @@
 title: "Selfie, Sex und Politik: Anmerkungen zum «Fall Geri Müller»"
 description: "Wer gehofft hat, im medialen Sommertheater sei nach dem Akt mit der «Porno-Sekretärin» der Schlussvorhang gefallen, sieht sich getäuscht."
 pubDate: '2014-08-19'
-tags: ["Netzwelt", "Social Media"]
+tags: ['Social Media', 'Medien']
 ---
 
 Wer gehofft hat, im medialen Sommertheater sei nach dem Akt mit der «[Porno-Sekretärin](http://www.watson.ch/!432746547)» der Schlussvorhang gefallen, sieht sich getäuscht. Mit dem «Fall» Geri Müller erhält die Serie eine Fortsetzung, die sich erneut um das potente Dreieck Selfie, Sex und Politik dreht. Die Hauptrolle spielt dieses Mal allerdings keine unbekannte Bundesbeamtin, sondern ein gewählter Volksvertreter.

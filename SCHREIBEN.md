@@ -18,6 +18,9 @@ heroImage: '../../assets/blog/mein-beitrag/titelbild.jpg'
 - `title`, `description`, `pubDate` sind Pflicht. Datum im Format `Oct 20 2026` oder `2026-10-20`.
 - `heroImage` ist optional (grosses Bild über dem Titel), `updatedDate` ebenfalls.
 - `vorschau` ist optional: das Bild, das in Beitragslisten und beim Teilen (Facebook, LinkedIn, Messenger) erscheint. Pfad wie bei `heroImage`; `vorschauAlt` beschreibt es kurz für die Social-Media-Vorschau. Reihenfolge: `vorschau`, sonst `heroImage`; ohne beides zeigt die Liste eine ruhige Farbkachel (Jahr und erstes Thema) und das Teilen das Standardbild. Querformat 3:2 oder breiter, mind. 1200 Pixel breit; Hochformat wird oben angeschnitten.
+- `tags` sind die Themen, z. B. `tags: ['E-Collecting', 'E-ID']`. Jedes Thema erhält eine Seite unter `/themen/`. Höchstens drei, und nur Themen, die im Beitrag wirklich Schwerpunkt sind. Nur Namen aus dieser Liste verwenden (genau so geschrieben), damit nichts doppelt entsteht:
+  Abstimmungen · ADHS & Neurodiversität · Basel · Bevölkerungsrat · Bilaterale III · Bildung · Bundesverfassung · Campaigning · Digitale Demokratie · Direkte Demokratie · E-Collecting · E-ID · Fundraising · Inklusion · KI · Klima & Umwelt · Lobbying · Medien · Menschenrechte · Netzpolitik · Rechtsextremismus · Referendum · Social Media · SRG · Unterschriften-Bschiss · Volksinitiative · Wahlen · WeCollect.
+  Neues Thema nur, wenn mehrere Beiträge dazu absehbar sind; dann hier ergänzen.
 - Darunter folgt der Text in Markdown: `## Zwischentitel`, `**fett**`, `*kursiv*`, `[Linktext](https://…)`, `- Liste`, `> Zitat`.
 
 ## .md oder .mdx?

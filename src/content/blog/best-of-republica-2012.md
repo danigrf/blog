@@ -2,7 +2,7 @@
 title: "Best of Republica 2012"
 description: "Bin gerade dabei, Notizen, Visitenkarten und Tweets der Re:publica 2012 zu sortieren. Leider konnte ich nur bis Donnerstag in Berlin bleiben."
 pubDate: '2012-05-06'
-tags: ["Netzpolitik"]
+tags: ['Netzpolitik']
 ---
 
 Bin gerade dabei, Notizen, Visitenkarten und Tweets der [Re:publica 2012](http://re-publica.de/12/) zu sortieren. Leider konnte ich nur bis Donnerstag in Berlin bleiben. Einen [Tag](http://re-publica.de/12/schedule/#day03) habe ich also verpasst. Hier meine Highlights, ergänzt mit Schnipsel von weiteren Kongress-TeilnehmerInnen.

@@ -3,7 +3,7 @@ title: "Chaotischer Pluralismus: Wie Crowd-Kampagnen unsere Demokratie auf den K
 description: "Wie kann die Zivilgesellschaft effizienter und mit Erfolg dazu beitragen, die Demokratie weiter zu entwicklen? Diese Frage beschäftig mich gerade."
 pubDate: '2017-04-23'
 heroImage: '../../assets/blog/chaotischer-pluralismus-wie-crowd-kampagnen-unsere-demokratie-auf-den-kopf-stellen/tumblr_mc8ltjqteh1r4rcy6o1_5001.jpg'
-tags: ["Demokratie", "Netzdemokratie", "Petition", "Schweiz", "Campaigning", "Digitale Demokratie", "Menschenrechte", "Netzpolitik", "Social Media"]
+tags: ['Campaigning', 'Digitale Demokratie']
 ---
 
 Wie kann die Zivilgesellschaft effizienter und mit Erfolg dazu beitragen, die Demokratie weiter zu entwicklen? Diese Frage beschäftig mich gerade. Auf Einladung von [LevizAlbania](http://www.levizalbania.al/) nehme ich an der «[Woche der lokalen Demokratie](http://www.levizalbania.al/website/108-levizalbania-organizon-javen-e-demokracise-vendore)» teil, die in Tirana statt findet und von der [Direktion für Entwicklung und Zusammenarbeit DEZA](https://www.eda.admin.ch/deza/de/home.html) unterstützt wird.

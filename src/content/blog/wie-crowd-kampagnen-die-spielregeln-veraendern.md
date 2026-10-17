@@ -3,7 +3,7 @@ title: "Wie Crowd-Kampagnen die Spielregeln verändern"
 description: "Schlafende Riesen zu wecken, ist heute das Ziel jeder erfolgreichen Kampagne."
 pubDate: '2018-02-24'
 heroImage: '../../assets/blog/wie-crowd-kampagnen-die-spielregeln-veraendern/sleeping_giants1-958x559.jpg'
-tags: ["Campaigning", "Digitale Demokratie", "Social Media"]
+tags: ['Campaigning', 'Digitale Demokratie']
 ---
 
 Schlafende Riesen zu wecken, ist heute das Ziel jeder erfolgreichen Kampagne. Mit dem Siegeszug der Sozialen Medien treten an die Stelle von hierarchischen Kampagnenorganisationen vermehrt dezentrale Netzwerke, die weitgehend autonom und selbstorganisiert agieren. In Anlehnung an das bekannte Finanzierungsmodell «Crowdfunding», bei dem zahlreiche Personen mit kleinen Beiträgen ein Projekt ermöglichen, sprechen wir deshalb von «Crowd-Kampagnen».

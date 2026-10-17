@@ -3,7 +3,7 @@ title: "Toleranz-Selfies: Skype-Interview mit 3Sat-Kulturzeit"
 description: "Eine kleine Premiere heute: Mein erstes Skype-Interview für die TV-Sendung «Kulturzeit» auf 3Sat. Ich wurde um meine Einschätzung gebeten, ob Selfies als Kampagnenmittel im Kampf gegen Extremismus funktionieren."
 pubDate: '2015-04-27'
 heroImage: '../../assets/blog/toleranz-selfies-skype-interview-mit-3sat-kulturzeit/150427_kuz_selfie02_n.jpg'
-tags: ["Campaigning", "Kampagne", "Lovestorm", "mitdir", "Medien", "Netzwelt", "Social Media"]
+tags: ['Social Media', 'Campaigning']
 ---
 
 Eine kleine Premiere heute: Mein erstes Skype-Interview für die TV-Sendung [«Kulturzeit» auf 3Sat.](http://www.3sat.de/mediathek/?mode=play&obj=51117) Ich wurde um meine Einschätzung gebeten, ob Selfies als Kampagnenmittel im Kampf gegen Extremismus funktionieren.

@@ -3,7 +3,7 @@ title: "Trump’s Troll-Kampagne: Mit Shitstorm ins Weisse Haus"
 description: "Die digitale Demokratie hat zugeschlagen, aber nicht so, wie alle erwartet haben."
 pubDate: '2016-11-10'
 heroImage: '../../assets/blog/trumps-troll-kampagne-mit-shitstorm-ins-weisse-haus/potus.png'
-tags: ["Digitale Demokratie", "Facebook", "Hillary", "Kampagne", "Trump", "Twitter", "USA", "Wahlen", "Wahlkampf", "Campaigning", "Medien", "Netzpolitik", "Social Media"]
+tags: ['Wahlen', 'Social Media']
 ---
 
 Die digitale Demokratie hat zugeschlagen, aber nicht so, wie alle erwartet haben. Der Kurznachrichtendienst Twitter hat Trump ins Zentrum der Macht katapultiert, während Hillary auf Facebook, trotz Geek-Team und Mobilisierungs-App, auf der Strecke blieb. Der frisch gewählte US-Präsident hat wie kein anderer Kandidat zuvor verstanden, Tweets für mediales Dauer-Agenda-Setting zu nutzen. Als Herausforderer mit weniger Geld und Macht als Hillary zwitscherte er drauf los – ganz nach dem Motto: «Ist der Ruf erst ruiniert, politisiert es sich auf Twitter ganz ungeniert.
