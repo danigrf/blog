@@ -2,20 +2,65 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/ueber-mich/daniel-graf.jpg';
+import portraitQuer from '../assets/ueber-mich/daniel-graf-quer.jpg';
+
+const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme verschränkt, vor einer hellen Wand';
 ---
 
 <!doctype html>
 <html lang="de-CH">
 	<head>
 		<BaseHead
+			image={portraitQuer}
+			imageAlt={portraitAlt}
 			title="Über mich – Daniel Graf"
 			description="Daniel Graf aus Basel: WeCollect, Stiftung für direkte Demokratie, E-Collecting und co-kreative Demokratie. Prototyping for democracy."
 		/>
+		<style>
+			.portrait {
+				float: right;
+				width: 15rem;
+				margin: 0.4rem 0 1.25rem 1.75rem;
+			}
+			.portrait img {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 4px;
+			}
+			.portrait figcaption {
+				margin-top: 0.4rem;
+				font-family: var(--mono);
+				font-size: 0.75rem;
+				color: var(--muted);
+			}
+			@media (max-width: 560px) {
+				.portrait {
+					float: none;
+					width: 100%;
+					max-width: 22rem;
+					margin: 0 0 1.5rem;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main id="inhalt">
 			<h1>Über mich</h1>
+			<figure class="portrait">
+				<Image
+					src={portrait}
+					alt={portraitAlt}
+					widths={[320, 480, 720]}
+					sizes="(max-width: 560px) 100vw, 15rem"
+					loading="eager"
+					fetchpriority="high"
+				/>
+				<figcaption>Foto: Katharina Schillinger, September 2026</figcaption>
+			</figure>
 			<p>Ich lebe in Basel und beschäftige mich seit über 20 Jahren mit einer Frage: Wie gelingt das Update der Demokratie?</p>
 			<p>2015 habe ich <a href="https://wecollect.ch">WeCollect.ch</a> entwickelt, um online Unterschriften für Volksinitiativen und Referenden zu sammeln. Weil die Plattform rasch bewiesen hatte, dass sie referendumsfähig ist und damit in der Schweizer Politik eine Rolle spielt, gründete ich mit erfahrenen Campaigner:innen die <a href="https://www.demokratie.ch">Stiftung für direkte Demokratie</a>, die erste Crowd-Stiftung der Schweiz.</p>
 			<p>Neben der Aufbauarbeit für WeCollect und die Stiftung habe ich mit Maximilian Stern das Buch «Eine Agenda für eine digitale Demokratie» geschrieben, zweimal eine Abstimmung für eine staatliche E-ID gewonnen, der Gletscher-Initiative den Namen gegeben und die Inklusions-Initiative bis zur Ziellinie begleitet. Inklusion ist mir ein sehr persönliches Anliegen, seit ich mit 51 Jahren eine ADHS-Diagnose erhalten habe.</p>
