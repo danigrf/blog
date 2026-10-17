@@ -93,7 +93,7 @@ ffmpeg -i clip.mp4 -ss 1 -frames:v 1 clip.jpg
 Ist das Video trotzdem über 25 MiB (lange Aufnahmen): bei YouTube hochladen und so einbinden. Der Baustein lädt erst nach Klick und nutzt die datenärmere Adresse youtube-nocookie.com:
 
 ```mdx
-<YouTube id="dQw4w9WgXcQ" titel="Titel des Videos" />
+<YouTube id="VIDEO-ID" titel="Titel des Videos" />
 ```
 
 Die ID steht in der YouTube-Adresse nach `v=`.
