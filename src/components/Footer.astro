@@ -3,13 +3,27 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Daniel Graf
+	<div class="inner meta">
+		<span>&copy; {today.getFullYear()} Daniel Graf</span>
+		<a href="/rss.xml">RSS</a>
+	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
+		border-top: 1px solid var(--line);
+	}
+	.inner {
+		max-width: calc(var(--measure) + 3rem);
+		margin: 0 auto;
+		padding: 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	a {
+		color: var(--muted);
+	}
+	a:hover {
+		color: var(--accent);
 	}
 </style>

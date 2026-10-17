@@ -1,23 +1,72 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import PostList from '../components/PostList.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 5);
 ---
 
 <!doctype html>
 <html lang="de-CH">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.intro {
+				margin-bottom: 3rem;
+			}
+			.intro h1 {
+				font-size: 2.6rem;
+				margin-bottom: 0.4rem;
+			}
+			.lead {
+				font-size: 1.4rem;
+				line-height: 1.45;
+				color: var(--muted);
+				margin: 0;
+			}
+			.section-head {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				margin: 0 0 0.75rem;
+			}
+			.section-head h2 {
+				margin: 0;
+				font-size: 1.1rem;
+			}
+			.section-head a {
+				font-family: var(--sans);
+				font-size: 0.95rem;
+			}
+			@media (max-width: 560px) {
+				.intro h1 {
+					font-size: 2.1rem;
+				}
+				.lead {
+					font-size: 1.2rem;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>Daniel Graf</h1>
-			<p>Notizen zu direkter und digitaler Demokratie.</p>
-			<p>
-				<a href="/blog/">Zu den Beiträgen</a>
-			</p>
+		<main id="inhalt">
+			<section class="intro">
+				<h1>Daniel Graf</h1>
+				<p class="lead">Notizen zu direkter und digitaler Demokratie.</p>
+			</section>
+			<section aria-labelledby="neueste">
+				<div class="section-head">
+					<h2 id="neueste">Neueste Beiträge</h2>
+					<a href="/blog/">Alle Beiträge</a>
+				</div>
+				<PostList posts={posts} />
+			</section>
 		</main>
 		<Footer />
 	</body>
