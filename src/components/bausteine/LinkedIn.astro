@@ -1,0 +1,37 @@
+---
+// <LinkedIn url="https://www.linkedin.com/posts/…-activity-123…-xxxx" />
+// Embed-Adresse wird aus der URL abgeleitet. Klappt das nicht (oder liefert LinkedIn nichts),
+// die Adresse aus LinkedIn → «Beitrag einbetten» (src des iframe) als embed="…" angeben.
+import SocialEmbed from './SocialEmbed.astro';
+
+interface Props {
+	url: string;
+	embed?: string;
+	titel?: string;
+	text?: string;
+	bild?: string;
+}
+const { url, embed: embedManuell, ...rest } = Astro.props;
+
+let embed = embedManuell;
+if (!embed) {
+	// 1) /posts/…-activity-<ID>-…  /posts/…-share-<ID>-…  /posts/…-ugcPost-<ID>-…
+	let m = url.match(/-(activity|share|ugcPost)-(\d{15,})/i);
+	let art = m?.[1];
+	let id = m?.[2];
+	// 2) /feed/update/urn:li:activity:<ID>/ (auch URL-kodiert)
+	if (!id) {
+		m = decodeURIComponent(url).match(/urn:li:(activity|share|ugcPost):(\d{15,})/i);
+		art = m?.[1];
+		id = m?.[2];
+	}
+	if (art && id) {
+		const urnArt = art.toLowerCase() === 'ugcpost' ? 'ugcPost' : art.toLowerCase();
+		embed = `https://www.linkedin.com/embed/feed/update/urn:li:${urnArt}:${id}`;
+	} else if (!/example/i.test(url)) {
+		throw new Error(`<LinkedIn url="${url}">: Beitrags-ID nicht erkannt. Bitte embed="…" aus «Beitrag einbetten» angeben.`);
+	}
+}
+---
+
+<SocialEmbed plattform="LinkedIn" url={url} embed={embed} hoehe={600} breite={504} {...rest} />

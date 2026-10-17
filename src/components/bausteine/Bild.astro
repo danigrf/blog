@@ -1,0 +1,69 @@
+---
+// Bild mit Legende und Quelle. Datei liegt in src/assets/blog/, src relativ dazu:
+// <Bild src="mein-beitrag/foto.jpg" alt="…" legende="…" quelle="…" />
+import { Image } from 'astro:assets';
+
+interface Props {
+	src: string;
+	alt: string;
+	legende?: string;
+	quelle?: string;
+	quelleUrl?: string;
+}
+const { src, alt, legende, quelle, quelleUrl } = Astro.props;
+
+if (typeof alt !== 'string' || alt.trim() === '') {
+	throw new Error(`<Bild src="${src}">: alt-Text fehlt. Bitte beschreiben, was auf dem Bild zu sehen ist.`);
+}
+
+const bilder = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/**/*.{jpg,jpeg,png,webp,avif,gif,svg}');
+const key = `/src/assets/blog/${src.replace(/^\/+/, '')}`;
+const laden = bilder[key];
+if (!laden) {
+	throw new Error(`<Bild src="${src}">: Datei nicht gefunden. Erwartet unter src/assets/blog/${src}`);
+}
+const bild = (await laden()).default;
+---
+
+<figure class="bild">
+	<Image src={bild} alt={alt} widths={[480, 800, 1200]} sizes="(max-width: 640px) 100vw, 640px" loading="lazy" />
+	{
+		(legende || quelle) && (
+			<figcaption>
+				{legende && <span class="legende">{legende}</span>}
+				{quelle && (
+					<span class="quelle">
+						Quelle: {quelleUrl ? <a href={quelleUrl} rel="noopener">{quelle}</a> : quelle}
+					</span>
+				)}
+			</figcaption>
+		)
+	}
+</figure>
+
+<style>
+	.bild {
+		margin: 2rem 0;
+	}
+	.bild :global(img) {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	figcaption {
+		margin-top: 0.6rem;
+		font-family: var(--sans);
+		font-size: 0.9rem;
+		line-height: 1.45;
+		color: var(--muted);
+	}
+	.legende,
+	.quelle {
+		display: block;
+	}
+	.quelle {
+		font-family: var(--mono);
+		font-size: 0.8rem;
+		margin-top: 0.15rem;
+	}
+</style>

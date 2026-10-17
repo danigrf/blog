@@ -1,0 +1,22 @@
+---
+// <YouTube id="VIDEO-ID" titel="…" />  – nutzt youtube-nocookie.com, erst nach Klick.
+import SocialEmbed from './SocialEmbed.astro';
+
+interface Props {
+	id: string;
+	titel?: string;
+	text?: string;
+	bild?: string;
+}
+const { id, ...rest } = Astro.props;
+if (!/^[\w-]{6,15}$/.test(id)) throw new Error(`<YouTube id="${id}">: ungültige Video-ID`);
+---
+
+<SocialEmbed
+	plattform="YouTube"
+	url={`https://www.youtube.com/watch?v=${id}`}
+	embed={`https://www.youtube-nocookie.com/embed/${id}`}
+	hoehe={315}
+	breite={640}
+	{...rest}
+/>

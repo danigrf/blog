@@ -1,0 +1,72 @@
+---
+// Hervorgehobene Textbox. typ="info" (kräftig) oder typ="kontext" (dezenter).
+interface Props {
+	typ?: 'info' | 'kontext';
+	titel?: string;
+}
+const { typ = 'info', titel } = Astro.props;
+const artLabel = typ === 'kontext' ? 'Kontext' : 'Info';
+---
+
+<aside class={`box box-${typ}`} aria-label={titel ? `${artLabel}: ${titel}` : artLabel}>
+	<p class="box-kopf" aria-hidden="true">
+		<span class="box-art">{artLabel}</span>
+		{titel && <span class="box-titel">{titel}</span>}
+	</p>
+	<div class="box-inhalt"><slot /></div>
+</aside>
+
+<style>
+	.box {
+		margin: 2rem 0;
+		padding: 1rem 1.25rem 1.1rem;
+		border-radius: 4px;
+		font-size: 1.0625rem;
+		line-height: 1.6;
+		color: var(--text);
+	}
+	.box-info {
+		background: var(--info-bg);
+		border-left: 5px solid var(--info-line);
+	}
+	.box-kontext {
+		background: var(--kontext-bg);
+		border: 1px solid var(--kontext-line);
+		border-left: 3px solid var(--kontext-line);
+	}
+	.box-kopf {
+		margin: 0 0 0.5rem;
+		font-family: var(--sans);
+		font-size: 0.9rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.15rem 0.7rem;
+		align-items: baseline;
+	}
+	.box-art {
+		font-family: var(--mono);
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+	.box-info .box-art,
+	.box-info .box-titel {
+		color: var(--info-label);
+	}
+	.box-kontext .box-art,
+	.box-kontext .box-titel {
+		color: var(--kontext-label);
+	}
+	.box-titel {
+		font-weight: 600;
+		font-size: 1rem;
+	}
+	.box-inhalt :global(> :last-child) {
+		margin-bottom: 0;
+	}
+	.box-inhalt :global(p),
+	.box-inhalt :global(ul),
+	.box-inhalt :global(ol) {
+		margin-bottom: 0.8em;
+	}
+</style>

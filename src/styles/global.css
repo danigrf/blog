@@ -15,6 +15,14 @@
 	--accent-strong: #123f4b;
 	--mark: rgba(29, 92, 107, 0.2);
 
+	/* Blau für Info-/Kontext-Boxen (neben dem Petrol-Akzent) */
+	--info-bg: #dfeaf8;
+	--info-line: #2a5db0;
+	--info-label: #153e75;
+	--kontext-bg: #edf2f9;
+	--kontext-line: #6b8fbf;
+	--kontext-label: #3a5680;
+
 	--serif: var(--font-serif), Georgia, serif;
 	--sans: var(--font-sans), system-ui, sans-serif;
 	--mono: var(--font-mono), ui-monospace, monospace;
@@ -33,6 +41,12 @@
 		--accent: #7fc3d1;
 		--accent-strong: #a9dce6;
 		--mark: rgba(127, 195, 209, 0.28);
+		--info-bg: #1a2a40;
+		--info-line: #5f93d8;
+		--info-label: #a9c9f4;
+		--kontext-bg: #172029;
+		--kontext-line: #4f6f99;
+		--kontext-label: #9fb6d4;
 	}
 }
 
