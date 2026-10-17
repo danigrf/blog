@@ -14,6 +14,11 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			// Vorschaubild für Listen und Social-Media-Vorschau. Fehlt es, gilt heroImage;
+			// fehlt auch das, erscheint eine gestaltete Kachel (Listen) bzw. das Standardbild (Teilen).
+			vorschau: z.optional(image()),
+			// Beschreibt das Vorschaubild für die Social-Media-Vorschau (in Listen ist es dekorativ).
+			vorschauAlt: z.string().optional(),
 			// Schlagwörter; jedes führt zu einer Themenseite unter /themen/.
 			tags: z.array(z.string()).default([]),
 			// Entwurf: wird nicht gebaut und taucht in keiner Liste, im RSS und in der Sitemap nicht auf.

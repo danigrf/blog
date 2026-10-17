@@ -47,3 +47,16 @@ export async function getThemen(): Promise<Thema[]> {
 		(a, b) => b.posts.length - a.posts.length || a.name.localeCompare(b.name, 'de'),
 	);
 }
+
+/** Vorschaubild eines Beitrags: erst `vorschau`, dann `heroImage`; sonst nichts (-> Platzhalter-Kachel). */
+export function vorschauBild(post: Post): { src: ImageMetadata; alt: string } | undefined {
+	const src = post.data.vorschau ?? post.data.heroImage;
+	return src ? { src, alt: post.data.vorschauAlt ?? '' } : undefined;
+}
+
+/** Stabile Kachelvariante 0-3 je Beitrag (gleiche Adresse, gleiche Farbe). */
+export function kachelVariante(id: string): number {
+	let h = 0;
+	for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+	return h % 4;
+}
