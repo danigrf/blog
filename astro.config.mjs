@@ -5,9 +5,9 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
+export default defineConfig({
 	// Öffentliche Adresse des Blogs (für Sitemap, RSS und Vorschaubilder).
-	// PLATZHALTER: Die echte Cloudflare-URL (z. B. https://dein-projekt.pages.dev) wird nach dem ersten Deployment hier nachgetragen.
-	site: 'https://example.com',
+	site: 'https://blog.daniel-graf.workers.dev',
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{
