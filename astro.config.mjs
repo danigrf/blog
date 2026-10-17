@@ -7,7 +7,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	// Öffentliche Adresse des Blogs (für Sitemap, RSS und Vorschaubilder).
-	site: 'https://blog.daniel-graf.workers.dev',
+	site: 'https://danielgraf.ch',
 	integrations: [mdx(), sitemap()],
 	// Schriften werden beim Build von Fontsource geholt und selbst ausgeliefert
 	// (keine Anfragen an Google Fonts im Browser der Besucher).

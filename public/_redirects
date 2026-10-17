@@ -2,6 +2,14 @@
 # Format: Quelle Ziel Statuscode. Feste Regeln stehen vor den Platzhalter-Regeln (Cloudflare-Vorgabe).
 
 # Beitraege: /JJJJ/MM/TT/<slug>/ (mit und ohne Schlussslash)
+/2014/08/22/authentizitat-als-konstanter-mangel/ /blog/authentizitat-als-konstanter-mangel/ 301
+/2014/08/22/authentizitat-als-konstanter-mangel /blog/authentizitat-als-konstanter-mangel/ 301
+/2014/05/14/hashtag-kampagne-bringbackourgirls-mein-interview-auf-radio-srf3/ /blog/hashtag-kampagne-bringbackourgirls-mein-interview-auf-radio-srf3/ 301
+/2014/05/14/hashtag-kampagne-bringbackourgirls-mein-interview-auf-radio-srf3 /blog/hashtag-kampagne-bringbackourgirls-mein-interview-auf-radio-srf3/ 301
+/2016/08/02/interview-wir-muessen-die-kampagnenplanung-auf-den-kopf-stellen/ /blog/interview-wir-muessen-die-kampagnenplanung-auf-den-kopf-stellen/ 301
+/2016/08/02/interview-wir-muessen-die-kampagnenplanung-auf-den-kopf-stellen /blog/interview-wir-muessen-die-kampagnenplanung-auf-den-kopf-stellen/ 301
+/2014/10/29/wer-im-netz-spendet-spendet-mehr-interview-mit-fundraiser-kevin-luximon/ /blog/wer-im-netz-spendet-spendet-mehr-interview-mit-fundraiser-kevin-luximon/ 301
+/2014/10/29/wer-im-netz-spendet-spendet-mehr-interview-mit-fundraiser-kevin-luximon /blog/wer-im-netz-spendet-spendet-mehr-interview-mit-fundraiser-kevin-luximon/ 301
 /2012/05/05/lobo-haut-rein/ /blog/lobo-haut-rein/ 301
 /2012/05/05/lobo-haut-rein /blog/lobo-haut-rein/ 301
 /2012/05/05/wir-hacker-kids-von-der-bahnhofstrasse/ /blog/wir-hacker-kids-von-der-bahnhofstrasse/ 301
