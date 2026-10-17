@@ -1,0 +1,20 @@
+---
+title: "Selfie, Sex und Politik: Anmerkungen zum «Fall Geri Müller»"
+description: "Wer gehofft hat, im medialen Sommertheater sei nach dem Akt mit der «Porno-Sekretärin» der Schlussvorhang gefallen, sieht sich getäuscht."
+pubDate: '2014-08-19'
+tags: ["Netzwelt", "Social Media"]
+---
+
+Wer gehofft hat, im medialen Sommertheater sei nach dem Akt mit der «[Porno-Sekretärin](http://www.watson.ch/!432746547)» der Schlussvorhang gefallen, sieht sich getäuscht. Mit dem «Fall» Geri Müller erhält die Serie eine Fortsetzung, die sich erneut um das potente Dreieck Selfie, Sex und Politik dreht. Die Hauptrolle spielt dieses Mal allerdings keine unbekannte Bundesbeamtin, sondern ein gewählter Volksvertreter.
+
+Gewiss gibt es im Zusammenhang mit dem Polizeieinsatz Vorwürfe, die weit über die Selfies hinausgehen und die noch zu klären sein werden. Wer die bisherige Berichterstattung liest, stellt aber fest, dass in altbekannter Manier durchs Schlüsselloch gelinst wird, die Kommentatoren sich vor Empörung überschlagen und süffisante Schlagzeilen auch den letzten Leser so richtig scharf auf die Bildchen machen.
+
+Mich stört dabei vor allem, dass beim ganzen Getöse der gelassene Blick auf die Selfie-Kultur aussen vor bleibt. Mehr noch: Statt die Gelegenheit zu nutzen und sich unaufgeregt einem Alltagsphänomen anzunähern, wird dem sensationslüsternen Publikum mit dem «[Grüsel-Geri](http://www.blick.ch/news/schweiz/aargau/nackt-selfie-affaere-gruesel-geri-wird-von-aufgaben-entbunden-id3060141.html)» in allseitiger medialer Erregung vorgeführt, welche ach so dekadenten Abgründe sich hinter der nur scheinbar harmlosen Schnappschuss-Welt auftun. Nicht von ungefähr kritisiert der Blogger [Philippe Wampfler](http://medium.com/@phwampfler), dem ich den Entwurf zu diesem Blogtext gezeigt habe, Medien nutzten Geschichten wie diese oft nur als Vorwand, um «allgemeingültige» Vorstellungen und Bilder einer sexuellen Normalität zu propagieren, die so nicht existiert.
+
+Sex und Medien haben eine lange, gemeinsame Geschichte, lautet doch eine der ältesten Binsenwahrheiten im Mediengeschäft «sex sells». Vermutlich hätte sich der «Fall Müller» kaum anders entwickelt, hätte der Betroffene einen Brief, ein Polaroid-Bild oder gar eine explizite Zeichnung von sich verschickt. Bemerkenswert bleibt jedoch der Zeitpunkt der beiden jüngst in den Medien verhandelten Nacktselfie-Patzer: Er zeigt, dass die Selfie-Kultur zu einem festen Bestandteil unseres Zusammenlebens geworden ist. Noch vor zwei Jahren hätte sich wohl höchstens eine Handvoll Leute gemeldet, wenn ich in einem Social Media-Kurs mit 30- bis 50-jährigen TeilnehmerInnen gefragt hätte, wer bereits ein Selfie von sich auf Social Media veröffentlicht hat. Heute dürfte es die Mehrheit sein.
+
+Nicht nur Stars und Sternchen inszenieren sich täglich mit Ego-Schnappschüssen. Im Aargau ebenso, wie im Weissen Haus oder an der Leichtathletik-EM. Die Fans liken die «authentischen» Bildgeschichten und die Medien veröffentlichen die Fotos in Serie, auch wenn Selfies mittlerweile oft das Werk von PR-Profis sind. Und schliesslich verzichtet kaum eine Marketingkampagne auf einen Selfie-Wettbewerb, um «hochwertigen Brand-Content» zu erzeugen, den die Leute auch auf privaten Kanälen weiter verbreiten.
+
+Die Selbstinszenierung im Netz ist Mainstream geworden und macht auch vor gesellschaftlichen Tabu-Zonen, wie beispielsweise Sex, nicht Halt. Ohne gerade einen wissenschaftliche Studie zur Hand zu haben, gehe ich davon aus, dass in der Schweiz und anderswo heute täglich Tausende von mehr oder weniger erotischen Selfies verschickt werden. Und zwar von überall her – aus dem Büro, aus dem Schlafzimmer oder von der Baustelle.
+
+Zweifellos ein Alptraum bzw. gefundenes Fressen für selbsternannte mediale Sittenwächter, aber dennoch eine gesellschaftliche Realität und Bestandteil unserer Beziehungskommunikation. Wer die Selfie-Kultur «pervers» findet, darf das selbstverständlich offen sagen. Menschen wegen privater Smartphone-Bildchen öffentlich zu verurteilen, ist heuchlerisch und intolerant. Oder ein Zeichen dafür, dass die eigenen Moralvorstellungen der Zeit hinterherhinken.
