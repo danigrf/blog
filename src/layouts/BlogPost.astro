@@ -9,12 +9,12 @@ import { themaSlug } from '../lib/posts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, vorschau, vorschauAlt, tags } = Astro.props;
 ---
 
 <html lang="de-CH">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={vorschau ?? heroImage} imageAlt={vorschauAlt} />
 		<style>
 			.hero-image img {
 				display: block;

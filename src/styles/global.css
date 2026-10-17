@@ -28,6 +28,14 @@
 	--mono: var(--font-mono), ui-monospace, monospace;
 
 	--measure: 40rem;
+
+	/* Platzhalter-Kacheln in Listen */
+	--kachel-0: #d3e3e7;
+	--kachel-1: #dfeaf8;
+	--kachel-2: #e4eaf0;
+	--kachel-3: #e9e3d3;
+	--kachel-text: #123f4b;
+	--kachel-line: rgba(29, 92, 107, 0.18);
 	color-scheme: light dark;
 }
 
@@ -47,6 +55,12 @@
 		--kontext-bg: #172029;
 		--kontext-line: #4f6f99;
 		--kontext-label: #9fb6d4;
+		--kachel-0: #1f3a41;
+		--kachel-1: #1a2a40;
+		--kachel-2: #1d2e38;
+		--kachel-3: #2a2f2c;
+		--kachel-text: #a9dce6;
+		--kachel-line: rgba(127, 195, 209, 0.2);
 	}
 }
 
@@ -214,32 +228,90 @@ td {
 }
 .post-list a {
 	display: grid;
-	grid-template-columns: 9.5rem 1fr;
-	gap: 0.25rem 1.25rem;
-	padding: 1rem 0;
+	grid-template-columns: minmax(0, 1fr) 11.5rem;
+	gap: 0 1.5rem;
+	align-items: start;
+	padding: 1.1rem 0;
 	text-decoration: none;
 	color: var(--text);
 }
+.post-list .text {
+	display: block;
+	min-width: 0;
+}
+.post-list .meta {
+	display: block;
+	margin-bottom: 0.25rem;
+}
 .post-list .post-title {
+	display: block;
 	font-family: var(--sans);
 	font-weight: 600;
 	font-size: 1.15rem;
 	line-height: 1.35;
 }
-.post-list a:hover .post-title {
+.post-list a:hover .post-title,
+.post-list a:focus-visible .post-title {
 	color: var(--accent);
 	text-decoration: underline;
 	text-underline-offset: 0.2em;
 }
-.post-list .meta {
-	padding-top: 0.2rem;
-}
 .post-list .post-desc {
-	grid-column: 2;
-	margin: 0;
+	display: block;
+	margin-top: 0.35rem;
 	font-size: 1rem;
 	line-height: 1.5;
 	color: var(--muted);
+}
+.post-list .thumb {
+	display: block;
+	aspect-ratio: 3 / 2;
+	overflow: hidden;
+	border-radius: 3px;
+	background: var(--surface);
+}
+.post-list .thumb img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+}
+
+/* Platzhalter-Kachel für Beiträge ohne Bild: ruhige Farbfläche aus der Palette. */
+.kachel {
+	--k-bg: var(--kachel-0);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 0.6rem 0.75rem;
+	background: var(--k-bg);
+	color: var(--kachel-text);
+	border: 1px solid var(--kachel-line);
+	border-radius: 3px;
+}
+.kachel-1 { --k-bg: var(--kachel-1); }
+.kachel-2 { --k-bg: var(--kachel-2); }
+.kachel-3 { --k-bg: var(--kachel-3); }
+.kachel-jahr {
+	font-family: var(--serif);
+	font-size: 1.9rem;
+	line-height: 1;
+	letter-spacing: -0.01em;
+}
+.kachel-thema {
+	font-family: var(--mono);
+	font-size: 0.7rem;
+	line-height: 1.3;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 @media (max-width: 560px) {
@@ -253,10 +325,20 @@ td {
 		font-size: 1.75rem;
 	}
 	.post-list a {
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr) 5.5rem;
+		gap: 0 1rem;
 	}
 	.post-list .post-desc {
-		grid-column: 1;
+		font-size: 0.95rem;
+	}
+	.kachel {
+		padding: 0.35rem 0.45rem;
+	}
+	.kachel-jahr {
+		font-size: 1.05rem;
+	}
+	.kachel-thema {
+		display: none;
 	}
 }
 
