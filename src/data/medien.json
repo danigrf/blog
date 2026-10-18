@@ -656,22 +656,6 @@
   "highlight": null
  },
  {
-  "id": "DG-0177",
-  "datum": "2022-10-13",
-  "ungefaehr": false,
-  "medium": "Tages-Anzeiger",
-  "titel": "Sibylle Berg, Sophie Hunger, Pedro Lenz: 100 Promis fordern schärfere Massnahmen",
-  "format": "text",
-  "art": null,
-  "organisation": null,
-  "link": "https://www.tagesanzeiger.ch/pipilotti-rist-sibylle-berg-milo-rau-samir-promis-fordern-schaerfere-massnahmen-837468555301",
-  "abo": true,
-  "wayback": null,
-  "geprueft": false,
-  "status": "Metadaten geprüft – Volltext offen",
-  "highlight": null
- },
- {
   "id": "DG-0176",
   "datum": "2022-09-21",
   "ungefaehr": false,
@@ -942,22 +926,6 @@
   "geprueft": true,
   "status": "Twitter-Hinweis – Original prüfen",
   "highlight": 2
- },
- {
-  "id": "DG-0071",
-  "datum": "2021-02-16",
-  "ungefaehr": true,
-  "medium": "Tages-Anzeiger",
-  "titel": "Macht mich die E-ID zum gläsernen Bürger?",
-  "format": "text",
-  "art": null,
-  "organisation": null,
-  "link": "https://tagesanzeiger.ch/macht-mich-die-e-id-zum-glaesernen-buerger-140700943428",
-  "abo": true,
-  "wayback": null,
-  "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
-  "highlight": null
  },
  {
   "id": "DG-0070",
@@ -1597,6 +1565,22 @@
   "wayback": null,
   "geprueft": true,
   "status": "Originalseite geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0123",
+  "datum": "2019-08-12",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger",
+  "titel": "«Bin beim Notar»: Heute gibt Daniel Graf Wecollect ab",
+  "format": "text",
+  "art": "Porträt",
+  "organisation": null,
+  "link": "https://www.tagesanzeiger.ch/bin-beim-notar-heute-gibt-daniel-graf-wecollect-ab-992961112046",
+  "abo": true,
+  "wayback": null,
+  "geprueft": true,
+  "status": "Medienverzeichnis belegt – Original prüfen",
   "highlight": null
  },
  {
@@ -3113,22 +3097,6 @@
   "art": null,
   "organisation": null,
   "link": "https://www.tagesanzeiger.ch/apropos-der-taegliche-podcast-ist-unsere-verfassung-noch-zeitgemaess-279258999340",
-  "abo": false,
-  "wayback": null,
-  "geprueft": false,
-  "status": "Medienverzeichnis belegt – Original prüfen",
-  "highlight": null
- },
- {
-  "id": "DG-0123",
-  "datum": null,
-  "ungefaehr": false,
-  "medium": "Tages-Anzeiger",
-  "titel": "Der Radikaldemokrat",
-  "format": "text",
-  "art": "Porträt",
-  "organisation": null,
-  "link": "https://www.tagesanzeiger.ch/schweiz/standard/der-radikaldemokrat/story/13897104",
   "abo": false,
   "wayback": null,
   "geprueft": false,
