@@ -1,4 +1,4 @@
-// Suchindex für «Nach Themen stöbern»: wird beim Build erzeugt und erst bei Bedarf geladen.
+// Suchindex für «Themen und Beiträge durchsuchen»: wird beim Build erzeugt und erst bei Bedarf geladen.
 // Felder (kurz gehalten): i = Adresse, t = Titel, d = Datum (ISO, nur Tag), g = Themen-Slugs,
 // b = Beschreibung, x = gekürzter Klartext.
 import { getPosts, themaSlug } from '../../lib/posts';
