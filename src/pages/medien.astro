@@ -12,6 +12,9 @@ type Eintrag = (typeof alle)[number];
 const vorschau = import.meta.env.DEV || process.env.MEDIEN_VORSCHAU === '1';
 const eintraege = alle.filter((e) => e.geprueft || vorschau || MEDIEN_UNGEPRUEFTE_ZEIGEN);
 
+// Auswahl (Highlight-Karten) oben auf der Seite; vorerst ausgeblendet.
+const AUSWAHL_ZEIGEN = false;
+
 const highlights = eintraege
 	.filter((e) => e.highlight)
 	.sort((a, b) => (b.datum ?? '').localeCompare(a.datum ?? ''));
@@ -188,6 +191,9 @@ function datumKurz(d: string | null) {
 				die Stiftung für direkte Demokratie sowie Volksinitiativen und Referenden, bei denen ich beteiligt war.
 			</p>
 
+			{
+				AUSWAHL_ZEIGEN && (
+					<>
 			<h2>Auswahl</h2>
 			<ul class="highlights">
 				{
@@ -209,8 +215,11 @@ function datumKurz(d: string | null) {
 					))
 				}
 			</ul>
+					</>
+				)
+			}
 
-			<h2 id="alle-titel">Alle Beiträge</h2>
+			{AUSWAHL_ZEIGEN && <h2 id="alle-titel">Alle Beiträge</h2>}
 			<div class="filter" id="filter" hidden>
 				<button type="button" data-format="" aria-pressed="true">Alle <span class="anzahl">{eintraege.length}</span></button>
 				<button type="button" data-format="tv" aria-pressed="false">TV <span class="anzahl">{anzahl.tv}</span></button>
