@@ -7,6 +7,8 @@ import { getPosts, getThemen } from '../../lib/posts';
 
 const themen = await getThemen();
 const neueste = (await getPosts()).slice(0, 10);
+const aktuellesJahr = new Date().getFullYear();
+const jahre = Array.from({ length: aktuellesJahr - 2012 + 1 }, (_, i) => 2012 + i);
 ---
 
 <!doctype html>
@@ -30,6 +32,23 @@ const neueste = (await getPosts()).slice(0, 10);
 				min-height: 2.75rem;
 			}
 			.suche input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.zeit { display: flex; gap: 0.75rem 1rem; margin-top: 0.75rem; }
+			.zeit .feld { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+			.zeit select {
+				font: inherit;
+				font-size: 1rem;
+				color: var(--text);
+				background: var(--bg);
+				border: 1px solid var(--muted);
+				border-radius: 4px;
+				padding: 0.45rem 0.6rem;
+				min-height: 2.5rem;
+				max-width: 100%;
+			}
+			.zeit select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.suche .hinweis { margin: 0.5rem 0 0; }
+			.suche .hinweis[hidden] { display: none; }
+			@media (max-width: 30rem) { .zeit .feld { flex: 1; } .zeit select { width: 100%; } }
 			.themen { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem 0.5rem; }
 			.themen li { margin: 0; }
 			.themen a, .themen button {
@@ -95,6 +114,17 @@ const neueste = (await getPosts()).slice(0, 10);
 			<form class="suche" id="suche" role="search" hidden>
 				<label for="q">Themen und Beiträge durchsuchen</label>
 				<input id="q" type="search" autocomplete="off" placeholder="z. B. Unterschriften, Küng, E-ID" />
+				<div class="zeit">
+					<div class="feld">
+						<label for="f-von">Von</label>
+						<select id="f-von"><option value="">Jahr</option>{jahre.map((j) => <option value={j}>{j}</option>)}</select>
+					</div>
+					<div class="feld">
+						<label for="f-bis">Bis</label>
+						<select id="f-bis"><option value="">Jahr</option>{[...jahre].reverse().map((j) => <option value={j}>{j}</option>)}</select>
+					</div>
+				</div>
+				<p class="meta hinweis" id="hinweis" hidden></p>
 			</form>
 			<ul class="themen" id="chips" aria-label="Themen">
 				{
@@ -128,6 +158,9 @@ const neueste = (await getPosts()).slice(0, 10);
 			const chipsEl = document.getElementById('chips') as HTMLUListElement;
 			const form = document.getElementById('suche') as HTMLFormElement;
 			const input = document.getElementById('q') as HTMLInputElement;
+			const selVon = document.getElementById('f-von') as HTMLSelectElement;
+			const selBis = document.getElementById('f-bis') as HTMLSelectElement;
+			const hinweis = document.getElementById('hinweis') as HTMLElement;
 			const leiste = document.getElementById('leiste') as HTMLElement;
 			const titel = document.getElementById('liste-titel') as HTMLElement;
 			const status = document.getElementById('status') as HTMLElement;
@@ -223,13 +256,27 @@ const neueste = (await getPosts()).slice(0, 10);
 			function urlSchreiben(q: string) {
 				const p = new URLSearchParams();
 				if (gewaehlt.size) p.set('themen', [...gewaehlt].join(','));
+				if (selVon.value) p.set('von', selVon.value);
+				if (selBis.value) p.set('bis', selBis.value);
 				if (q.trim()) p.set('q', q.trim());
 				const s = p.toString().replace(/%2C/g, ',');
 				history.replaceState(null, '', location.pathname + (s ? `?${s}` : ''));
 			}
 
-			function aktualisieren() {
+			function aktualisieren(mitHinweis = true) {
 				const q = input.value;
+				let von = parseInt(selVon.value, 10) || 0;
+				let bis = parseInt(selBis.value, 10) || 0;
+				hinweis.hidden = true;
+				if (von && bis && von > bis) {
+					[von, bis] = [bis, von];
+					selVon.value = String(von);
+					selBis.value = String(bis);
+					if (mitHinweis) {
+						hinweis.textContent = 'Von und Bis waren vertauscht und wurden getauscht.';
+						hinweis.hidden = false;
+					}
+				}
 				const qf = falte(q).trim();
 				const worte = qf.split(/\s+/).filter(Boolean);
 
@@ -241,7 +288,7 @@ const neueste = (await getPosts()).slice(0, 10);
 				});
 				urlSchreiben(q);
 
-				const aktiv = gewaehlt.size > 0 || worte.length > 0;
+				const aktiv = gewaehlt.size > 0 || worte.length > 0 || von > 0 || bis > 0;
 				reset.hidden = !aktiv;
 				standard.hidden = aktiv;
 				trefferBox.hidden = !aktiv;
@@ -258,7 +305,8 @@ const neueste = (await getPosts()).slice(0, 10);
 				}
 				// Themen: UND (ein Beitrag muss alle gewählten Themen haben); Suchwörter: ebenfalls UND.
 				const treffer = index.filter(
-					(e) => [...gewaehlt].every((s) => e.g.includes(s)) && worte.every((w) => e.h.includes(w)),
+					(e) => [...gewaehlt].every((s) => e.g.includes(s)) && worte.every((w) => e.h.includes(w)) &&
+						(!von || +e.d.slice(0, 4) >= von) && (!bis || +e.d.slice(0, 4) <= bis),
 				);
 				liste.replaceChildren(...treffer.slice(0, sichtbar).map(zeile));
 				mehr.hidden = treffer.length <= sichtbar;
@@ -276,6 +324,9 @@ const neueste = (await getPosts()).slice(0, 10);
 			reset.addEventListener('click', () => {
 				gewaehlt.clear();
 				input.value = '';
+				selVon.value = '';
+				selBis.value = '';
+				hinweis.hidden = true;
 				sichtbar = SEITE;
 				aktualisieren();
 				input.focus();
@@ -286,6 +337,12 @@ const neueste = (await getPosts()).slice(0, 10);
 				aktualisieren();
 			});
 			// Index erst laden, wenn jemand die Suche benutzt (spart Daten auf der Startansicht).
+			[selVon, selBis].forEach((el) =>
+				el.addEventListener('change', () => {
+					sichtbar = SEITE;
+					aktualisieren();
+				}),
+			);
 			input.addEventListener('focus', () => void ladeIndex(), { once: true });
 			chipsEl.addEventListener('pointerover', () => void ladeIndex(), { once: true });
 
@@ -296,6 +353,10 @@ const neueste = (await getPosts()).slice(0, 10);
 				.filter((s) => namen.has(s))
 				.forEach((s) => gewaehlt.add(s));
 			input.value = params.get('q') ?? '';
+			const jahrOk = (sel: HTMLSelectElement, v: string | null) =>
+				[...sel.options].some((o) => o.value === v) ? (v as string) : '';
+			selVon.value = jahrOk(selVon, params.get('von'));
+			selBis.value = jahrOk(selBis, params.get('bis'));
 			aktualisieren();
 		</script>
 	</body>
