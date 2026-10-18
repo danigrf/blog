@@ -40,7 +40,6 @@ const anzahl = {
 	text: eintraege.filter((e) => e.format === 'text').length,
 };
 const jahre = eintraege.filter((e) => e.datum).map((e) => e.datum!.slice(0, 4));
-const vonJahr = jahre[jahre.length - 1];
 
 const monate = ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'];
 function datumKurz(d: string | null) {
@@ -56,7 +55,7 @@ function datumKurz(d: string | null) {
 	<head>
 		<BaseHead
 			title="Medien – Daniel Graf"
-			description={`Interviews, Porträts und Auftritte in TV, Radio und Presse seit ${vonJahr}, dazu Berichte über WeCollect, die Stiftung für direkte Demokratie sowie Volksinitiativen und Referenden, bei denen ich beteiligt war.`}
+			description={`Interviews, Porträts und Auftritte in TV, Radio und Presse, dazu Berichte über WeCollect, die Stiftung für direkte Demokratie sowie Volksinitiativen und Referenden, bei denen ich beteiligt war.`}
 		/>
 		<style is:global>
 			.vorschau-hinweis {
@@ -185,7 +184,7 @@ function datumKurz(d: string | null) {
 				)
 			}
 			<p>
-				Interviews, Porträts und Auftritte in TV, Radio und Presse seit {vonJahr}, dazu Berichte über WeCollect,
+				Interviews, Porträts und Auftritte in TV, Radio und Presse, dazu Berichte über WeCollect,
 				die Stiftung für direkte Demokratie sowie Volksinitiativen und Referenden, bei denen ich beteiligt war.
 			</p>
 
