@@ -6,10 +6,9 @@ import { kachelVariante, kurz, type Post, vorschauBild } from '../lib/posts';
 
 interface Props {
 	posts: Post[];
-	haupt?: string;
 }
-const { posts, haupt } = Astro.props;
-const titel = haupt ? `Mehr zum Thema ‹${haupt}›` : 'Weitere Beiträge';
+const { posts } = Astro.props;
+const titel = 'Auch interessant für dich';
 ---
 
 <section class="mehr" aria-labelledby="mehr-titel">
