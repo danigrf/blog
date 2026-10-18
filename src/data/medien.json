@@ -285,6 +285,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0225",
+  "datum": "2026-02-21",
+  "ungefaehr": false,
+  "medium": "Winterkongress Digitale Gesellschaft",
+  "titel": "Direkte Demokratie digital: Vertrauen, Machtfragen, Teilhabe",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://media.ccc.de/v/dgwk2026-56524-direkte-demokratie-digita",
+  "abo": false,
+  "geprueft": true,
+  "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0129",
   "datum": "2025-08-31",
   "ungefaehr": false,
@@ -387,6 +402,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0224",
+  "datum": "2025-03-01",
+  "ungefaehr": false,
+  "medium": "Winterkongress Digitale Gesellschaft",
+  "titel": "Pilotprojekt E-Collecting: How low can we go?",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://media.ccc.de/v/dgwk2025-56333-pilotprojekt-e-collecting",
+  "abo": false,
+  "geprueft": true,
+  "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -690,6 +720,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0223",
+  "datum": "2024-03-01",
+  "ungefaehr": false,
+  "medium": "Winterkongress Digitale Gesellschaft",
+  "titel": "Update Schweiz – Demokratie-Hack für eine neue Verfassung",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://media.ccc.de/v/dgwk2024-56179-update-schweiz-demokratie",
+  "abo": false,
+  "geprueft": true,
+  "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0126",
   "datum": "2023-11-03",
   "ungefaehr": false,
@@ -825,6 +870,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0222",
+  "datum": "2023-02-25",
+  "ungefaehr": false,
+  "medium": "Winterkongress Digitale Gesellschaft",
+  "titel": "Datenschutz-Initiative",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://media.ccc.de/v/dgwk2023-56050-datenschutz-initiative",
+  "abo": false,
+  "geprueft": true,
+  "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0141",
   "datum": "2023-01-18",
   "ungefaehr": false,
@@ -927,6 +987,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0221",
+  "datum": "2022-02-25",
+  "ungefaehr": false,
+  "medium": "Winterkongress Digitale Gesellschaft",
+  "titel": "Virtuelle Demokratie – ein neues Betriebssystem für unseren Planeten",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://media.ccc.de/v/dgwk2022-4145-virtuelle-demokratie-ein-n",
+  "abo": false,
+  "geprueft": true,
+  "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1092,6 +1167,21 @@
   "abo": true,
   "geprueft": true,
   "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0220",
+  "datum": "2021-02-27",
+  "ungefaehr": false,
+  "medium": "Winterkongress Digitale Gesellschaft",
+  "titel": "E-ID-Abstimmung: What's next?",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://media.ccc.de/v/wk04-6784-e-id-abstimmung-what-s-next-",
+  "abo": false,
+  "geprueft": true,
+  "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -3027,6 +3117,21 @@
   "abo": true,
   "geprueft": true,
   "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0219",
+  "datum": "2010-02-03",
+  "ungefaehr": false,
+  "medium": "Social Media Gipfel Zürich",
+  "titel": "Social Media helfen Libyen-Geiseln",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://socialmediagipfel.ch/event/2-social-media-helfen-libyen-geiseln",
+  "abo": false,
+  "geprueft": true,
+  "status": "Name auf der Eventseite, geprüft 18.10.2026",
   "highlight": null
  },
  {
