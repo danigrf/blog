@@ -1,0 +1,282 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { MEDIEN_UNGEPRUEFTE_ZEIGEN } from '../consts';
+// Wird aus der Masterliste erzeugt: Projekte/Astro-Blog-Migration/medienliste/umwandeln.py
+import alle from '../data/medien.json';
+
+type Eintrag = (typeof alle)[number];
+
+// Lokale Vorschau (npm run dev oder Build mit MEDIEN_VORSCHAU=1): ungeprüfte Einträge grau zeigen.
+const vorschau = import.meta.env.DEV || process.env.MEDIEN_VORSCHAU === '1';
+const eintraege = alle.filter((e) => e.geprueft || vorschau || MEDIEN_UNGEPRUEFTE_ZEIGEN);
+
+const highlights = eintraege
+	.filter((e) => e.highlight)
+	.sort((a, b) => (a.highlight ?? 0) - (b.highlight ?? 0));
+
+const FORMAT: Record<string, string> = { tv: 'TV', audio: 'Radio/Podcast', text: 'Text' };
+
+// Nach Jahr gruppieren; Einträge ohne Datum kommen ans Ende.
+const gruppen: { jahr: string; items: Eintrag[] }[] = [];
+for (const e of eintraege) {
+	const jahr = e.datum ? e.datum.slice(0, 4) : 'Datum offen';
+	const letzte = gruppen[gruppen.length - 1];
+	if (letzte && letzte.jahr === jahr) letzte.items.push(e);
+	else gruppen.push({ jahr, items: [e] });
+}
+
+const anzahl = {
+	tv: eintraege.filter((e) => e.format === 'tv').length,
+	audio: eintraege.filter((e) => e.format === 'audio').length,
+	text: eintraege.filter((e) => e.format === 'text').length,
+};
+const jahre = eintraege.filter((e) => e.datum).map((e) => e.datum!.slice(0, 4));
+const vonJahr = jahre[jahre.length - 1];
+
+const monate = ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'];
+function datumKurz(d: string | null) {
+	if (!d) return '';
+	const [, m, t] = d.split('-');
+	if (!m) return '';
+	return t ? `${Number(t)}. ${monate[Number(m) - 1]}` : monate[Number(m) - 1];
+}
+---
+
+<!doctype html>
+<html lang="de-CH">
+	<head>
+		<BaseHead
+			title="Medien – Daniel Graf"
+			description={`Interviews, Porträts und Auftritte in TV, Radio und Presse seit ${vonJahr}, dazu Berichte über WeCollect, die Stiftung für direkte Demokratie und Public Beta.`}
+		/>
+		<style is:global>
+			.vorschau-hinweis {
+				font-family: var(--sans);
+				font-size: 0.9rem;
+				background: var(--info-bg);
+				border-left: 3px solid var(--info-line);
+				padding: 0.6rem 0.9rem;
+				margin: 0 0 1.5rem;
+			}
+			.highlights {
+				list-style: none;
+				margin: 1.25rem 0 0;
+				padding: 0;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+				gap: 0.75rem;
+			}
+			.highlights li { margin: 0; }
+			.highlights a {
+				display: flex;
+				flex-direction: column;
+				gap: 0.4rem;
+				height: 100%;
+				box-sizing: border-box;
+				padding: 1rem 1.1rem 1.1rem;
+				background: var(--surface);
+				border: 1px solid var(--line);
+				border-radius: 6px;
+				text-decoration: none;
+				color: var(--text);
+			}
+			.highlights a:hover { border-color: var(--accent); }
+			.highlights a:hover .hl-titel { color: var(--accent); }
+			.hl-medium { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; color: var(--accent-strong); }
+			.hl-titel { font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }
+			.hl-meta { margin-top: auto; }
+
+			.filter {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0.5rem 0.5rem;
+				margin: 2.5rem 0 0.5rem;
+				font-family: var(--sans);
+			}
+			.filter[hidden] { display: none; }
+			.filter button {
+				display: inline-flex;
+				align-items: baseline;
+				gap: 0.4rem;
+				min-height: 2.25rem;
+				padding: 0.3rem 0.8rem;
+				font: inherit;
+				font-size: 0.95rem;
+				font-weight: 500;
+				color: var(--text);
+				background: transparent;
+				border: 1px solid var(--line);
+				border-radius: 999px;
+				cursor: pointer;
+			}
+			.filter button:hover { border-color: var(--accent); color: var(--accent); }
+			.filter button:focus-visible, .filter input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.filter button[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+			.filter .anzahl { font-family: var(--mono); font-size: 0.8rem; font-weight: 400; }
+			.filter label { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.95rem; margin-left: 0.5rem; cursor: pointer; }
+			.filter input { width: 1.1rem; height: 1.1rem; accent-color: var(--accent); }
+			#medien-status { margin: 0.25rem 0 0; }
+
+			.medien-jahr h2 { font-size: 1.25rem; margin: 2rem 0 0.4rem; }
+			.medien-jahr[hidden] { display: none; }
+			.medien-liste { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+			.medien-liste li {
+				margin: 0;
+				padding: 0.6rem 0;
+				border-bottom: 1px solid var(--line);
+				display: grid;
+				grid-template-columns: 5.5rem minmax(0, 1fr);
+				gap: 0 0.75rem;
+			}
+			.medien-liste li[hidden] { display: none; }
+			.medien-liste .datum { padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+			.medien-liste .medium { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; color: var(--accent-strong); }
+			.medien-liste .titel { display: block; line-height: 1.4; }
+			.medien-liste .titel a { color: var(--text); text-decoration-color: var(--line); text-underline-offset: 0.18em; }
+			.medien-liste .titel a:hover { color: var(--accent); text-decoration-color: currentColor; }
+			.medien-liste .zeile2 { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; margin-top: 0.15rem; }
+			.marke {
+				font-family: var(--mono);
+				font-size: 0.75rem;
+				color: var(--muted);
+				border: 1px solid var(--line);
+				border-radius: 3px;
+				padding: 0 0.35rem;
+				line-height: 1.5;
+				white-space: nowrap;
+			}
+			.marke.org { border-style: dashed; }
+			.marke.offen { color: var(--text); background: var(--mark); border-color: transparent; }
+			.medien-liste li.ungeprueft .titel a, .medien-liste li.ungeprueft .medium { color: var(--muted); }
+			.medien-liste li.ungeprueft { opacity: 0.8; }
+			.medien-liste .wayback { font-family: var(--sans); font-size: 0.85rem; }
+			@media (max-width: 30rem) {
+				.medien-liste li { grid-template-columns: minmax(0, 1fr); }
+				.medien-liste .datum { padding: 0; }
+				.filter label { margin-left: 0; flex-basis: 100%; }
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main id="inhalt">
+			<h1>Medien</h1>
+			{
+				vorschau && (
+					<p class="vorschau-hinweis">
+						Lokale Vorschau: Grau markierte Einträge sind noch nicht am Original geprüft und erscheinen online
+						erst, wenn sie geprüft sind (oder <code>MEDIEN_UNGEPRUEFTE_ZEIGEN</code> auf true steht).
+					</p>
+				)
+			}
+			<p>
+				Interviews, Porträts und Auftritte in TV, Radio und Presse seit {vonJahr}, dazu Berichte über WeCollect,
+				die Stiftung für direkte Demokratie und Public Beta.
+			</p>
+
+			<h2>Auswahl</h2>
+			<ul class="highlights">
+				{
+					highlights.map((e) => (
+						<li>
+							<a href={e.link ?? undefined}>
+								<span class="hl-medium">{e.medium}</span>
+								<span class="hl-titel">{e.titel}</span>
+								<span class="meta hl-meta">
+									{e.datum?.slice(0, 4)} · {e.art ?? FORMAT[e.format]}
+									{e.art && e.format !== 'text' ? ` · ${FORMAT[e.format]}` : ''}
+								</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+
+			<h2 id="alle-titel">Alle Beiträge</h2>
+			<div class="filter" id="filter" hidden>
+				<button type="button" data-format="" aria-pressed="true">Alle <span class="anzahl">{eintraege.length}</span></button>
+				<button type="button" data-format="tv" aria-pressed="false">TV <span class="anzahl">{anzahl.tv}</span></button>
+				<button type="button" data-format="audio" aria-pressed="false">Radio/Podcast <span class="anzahl">{anzahl.audio}</span></button>
+				<button type="button" data-format="text" aria-pressed="false">Text <span class="anzahl">{anzahl.text}</span></button>
+				<label><input type="checkbox" id="nur-persoenlich" /> Nur mit mir persönlich</label>
+			</div>
+			<p class="meta" id="medien-status" role="status" aria-live="polite"></p>
+
+			{
+				gruppen.map((g) => (
+					<section class="medien-jahr" aria-labelledby={`j-${g.jahr}`}>
+						<h2 id={`j-${g.jahr}`}>{g.jahr}</h2>
+						<ul class="medien-liste">
+							{g.items.map((e) => (
+								<li
+									class={e.geprueft ? undefined : 'ungeprueft'}
+									data-format={e.format}
+									data-org={e.organisation ? '1' : undefined}
+									title={!e.geprueft ? `Status: ${e.status}` : undefined}
+								>
+									<span class="meta datum">
+										{e.ungefaehr && <abbr title="Datum des Hinweis-Tweets, Erscheinungsdatum ungefähr">≈ </abbr>}
+										{datumKurz(e.datum)}
+									</span>
+									<span>
+										<span class="medium">{e.medium}</span>
+										<span class="titel">
+											{e.link ? <a href={e.link}>{e.titel}</a> : e.titel}
+										</span>
+										<span class="zeile2">
+											<span class="marke">{FORMAT[e.format]}</span>
+											{e.art && <span class="marke">{e.art}</span>}
+											{e.abo && <span class="marke" title="Hinter Bezahlschranke">Abo</span>}
+											{e.organisation &&<span class="marke org">über {e.organisation}</span>}
+											{!e.geprueft && <span class="marke offen">ungeprüft</span>}
+											{e.wayback && (
+												<a class="wayback" href={e.wayback}>
+													Archivkopie
+												</a>
+											)}
+										</span>
+									</span>
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+		</main>
+		<Footer />
+		<script>
+			// Ohne JavaScript bleibt die volle Liste sichtbar; die Filter erscheinen erst mit JS.
+			const filter = document.getElementById('filter') as HTMLElement;
+			const knoepfe = [...filter.querySelectorAll<HTMLButtonElement>('button')];
+			const persoenlich = document.getElementById('nur-persoenlich') as HTMLInputElement;
+			const status = document.getElementById('medien-status') as HTMLElement;
+			const zeilen = [...document.querySelectorAll<HTMLLIElement>('.medien-liste li')];
+			const gruppen = [...document.querySelectorAll<HTMLElement>('.medien-jahr')];
+			let format = '';
+			filter.hidden = false;
+
+			function anwenden() {
+				let n = 0;
+				for (const li of zeilen) {
+					const sichtbar = (!format || li.dataset.format === format) && !(persoenlich.checked && li.dataset.org);
+					li.hidden = !sichtbar;
+					if (sichtbar) n++;
+				}
+				for (const g of gruppen) g.hidden = !g.querySelector('li:not([hidden])');
+				status.textContent = format || persoenlich.checked ? `${n} von ${zeilen.length} Beiträgen` : '';
+			}
+
+			knoepfe.forEach((b) =>
+				b.addEventListener('click', () => {
+					format = b.dataset.format ?? '';
+					knoepfe.forEach((k) => k.setAttribute('aria-pressed', String(k === b)));
+					anwenden();
+				}),
+			);
+			persoenlich.addEventListener('change', anwenden);
+		</script>
+	</body>
+</html>
