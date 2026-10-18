@@ -10,10 +10,189 @@
   "organisation": null,
   "link": "https://telebasel.ch/sendungen/punkt6-thema/240036",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": 6
+ },
+ {
+  "id": "DG-0202",
+  "datum": "2026-09-14",
+  "ungefaehr": false,
+  "medium": "Schweizer Monat",
+  "titel": "Die Demokratie bleibt mit den EU-Verträgen auf dem Papier intakt – vor allem das Parlament verliert jedoch an Gestaltungsspielraum",
+  "format": "text",
+  "art": "Eigener Text",
+  "organisation": null,
+  "link": "https://www.schweizermonat.ch/die-demokratie-bleibt-mit-den-eu-vertragen-auf-dem-papier-intakt-vor-allem-das-parlament-verliert-jedoch-an-gestaltungsspielraum/",
+  "abo": false,
+  "geprueft": true,
+  "status": "Autor laut Seitendaten, geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0206",
+  "datum": "2026-06-19",
+  "ungefaehr": false,
+  "medium": "watson",
+  "titel": "«Die Schweiz verkauft die Rolle des Stimmvolks unter Wert»",
+  "format": "text",
+  "art": "Interview",
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.watson.ch/schweiz/interview/548385281-demokratieforscher-andreas-glaser-kritisiert-vertraege-mit-der-eu",
+  "abo": false,
+  "geprueft": true,
+  "status": "Medienspiegel der Studie; Name nicht im Seitentext",
+  "highlight": null
+ },
+ {
+  "id": "DG-0211",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "20 Minuten",
+  "titel": "EU-Schutzmassnahmen: Politiker uneinig über Demokratieverlust",
+  "format": "text",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.20min.ch/story/svp-warnte-davor-das-sagen-politiker-zu-eu-schutzmassnahmen-vor-demokratieverlust-103584777",
+  "abo": false,
+  "geprueft": true,
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0210",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "watson",
+  "titel": "Studie warnt: Mit Bilateralen III verlagern sich die Machtverhältnisse",
+  "format": "text",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.watson.ch/schweiz/eu/276735994-bilaterale-iii-studie-verlangt-wegen-europavertraege-mehr-demokratie",
+  "abo": false,
+  "geprueft": true,
+  "status": "Stiftung im Artikeltext, geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0209",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "CH Media",
+  "titel": "EU-Verträge schwächen laut Studie die Mitsprache in der Schweiz",
+  "format": "text",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.aargauerzeitung.ch/schweiz/eu-vertraege-und-demokratie-studie-sieht-risiko-fuer-mitsprache-ld.4187153",
+  "abo": true,
+  "geprueft": true,
+  "status": "Name in den Seitendaten, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0208",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger",
+  "titel": "Bilaterale 3: Studie sieht Machtverlust für Parlament",
+  "format": "text",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.tagesanzeiger.ch/bilaterale-3-studie-sieht-machtverlust-fuer-parlament-256311098567",
+  "abo": true,
+  "geprueft": true,
+  "status": "Medienspiegel der Studie",
+  "highlight": null
+ },
+ {
+  "id": "DG-0207",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "NZZ",
+  "titel": "EU-Verträge und Mitsprache: Wie der Profi-Aktivist Daniel Graf die Demokratie retten will",
+  "format": "text",
+  "art": "Porträt",
+  "organisation": null,
+  "link": "https://www.nzz.ch/schweiz/eu-vertraege-und-mitsprache-wie-der-profi-aktivist-daniel-graf-die-demokratie-retten-will-ld.10011491",
+  "abo": true,
+  "geprueft": true,
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0205",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "SRF Tagesschau",
+  "titel": "EU-Verträge dürften direkte Demokratie unter Druck setzen",
+  "format": "tv",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.srf.ch/play/tv/-/video/-?urn=urn:srf:video:5ccba062-eb44-49a8-99d8-8252294756a2",
+  "abo": false,
+  "geprueft": true,
+  "status": "Medienspiegel der Studie",
+  "highlight": null
+ },
+ {
+  "id": "DG-0204",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "20 Minuten",
+  "titel": "Studie: EU-Abkommen schwächen Parlamentseinfluss in der Schweiz",
+  "format": "text",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.20min.ch/story/neue-studie-eu-vertraege-duerften-die-direkte-demokratie-unter-druck-setzen-103584774",
+  "abo": false,
+  "geprueft": true,
+  "status": "Medienspiegel der Studie; Name nicht im Seitentext",
+  "highlight": null
+ },
+ {
+  "id": "DG-0203",
+  "datum": "2026-06-18",
+  "ungefaehr": false,
+  "medium": "SRF Echo der Zeit",
+  "titel": "Die dynamische Rechtsübernahme und die Schweizer Demokratie",
+  "format": "audio",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.srf.ch/audio/echo-der-zeit/die-dynamische-rechtsuebernahme-und-die-schweizer-demokratie?partId=Gk0Gyyoi8djjeS8PjZjSO2avVE4",
+  "abo": false,
+  "geprueft": true,
+  "status": "Medienspiegel der Studie; Name nicht im Seitentext",
+  "highlight": null
+ },
+ {
+  "id": "DG-0217",
+  "datum": "2026-06-15",
+  "ungefaehr": false,
+  "medium": "Fazetten",
+  "titel": "Wenn die Minderheit entscheidet",
+  "format": "text",
+  "art": null,
+  "organisation": null,
+  "link": "https://fazetten.ch/a/bevoelkerungsrat-kickoff",
+  "abo": false,
+  "geprueft": true,
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0218",
+  "datum": "2026-06-12",
+  "ungefaehr": false,
+  "medium": "Riehener Zeitung",
+  "titel": "«Demokratie ist kein Marmorschädel»",
+  "format": "text",
+  "art": null,
+  "organisation": null,
+  "link": "https://bevoelkerungsrat-basel.ch/__l5e/assets-v1/e5ac5218-37c0-4c13-b5ae-18b9a2c124c7/riehener-zeitung-2026-06-12.pdf",
+  "abo": false,
+  "geprueft": true,
+  "status": "PDF gelesen 18.10.2026; Name im Text",
+  "highlight": null
  },
  {
   "id": "DG-0161",
@@ -26,9 +205,83 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/2026/article/deepfakes-une-petition-de-25-000-signatures-contre-les-violences-en-ligne-29268319.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0215",
+  "datum": "2026-06-08",
+  "ungefaehr": false,
+  "medium": "Bajour",
+  "titel": "Pilotprojekt Bevölkerungsrat in Basel: Per Los zu mehr Demokratie?",
+  "format": "text",
+  "art": null,
+  "organisation": null,
+  "link": "https://bajour.ch/a/pilotprojekt-bevoelkerungsrat-in-basel-per-los-zu-mehr-demokratie",
+  "abo": false,
+  "geprueft": true,
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0214",
+  "datum": "2026-06-06",
+  "ungefaehr": false,
+  "medium": "bz Basel",
+  "titel": "Basel will Bevölkerungsrat als politisches Pilotprojekt testen",
+  "format": "text",
+  "art": null,
+  "organisation": "Bevölkerungsrat Basel",
+  "link": "https://www.bzbasel.ch/basel/basel-stadt/basel-will-bevoelkerungsrat-als-politisches-pilotprojekt-testen-ld.4179566",
+  "abo": true,
+  "geprueft": true,
+  "status": "PDF gelesen 18.10.2026; Name nicht im Text",
+  "highlight": null
+ },
+ {
+  "id": "DG-0213",
+  "datum": "2026-06-06",
+  "ungefaehr": false,
+  "medium": "SRF Regionaljournal Basel",
+  "titel": "Pilotprojekt Bevölkerungsrat in Basel",
+  "format": "audio",
+  "art": null,
+  "organisation": "Bevölkerungsrat Basel",
+  "link": "https://bevoelkerungsrat-basel.ch/#medien",
+  "abo": false,
+  "geprueft": true,
+  "status": "Medienseite Bevölkerungsrat",
+  "highlight": null
+ },
+ {
+  "id": "DG-0212",
+  "datum": "2026-06-06",
+  "ungefaehr": false,
+  "medium": "SRF Tagesschau",
+  "titel": "Direkte Demokratie wackelt – Premiere in Basel",
+  "format": "tv",
+  "art": null,
+  "organisation": "Bevölkerungsrat Basel",
+  "link": "https://www.srf.ch/news/schweiz/direkte-demokratie-wackelt-premiere-in-basel-stimmberechtigte-sind-keine-mehrheit-mehr",
+  "abo": false,
+  "geprueft": true,
+  "status": "Medienseite Bevölkerungsrat; Name nicht im Seitentext",
+  "highlight": null
+ },
+ {
+  "id": "DG-0216",
+  "datum": "2026-06-04",
+  "ungefaehr": false,
+  "medium": "Das Magazin",
+  "titel": "Wie demokratisch ist die Schweiz? Geht so",
+  "format": "text",
+  "art": null,
+  "organisation": null,
+  "link": "https://bevoelkerungsrat-basel.ch/__l5e/assets-v1/f9c08c02-576b-4724-93c5-d127aadc696c/das-magazin-philipp-loser.pdf",
+  "abo": false,
+  "geprueft": true,
+  "status": "PDF gelesen 18.10.2026; Name im Text",
   "highlight": null
  },
  {
@@ -42,9 +295,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/fr/suisse/societe/692560285-vote-comment-l-e-id-pourrait-changer-le-quotidien-des-suisses",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -58,9 +310,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/gesellschaft-politik/296902617-e-id-so-wuerde-sie-unseren-alltag-veraendern",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -74,9 +325,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/2534/elektronische-identitaet/eine-frage-des-vertrauens/%21B0G2ZFBJ6S8C",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -90,9 +340,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/eu/727279582-kompass-europa-schweizer-anti-eu-bewegung-waechst-weiter",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -106,9 +355,8 @@
   "organisation": null,
   "link": "https://www.tagesanzeiger.ch/economiesuisse-baut-eine-grosse-kampagnenmaschine-850353217969",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -122,9 +370,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/e-collecting-digitales-unterschriftensammeln-kommt-voran",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -138,9 +385,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/2025/article/la-politique-pro-ogm-de-migros-suscite-le-debat-28882621.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -154,9 +400,8 @@
   "organisation": null,
   "link": "https://www.moneta.ch/hoffnung-schafft-eine-staerkere-verbindung-als-angst",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -170,9 +415,8 @@
   "organisation": null,
   "link": "https://thephilanthropist.ch/demokratie-lebt-vom-engagement-und-muss-aktiv-gefoerdert-werden/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -186,9 +430,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/politplattform-wecollect-in-not-fuer-netzaktivist-daniel-graf-zaehlt-jeder-rappen-ld.1852777",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -202,9 +445,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/audio/srf-4-news/kampagnen-plattform-wecollect-in-der-krise?uuid=52ae16b1-e287-47dd-a408-b1995d061c0f",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -218,9 +460,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/nach-unterschriften-skandal-unterschriftensammeln-fuer-initiativen-wird-doch-noch-digital",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -234,9 +475,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/radio/popupaudioplayer?id=2694e599-eddd-433a-bd98-ff4b1a607b12",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -250,9 +490,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/verdacht-auf-wahlfaelschung-demokratie-stiftung-will-bezahltes-unterschriftensammeln-stoppen",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -266,9 +505,8 @@
   "organisation": null,
   "link": "https://www.rsi.ch/info/svizzera/Le-raccolte-firme-a-pagamento-%E2%80%9Cvanno-bloccate%E2%80%9D--2250828.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -282,9 +520,8 @@
   "organisation": null,
   "link": "https://bajour.ch/a/daniel-graf-spricht-ueber-seine-adhs-diagnose",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": 5
  },
  {
@@ -298,9 +535,8 @@
   "organisation": null,
   "link": "https://www.beobachter.ch/gesetze-recht/unterschriften-digital-sammeln-darum-gehts-nicht-vorwarts-745307",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -314,9 +550,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/10-vor-10/video/fokus-bundesbern-nach-unterschriften-betrug-in-aufruhr?urn=urn:srf:video:4fdc0e7e-68d8-4735-9011-029b6dc91ec6",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -330,9 +565,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/analyse/526984651-gefaelschte-unterschriften-ein-kaufverbot-hilft-nur-bedingt",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -346,9 +580,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/daniel-graf-duracell-demokrat-will-einen-sieg-von-blochers-svp-verhindern-aber-jetzt-erhaelt-er-applaus-von-rechts-ld.1838830",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -362,9 +595,8 @@
   "organisation": null,
   "link": "https://www.aargauerzeitung.ch/schweiz/interview-die-warnung-des-radikaldemokraten-graf-die-dynamische-uebernahme-von-eu-recht-gefaehrdet-die-direkte-demokratie-ld.2643243",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -378,9 +610,8 @@
   "organisation": null,
   "link": "https://bajour.ch/a/psychische-gesundheit-und-adhs-versorgungskrise-basel",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -394,9 +625,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/le-versant-politique-de-la-victoire-de-nemo-a-l-eurovision-un-troisieme-genre-va-t-il-entrer-dans-le-code-civil-suisse",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -410,9 +640,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/keine-totalrevision-der-bundesverfassung-der-linke-politaktivist-daniel-graf-muss-die-rettung-der-demokratie-verschieben-ld.1828233",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -426,9 +655,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/direkte-demokratie-ein-warnsignal-an-regierung-und-parlament-in-bern",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -442,9 +670,8 @@
   "organisation": null,
   "link": "https://www.schweizermonat.ch/das-establishment-verteidigt-seinen-einfluss/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Medienverzeichnis belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -458,9 +685,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/pflichtdienst-fuer-alle-der-bundesrat-lehnt-die-volksinitiative-fuer-einen-buergerdienst-ab",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -474,9 +700,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/migration/986461612-kanton-bern-kuendigt-zusammenarbeit-mit-baba-news-auf",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -490,9 +715,8 @@
   "organisation": null,
   "link": "https://tsri.ch/a/demokratie-experte-daniel-graf-kritisiert-schweizer-demokratie",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -506,9 +730,8 @@
   "organisation": null,
   "link": "https://www.republik.ch/2023/09/12/175-jahre-bundesverfassung-wir-schreiben-die-verfassung-neu",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -522,9 +745,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/bundesverfassung-wird-175-jahre-alt-daniel-graf-will-sie-modernisieren-die-schweiz-braucht-ein-systemupdate-id18932572.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -538,9 +760,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/freunde-der-verfassung-lancieren-referendums-plattform/rm6kgwt",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext; Link aktualisiert",
   "highlight": null
  },
  {
@@ -554,9 +775,8 @@
   "organisation": null,
   "link": "https://thephilanthropist.ch/demokratie-kann-man-nicht-aus-buechern-lernen/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -570,9 +790,8 @@
   "organisation": null,
   "link": "https://www.tdg.ch/deux-hommes-en-appellent-au-peuple-pour-changer-la-constitution-196637289359",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -586,9 +805,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/initiative-fuer-neue-verfassung-die-zeit-ist-reif-fuer-ein-update-der-schweiz",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -602,9 +820,8 @@
   "organisation": null,
   "link": "https://www.beobachter.ch/gesetze-recht/volksinitiative-von-michel-huissoud-und-daniel-graf-update-schweiz-verlangt-eine-totalrevision-der-bundesverfassung-578747",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -618,9 +835,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/tagesschau/video/initiative-fuer-ein-bedingungsloses-grundeinkommen-ist-abgebrochen?urn=urn:srf:video:f285d7da-1b93-4a13-b80f-83a1017106dc",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -634,9 +850,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/fr/suisse/ils-signent-jusqua-neuf-fois-une-initiative-des-jeunes-verts/sdsqtqg",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext; Link aktualisiert",
   "highlight": null
  },
  {
@@ -650,9 +865,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/noch-fehlen-unterschriften-fuer-die-jungen-gruenen-wird-es-eng/38r00cr",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext; Link aktualisiert",
   "highlight": null
  },
  {
@@ -666,9 +880,8 @@
   "organisation": "Stiftung für direkte Demokratie",
   "link": "https://www.tagesanzeiger.ch/zwietracht-unter-den-5g-skeptikern-564047468203",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -682,9 +895,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/neue-initiative-die-demokratie-soll-leben-ld.1785022",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – historisches Datum vorläufig",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -698,9 +910,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/elektronische-demokratie-initiativen-auf-dem-handy-unterschreiben-bald-realitaet",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -714,9 +925,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/nach-nein-an-der-urne-wie-weiter-mit-der-elternzeit-fuer-vaeter-und-muetter",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -730,9 +940,8 @@
   "organisation": "WeCollect",
   "link": "https://www.bzbasel.ch/basel/basel-stadt/zur-ig-musik-ruhe-vor-dem-sturm-oder-sturm-im-wasserglas-ld.2253242",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Kampagnenbezug laut Tweet",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -746,9 +955,8 @@
   "organisation": "WeCollect",
   "link": "https://www.blick.ch/politik/schon-ueber-100000-unterschriften-ahv-referendum-kommt-zustande/k409ycn",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Kampagnenbezug laut Tweet",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -762,9 +970,8 @@
   "organisation": "WeCollect",
   "link": "https://www.blick.ch/politik/uber-55000-unterschriften-frontex-referendum-kommt-zustande/lc8wg8c",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Kampagnenbezug laut Tweet",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -778,9 +985,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/2201/frontex-referendum/es-wird-knapp-sehr-knapp",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -794,9 +1000,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/lobbyieren-per-knopfdruck-neue-plattform-bringt-klima-buerger-ins-parlament/nt9z3qx",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext",
   "highlight": null
  },
  {
@@ -810,9 +1015,8 @@
   "organisation": null,
   "link": "https://www.zeit.de/2021/32/demokratie-schweiz-politik-aktivismus-abstimmung-daniel-graf",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": 1
  },
  {
@@ -826,9 +1030,8 @@
   "organisation": null,
   "link": "https://nzzas.nzz.ch/hintergrund/spezialist-fuer-wahlkaempfe-startet-abo-fuer-direkte-demokratie-ld.1606527",
   "abo": true,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "NZZ am Sonntag Link; Tweet-Hinweis 2021-03-14 bestätigt Porträt-Veröffentlichung",
   "highlight": null
  },
  {
@@ -842,9 +1045,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/wirtschaft/neue-lobby-allianzen-social-media-powerplay-gegen-das-rahmenabkommen",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Datum: datePublished",
   "highlight": null
  },
  {
@@ -858,9 +1060,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/10-vor-10/video/kampagne-gegen-eu-rahmenabkommen?urn=urn:srf:video:3c0bb2da-ab43-4022-94bd-6289d9aca7b3",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -874,9 +1075,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/12027000-le-projet-didentite-electronique-eid-a-ete-balaye-par-le-peuple-suisse.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -890,9 +1090,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/un-camouflet-conseil-federal-lidentite-numerique",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -906,9 +1105,8 @@
   "organisation": null,
   "link": "https://lecourrier.ch/2021/02/21/un-consortium-prive-en-embuscade/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -922,9 +1120,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/daniel-graf-zur-e-id-als-campaigner-bin-ich-ein-professioneller-verlierer-ld.1602476",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Datum vorher aus Tweet 2024-04-26",
   "highlight": 2
  },
  {
@@ -938,9 +1135,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/10-vor-10/video/abstimmung-e-id-gesetz-offene-fragen?urn=urn:srf:video:e9202c4f-0123-46d0-93b2-eaf8a8e1613e",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Video geprüft – persönlicher Auftritt bestätigt",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -954,9 +1150,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/tagesschau/video/crowd-lobbying-was-das-ist-und-was-es-kann?urn=urn:srf:video:8940c653-956a-4988-be37-08fd690c4800",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Video geprüft – persönlicher Auftritt bestätigt",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -970,9 +1165,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/10-vor-10/video/10-vor-10-vom-02-02-2021?urn=urn:srf:video:3018b6e0-2a7d-4de6-908f-5f7a09783571",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Sendungsseite geprüft – Personenbezug prüfen",
+  "status": "SRF 10vor10 Video abrufbar; Link ist Gesamtsendung 26 Min, Personenbezug (Stimmrecht-16) nicht eindeutig",
   "highlight": null
  },
  {
@@ -986,9 +1180,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/11932770-les-partisans-de-lidentification-electronique-lancent-leur-campagne.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1002,9 +1195,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/11905120-les-contours-de-lidentification-electronique-au-coeur-du-vote-du-7-mars.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1018,9 +1210,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/2103/elektronische-identitaet/ringier-der-goldschatz-und-die-demokratie",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1034,9 +1225,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/11896164-le-conseil-federal-lance-sa-campagne-sur-lidentification-electronique.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1050,9 +1240,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/analyse/135779863-e-impfausweis-so-schlimm-ist-meineimpfungen",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -1066,9 +1255,8 @@
   "organisation": null,
   "link": "https://www.aargauerzeitung.ch/schweiz/das-ist-fast-surreal-das-referendum-gegen-das-terror-gesetz-kommt-mit-uber-140-000-unterschriften-zustande-ld.2085374",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1082,9 +1270,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/impfung-gegen-corona-die-betreiber-des-elektronischen-impfpasses-stehen-in-der-kritik",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1098,9 +1285,8 @@
   "organisation": null,
   "link": "https://www.republik.ch/2020/12/17/anwaelte-demonstrieren-im-parlament-ihre-macht-impffahrplan-fuer-die-schweiz-steht-und-in-der-romandie-wuetet-der-poebel",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1114,9 +1300,8 @@
   "organisation": "Public Beta",
   "link": "https://www.srf.ch/news/elektronische-identitaet/referendum-gegen-e-id-gesetz-komitee-digitaler-pass-darf-nicht-kommerzialisiert-werden",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Public Beta ohne persönliches Zitat",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1130,9 +1315,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/campagne-contre-passeport-numerique-privatise-ouverte",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1146,9 +1330,8 @@
   "organisation": null,
   "link": "https://www.aargauerzeitung.ch/schweiz/digitale-signatur-was-bei-der-post-moglich-ist-gilt-nicht-fur-initiativen-ld.1466441",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1162,9 +1345,8 @@
   "organisation": null,
   "link": "https://www.aargauerzeitung.ch/schweiz/brisante-filmaufnahmen-so-uberfuhren-detektive-sozialhilfebezuger-ld.1326753",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1178,9 +1360,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/abstimmungen/ja-zu-mehr-vaterschaftsurlaub-zwei-kmus-zwei-meinungen/kr300b9",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext; Link aktualisiert",
   "highlight": null
  },
  {
@@ -1194,9 +1375,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/svp-nationalrat-will-mehr-zeit-fuer-unterschriftensammlungen/mc0t767",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext",
   "highlight": null
  },
  {
@@ -1210,9 +1390,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/2025/digi/demokratie-fuer-die-generation-smartphone",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1226,9 +1405,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/gesellschaft-politik/956409161-so-soll-die-politische-digitalisierung-forciert-werden",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1240,11 +1418,10 @@
   "format": "text",
   "art": null,
   "organisation": null,
-  "link": "https://www.aargauerzeitung.ch/schweiz/coronakrise-deckte-zwei-grosse-versaumnisse-der-schweiz-auf-aktivisten-kampfen-fur-modernere-demokratie-ld.1217384?nativeApp=false",
+  "link": "https://www.aargauerzeitung.ch/schweiz/coronakrise-deckte-zwei-grosse-versaumnisse-der-schweiz-auf-aktivisten-kampfen-fur-modernere-demokratie-ld.1217384",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Medienverzeichnis belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -1256,11 +1433,10 @@
   "format": "text",
   "art": null,
   "organisation": null,
-  "link": "https://www.aargauerzeitung.ch/schweiz/wie-kann-die-schweizer-demokratie-digitaler-werden-zehn-vorschlage-von-buch-autor-daniel-graf-ld.1217385?nativeApp=false",
+  "link": "https://www.aargauerzeitung.ch/schweiz/wie-kann-die-schweizer-demokratie-digitaler-werden-zehn-vorschlage-von-buch-autor-daniel-graf-ld.1217385",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -1274,9 +1450,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/tagesschau/video/e-collecting-elektronische-unterschriften-fuer-initiativen?urn=urn:srf:video:d1398ef6-4ea8-4c2e-93a2-624ccbc166e6",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -1290,9 +1465,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/berne/democratie-numerique",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1306,9 +1480,8 @@
   "organisation": null,
   "link": "https://www.toponline.ch/tele-top/sendungen/top-news/news/top-news-vom-3-maerz-2020-00129936/",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Tele TOP Video - Link zeigt leere Webseite; Tweet-Hinweis 2020-03-04 erwähnt TV-Beitrag zu E-Collecting",
   "highlight": null
  },
  {
@@ -1322,9 +1495,8 @@
   "organisation": null,
   "link": "https://www.radiomunot.ch/radio",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Radio Munot - nur generisches Radiolink ohne Sendungsarchiv; Tweet-Hinweis 2020-03-03 mit Foto von Daniel Graf …",
   "highlight": null
  },
  {
@@ -1338,9 +1510,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/jaimerais-quon-puisse-signer-un-referendum-smartphone",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1354,9 +1525,8 @@
   "organisation": "Public Beta",
   "link": "https://www.woz.ch/2002/digi/private-e-id-kommt-vors-volk",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Public Beta ohne persönliches Zitat",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1370,9 +1540,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/kampfjetbeschaffung/start-zum-kampfjet-referendum-viola-amherd-wird-eine-schwierige-gegnerin",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1386,9 +1555,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/10962759-le-referendum-contre-la-loi-sur-lidentification-electronique-a-abouti.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1402,9 +1570,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/das-referendum-gegen-die-e-id-kommt-zustande/c0fmpb8",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext",
   "highlight": null
  },
  {
@@ -1418,9 +1585,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/news/politik/die-benoetigten-50000-unterschriften-sind-zugesagt-referendum-gegen-kampfjet-kauf-steht-schon-id15668533.html/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchindextext geprüft – Live-Original nicht erreichbar",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1434,9 +1600,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/tagesschau/video/unterschriften-sammeln-auf-online-plattform-und-der-strasse?urn=urn:srf:video:b0de938c-4471-4d44-a28d-4e8c60d54785",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -1450,9 +1615,8 @@
   "organisation": null,
   "link": "https://www.toponline.ch/tele-top/sendungen/top-news/news/top-news-vom-8-oktober-2019-00121116/",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Themenhinweis – Personenbezug prüfen",
+  "status": "Tele TOP Video - Link zeigt Webplayer ohne Metadaten; Tweet-Hinweis 2019-12-13 erwähnt TV-Beitrag zu E-ID",
   "highlight": null
  },
  {
@@ -1466,9 +1630,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/10767996-collecte-de-signatures-pour-le-referendum-sur-lidentite-electronique.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1482,9 +1645,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/referendum-gegen-e-id-elektronischer-pass-soll-staatlich-sein/jskpby6",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Blick Artikel geprüft; E-ID Referendum, Daniel Graf als Referendumsführer",
   "highlight": null
  },
  {
@@ -1498,9 +1660,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/radio/popupaudioplayer?id=9d90e55a-2ae8-4643-9c54-89f735d09b2e",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Themenhinweis – Segment prüfen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -1514,9 +1675,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/radio/popupaudioplayer?id=af2154c7-df25-4b18-b2bc-c292a778e603",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -1530,9 +1690,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/bundesrat/671559927-elternzeit-initianten-werfen-keller-sutter-steinzeit-denken-vor",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1546,9 +1705,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/ger/demokratie/demokratie-schweiz_der-marathon-man-der-demokratie-erneuerung-in-der-schweiz/45251034",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": 4
  },
  {
@@ -1562,9 +1720,8 @@
   "organisation": null,
   "link": "https://www.publiceye.ch/fileadmin/doc/Magazin/2019_09_PublicEye_Sonderheft_KOVI_7S.pdf",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft; Datum: PDF-Metadaten (xmp:CreateDate)",
   "highlight": null
  },
  {
@@ -1578,9 +1735,8 @@
   "organisation": null,
   "link": "https://www.tagesanzeiger.ch/bin-beim-notar-heute-gibt-daniel-graf-wecollect-ab-992961112046",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Medienverzeichnis belegt – Original prüfen",
+  "status": "Chrome mit Abo 18.10.2026: alte URL leitet hierher, Text nennt Graf «Radikaldemokrat»; Titel vorher «Der Radikaldemokrat»",
   "highlight": null
  },
  {
@@ -1594,9 +1750,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/1932/e-collecting/mit-neuen-huerden-volksrechte-staerken",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1610,9 +1765,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/politik/avenir-suisse-will-huerden-fuer-direkte-demokratie-erhoehen/vflwzq7",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Browser 18.10.2026: Name im Artikeltext; Link aktualisiert",
   "highlight": null
  },
  {
@@ -1626,9 +1780,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/wecollect-daniel-graf-bringt-online-plattform-in-stiftung-ein-ld.1493742",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Medienverzeichnis belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1642,9 +1795,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/news-clip/video/was-jetzt-mit-dem-thema-passiert-ist-vergleichbar-mit-klimawandel?urn=urn:srf:video:db71500e-3ba6-4b08-b5bb-5195b2d45266",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Sendungsseite geprüft – Aufnahme und Datum offen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1658,9 +1810,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/10-vor-10/video/fokus-die-forderung-nach-elternzeit?urn=urn:srf:video:1eb941b7-aef4-43b9-8dcf-d2ee1b12670b",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -1674,9 +1825,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/auch-buergerliche-stimmen-zu-elternzeit-nimmt-fahrt-auf",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1690,9 +1840,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/10477996-deux-romands-lancent-une-alternative-citoyenne-a-facebook.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1706,9 +1855,8 @@
   "organisation": "WeCollect",
   "link": "https://www.republik.ch/2019/06/06/daten-fuer-die-firmen-geld-fuer-die-kultur-und-kein-schutz-fuer-whistleblower",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Republik Artikel geprüft; WeCollect/E-ID erwähnt",
   "highlight": null
  },
  {
@@ -1722,9 +1870,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/am-volk-vorbei-widerstand-gegen-eine-private-e-id",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Datum: datePublished",
   "highlight": null
  },
  {
@@ -1738,9 +1885,8 @@
   "organisation": "WeCollect",
   "link": "https://www.blick.ch/politik/waffenexporte-korrektur-initiative-wird-im-juni-eingereicht/wsfqm1s",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Kampagnenbezug laut Tweet",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1754,9 +1900,8 @@
   "organisation": "Public Beta",
   "link": "https://www.nzz.ch/schweiz/facebook-der-politik-macht-wut-und-idealismus-nutzbar-ld.1476237",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1770,9 +1915,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/audio/politikum/diskussion-ueber-digitale-id?id=3a67725e-3bd7-42df-b842-0e8ccb7bfeaa",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Themenhinweis – Personenbezug prüfen",
+  "status": "SRF Audio Politikum - Gäste sind Min Li Marti und Bernhard Guhl laut Suchindex; Daniel Grafs Teilnahme nicht bestätigt",
   "highlight": null
  },
  {
@@ -1786,9 +1930,8 @@
   "organisation": null,
   "link": "https://www.aargauerzeitung.ch/schweiz/links-grun-sammelt-stimmen-langst-online-jetzt-startet-die-svp-ein-burgerliches-gegengewicht-ld.1348335",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1802,9 +1945,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/tagesschau/video/unterschriften-per-computer-sammeln?urn=urn:srf:video:c039d2f6-5cef-4d38-bc0c-b9e4028e36bf",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -1818,9 +1960,8 @@
   "organisation": null,
   "link": "https://www.tagesanzeiger.ch/jeder-franken-landete-direkt-auf-den-konten-der-komitees-146320468363",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1834,9 +1975,8 @@
   "organisation": "WeCollect",
   "link": "https://www.luzernerzeitung.ch/schweiz/jetzt-kommt-die-sammelhilfe-von-rechts-ld.1092056",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1850,9 +1990,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/news/politik/neue-sammelstrategie-will-demokratie-umkrempeln-gletscher-initiative-hat-schon-ueber-20000-unterstuetzer-id15153452.html/",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Blick URL 404; WebSearch deutet auf Artikel hin, aber '20000' nicht bestätigt",
   "highlight": null
  },
  {
@@ -1866,9 +2005,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/wecollect-wie-eine-digitale-politplattform-an-einfluss-gewinnt-ld.1454709",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1882,9 +2020,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/1902/wahljahr-2019/alle-werden-einen-digitalen-wahlkampf-versuchen",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1898,9 +2035,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/10-vor-10/video/neue-wege-fuer-die-demokratie?urn=urn:srf:video:98f7fda4-cfdb-4a4a-a6de-2b8a461d5829",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Video geprüft – persönlicher Auftritt bestätigt",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": 3
  },
  {
@@ -1914,9 +2050,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/assurances-surveiller-surveillants",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1930,9 +2065,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/dimitri-rougy-activiste-campagne",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -1946,9 +2080,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/daniel-graf-une-revolution-democratie-marche",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1962,9 +2095,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/digital/533291188-dieser-mann-will-die-machtverhaeltnisse-in-der-schweiz-verschieben-und-so-soll-das-gehen",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -1978,9 +2110,8 @@
   "organisation": null,
   "link": "https://www.tagblatt.ch/bildergalerien/dieser-netzaktivist-stellt-gerade-die-schweizer-politik-auf-den-kopf-ld.1319022",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Tagblatt-Link ist HTTP 404",
   "highlight": null
  },
  {
@@ -1994,9 +2125,8 @@
   "organisation": null,
   "link": "https://3fach.ch/programm/krasspolitic/arbeiter-hinter-den-kulissen-daniel-graf",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2010,9 +2140,8 @@
   "organisation": "WeCollect",
   "link": "https://www.tagesanzeiger.ch/waffenexport-linke-kuendigt-volksinitiative-an-749363734620",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Kampagnenbezug laut Tweet",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2026,9 +2155,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/audio/tagesgespraech/daniel-graf-max-stern-agenda-fuer-eine-digitale-demokratie?id=aaac05f6-ee35-4fa6-ba15-533a6a3b881c",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2042,9 +2170,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/info/suisse/9624908-le-referendum-contre-la-surveillance-des-assures-est-en-passe-daboutir.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2058,9 +2185,8 @@
   "organisation": "WeCollect",
   "link": "https://www.nzz.ch/schweiz/politische-pop-up-stores-halten-die-parteien-in-atem-ld.1375975",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2074,9 +2200,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/hornkuh-initiative-dieser-mann-kaempft-fuer-mehr-hoerner",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Datum: datePublished",
   "highlight": null
  },
  {
@@ -2090,9 +2215,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/audio-podcast/2018/audio/un-groupe-de-citoyens-lance-le-referendum-contre-la-surveillance-des-assures-25525563.html",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2106,9 +2230,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/1813/versicherungsspione/die-empoerung-an-der-basis-ist-riesig",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2122,9 +2245,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/digital/823645219-erreicht-der-facebook-skandal-die-schweiz-alle-warten-auf-die-viral-partei-svp",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -2138,9 +2260,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/dein-smartphone-ist-auch-ein-unterschriftenbogen-ld.1359948",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2154,9 +2275,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/10-vor-10/video/fokus-die-zukunft-des-unterschriftensammelns?urn=urn:srf:video:962e357b-7182-47af-90f8-cea1a07b7ac6",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Sendungsseite geprüft – Personenbezug prüfen",
+  "status": "SRF 10vor10 Video abrufbar; Personenbezug (Daniel Graf Auftritt) nicht eindeutig bestätigt",
   "highlight": null
  },
  {
@@ -2170,9 +2290,8 @@
   "organisation": null,
   "link": "https://www.tagesanzeiger.ch/kiffer-starten-speed-sammelaktion-244093659305",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2186,9 +2305,8 @@
   "organisation": null,
   "link": "https://www.aargauerzeitung.ch/schweiz/initianten-fur-vaterschaftsurlaub-sammelten-unterschriften-im-internet-ld.1437511",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2202,9 +2320,8 @@
   "organisation": "WeCollect",
   "link": "https://www.swissinfo.ch/ger/schweizer-politik/digitale-direkte-demokratie_140-000-digitale-unterschriften-im-startjahr-von-wecollect/43245810",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2218,9 +2335,8 @@
   "organisation": null,
   "link": "https://www.rts.ch/play/tv/19h30/video/democratie-numerique-premier-succes-pour-wecollect?urn=urn:rts:video:8695058",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Video geprüft – persönlicher Auftritt bestätigt",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2234,9 +2350,8 @@
   "organisation": "WeCollect",
   "link": "https://www.swissinfo.ch/fre/politique-suisse/wecollect-la-d%C3%A9mocratie-num%C3%A9rique_un-an-et-plus-de-140-000-signatures/43236954",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2250,9 +2365,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/eng/archive-democracy/wecollect-ch_swiss-signature-gathering-platform-marks-debut-year/43239488",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2266,9 +2380,8 @@
   "organisation": "WeCollect",
   "link": "https://www.tagesanzeiger.ch/der-digitalen-demokratie-ein-stueck-naeher-277687228108",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2282,9 +2395,8 @@
   "organisation": "WeCollect",
   "link": "https://www.srf.ch/play/tv/tagesschau/video/initiative-fuer-vaterschaftsurlaub-steht?urn=urn:srf:video:ad61cef7-4824-4bcb-923d-76df77f3692d",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivtreffer geprüft – Aufnahme offen",
+  "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
   "highlight": null
  },
  {
@@ -2298,9 +2410,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/ueber-120-000-unterschriften-vaterschaftsurlaub-dank-effizientem-unterschriftensammeln-1",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2314,9 +2425,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/1721/digitale-politik/die-demokratie-in-deinem-handy",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2330,9 +2440,8 @@
   "organisation": "WeCollect",
   "link": "https://www.tagesanzeiger.ch/gsoa-will-ruestung-den-geldhahn-zudrehen-887415397313",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Kampagnenbezug laut Tweet",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2346,9 +2455,8 @@
   "organisation": null,
   "link": "https://nerdfunk.ch/nerdfunk-378/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2362,9 +2470,8 @@
   "organisation": "WeCollect",
   "link": "https://www.woz.ch/1703/pflegeinitiative/blitzstart-dank-onlineplattform",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2378,9 +2485,8 @@
   "organisation": "WeCollect",
   "link": "https://www.20min.ch/story/schweizer-preise-sollen-deutlich-fallen-161010020534",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Kampagnenbezug laut Tweet",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2394,9 +2500,8 @@
   "organisation": null,
   "link": "https://www.dropbox.com/s/si9km5gg2rvfs1u/p003-FAIT%20DU%20JOUR.pdf?dl=0",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Dropbox PDF nicht abrufbar; Medium unbekannt ('Fait du jour'); WebSearch findet keine Quelle",
   "highlight": null
  },
  {
@@ -2410,9 +2515,8 @@
   "organisation": "WeCollect",
   "link": "https://www.zeit.de/2016/26/volksinitiative-schweiz-volksrecht-internet-zulauf",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Metadaten geprüft – Volltext und Organisationsbezug offen",
+  "status": "DIE ZEIT-Vorspann erwähnt WeCollect; Volltext nicht abrufbar; kein belegtes Daniel-Graf-Porträt",
   "highlight": null
  },
  {
@@ -2426,9 +2530,8 @@
   "organisation": null,
   "link": "http://www.nzz.ch/schweiz/aktuelle-themen/unterschriftensammlung-im-internet-initiative-fuer-vaterschaftsurlaub-legt-blitzstart-hin-ld.84958",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2442,9 +2545,8 @@
   "organisation": "WeCollect",
   "link": "https://www.swissinfo.ch/ger/archiv-demokratie/demokratie-2-0_das-internet-erfindet-das-politische-forum-neu/42150824",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2458,9 +2560,8 @@
   "organisation": null,
   "link": "https://www.20min.ch/story/donat-kaufmann-sammelt-jetzt-fuer-transparenz-572437088435",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Personen- und Organisationsbezug",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2474,9 +2575,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/tagesschau/video/unterschriften-elektronisch-sammeln?urn=urn:srf:video:57b5bdb5-920b-4274-b81f-47bcf44403e3",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Sendungsseite geprüft – Personenbezug prüfen",
+  "status": "SRF Tagesschau Video abrufbar; Inhalt partiell geprüft, Daniel-Graf-Auftritt nicht eindeutig identifiziert",
   "highlight": null
  },
  {
@@ -2490,9 +2590,8 @@
   "organisation": null,
   "link": "https://www.facebook.com/wecollect/posts/472243616308720",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Facebook-Link zu WeCollect Post; Tweet-Hinweis 2016-04-18 erwähnt Radio RaBe-Bericht",
   "highlight": null
  },
  {
@@ -2506,9 +2605,8 @@
   "organisation": null,
   "link": "https://www.nzz.ch/schweiz/aktuelle-themen/wecollec-rot-gruen-lanciert-den-unterschriften-automat-direkte-demokratie-referendum-initiative-ld.13453",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -2522,9 +2620,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/recolte-signatures-internet-va-secouer-systeme-politique-suisse",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2538,9 +2635,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/verkehrsfinanzierung-bundeskanzlei-haette-titel-milchkuh-initiative-abgelehnt",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -2554,9 +2650,8 @@
   "organisation": null,
   "link": "https://www.tagesanzeiger.ch/eine-zaesur-fuer-die-schweiz-742156772973",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -2570,9 +2665,8 @@
   "organisation": "WeCollect",
   "link": "https://www.nzz.ch/schweiz/das-instant-referendum-ld.1071762",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – Organisationsbeitrag",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2586,9 +2680,8 @@
   "organisation": null,
   "link": "http://blickfeld29.ch/zeitungsmensch/",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "blickfeld29.ch Domain offline (ENOTFOUND); Artikel nicht verifizierbar",
   "highlight": null
  },
  {
@@ -2602,9 +2695,8 @@
   "organisation": null,
   "link": "http://www.lematin.ch/suisse/Les-reseaux-ne-font-pas-les-elus/story/13791682",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Themenhinweis – Personenbezug prüfen",
+  "status": "Le Matin URL 404; Tweet-Hinweis 2015-10-20 erwähnt RT (@LukasGolder), Personenbezug unklar",
   "highlight": null
  },
  {
@@ -2618,9 +2710,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/news/schweiz/unterschriften-sammeln-im-internet",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2634,9 +2725,8 @@
   "organisation": null,
   "link": "https://www.persoenlich.com/digital/keine-angst-vor-der-facebook-demokratie-324265",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
   "highlight": null
  },
  {
@@ -2650,9 +2740,8 @@
   "organisation": null,
   "link": "https://www.watson.ch/schweiz/migration/361816454-fluechtlingsdrama-rega-fliegt-keine-hilfseinsaetze-im-mittelmeer",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -2666,9 +2755,8 @@
   "organisation": null,
   "link": "http://www.srf.ch/sendungen/sport-im-gespraech/die-neue-ego-vermarktung-fussballer-auf-facebook-und-twitter",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "SRF.ch/sendungen Link 404; Tweet-Hinweis 2014-07-29 bestätigt Interesse",
   "highlight": null
  },
  {
@@ -2682,9 +2770,8 @@
   "organisation": null,
   "link": "https://danielgraf.blog/2014/05/14/hashtag-kampagne-bringbackourgirls-mein-interview-auf-radio-srf3/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Blog-Selbstbeleg geprüft – Sendedatum prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -2698,9 +2785,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/kulturplatz/video/aus-dem-kunstmuseum-olten?urn=urn:srf:video:89d628c8-5e09-4001-a313-a1c0834c104e",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Video geprüft – persönlicher Auftritt bestätigt",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2714,9 +2800,8 @@
   "organisation": null,
   "link": "http://www.radio24.ch/podcast/5722",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Radio 24 Greenpeace - Link 404; Tweet vom 2013-10-03 als Hinweis",
   "highlight": null
  },
  {
@@ -2730,9 +2815,8 @@
   "organisation": null,
   "link": "http://bit.ly/15H2rcg",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Radio 24 Podcast - Kurzlink 404; Sendung nicht nachgewiesen",
   "highlight": null
  },
  {
@@ -2746,9 +2830,8 @@
   "organisation": null,
   "link": "https://x.com/dani_graf/status/342627780023947265",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Radio 24 Interview Migros - nur Tweet-Hinweis 2013-06-06; bit.ly verlinkt zu 20min Artikel ohne Daniel Graf",
   "highlight": null
  },
  {
@@ -2762,9 +2845,8 @@
   "organisation": null,
   "link": "http://tagi.ch/19229434",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "tagi.ch/19229434 Kurzlink möglicherweise veraltet; Artikel nicht nachweisbar",
   "highlight": null
  },
  {
@@ -2778,9 +2860,8 @@
   "organisation": null,
   "link": "http://vortex.feinheit.ch/2012/04/21/kony2012-das-ist-erst-der-anfang/",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "vortex.feinheit.ch Domain offline (ENOTFOUND); Artikel nicht erreichbar/verifizierbar",
   "highlight": null
  },
  {
@@ -2794,9 +2875,8 @@
   "organisation": null,
   "link": "https://x.com/dani_graf/status/182766201733251073",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Twitter-Hinweis – Original prüfen",
+  "status": "Telebasel Interview Stop Kony - nur Tweet-Hinweis 2012-03-22; Original-Sendung nicht nachweisbar",
   "highlight": null
  },
  {
@@ -2810,9 +2890,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/kulturplatz/video/kulturplatz-sendung-vom-14-03-2012-22-20-uhr-auf-sf-1?urn=urn:srf:video:cc1e77f5-17eb-4868-bdc7-daf1afd1fa17",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Video geprüft – persönlicher Auftritt bestätigt",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2826,9 +2905,8 @@
   "organisation": null,
   "link": "https://medienwoche.ch/2011/10/20/kernkraft-klimawandel-kinderschnitte/",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2842,9 +2920,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/ita/politica-svizzera/in-siria-diventer%C3%A0-ancora-peggio/30842506",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -2858,9 +2935,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/eng/swiss-politics/chinese-dissident-gets-nobel-peace-prize/28499960",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2874,9 +2950,8 @@
   "organisation": null,
   "link": "https://www.srf.ch/play/tv/news-clip/video/daniel-graf-amnesty-international-ueber-die-integration-der-uiguren-?urn=urn%3Asrf%3Avideo%3A76e4a237-869d-4c0f-a1d5-1e462825e94b",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2890,9 +2965,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/spa/politics/iniciativa-para-reactivar-pena-de-muerte-en-suiza/26417360",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2906,9 +2980,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/ger/politik/umstrittene-initiative-fuer-die-todesstrafe/26410752",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2922,9 +2995,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/ita/politica/l-appello-di-goeldi-al-figlio-di-gheddafi/8717342",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2938,9 +3010,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/fre/politique/max-goeldi-a-purg%C3%A9-la-moiti%C3%A9-de-sa-peine/8717484",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -2954,9 +3025,8 @@
   "organisation": null,
   "link": "https://www.letemps.ch/suisse/verdict-repousse-max-goldi",
   "abo": true,
-  "wayback": null,
   "geprueft": true,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -2970,9 +3040,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/eng/swiss-politics/detained-swiss-in-libya-hampered-by-legal-fog/7978218",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2986,9 +3055,8 @@
   "organisation": null,
   "link": "https://www.woz.ch/0922/obdachlose-in-brasilien/jetzt-sind-wir-halt-nachbarn",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -3002,9 +3070,8 @@
   "organisation": null,
   "link": "https://www.swissinfo.ch/ger/leben-und-altern/195-schweizer-im-ausland-im-gefaengnis/7239060",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalseite geprüft",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -3018,9 +3085,8 @@
   "organisation": null,
   "link": "https://www.kleinreport.ch/leute/?page=860",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Klein Report Archiv zeigt 16-26.05.2008; Artikel vom 15.05 auf vorheriger Seite (nicht direkt abrufbar)",
   "highlight": null
  },
  {
@@ -3034,9 +3100,8 @@
   "organisation": null,
   "link": "https://web.archive.org/web/20081016124545/http://www.comedia.ch/37.html?&tx_ttnews%5Btt_news%5D=240&tx_ttnews%5BbackPid%5D=25&cHash=f22a453714",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Archivierte Originalseite geprüft – eigener Artikel",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -3050,9 +3115,8 @@
   "organisation": null,
   "link": "https://www.e-periodica.ch/digbib/view?pid=zus-002%3A2001%3A79%3A%3A64",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Originalscan geprüft – eigener Artikel",
+  "status": "vor 18.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -3066,9 +3130,8 @@
   "organisation": null,
   "link": "https://www.demokratie.ch/blog/die-stiftungsgrundung-enthalt-ein-grosses-versprechen-die-demokratisierung",
   "abo": false,
-  "wayback": null,
   "geprueft": true,
-  "status": "Original geprüft – eigene Publikationsplattform; Datum offen",
+  "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
   "highlight": null
  },
  {
@@ -3082,9 +3145,8 @@
   "organisation": null,
   "link": "https://www.3sat.de/mediathek/?mode=play&obj=51117",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Blog-Selbstbeleg geprüft – Sendedatum prüfen",
+  "status": "Blog-Selbstbeleg für Datum und Skype-Interview; 3sat.de-Link heute 404; Sendedatum TV-Original ungeprüft",
   "highlight": null
  },
  {
@@ -3098,9 +3160,8 @@
   "organisation": null,
   "link": "https://www.tagesanzeiger.ch/apropos-der-taegliche-podcast-ist-unsere-verfassung-noch-zeitgemaess-279258999340",
   "abo": false,
-  "wayback": null,
   "geprueft": false,
-  "status": "Medienverzeichnis belegt – Original prüfen",
+  "status": "TA-Link hat Redirect-Schleife; Name nicht im Seitentext, Podcast-Audio nicht geprüft",
   "highlight": null
  },
  {
@@ -3114,9 +3175,8 @@
   "organisation": null,
   "link": "https://www.blick.ch/news/wirtschaft/telekomfirmen-stecken-milliarden-ins-internet-der-naechsten-generation-5geht-vielen-viel-zu-schnell-id15329030.html/",
   "abo": false,
-  "wayback": "https://web.archive.org/web/20200610000000*/blick.ch/news/wirtschaft/telekomfirmen-stecken-milliarden-ins-internet-der-naechsten-generation",
   "geprueft": false,
-  "status": "Suchtreffer belegt – Original prüfen",
+  "status": "Link 404 oder tot",
   "highlight": null
  }
 ]
