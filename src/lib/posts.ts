@@ -60,3 +60,35 @@ export function kachelVariante(id: string): number {
 	for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
 	return h % 4;
 }
+
+/** Anriss auf ca. `max` Zeichen kürzen (an der Wortgrenze, mit «…»). */
+export function kurz(text: string, max = 140): string {
+	const t = text.replace(/\s+/g, ' ').trim();
+	if (t.length <= max) return t;
+	const schnitt = t.slice(0, max);
+	const wort = schnitt.lastIndexOf(' ');
+	return `${schnitt.slice(0, wort > max * 0.6 ? wort : max).replace(/[\s,;:.–-]+$/, '')}…`;
+}
+
+/**
+ * «Mehr zum Thema»: bis zu drei Beiträge (die neusten), nie der aktuelle.
+ * Reihenfolge: zuerst Beiträge mit dem Hauptthema (tags[0]), dann mit weiteren
+ * gemeinsamen Themen, dann die neusten Beiträge allgemein. `alle` ist neueste-zuerst.
+ */
+export function verwandtePosts(aktuell: Post, alle: Post[], anzahl = 3): { posts: Post[]; haupt?: string } {
+	const tags = aktuell.data.tags;
+	const haupt = tags[0];
+	const andere = alle.filter((p) => p.id !== aktuell.id);
+	const gewaehlt: Post[] = [];
+	const nimm = (liste: Post[]) => {
+		for (const p of liste) {
+			if (gewaehlt.length >= anzahl) break;
+			if (!gewaehlt.includes(p)) gewaehlt.push(p);
+		}
+	};
+	if (haupt) nimm(andere.filter((p) => p.data.tags.includes(haupt)));
+	const hauptAnzahl = gewaehlt.length;
+	nimm(andere.filter((p) => p.data.tags.some((t) => tags.includes(t))));
+	nimm(andere);
+	return { posts: gewaehlt, haupt: haupt && hauptAnzahl > 0 ? haupt : undefined };
+}

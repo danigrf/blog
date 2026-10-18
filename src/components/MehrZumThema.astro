@@ -1,0 +1,139 @@
+---
+// Box unter dem Beitrag: bis zu drei verwandte Beiträge (Auswahl: verwandtePosts in lib/posts.ts).
+import { Image } from 'astro:assets';
+import FormattedDate from './FormattedDate.astro';
+import { kachelVariante, kurz, type Post, vorschauBild } from '../lib/posts';
+
+interface Props {
+	posts: Post[];
+	haupt?: string;
+}
+const { posts, haupt } = Astro.props;
+const titel = haupt ? `Mehr zum Thema ‹${haupt}›` : 'Weitere Beiträge';
+---
+
+<section class="mehr" aria-labelledby="mehr-titel">
+	<h2 id="mehr-titel">{titel}</h2>
+	<ul>
+		{
+			posts.map((post) => {
+				const bild = vorschauBild(post);
+				return (
+					<li>
+						<span class="thumb" aria-hidden="true">
+							{bild ? (
+								<Image src={bild.src} alt="" width={160} height={107} densities={[1, 2]} fit="cover" position="top" format="webp" loading="lazy" decoding="async" />
+							) : (
+								<span class={`kachel kachel-${kachelVariante(post.id)}`}>
+									<span class="kachel-jahr">{post.data.pubDate.getFullYear()}</span>
+								</span>
+							)}
+						</span>
+						<span class="text">
+							<span class="meta"><FormattedDate date={post.data.pubDate} /></span>
+							<a class="mehr-titel" href={`/blog/${post.id}/`}>{post.data.title}</a>
+							<span class="anriss">{kurz(post.data.description)}</span>
+						</span>
+					</li>
+				);
+			})
+		}
+	</ul>
+</section>
+
+<style>
+	.mehr {
+		margin: 3rem 0 0;
+		padding: 1.1rem 1.25rem 0.5rem;
+		background: var(--kontext-bg);
+		border: 1px solid var(--kontext-line);
+		border-left: 3px solid var(--kontext-line);
+		border-radius: 4px;
+		font-family: var(--sans);
+	}
+	h2 {
+		margin: 0 0 0.4rem;
+		font-family: var(--mono);
+		font-size: 0.8rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--kontext-label);
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		position: relative;
+		display: grid;
+		grid-template-columns: 6.5rem minmax(0, 1fr);
+		gap: 1rem;
+		align-items: start;
+		padding: 0.9rem 0;
+		border-top: 1px solid var(--kontext-line);
+	}
+	li:first-child {
+		border-top: 0;
+	}
+	.thumb {
+		display: block;
+		aspect-ratio: 3 / 2;
+		overflow: hidden;
+		border-radius: 3px;
+	}
+	.thumb :global(img) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+	}
+	.text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		min-width: 0;
+	}
+	.meta {
+		font-family: var(--mono);
+		font-size: 0.78rem;
+		color: var(--muted);
+	}
+	.mehr-titel {
+		font-family: var(--serif);
+		font-size: 1.1rem;
+		line-height: 1.3;
+		color: var(--text);
+		text-decoration: none;
+	}
+	/* ganze Zeile klickbar, aber nur ein Tab-Stopp */
+	.mehr-titel::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
+	li:hover .mehr-titel,
+	.mehr-titel:focus-visible {
+		color: var(--accent-strong);
+		text-decoration: underline;
+	}
+	.anriss {
+		font-size: 0.92rem;
+		line-height: 1.45;
+		color: var(--muted);
+	}
+	@media (max-width: 560px) {
+		.mehr {
+			padding: 1rem 1rem 0.4rem;
+		}
+		li {
+			grid-template-columns: 4.5rem minmax(0, 1fr);
+			gap: 0.75rem;
+		}
+		.anriss {
+			font-size: 0.88rem;
+		}
+	}
+</style>
