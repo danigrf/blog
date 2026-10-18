@@ -2,50 +2,89 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
-import { getThemen } from '../../lib/posts';
+import PostList from '../../components/PostList.astro';
+import { getPosts, getThemen } from '../../lib/posts';
 
 const themen = await getThemen();
+const neueste = (await getPosts()).slice(0, 10);
 ---
 
 <!doctype html>
 <html lang="de-CH">
 	<head>
-		<BaseHead title="Themen – Daniel Graf" description="Alle Beiträge nach Themen geordnet." />
-		<style>
-			.themen {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.6rem 0.5rem;
+		<BaseHead title="Themen – Daniel Graf" description="Alle Beiträge nach Themen geordnet, mit Suche." />
+		<style is:global>
+			.suche { margin: 1.25rem 0 1rem; font-family: var(--sans); }
+			.suche[hidden] { display: none; }
+			.suche label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-bottom: 0.25rem; }
+			.suche input {
+				box-sizing: border-box;
+				width: 100%;
+				font: inherit;
+				font-size: 1rem;
+				color: var(--text);
+				background: var(--bg);
+				border: 1px solid var(--muted);
+				border-radius: 4px;
+				padding: 0.45rem 0.7rem;
+				min-height: 2.75rem;
 			}
-			.themen li {
-				margin: 0;
-			}
-			.themen a {
+			.suche input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.themen { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem 0.5rem; }
+			.themen li { margin: 0; }
+			.themen a, .themen button {
 				display: inline-flex;
 				align-items: baseline;
 				gap: 0.45rem;
 				padding: 0.3rem 0.7rem;
+				min-height: 2.25rem;
+				box-sizing: border-box;
 				border: 1px solid var(--line);
 				border-radius: 999px;
 				font-family: var(--sans);
 				font-size: 0.95rem;
 				font-weight: 500;
+				line-height: 1.5;
 				text-decoration: none;
 				color: var(--text);
+				background: transparent;
+				cursor: pointer;
 			}
-			.themen a:hover {
+			.themen a:hover, .themen button:hover { border-color: var(--accent); color: var(--accent); }
+			.themen button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.themen button[aria-pressed='true'] {
+				background: var(--accent);
 				border-color: var(--accent);
-				color: var(--accent);
+				color: var(--bg);
 			}
-			.themen .anzahl {
-				font-family: var(--mono);
-				font-size: 0.8rem;
-				font-weight: 400;
-				color: var(--muted);
+			.themen button[aria-pressed='true'] .anzahl { color: inherit; }
+			.themen li[hidden] { display: none; }
+			.themen .anzahl { font-family: var(--mono); font-size: 0.8rem; font-weight: 400; color: var(--muted); }
+			.leiste { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; margin: 1.5rem 0 0.75rem; }
+			.leiste[hidden] { display: none; }
+			.leiste h2 { margin: 0; font-size: 1.15rem; }
+			.leiste .meta { margin: 0; font-variant-numeric: tabular-nums; }
+			.leiste button, .mehr button {
+				font: inherit;
+				font-family: var(--sans);
+				font-size: 0.95rem;
+				min-height: 2.5rem;
+				padding: 0.35rem 0.9rem;
+				color: var(--accent-strong);
+				background: transparent;
+				border: 1px solid var(--accent);
+				border-radius: 4px;
+				cursor: pointer;
 			}
+			.leiste button:hover, .mehr button:hover { background: var(--mark); }
+			.leiste button:focus-visible, .mehr button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+			.leiste button[hidden], .mehr[hidden] { display: none; }
+			.mehr { margin: 1.5rem 0 0.5rem; text-align: center; }
+			.treffer a { grid-template-columns: minmax(0, 1fr); }
+			.treffer .tags { display: block; margin-top: 0.35rem; }
+			.keine { margin: 1rem 0; color: var(--muted); }
+			.alle { margin-top: 1rem; }
+			@media (max-width: 30rem) { .leiste h2 { flex-basis: 100%; } }
 		</style>
 	</head>
 	<body>
@@ -53,18 +92,211 @@ const themen = await getThemen();
 		<main id="inhalt">
 			<h1>Themen</h1>
 			<p class="meta">{themen.length} Themen</p>
-			<ul class="themen">
+			<form class="suche" id="suche" role="search" hidden>
+				<label for="q">Themen und Beiträge durchsuchen</label>
+				<input id="q" type="search" autocomplete="off" placeholder="z. B. Unterschriften, Küng, E-ID" />
+			</form>
+			<ul class="themen" id="chips" aria-label="Themen">
 				{
 					themen.map((t) => (
-						<li>
-							<a href={`/themen/${t.slug}/`}>
+						<li data-name={t.name}>
+							<a href={`/themen/${t.slug}/`} data-slug={t.slug}>
 								{t.name} <span class="anzahl">{t.posts.length}</span>
 							</a>
 						</li>
 					))
 				}
 			</ul>
+			<div class="leiste" id="leiste">
+				<h2 id="liste-titel">Neueste Beiträge</h2>
+				<p class="meta" id="status" role="status" aria-live="polite"></p>
+				<button type="button" id="reset" hidden>Auswahl zurücksetzen</button>
+			</div>
+			<div id="standard">
+				<PostList posts={neueste} />
+				<p class="alle"><a href="/blog/">Alle Beiträge im Blog</a></p>
+			</div>
+			<div id="treffer" hidden>
+				<ul class="post-list treffer" aria-labelledby="liste-titel"></ul>
+				<p class="keine" id="keine" hidden>Keine Beiträge gefunden. Weniger Themen oder andere Suchbegriffe probieren.</p>
+				<p class="mehr" id="mehr" hidden><button type="button">Mehr anzeigen</button></p>
+			</div>
 		</main>
 		<Footer />
+		<script>
+			const SEITE = 20;
+			const chipsEl = document.getElementById('chips') as HTMLUListElement;
+			const form = document.getElementById('suche') as HTMLFormElement;
+			const input = document.getElementById('q') as HTMLInputElement;
+			const leiste = document.getElementById('leiste') as HTMLElement;
+			const titel = document.getElementById('liste-titel') as HTMLElement;
+			const status = document.getElementById('status') as HTMLElement;
+			const reset = document.getElementById('reset') as HTMLButtonElement;
+			const standard = document.getElementById('standard') as HTMLElement;
+			const trefferBox = document.getElementById('treffer') as HTMLElement;
+			const liste = trefferBox.querySelector('ul') as HTMLUListElement;
+			const keine = document.getElementById('keine') as HTMLElement;
+			const mehr = document.getElementById('mehr') as HTMLElement;
+
+			type Eintrag = { i: string; t: string; d: string; g: string[]; b: string; x: string; h: string };
+			let index: Eintrag[] | null = null;
+			let laden: Promise<void> | null = null;
+			let sichtbar = SEITE;
+			const gewaehlt = new Set<string>();
+			const namen = new Map<string, string>();
+
+			// «ä» -> «a», «ue» -> «u» usw.: Index und Suchwort werden gleich vereinfacht,
+			// so findet «Küng» auch «kueng» und «kung».
+			const falte = (s: string) =>
+				s
+					.toLowerCase()
+					.replace(/ß/g, 'ss')
+					.normalize('NFD')
+					.replace(/[̀-ͯ]/g, '')
+					.replace(/(a|o|u)e/g, '$1');
+
+			// Chips: Links werden zu Schaltflächen (ohne JS bleiben es normale Themen-Links).
+			const chips: { li: HTMLLIElement; btn: HTMLButtonElement; slug: string; name: string }[] = [];
+			chipsEl.querySelectorAll<HTMLLIElement>('li').forEach((li) => {
+				const a = li.querySelector('a') as HTMLAnchorElement;
+				const slug = a.dataset.slug as string;
+				const name = li.dataset.name as string;
+				const btn = document.createElement('button');
+				btn.type = 'button';
+				btn.setAttribute('aria-pressed', 'false');
+				btn.innerHTML = a.innerHTML;
+				btn.addEventListener('click', () => {
+					if (gewaehlt.has(slug)) gewaehlt.delete(slug);
+					else gewaehlt.add(slug);
+					sichtbar = SEITE;
+					aktualisieren();
+				});
+				a.replaceWith(btn);
+				namen.set(slug, name);
+				chips.push({ li, btn, slug, name: falte(name) });
+			});
+
+			function ladeIndex() {
+				laden ??= fetch('/themen/suche.json')
+					.then((r) => r.json())
+					.then((daten: Eintrag[]) => {
+						daten.forEach((e) => {
+							e.h = falte([e.t, e.b, e.g.map((s) => namen.get(s) ?? '').join(' '), e.x].join(' '));
+						});
+						index = daten;
+					})
+					.catch(() => {
+						laden = null;
+					});
+				return laden;
+			}
+
+			const datum = new Intl.DateTimeFormat('de-CH', { year: 'numeric', month: 'short', day: 'numeric' });
+
+			function zeile(e: Eintrag) {
+				const li = document.createElement('li');
+				const a = document.createElement('a');
+				a.href = `/blog/${e.i}/`;
+				const text = document.createElement('span');
+				text.className = 'text';
+				const meta = document.createElement('span');
+				meta.className = 'meta';
+				const time = document.createElement('time');
+				time.dateTime = e.d;
+				time.textContent = datum.format(new Date(e.d));
+				meta.append(time);
+				const t = document.createElement('span');
+				t.className = 'post-title';
+				t.textContent = e.t;
+				const d = document.createElement('span');
+				d.className = 'post-desc';
+				d.textContent = e.b;
+				const tags = document.createElement('span');
+				tags.className = 'meta tags';
+				tags.textContent = e.g.map((s) => namen.get(s) ?? s).join(' · ');
+				text.append(meta, t, d, tags);
+				a.append(text);
+				li.append(a);
+				return li;
+			}
+
+			function urlSchreiben(q: string) {
+				const p = new URLSearchParams();
+				if (gewaehlt.size) p.set('themen', [...gewaehlt].join(','));
+				if (q.trim()) p.set('q', q.trim());
+				const s = p.toString().replace(/%2C/g, ',');
+				history.replaceState(null, '', location.pathname + (s ? `?${s}` : ''));
+			}
+
+			function aktualisieren() {
+				const q = input.value;
+				const qf = falte(q).trim();
+				const worte = qf.split(/\s+/).filter(Boolean);
+
+				// Chips: Auswahl bleibt sichtbar, übrige werden nach dem Suchtext gefiltert.
+				chips.forEach((c) => {
+					const an = gewaehlt.has(c.slug);
+					c.btn.setAttribute('aria-pressed', String(an));
+					c.li.hidden = !an && qf !== '' && !c.name.includes(qf);
+				});
+				urlSchreiben(q);
+
+				const aktiv = gewaehlt.size > 0 || worte.length > 0;
+				reset.hidden = !aktiv;
+				standard.hidden = aktiv;
+				trefferBox.hidden = !aktiv;
+				if (!aktiv) {
+					titel.textContent = 'Neueste Beiträge';
+					status.textContent = '';
+					return;
+				}
+				titel.textContent = 'Beiträge';
+				if (!index) {
+					status.textContent = 'Lade Beiträge …';
+					ladeIndex().then(() => index && aktualisieren());
+					return;
+				}
+				// Themen: UND (ein Beitrag muss alle gewählten Themen haben); Suchwörter: ebenfalls UND.
+				const treffer = index.filter(
+					(e) => [...gewaehlt].every((s) => e.g.includes(s)) && worte.every((w) => e.h.includes(w)),
+				);
+				liste.replaceChildren(...treffer.slice(0, sichtbar).map(zeile));
+				mehr.hidden = treffer.length <= sichtbar;
+				keine.hidden = treffer.length > 0;
+				status.textContent =
+					treffer.length === 1 ? '1 Beitrag' : `${treffer.length} Beiträge`;
+				const chipsSichtbar = chips.filter((c) => !c.li.hidden).length;
+				if (worte.length && chipsSichtbar === 0) status.textContent += ' (kein passendes Thema)';
+			}
+
+			mehr.querySelector('button')!.addEventListener('click', () => {
+				sichtbar += SEITE;
+				aktualisieren();
+			});
+			reset.addEventListener('click', () => {
+				gewaehlt.clear();
+				input.value = '';
+				sichtbar = SEITE;
+				aktualisieren();
+				input.focus();
+			});
+			form.addEventListener('submit', (ev) => ev.preventDefault());
+			input.addEventListener('input', () => {
+				sichtbar = SEITE;
+				aktualisieren();
+			});
+			// Index erst laden, wenn jemand die Suche benutzt (spart Daten auf der Startansicht).
+			input.addEventListener('focus', () => void ladeIndex(), { once: true });
+			chipsEl.addEventListener('pointerover', () => void ladeIndex(), { once: true });
+
+			form.hidden = false;
+			const params = new URLSearchParams(location.search);
+			(params.get('themen') ?? '')
+				.split(',')
+				.filter((s) => namen.has(s))
+				.forEach((s) => gewaehlt.add(s));
+			input.value = params.get('q') ?? '';
+			aktualisieren();
+		</script>
 	</body>
 </html>
