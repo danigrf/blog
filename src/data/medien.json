@@ -45,6 +45,51 @@
   "highlight": null
  },
  {
+  "id": "DG-0271",
+  "datum": "2026-08-25",
+  "ungefaehr": false,
+  "medium": "Stiftung für direkte Demokratie",
+  "titel": "Pesche Buri will seine politischen Rechte selbständig wahrnehmen können",
+  "format": "video",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.youtube.com/watch?v=KTQ2cHhACAs",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0275",
+  "datum": "2026-08-21",
+  "ungefaehr": false,
+  "medium": "Stiftung für direkte Demokratie",
+  "titel": "Rebecca Dürr kämpft dafür, dass ihre Stimme zählt",
+  "format": "video",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.youtube.com/watch?v=hfA7NB8DoxM",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0276",
+  "datum": "2026-08-18",
+  "ungefaehr": false,
+  "medium": "Stiftung für direkte Demokratie",
+  "titel": "Erika fordert: Entscheid rückgängig machen",
+  "format": "video",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.youtube.com/watch?v=lGhgEuRJukw",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0206",
   "datum": "2026-06-19",
   "ungefaehr": false,
@@ -315,6 +360,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0277",
+  "datum": "2026-02-25",
+  "ungefaehr": false,
+  "medium": "Stiftung für direkte Demokratie",
+  "titel": "Follow the Money! Gülsha erklärt ihr Nein zur Halbierungs-Initiative",
+  "format": "video",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.youtube.com/watch?v=-KozZTcjU7E",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0225",
   "datum": "2026-02-21",
   "ungefaehr": false,
@@ -342,6 +402,51 @@
   "abo": false,
   "geprueft": true,
   "status": "19.10.2026 geprüft (Spotify, Captivate-Feed)",
+  "highlight": null
+ },
+ {
+  "id": "DG-0246",
+  "datum": "2025-11-21",
+  "ungefaehr": false,
+  "medium": "Initiative Offene Gesellschaft",
+  "titel": "Panel Mut zur Hoffnung – Wie aus Zuversicht demokratische Kraft wird - Teil 2",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=V4g2YvMMqDs",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0245",
+  "datum": "2025-11-21",
+  "ungefaehr": false,
+  "medium": "Initiative Offene Gesellschaft",
+  "titel": "Panel Mut zur Hoffnung – Wie aus Zuversicht demokratische Kraft wird - Teil 1",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=1eYHtrd427o",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0279",
+  "datum": "2025-11-08",
+  "ungefaehr": false,
+  "medium": "Digitale Gesellschaft",
+  "titel": "Gute Sache, falsche Plattform? NGO im Dilemma der sozialen Medien",
+  "format": "video",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=tqQhw4aDsqI",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -402,6 +507,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0247",
+  "datum": "2025-08-19",
+  "ungefaehr": false,
+  "medium": "Ja-Komitee E-ID (Medienkonferenz)",
+  "titel": "Pressekonferenz: Ja zur e-ID / Conférence de presse: Oui à l'e-ID",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=aEloqXbPfRw",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -840,6 +960,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0248",
+  "datum": "2024-03-06",
+  "ungefaehr": false,
+  "medium": "Stiftung für direkte Demokratie",
+  "titel": "Verfassungs-Initiative: Update statt Stillstand!",
+  "format": "video",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.youtube.com/watch?v=WJepV-4sOg4",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0223",
   "datum": "2024-03-01",
   "ungefaehr": false,
@@ -927,6 +1062,21 @@
   "abo": false,
   "geprueft": true,
   "status": "laut Daniel 19.10.2026; Folge und Datum über Simplecast belegt, Audio nicht angehört",
+  "highlight": null
+ },
+ {
+  "id": "DG-0249",
+  "datum": "2023-09-01",
+  "ungefaehr": false,
+  "medium": "Stiftung für direkte Demokratie",
+  "titel": "Update Schweiz: Zeit für mehr Demokratie!",
+  "format": "video",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.youtube.com/watch?v=O-hyCPIgDeU",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -1110,6 +1260,36 @@
   "highlight": null
  },
  {
+  "id": "DG-0250",
+  "datum": "2022-09-02",
+  "ungefaehr": false,
+  "medium": "Forum für Universität und Gesellschaft",
+  "titel": "Podium: Das Geschäftsmodell der Plattformökonomie",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=7ZJHJHok7BY",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0251",
+  "datum": "2022-09-01",
+  "ungefaehr": false,
+  "medium": "Forum für Universität und Gesellschaft",
+  "titel": "Daniel Graf: Plattform als politische Chance",
+  "format": "video",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=TyihA8nU2qQ",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0175",
   "datum": "2022-07-31",
   "ungefaehr": false,
@@ -1122,6 +1302,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0252",
+  "datum": "2022-07-01",
+  "ungefaehr": false,
+  "medium": "Stiftung für direkte Demokratie",
+  "titel": "Bauen wir eine Startrampe für die Demokratie!",
+  "format": "video",
+  "art": null,
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://www.youtube.com/watch?v=jFAniYPuZ9g",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -1230,6 +1425,36 @@
   "highlight": null
  },
  {
+  "id": "DG-0253",
+  "datum": "2021-11-02",
+  "ungefaehr": false,
+  "medium": "KOSMOS",
+  "titel": "KOSMOPOLITICS – SYSTEM CHANGE – BÜRGER:INNEN-VERSAMMLUNG? | Mo 1.11.21 20 Uhr",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=S0EzP7sLgJU",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0272",
+  "datum": "2021-10-14",
+  "ungefaehr": false,
+  "medium": "Karl der Grosse - das Debattierhaus",
+  "titel": "Die Weiterentwicklung der Schweizer Demokratie – Ein Podium über die politische Teilhabe",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=zUcytX4QZ3Q",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0109",
   "datum": "2021-10-09",
   "ungefaehr": false,
@@ -1242,6 +1467,36 @@
   "abo": false,
   "geprueft": true,
   "status": "Browser 18.10.2026: Name im Artikeltext",
+  "highlight": null
+ },
+ {
+  "id": "DG-0273",
+  "datum": "2021-09-29",
+  "ungefaehr": false,
+  "medium": "ZDA Zentrum für Demokratie Aarau",
+  "titel": "Der Weg zum sicheren E-Collecting",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=vr00p2WioKI",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0254",
+  "datum": "2021-08-16",
+  "ungefaehr": false,
+  "medium": "Xpreneurs",
+  "titel": "Wie Holacracy Public Beta verändert hat",
+  "format": "video",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=PSbaQQMym04",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -1272,6 +1527,21 @@
   "abo": true,
   "geprueft": true,
   "status": "eigener Tweet 14.03.2021: «fürs Porträt @hossli»; Titel passt",
+  "highlight": null
+ },
+ {
+  "id": "DG-0255",
+  "datum": "2021-03-11",
+  "ungefaehr": false,
+  "medium": "OpendataCH",
+  "titel": "Debatte über die Zukunft der digitalen Demokratie in der Schweiz und Civic Tech.",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=bmAqHWvNVYU",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -1560,6 +1830,36 @@
   "highlight": null
  },
  {
+  "id": "DG-0256",
+  "datum": "2020-12-15",
+  "ungefaehr": false,
+  "medium": "E-ID Referendum",
+  "titel": "Begrüssung durch Daniel Graf | Medienkonferenz NEIN-Komitee E-ID Referendum",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=1KZgWB6HK5k",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0257",
+  "datum": "2020-12-14",
+  "ungefaehr": false,
+  "medium": "E-ID Referendum",
+  "titel": "Pressekonferenz E-ID Referendum",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=bs4V23fNMkE",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0200",
   "datum": "2020-12-14",
   "ungefaehr": false,
@@ -1650,6 +1950,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0258",
+  "datum": "2020-08-21",
+  "ungefaehr": false,
+  "medium": "ZDA Zentrum für Demokratie Aarau",
+  "titel": "12. Aarauer Demokratietage: Panel zur Digitalisierung der Demokratie",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=Jzog7wr_79s",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0064",
   "datum": "2020-06-18",
   "ungefaehr": false,
@@ -1707,6 +2022,36 @@
   "abo": false,
   "geprueft": true,
   "status": "Name im Artikeltext, automatisch geprüft 18.10.2026; Link aktualisiert",
+  "highlight": null
+ },
+ {
+  "id": "DG-0274",
+  "datum": "2020-04-22",
+  "ungefaehr": false,
+  "medium": "Kanton Basel-Stadt",
+  "titel": "Digitalisierung der politischen Mitbestimmung: Bevölkerungsumfrage im Kanton Basel-Stadt",
+  "format": "podcast",
+  "art": "Gesprächsrunde",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=13nynGnE9WE",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0259",
+  "datum": "2020-04-21",
+  "ungefaehr": false,
+  "medium": "gemein & nützlich",
+  "titel": "GN010 Stiftung für direkte Demokratie in der Schweiz",
+  "format": "video",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=andPEIQUxtI",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -1872,6 +2217,21 @@
   "abo": false,
   "geprueft": true,
   "status": "SRF-Archivbeschreibung nennt WeCollect; Personenbezug nicht vorausgesetzt",
+  "highlight": null
+ },
+ {
+  "id": "DG-0260",
+  "datum": "2019-10-08",
+  "ungefaehr": false,
+  "medium": "Digitale Gesellschaft",
+  "titel": "Öffentliche Medienkonferenz: Start des E-ID-Referendums 8.10.2019",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=2ZUvtd9AdmE",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -2280,6 +2640,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0278",
+  "datum": "2019-01-25",
+  "ungefaehr": false,
+  "medium": "Tele 1",
+  "titel": "Volksinitiative für E-Voting-Moratorium lanciert (Tele 1, 25.01.2019)",
+  "format": "tv",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=pG-B7LuuCV0",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0049",
   "datum": "2019-01-10",
   "ungefaehr": false,
@@ -2427,6 +2802,21 @@
   "abo": false,
   "geprueft": true,
   "status": "19.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0261",
+  "datum": "2018-06-27",
+  "ungefaehr": false,
+  "medium": "NEOS - Das Neue Österreich",
+  "titel": "NEOS Lab Talk - Agenda für eine digitale Demokratie",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=ACVgr0wRLIk",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -2745,6 +3135,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0262",
+  "datum": "2017-01-01",
+  "ungefaehr": false,
+  "medium": "Sam National",
+  "titel": "Sam National - Alles nur e Phase",
+  "format": "video",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=uYgvpvv11e0",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0192",
   "datum": "2016-09-20",
   "ungefaehr": false,
@@ -2787,6 +3192,21 @@
   "abo": false,
   "geprueft": true,
   "status": "DIE ZEIT-Vorspann erwähnt WeCollect; Volltext nicht abrufbar; kein belegtes Daniel-Graf-Porträt",
+  "highlight": null
+ },
+ {
+  "id": "DG-0263",
+  "datum": "2016-06-15",
+  "ungefaehr": false,
+  "medium": "EB Zürich Informatiktage",
+  "titel": "Vortrag Daniel Graf «im Neuland» - Informatiktage 2016",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=eyb3i67PkxA",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -2925,6 +3345,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0264",
+  "datum": "2015-12-20",
+  "ungefaehr": false,
+  "medium": "daniel häni",
+  "titel": "Grundeinkommen - Gegenargument gelesen vom Daniel Graf",
+  "format": "video",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=MPzQ820Tzqg",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0189",
   "datum": "2015-11-20",
   "ungefaehr": false,
@@ -2967,6 +3402,36 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0265",
+  "datum": "2015-05-27",
+  "ungefaehr": false,
+  "medium": "easyvote",
+  "titel": "Daniel Graf",
+  "format": "video",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=FKsgbys8kxw",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0266",
+  "datum": "2015-05-12",
+  "ungefaehr": false,
+  "medium": "Campaigning Summit Switzerland",
+  "titel": "Campaigning Summit Switzerland 2015 – Daniel Graf",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=a7vXuGRUou8",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -3027,6 +3492,21 @@
   "abo": false,
   "geprueft": true,
   "status": "19.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0267",
+  "datum": "2014-08-07",
+  "ungefaehr": false,
+  "medium": "Startup Academy",
+  "titel": "STARTUP ACADEMY – BROWN BAG: Virale Startups (7. August 2014)",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=aGNDABxBlA0",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
@@ -3195,6 +3675,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0268",
+  "datum": "2011-03-15",
+  "ungefaehr": false,
+  "medium": "bernetblog",
+  "titel": "ZPRG Podium Social Media Studie Schweiz",
+  "format": "video",
+  "art": "Vortrag",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=faXJ7ldqFq8",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
   "id": "DG-0014",
   "datum": "2010-10-08",
   "ungefaehr": false,
@@ -3282,6 +3777,36 @@
   "abo": true,
   "geprueft": true,
   "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0269",
+  "datum": "2010-03-15",
+  "ungefaehr": false,
+  "medium": "SRF Tagesschau",
+  "titel": "Tagesschau (15.03.2010) - Konflikt Schweiz - Libyen (Teil9)",
+  "format": "tv",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=Ojv26pKeNgA",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0270",
+  "datum": "2010-03-01",
+  "ungefaehr": false,
+  "medium": "SRF Tagesschau",
+  "titel": "Tagesschau (01.03.2010) - Konflikt Schweiz - Libyen (Teil6)",
+  "format": "tv",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=2f2DrZI06Kw",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026 (Checkliste); YouTube-Metadaten 19.10.2026",
   "highlight": null
  },
  {
