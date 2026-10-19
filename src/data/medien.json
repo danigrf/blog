@@ -1,5 +1,20 @@
 [
  {
+  "id": "DG-0236",
+  "datum": "2026-09-21",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger Apropos",
+  "titel": "Ein neues Kapitel im «Unterschriften-Bschiss»",
+  "format": "podcast",
+  "art": null,
+  "organisation": null,
+  "link": "https://apropos.simplecast.com/episodes/neues-kapitel-im-unterschriften-bschiss-mit-spuren-in-die-usa-Nx84cNey",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026; Folge und Datum über Simplecast belegt, Audio nicht angehört",
+  "highlight": null
+ },
+ {
   "id": "DG-0099",
   "datum": "2026-09-15",
   "ungefaehr": false,
@@ -296,7 +311,7 @@
   "link": "https://open.spotify.com/episode/4hcLN5gYY3fED7uvIpozdv",
   "abo": false,
   "geprueft": true,
-  "status": "19.10.2026 geprüft (Shownotes: Pascal Nufer mit Daniel Graf, Sophie Fürst und Lisa Schweizer vom Kampagnenteam der Stiftung; Kampagnenpodcast)",
+  "status": "19.10.2026 geprüft (Spotify, Captivate-Feed)",
   "highlight": null
  },
  {
@@ -326,7 +341,22 @@
   "link": "https://open.spotify.com/episode/070jhlDq4rl8RRKgoENwun",
   "abo": false,
   "geprueft": true,
-  "status": "19.10.2026 geprüft (Spotify-Titel und Shownotes nennen Daniel Graf, Gründer Stiftung für direkte Demokratie; Kampagnenpodcast gegen die Halbierungsinitiative)",
+  "status": "19.10.2026 geprüft (Spotify, Captivate-Feed)",
+  "highlight": null
+ },
+ {
+  "id": "DG-0235",
+  "datum": "2025-09-18",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger Apropos",
+  "titel": "Ein neuer Unterschriften-Bschiss. Schon wieder!",
+  "format": "podcast",
+  "art": null,
+  "organisation": null,
+  "link": "https://apropos.simplecast.com/episodes/unterschriften-bschiss-geht-weiter-involviert-sind-bekannten-svpler-kdqmqIRa",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026; Folge und Datum über Simplecast belegt, Audio nicht angehört",
   "highlight": null
  },
  {
@@ -372,6 +402,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0237",
+  "datum": "2025-08-12",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger Apropos",
+  "titel": "Digitale Identität: Darum die E-ID umstritten ist",
+  "format": "podcast",
+  "art": null,
+  "organisation": null,
+  "link": "https://apropos.simplecast.com/episodes/digitale-identitat-darum-ist-die-e-id-umstritten-zTEMCzXx",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026; Folge und Datum über Simplecast belegt, Audio nicht angehört",
   "highlight": null
  },
  {
@@ -521,7 +566,7 @@
   "link": "https://www.youtube.com/watch?v=Y5svJq5XQh0",
   "abo": false,
   "geprueft": true,
-  "status": "19.10.2026 geprüft (YouTube Verein Bajour; Bajour-Artikel nennt Daniel Graf)",
+  "status": "19.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -537,6 +582,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0234",
+  "datum": "2024-09-16",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger Apropos",
+  "titel": "Die dreisten Methoden der Unterschriftensammler",
+  "format": "podcast",
+  "art": null,
+  "organisation": null,
+  "link": "https://apropos.simplecast.com/episodes/die-dreisten-methoden-der-unterschriftensammler-18mTYf8Q",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026; Folge und Datum über Simplecast belegt, Audio nicht angehört",
   "highlight": null
  },
  {
@@ -612,6 +672,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0233",
+  "datum": "2024-09-03",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger Apropos",
+  "titel": "Der Unterschriften-Bschiss und seine Folgen für unsere Demokratie",
+  "format": "podcast",
+  "art": null,
+  "organisation": null,
+  "link": "https://apropos.simplecast.com/episodes/unterschriften-beschiss-massenhaft-gefalschte-daten-aufgedeckt-t9_Yj37J",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026; Folge und Datum über Simplecast belegt, Audio nicht angehört",
   "highlight": null
  },
  {
@@ -837,6 +912,36 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0232",
+  "datum": "2023-09-06",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger Apropos",
+  "titel": "Die Verfassung (4/4): Ein Spaziergang durch 175 Jahre",
+  "format": "podcast",
+  "art": null,
+  "organisation": null,
+  "link": "https://apropos.simplecast.com/episodes/die-verfassung-4-4-mC5Hg0Wj",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026; Folge und Datum über Simplecast belegt, Audio nicht angehört",
+  "highlight": null
+ },
+ {
+  "id": "DG-0124",
+  "datum": "2023-08-31",
+  "ungefaehr": false,
+  "medium": "Tages-Anzeiger Apropos",
+  "titel": "Die Verfassung (3/4): Ist sie noch zeitgemäss?",
+  "format": "podcast",
+  "art": null,
+  "organisation": null,
+  "link": "https://www.tagesanzeiger.ch/apropos-der-taegliche-podcast-ist-unsere-verfassung-noch-zeitgemaess-279258999340",
+  "abo": false,
+  "geprueft": true,
+  "status": "laut Daniel 19.10.2026; Folge vom 31.08.2023 (Simplecast), Gast laut Seite Markus Häfliger, Audio nicht angehört",
   "highlight": null
  },
  {
@@ -1256,7 +1361,7 @@
   "link": "https://open.spotify.com/episode/0L5yldrytkGTmTktQGakYe",
   "abo": false,
   "geprueft": true,
-  "status": "19.10.2026 geprüft (Spotify und dezentrum.ch nennen Daniel Graf vom E-ID-Referendumskomitee)",
+  "status": "19.10.2026 geprüft (Spotify und dezentrum.ch)",
   "highlight": null
  },
  {
@@ -2321,7 +2426,7 @@
   "link": "https://www.srf.ch/audio/rendez-vous/daniel-graf-max-stern-agenda-fuer-eine-digitale-demokratie?partId=791df3f8-bb5f-41c8-8011-c22602a62665",
   "abo": false,
   "geprueft": true,
-  "status": "19.10.2026 geprüft (SRF-Seite: Rendez-vous vom 04.07.2018, 12.30 Uhr, Buch «Agenda für eine digitale Demokratie»; identisch mit Tagesgespräch)",
+  "status": "19.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -2921,7 +3026,7 @@
   "link": "https://danielgraf.ch/blog/online-campaigning-im-ruckspiegel-gast-im-socialgenius-podcast/",
   "abo": false,
   "geprueft": true,
-  "status": "19.10.2026: Original (socialgenius.de) offline; Beleg eigener Blogbeitrag vom 28.11.2014",
+  "status": "19.10.2026 geprüft",
   "highlight": null
  },
  {
@@ -3342,21 +3447,6 @@
   "abo": false,
   "geprueft": false,
   "status": "Blog-Selbstbeleg für Datum und Skype-Interview; 3sat.de-Link heute 404; Sendedatum TV-Original ungeprüft",
-  "highlight": null
- },
- {
-  "id": "DG-0124",
-  "datum": null,
-  "ungefaehr": false,
-  "medium": "Tages-Anzeiger Apropos",
-  "titel": "Ist unsere Verfassung noch zeitgemäss?",
-  "format": "podcast",
-  "art": null,
-  "organisation": null,
-  "link": "https://www.tagesanzeiger.ch/apropos-der-taegliche-podcast-ist-unsere-verfassung-noch-zeitgemaess-279258999340",
-  "abo": false,
-  "geprueft": false,
-  "status": "TA-Link hat Redirect-Schleife; Name nicht im Seitentext, Podcast-Audio nicht geprüft",
   "highlight": null
  },
  {
