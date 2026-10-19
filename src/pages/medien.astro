@@ -5,6 +5,8 @@ import Header from '../components/Header.astro';
 import { MEDIEN_UNGEPRUEFTE_ZEIGEN } from '../consts';
 // Wird aus der Masterliste erzeugt: Projekte/Astro-Blog-Migration/medienliste/umwandeln.py
 import alle from '../data/medien.json';
+// Quellen-Icons: Zuordnung Medium -> Datei in public/logos (Pflege: scripts/logos-holen.py)
+import logos from '../data/medien-logos.json';
 
 type Eintrag = (typeof alle)[number];
 
@@ -27,6 +29,13 @@ const SYMBOL: Record<string, string> = {
 	text: '<path d="M5 4h11l3 3v13H5z"/><path d="M8 9h8M8 13h8M8 17h5"/>',
 	video: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
 };
+
+function logoFuer(medium: string): string | null {
+	const m = logos.medien as Record<string, string>;
+	let key = m[medium];
+	if (!key) key = Object.entries(logos.praefix).find(([pre]) => medium.startsWith(pre))?.[1] as string;
+	return key ? `/logos/${key}.png` : null;
+}
 
 const FORMAT: Record<string, string> = { tv: 'TV', audio: 'Radio', podcast: 'Podcast', video: 'Video', text: 'Text' };
 
@@ -97,6 +106,7 @@ function datumKurz(d: string | null) {
 			}
 			.highlights a:hover { border-color: var(--accent); }
 			.highlights a:hover .hl-titel { color: var(--accent); }
+			.qlogo { width: 18px; height: 18px; border-radius: 4px; vertical-align: -3px; margin-right: 0.4rem; background: #fff; border: 1px solid rgba(128,128,128,0.35); padding: 1px; box-sizing: border-box; object-fit: contain; }
 			.hl-medium { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; color: var(--accent-strong); }
 			.hl-titel { font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }
 			.hl-meta { margin-top: auto; }
@@ -208,7 +218,7 @@ function datumKurz(d: string | null) {
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={SYMBOL[e.format]} />
 									<span class="kachel-jahr">{e.datum?.slice(0, 4)}</span>
 								</span>
-								<span class="hl-medium">{e.medium}</span>
+								<span class="hl-medium">{logoFuer(e.medium) && <img class="qlogo" src={logoFuer(e.medium)!} alt="" width="18" height="18" loading="lazy" />}{e.medium}</span>
 								<span class="hl-titel">{e.titel}</span>
 								<span class="meta hl-meta">
 									{e.art ?? FORMAT[e.format]}
@@ -251,7 +261,7 @@ function datumKurz(d: string | null) {
 										{datumKurz(e.datum)}
 									</span>
 									<span>
-										<span class="medium">{e.medium}</span>
+										<span class="medium">{logoFuer(e.medium) && <img class="qlogo" src={logoFuer(e.medium)!} alt="" width="18" height="18" loading="lazy" />}{e.medium}</span>
 										<span class="titel">
 											{e.link ? <a href={e.link}>{e.titel}</a> : e.titel}
 										</span>
