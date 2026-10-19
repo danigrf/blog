@@ -1741,17 +1741,17 @@
  },
  {
   "id": "DG-0061",
-  "datum": "2020-03-04",
-  "ungefaehr": true,
+  "datum": "2020-03-03",
+  "ungefaehr": false,
   "medium": "Tele TOP",
   "titel": "TOP NEWS vom 3. März 2020",
   "format": "tv",
   "art": null,
-  "organisation": null,
+  "organisation": "Volksmotion E-Collecting Schaffhausen",
   "link": "https://www.toponline.ch/tele-top/sendungen/top-news/news/top-news-vom-3-maerz-2020-00129936/",
   "abo": false,
-  "geprueft": false,
-  "status": "eigener Tweet 04.03.2020 verweist auf TV-Beitrag ab 11:35 zu E-Collecting; Auftritt von Daniel nicht belegt, Video ohne Metadaten",
+  "geprueft": true,
+  "status": "auf Daniels Wunsch aufgenommen 19.10.2026: Sendung vom 03.03.2020 (Titel), Beitrag ab 11:35 zu E-Collecting mit staatlicher E-ID; persönlicher Auftritt nicht geprüft",
   "highlight": null
  },
  {
@@ -1875,21 +1875,6 @@
   "highlight": null
  },
  {
-  "id": "DG-0058",
-  "datum": "2019-12-13",
-  "ungefaehr": true,
-  "medium": "Tele TOP",
-  "titel": "TOP NEWS vom 8. Oktober 2019",
-  "format": "tv",
-  "art": null,
-  "organisation": null,
-  "link": "https://www.toponline.ch/tele-top/sendungen/top-news/news/top-news-vom-8-oktober-2019-00121116/",
-  "abo": false,
-  "geprueft": false,
-  "status": "eigener Tweet 13.12.2019 verweist auf TV-Beitrag ab 6:40 zur E-ID in Schaffhausen; Auftritt von Daniel nicht belegt, Video ohne Metadaten",
-  "highlight": null
- },
- {
   "id": "DG-0154",
   "datum": "2019-10-08",
   "ungefaehr": false,
@@ -1902,6 +1887,21 @@
   "abo": false,
   "geprueft": true,
   "status": "vor 18.10.2026 geprüft",
+  "highlight": null
+ },
+ {
+  "id": "DG-0058",
+  "datum": "2019-10-08",
+  "ungefaehr": false,
+  "medium": "Tele TOP",
+  "titel": "TOP NEWS vom 8. Oktober 2019",
+  "format": "tv",
+  "art": null,
+  "organisation": "E-ID-Referendum",
+  "link": "https://www.toponline.ch/tele-top/sendungen/top-news/news/top-news-vom-8-oktober-2019-00121116/",
+  "abo": false,
+  "geprueft": true,
+  "status": "auf Daniels Wunsch aufgenommen 19.10.2026: Sendung vom 08.10.2019 (Titel), Beitrag ab 6:40 zur staatlichen E-ID in Schaffhausen und zum Referendum; persönlicher Auftritt nicht geprüft",
   "highlight": null
  },
  {
