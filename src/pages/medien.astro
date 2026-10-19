@@ -23,11 +23,12 @@ const highlights = eintraege
 const SYMBOL: Record<string, string> = {
 	tv: '<rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 21h8M12 17v4"/>',
 	audio: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
+	podcast: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
 	text: '<path d="M5 4h11l3 3v13H5z"/><path d="M8 9h8M8 13h8M8 17h5"/>',
 	video: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
 };
 
-const FORMAT: Record<string, string> = { tv: 'TV', audio: 'Radio/Podcast', video: 'Video', text: 'Text' };
+const FORMAT: Record<string, string> = { tv: 'TV', audio: 'Radio', podcast: 'Podcast', video: 'Video', text: 'Text' };
 
 // Nach Jahr gruppieren; Einträge ohne Datum kommen ans Ende.
 const gruppen: { jahr: string; items: Eintrag[] }[] = [];
@@ -41,6 +42,7 @@ for (const e of eintraege) {
 const anzahl = {
 	tv: eintraege.filter((e) => e.format === 'tv').length,
 	audio: eintraege.filter((e) => e.format === 'audio').length,
+	podcast: eintraege.filter((e) => e.format === 'podcast').length,
 	video: eintraege.filter((e) => e.format === 'video').length,
 	text: eintraege.filter((e) => e.format === 'text').length,
 };
@@ -189,8 +191,8 @@ function datumKurz(d: string | null) {
 				)
 			}
 			<p>
-				Interviews, Porträts und Auftritte in TV, Radio und Presse, dazu Berichte über WeCollect,
-				die Stiftung für direkte Demokratie sowie Volksinitiativen und Referenden, bei denen ich beteiligt war.
+				Eine Auswahl von Medienberichten über WeCollect, die Stiftung für direkte Demokratie und Projekte,
+				an denen ich mitgearbeitet habe.
 			</p>
 
 			{
@@ -225,10 +227,11 @@ function datumKurz(d: string | null) {
 			<div class="filter" id="filter" hidden>
 				<button type="button" data-format="" aria-pressed="true">Alle <span class="anzahl">{eintraege.length}</span></button>
 				<button type="button" data-format="tv" aria-pressed="false">TV <span class="anzahl">{anzahl.tv}</span></button>
-				<button type="button" data-format="audio" aria-pressed="false">Radio/Podcast <span class="anzahl">{anzahl.audio}</span></button>
+				<button type="button" data-format="audio" aria-pressed="false">Radio <span class="anzahl">{anzahl.audio}</span></button>
+				{anzahl.podcast > 0 && <button type="button" data-format="podcast" aria-pressed="false">Podcast <span class="anzahl">{anzahl.podcast}</span></button>}
 				<button type="button" data-format="video" aria-pressed="false">Video <span class="anzahl">{anzahl.video}</span></button>
 				<button type="button" data-format="text" aria-pressed="false">Text <span class="anzahl">{anzahl.text}</span></button>
-				<label><input type="checkbox" id="nur-persoenlich" /> Nur mit mir persönlich</label>
+				<label hidden><input type="checkbox" id="nur-persoenlich" /> Nur mit mir persönlich</label>
 			</div>
 			<p class="meta" id="medien-status" role="status" aria-live="polite"></p>
 
