@@ -231,7 +231,6 @@ function datumKurz(d: string | null) {
 				{anzahl.podcast > 0 && <button type="button" data-format="podcast" aria-pressed="false">Podcast <span class="anzahl">{anzahl.podcast}</span></button>}
 				<button type="button" data-format="video" aria-pressed="false">Video <span class="anzahl">{anzahl.video}</span></button>
 				<button type="button" data-format="text" aria-pressed="false">Text <span class="anzahl">{anzahl.text}</span></button>
-				<label hidden><input type="checkbox" id="nur-persoenlich" /> Nur mit mir persönlich</label>
 			</div>
 			<p class="meta" id="medien-status" role="status" aria-live="polite"></p>
 
@@ -281,7 +280,6 @@ function datumKurz(d: string | null) {
 			// Ohne JavaScript bleibt die volle Liste sichtbar; die Filter erscheinen erst mit JS.
 			const filter = document.getElementById('filter') as HTMLElement;
 			const knoepfe = [...filter.querySelectorAll<HTMLButtonElement>('button')];
-			const persoenlich = document.getElementById('nur-persoenlich') as HTMLInputElement;
 			const status = document.getElementById('medien-status') as HTMLElement;
 			const zeilen = [...document.querySelectorAll<HTMLLIElement>('.medien-liste li')];
 			const gruppen = [...document.querySelectorAll<HTMLElement>('.medien-jahr')];
@@ -291,12 +289,12 @@ function datumKurz(d: string | null) {
 			function anwenden() {
 				let n = 0;
 				for (const li of zeilen) {
-					const sichtbar = (!format || li.dataset.format === format) && !(persoenlich.checked && li.dataset.org);
+					const sichtbar = (!format || li.dataset.format === format);
 					li.hidden = !sichtbar;
 					if (sichtbar) n++;
 				}
 				for (const g of gruppen) g.hidden = !g.querySelector('li:not([hidden])');
-				status.textContent = format || persoenlich.checked ? `${n} von ${zeilen.length} Beiträgen` : '';
+				status.textContent = format ? `${n} von ${zeilen.length} Beiträgen` : '';
 			}
 
 			knoepfe.forEach((b) =>
@@ -306,7 +304,6 @@ function datumKurz(d: string | null) {
 					anwenden();
 				}),
 			);
-			persoenlich.addEventListener('change', anwenden);
 		</script>
 	</body>
 </html>
