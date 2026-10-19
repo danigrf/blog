@@ -16,7 +16,7 @@ const typ = src.toLowerCase().endsWith('.webm') ? 'video/webm' : 'video/mp4';
 <figure class="video">
 	<video controls preload="metadata" playsinline poster={poster} aria-label={beschreibung ?? legende}>
 		<source src={src} type={typ} />
-		<p>Ihr Browser kann dieses Video nicht abspielen. <a href={src}>Video herunterladen</a>.</p>
+		<p>Dein Browser kann dieses Video nicht abspielen. <a href={src}>Video herunterladen</a>.</p>
 	</video>
 	{
 		(legende || quelle) && (
