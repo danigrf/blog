@@ -6,7 +6,7 @@ import HeaderLink from './HeaderLink.astro';
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 <header>
 	<div class="bar">
-		<a class="brand" href="/">{SITE_TITLE}</a>
+		<a class="brand" href="/">{SITE_TITLE} <span class="beta">Beta v1.3</span></a>
 		<nav aria-label="Hauptnavigation">
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/medien">Medien</HeaderLink>
@@ -46,5 +46,19 @@ import HeaderLink from './HeaderLink.astro';
 		.bar {
 			padding: 0.9rem 1.25rem;
 		}
+	}
+	.beta {
+		display: inline-block;
+		margin-left: 0.35rem;
+		padding: 0.05rem 0.4rem;
+		font-family: var(--mono);
+		font-size: 0.7rem;
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--accent);
+		border: 1px solid currentColor;
+		border-radius: 3px;
+		vertical-align: 0.15em;
 	}
 </style>
