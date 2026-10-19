@@ -285,6 +285,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0231",
+  "datum": "2026-03-08",
+  "ungefaehr": false,
+  "medium": "Rendez-vous am Chuchitisch (Podcast)",
+  "titel": "«Nein, aber was jetzt?» Ein Aus- und Rückblick von Teufeln und allzu guten KI-Bots",
+  "format": "podcast",
+  "art": "Gesprächsrunde",
+  "organisation": "Stiftung für direkte Demokratie",
+  "link": "https://open.spotify.com/episode/4hcLN5gYY3fED7uvIpozdv",
+  "abo": false,
+  "geprueft": true,
+  "status": "19.10.2026 geprüft (Shownotes: Pascal Nufer mit Daniel Graf, Sophie Fürst und Lisa Schweizer vom Kampagnenteam der Stiftung; Kampagnenpodcast)",
+  "highlight": null
+ },
+ {
   "id": "DG-0225",
   "datum": "2026-02-21",
   "ungefaehr": false,
@@ -297,6 +312,21 @@
   "abo": false,
   "geprueft": true,
   "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0230",
+  "datum": "2026-02-02",
+  "ungefaehr": false,
+  "medium": "Rendez-vous am Chuchitisch (Podcast)",
+  "titel": "Trendfrisuren, ein Tabubruch und andere haarige Geschichten: Claude Longchamp und Daniel Graf analysieren mit der virtuellen Tina die erste Halbzeit der SRG-Halbierungsinitiative",
+  "format": "podcast",
+  "art": "Gespräch",
+  "organisation": null,
+  "link": "https://open.spotify.com/episode/070jhlDq4rl8RRKgoENwun",
+  "abo": false,
+  "geprueft": true,
+  "status": "19.10.2026 geprüft (Spotify-Titel und Shownotes nennen Daniel Graf, Gründer Stiftung für direkte Demokratie; Kampagnenpodcast gegen die Halbierungsinitiative)",
   "highlight": null
  },
  {
@@ -1212,6 +1242,21 @@
   "abo": false,
   "geprueft": true,
   "status": "Referentenliste media.ccc.de, geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0229",
+  "datum": "2021-02-25",
+  "ungefaehr": false,
+  "medium": "Digitalsalat (Podcast, dezentrum)",
+  "titel": "E-ID: ja, aber wie?",
+  "format": "podcast",
+  "art": "Interview",
+  "organisation": null,
+  "link": "https://open.spotify.com/episode/0L5yldrytkGTmTktQGakYe",
+  "abo": false,
+  "geprueft": true,
+  "status": "19.10.2026 geprüft (Spotify und dezentrum.ch nennen Daniel Graf vom E-ID-Referendumskomitee)",
   "highlight": null
  },
  {
@@ -2268,15 +2313,15 @@
   "id": "DG-0044",
   "datum": "2018-07-04",
   "ungefaehr": false,
-  "medium": "SRF",
+  "medium": "SRF Rendez-vous / Tagesgespräch",
   "titel": "Daniel Graf & Max Stern: Agenda für eine digitale Demokratie",
   "format": "audio",
-  "art": null,
+  "art": "Gespräch",
   "organisation": null,
-  "link": "https://www.srf.ch/audio/tagesgespraech/daniel-graf-max-stern-agenda-fuer-eine-digitale-demokratie?id=aaac05f6-ee35-4fa6-ba15-533a6a3b881c",
+  "link": "https://www.srf.ch/audio/rendez-vous/daniel-graf-max-stern-agenda-fuer-eine-digitale-demokratie?partId=791df3f8-bb5f-41c8-8011-c22602a62665",
   "abo": false,
   "geprueft": true,
-  "status": "vor 18.10.2026 geprüft",
+  "status": "19.10.2026 geprüft (SRF-Seite: Rendez-vous vom 04.07.2018, 12.30 Uhr, Buch «Agenda für eine digitale Demokratie»; identisch mit Tagesgespräch)",
   "highlight": null
  },
  {
