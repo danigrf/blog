@@ -480,6 +480,21 @@
   "highlight": null
  },
  {
+  "id": "DG-0227",
+  "datum": "2024-09-19",
+  "ungefaehr": false,
+  "medium": "Bajour (Video-Podcast)",
+  "titel": "Mit Masturbation, Serien und Medis gegen Langeweile: ADHS-Gespräch",
+  "format": "podcast",
+  "art": "Gesprächsrunde",
+  "organisation": null,
+  "link": "https://www.youtube.com/watch?v=Y5svJq5XQh0",
+  "abo": false,
+  "geprueft": true,
+  "status": "19.10.2026 geprüft (YouTube Verein Bajour; Bajour-Artikel nennt Daniel Graf)",
+  "highlight": null
+ },
+ {
   "id": "DG-0092",
   "datum": "2024-09-18",
   "ungefaehr": false,
@@ -927,6 +942,21 @@
   "abo": false,
   "geprueft": true,
   "status": "Browser 18.10.2026: Name im Artikeltext; Link aktualisiert",
+  "highlight": null
+ },
+ {
+  "id": "DG-0226",
+  "datum": "2022-11-22",
+  "ungefaehr": false,
+  "medium": "Digital Sensemaker (Podcast)",
+  "titel": "#72 «Die [digitale] direkte Demokratie!» mit Daniel Graf",
+  "format": "podcast",
+  "art": "Gespräch",
+  "organisation": null,
+  "link": "https://open.spotify.com/episode/2Vak8SbBssKR7ve4SOrDWy",
+  "abo": false,
+  "geprueft": true,
+  "status": "19.10.2026 geprüft (Spotify-Seite nennt Daniel Graf)",
   "highlight": null
  },
  {
@@ -2832,6 +2862,21 @@
   "abo": false,
   "geprueft": true,
   "status": "Name im Artikeltext, automatisch geprüft 18.10.2026",
+  "highlight": null
+ },
+ {
+  "id": "DG-0228",
+  "datum": "2014-11-28",
+  "ungefaehr": false,
+  "medium": "Social Genius Podcast",
+  "titel": "Testen statt Glauben: Community-Kampagnen, NPOs und Social Media bei Amnesty International",
+  "format": "podcast",
+  "art": "Interview",
+  "organisation": null,
+  "link": "https://danielgraf.ch/blog/online-campaigning-im-ruckspiegel-gast-im-socialgenius-podcast/",
+  "abo": false,
+  "geprueft": true,
+  "status": "19.10.2026: Original (socialgenius.de) offline; Beleg eigener Blogbeitrag vom 28.11.2014",
   "highlight": null
  },
  {
