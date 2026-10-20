@@ -295,6 +295,10 @@
 /feed/ /rss.xml 301
 /feed /rss.xml 301
 
+# Geloescht 21.10.2026 (Doppel zur SDD-Fassung)
+/blog/bilaterale-iii-auf-dem-demokratie-pruefstand/ /blog/was-machen-die-bilateralen-mit-unserer-demokratie/ 301
+/blog/bilaterale-iii-auf-dem-demokratie-pruefstand /blog/was-machen-die-bilateralen-mit-unserer-demokratie/ 301
+
 # Alle uebrigen (nicht uebernommenen) Schlagwoerter/Kategorien -> Themenuebersicht
 /tag/* /themen/ 301
 /category/* /themen/ 301
