@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import JahresUebersicht from '../components/JahresUebersicht.astro';
 import { MEDIEN_UNGEPRUEFTE_ZEIGEN } from '../consts';
 // Wird aus der Masterliste erzeugt: Projekte/Astro-Blog-Migration/medienliste/umwandeln.py
 import alle from '../data/medien.json';
@@ -56,6 +57,19 @@ const anzahl = {
 	text: eintraege.filter((e) => e.format === 'text').length,
 };
 const jahre = eintraege.filter((e) => e.datum).map((e) => e.datum!.slice(0, 4));
+
+// Jahresübersicht: gestapelt nach Format (Reihenfolge = feste Farb-Reihenfolge).
+const FORMATE = ['text', 'tv', 'audio', 'podcast', 'video'].filter((f) => anzahl[f as keyof typeof anzahl] > 0);
+const jahreNum = jahre.map(Number);
+const uebersicht = jahreNum.length
+	? Array.from({ length: Math.max(...jahreNum) - Math.min(...jahreNum) + 1 }, (_, i) => {
+			const jahr = Math.min(...jahreNum) + i;
+			return {
+				jahr,
+				werte: FORMATE.map((f) => eintraege.filter((e) => e.datum?.startsWith(String(jahr)) && e.format === f).length),
+			};
+		})
+	: [];
 
 const monate = ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'];
 function datumKurz(d: string | null) {
@@ -121,7 +135,7 @@ function datumKurz(d: string | null) {
 				flex-wrap: wrap;
 				align-items: center;
 				gap: 0.5rem 0.5rem;
-				margin: 2.5rem 0 0.5rem;
+				margin: 1.5rem 0 0.5rem;
 				font-family: var(--sans);
 			}
 			.filter[hidden] { display: none; }
@@ -148,7 +162,7 @@ function datumKurz(d: string | null) {
 			.filter input { width: 1.1rem; height: 1.1rem; accent-color: var(--accent); }
 			#medien-status { margin: 0.25rem 0 0; }
 
-			.medien-jahr h2 { font-size: 1.25rem; margin: 2rem 0 0.4rem; }
+			.medien-jahr h2 { font-size: 1.25rem; margin: 2rem 0 0.4rem; scroll-margin-top: 1rem; }
 			.medien-jahr[hidden] { display: none; }
 			.medien-liste { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 			.medien-liste li {
@@ -234,6 +248,7 @@ function datumKurz(d: string | null) {
 			}
 
 			{AUSWAHL_ZEIGEN && <h2 id="alle-titel">Alle Beiträge</h2>}
+			<JahresUebersicht jahre={uebersicht} prefix="j-" serien={FORMATE.map((f) => ({ key: f, label: FORMAT[f] }))} />
 			<div class="filter" id="filter" hidden>
 				<button type="button" data-format="" aria-pressed="true">Alle <span class="anzahl">{eintraege.length}</span></button>
 				<button type="button" data-format="tv" aria-pressed="false">TV <span class="anzahl">{anzahl.tv}</span></button>
@@ -295,6 +310,23 @@ function datumKurz(d: string | null) {
 			const gruppen = [...document.querySelectorAll<HTMLElement>('.medien-jahr')];
 			let format = '';
 			filter.hidden = false;
+			const uebersicht = document.querySelector('.ju') as (HTMLElement & { juUpdate?: (w: Record<string, number[]>, a?: Record<string, boolean>) => void }) | null;
+			const serienKeys: string[] = uebersicht ? JSON.parse(uebersicht.dataset.serien ?? '[]').map((r: { key: string }) => r.key) : [];
+
+			function balken() {
+				if (!uebersicht?.juUpdate) return;
+				const werte: Record<string, number[]> = {};
+				for (const li of zeilen) {
+					if (li.hidden) continue;
+					const sec = li.closest('.medien-jahr h2, .medien-jahr');
+					const jahr = sec?.querySelector('h2')?.id.replace('j-', '') ?? '';
+					if (!/^\d{4}$/.test(jahr)) continue;
+					const w = (werte[jahr] ??= serienKeys.map(() => 0));
+					const i = serienKeys.indexOf(li.dataset.format ?? '');
+					if (i >= 0) w[i]++;
+				}
+				uebersicht.juUpdate(werte);
+			}
 
 			function anwenden() {
 				let n = 0;
@@ -304,6 +336,7 @@ function datumKurz(d: string | null) {
 					if (sichtbar) n++;
 				}
 				for (const g of gruppen) g.hidden = !g.querySelector('li:not([hidden])');
+				balken();
 				status.textContent = format ? `${n} von ${zeilen.length} Beiträgen` : '';
 			}
 

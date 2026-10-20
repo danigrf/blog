@@ -1,0 +1,315 @@
+---
+// Jahresübersicht: pro Jahr ein Balken (Anzahl Einträge), wie eine kleine Skyline.
+// Rendert zur Build-Zeit; das Inline-Script macht Tooltip und Live-Updates (el.juUpdate).
+// Ohne JS bleiben die Balken Links auf #<prefix><jahr> mit Zahl im title/aria-label.
+interface Serie {
+	key: string;
+	label: string;
+}
+interface Props {
+	/** Anzahl je Jahr; werte = ein Eintrag pro Serie (bei einer Serie: [n]). */
+	jahre: { jahr: number; werte: number[] }[];
+	/** Anker-Präfix der Jahres-Titel in der Liste, z. B. «jahr-» oder «j-». */
+	prefix: string;
+	/** Mehrere Serien -> gestapelt, mit Legende. Ohne Angabe: eine Serie. */
+	serien?: Serie[];
+}
+const { jahre, prefix, serien } = Astro.props;
+const reihen = serien ?? [{ key: 'alle', label: 'Beiträge' }];
+const gestapelt = reihen.length > 1;
+const summe = (w: number[]) => w.reduce((a, b) => a + b, 0);
+const max = Math.max(1, ...jahre.map((j) => summe(j.werte)));
+const n = jahre.length;
+// Beschriftung: Desktop jedes Jahr bzw. jedes 2.; mobil seltener (CSS-Klassen l-d / l-m).
+const zeigtD = (y: number) => n <= 16 || y % 2 === 0;
+const zeigtM = (y: number) => n <= 9 || (n <= 18 ? y % 2 === 0 : y % 5 === 0);
+const text = (j: { jahr: number; werte: number[] }) => {
+	const t = summe(j.werte);
+	if (!t) return `${j.jahr}: keine Beiträge`;
+	const kopf = `${j.jahr}: ${t} ${t === 1 ? 'Beitrag' : 'Beiträge'}`;
+	if (!gestapelt) return kopf;
+	const teile = reihen.map((r, i) => (j.werte[i] ? `${r.label} ${j.werte[i]}` : '')).filter(Boolean);
+	return `${kopf} (${teile.join(', ')})`;
+};
+---
+
+<figure
+	class="ju"
+	data-prefix={prefix}
+	data-serien={JSON.stringify(reihen)}
+	data-ein={gestapelt ? '' : 'alle'}
+>
+	<figcaption class="ju-kopf">
+		<span id="ju-titel" class="ju-titel">Beiträge pro Jahr</span>
+		<span class="ju-max meta">höchstes Jahr: <span data-ju-max>{max}</span></span>
+	</figcaption>
+	<div class="ju-plot" role="group" aria-labelledby="ju-titel">
+		{
+			jahre.map((j) => {
+				const t = summe(j.werte);
+				const inhalt = (
+					<>
+						<span class="ju-bar" style={`height:${(t / max) * 100}%`}>
+							{reihen.map((r, i) => (
+								<i class={`ju-seg s${i}`} style={`flex-grow:${j.werte[i] || 0}`} hidden={!j.werte[i]} />
+							))}
+						</span>
+						<span class={`ju-lbl${zeigtD(j.jahr) ? ' l-d' : ''}${zeigtM(j.jahr) ? ' l-m' : ''}`} aria-hidden="true">
+							{j.jahr}
+						</span>
+					</>
+				);
+				return t > 0 ? (
+					<a
+						class="ju-col"
+						href={`#${prefix}${j.jahr}`}
+						data-jahr={j.jahr}
+						title={text(j)}
+						aria-label={`${text(j)}, zum Jahr springen`}
+					>
+						{inhalt}
+					</a>
+				) : (
+					<span class="ju-col leer" data-jahr={j.jahr} title={text(j)} role="img" aria-label={text(j)}>
+						{inhalt}
+					</span>
+				);
+			})
+		}
+		<div class="ju-tip" role="tooltip" hidden></div>
+	</div>
+	{
+		gestapelt && (
+			<ul class="ju-legende" aria-label="Formate">
+				{reihen.map((r, i) => (
+					<li>
+						<i class={`ju-key s${i}`} aria-hidden="true" /> {r.label}
+					</li>
+				))}
+			</ul>
+		)
+	}
+</figure>
+
+<style is:global>
+	.ju {
+		--ju-h: 64px;
+		--ju-kopf: 2.2rem;
+		--s0: #2a78d6;
+		--s1: #eb6834;
+		--s2: #1baf7a;
+		--s3: #eda100;
+		--s4: #e87ba4;
+		margin: 1.25rem 0 0.5rem;
+		font-family: var(--sans);
+	}
+	@media (prefers-color-scheme: dark) {
+		.ju {
+			--s0: #3987e5;
+			--s1: #d95926;
+			--s2: #199e70;
+			--s3: #c98500;
+			--s4: #d55181;
+		}
+	}
+	.ju-kopf {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1rem;
+		margin-bottom: 0.4rem;
+	}
+	.ju-titel { font-size: 0.9rem; font-weight: 600; color: var(--muted); }
+	.ju-max { font-size: 0.75rem; font-family: var(--mono); }
+	.ju-plot {
+		position: relative;
+		display: flex;
+		align-items: stretch;
+		gap: 2px;
+		height: calc(var(--ju-h) + 1.4rem + var(--ju-kopf));
+		padding: var(--ju-kopf) 0 1.4rem;
+	}
+	.ju-col {
+		position: relative;
+		flex: 1 1 0;
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		text-decoration: none;
+		color: var(--muted);
+		border-radius: 2px;
+	}
+	.ju-col .ju-bar {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 2px;
+		min-height: 2px;
+		transition: height 0.25s ease;
+	}
+	.ju-seg {
+		display: block;
+		flex-basis: 0;
+		min-height: 0;
+		background: var(--s0);
+		border-radius: 2px 2px 0 0;
+	}
+	.ju-seg[hidden] { display: none; }
+	.ju-seg.s1 { background: var(--s1); }
+	.ju-seg.s2 { background: var(--s2); }
+	.ju-seg.s3 { background: var(--s3); }
+	.ju-seg.s4 { background: var(--s4); }
+	.ju[data-ein='alle'] .ju-seg { background: var(--accent); }
+	.ju-col.leer .ju-bar { height: 1px !important; background: var(--line); }
+	.ju-col.leer .ju-seg { display: none; }
+	.ju-col[aria-disabled='true'] { cursor: default; }
+	.ju-col.dim .ju-bar { opacity: 0.3; }
+	.ju-col:hover .ju-seg, .ju-col:focus-visible .ju-seg { filter: brightness(0.82); }
+	.ju[data-ein='alle'] .ju-col:hover .ju-seg { background: var(--accent-strong); filter: none; }
+	.ju-col:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+	.ju-lbl {
+		position: absolute;
+		left: 50%;
+		bottom: -1.4rem;
+		height: 1.4rem;
+		transform: translateX(-50%);
+		display: none;
+		align-items: flex-end;
+		padding-bottom: 0.15rem;
+		font-family: var(--mono);
+		font-size: 0.7rem;
+		line-height: 1;
+		color: var(--muted);
+		white-space: nowrap;
+	}
+	.ju-plot::after {
+		content: '';
+		position: absolute;
+		left: 0; right: 0;
+		bottom: 1.4rem;
+		border-bottom: 1px solid var(--line);
+		pointer-events: none;
+	}
+	@media (min-width: 561px) { .ju-lbl.l-d { display: flex; } }
+	@media (max-width: 560px) { .ju-lbl.l-m { display: flex; } }
+	.ju-tip {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: max-content;
+		max-width: min(20rem, 100%);
+		padding: 0.3rem 0.55rem;
+		font-family: var(--sans);
+		font-size: 0.8rem;
+		line-height: 1.35;
+		color: var(--text);
+		background: var(--surface);
+		border: 1px solid var(--line);
+		border-radius: 4px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+		pointer-events: none;
+		white-space: normal;
+	}
+	.ju-tip[hidden] { display: none; }
+	.ju-legende {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.15rem 1rem;
+		list-style: none;
+		margin: 0.3rem 0 0;
+		padding: 0;
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+	.ju-legende li { margin: 0; }
+	.ju-key { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; vertical-align: -1px; background: var(--s0); }
+	.ju-key.s1 { background: var(--s1); }
+	.ju-key.s2 { background: var(--s2); }
+	.ju-key.s3 { background: var(--s3); }
+	.ju-key.s4 { background: var(--s4); }
+	@media (prefers-reduced-motion: reduce) { .ju-col .ju-bar { transition: none; } }
+</style>
+
+<script is:inline>
+	(function () {
+		var el = document.querySelector('.ju');
+		if (!el) return;
+		var plot = el.querySelector('.ju-plot');
+		var tip = el.querySelector('.ju-tip');
+		var maxEl = el.querySelector('[data-ju-max]');
+		var serien = JSON.parse(el.getAttribute('data-serien'));
+		var gestapelt = serien.length > 1;
+		var cols = Array.prototype.slice.call(el.querySelectorAll('.ju-col'));
+
+		function text(jahr, w) {
+			var t = w.reduce(function (a, b) { return a + b; }, 0);
+			if (!t) return jahr + ': keine Beiträge';
+			var s = jahr + ': ' + t + (t === 1 ? ' Beitrag' : ' Beiträge');
+			if (gestapelt) {
+				var teile = [];
+				serien.forEach(function (r, i) { if (w[i]) teile.push(r.label + ' ' + w[i]); });
+				s += ' (' + teile.join(', ') + ')';
+			}
+			return s;
+		}
+
+		// werte: { '2019': [n, ...] }; ausserhalb: Menge von Jahren, die abgeschwächt und nicht anspringbar sind.
+		el.juUpdate = function (werte, ausserhalb) {
+			var max = 1;
+			cols.forEach(function (c) {
+				var w = werte[c.getAttribute('data-jahr')] || serien.map(function () { return 0; });
+				max = Math.max(max, w.reduce(function (a, b) { return a + b; }, 0));
+			});
+			maxEl.textContent = max;
+			cols.forEach(function (c) {
+				var jahr = c.getAttribute('data-jahr');
+				var w = werte[jahr] || serien.map(function () { return 0; });
+				var t = w.reduce(function (a, b) { return a + b; }, 0);
+				var aus = ausserhalb && ausserhalb[jahr];
+				var bar = c.querySelector('.ju-bar');
+				bar.style.height = t ? (t / max * 100) + '%' : '1px';
+				if (!t) bar.style.background = 'var(--line)'; else bar.style.background = '';
+				Array.prototype.forEach.call(bar.children, function (seg, i) {
+					seg.style.flexGrow = w[i] || 0;
+					seg.hidden = !w[i];
+				});
+				var s = text(jahr, w);
+				c.title = s;
+				c.classList.toggle('dim', !!aus);
+				if (c.tagName === 'A') {
+					var tot = !t || aus;
+					c.setAttribute('aria-label', s + (aus ? ' (ausserhalb des gewählten Zeitraums)' : '') + (tot ? '' : ', zum Jahr springen'));
+					if (tot) c.setAttribute('aria-disabled', 'true'); else c.removeAttribute('aria-disabled');
+				}
+				c._text = s;
+			});
+		};
+		cols.forEach(function (c) {
+			c._text = c.title;
+			c.addEventListener('click', function (e) {
+				if (c.getAttribute('aria-disabled') === 'true') { e.preventDefault(); return; }
+				var ev = new CustomEvent('ju:wahl', { bubbles: true, cancelable: true, detail: { jahr: Number(c.getAttribute('data-jahr')) } });
+				if (!c.dispatchEvent(ev)) e.preventDefault();
+			});
+			function zeigen() {
+				tip.textContent = c._text || c.title;
+				tip.hidden = false;
+				var pr = plot.getBoundingClientRect(), cr = c.getBoundingClientRect();
+				var x = cr.left - pr.left + cr.width / 2 - tip.offsetWidth / 2;
+				x = Math.max(0, Math.min(x, pr.width - tip.offsetWidth));
+				tip.style.left = x + 'px';
+				var br = c.querySelector('.ju-bar').getBoundingClientRect();
+				tip.style.top = (br.top - pr.top - tip.offsetHeight - 6) + 'px';
+			}
+			function weg() { tip.hidden = true; }
+			c.addEventListener('mouseenter', zeigen);
+			c.addEventListener('focus', zeigen);
+			c.addEventListener('mouseleave', weg);
+			c.addEventListener('blur', weg);
+			// title erst nach dem Aufbau entfernen, damit kein doppelter Browser-Tooltip erscheint
+			c.removeAttribute('title');
+		});
+		document.addEventListener('keydown', function (e) { if (e.key === 'Escape') tip.hidden = true; });
+	})();
+</script>
