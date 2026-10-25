@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -16,11 +16,34 @@ const { title, description, pubDate, updatedDate, heroImage, vorschau, vorschauA
 // Reihenfolge: Text, Box «Auch interessant für dich», Themen, Quellenhinweis (steht im Inhalt, siehe lib/quellenhinweis.mjs).
 const [text, quelle] = trenneQuellenhinweis(await Astro.slots.render('default'));
 const hatBox = !!verwandte && verwandte.posts.length > 0;
+
+// Strukturierte Daten (schema.org BlogPosting): Bild wie in der Social-Vorschau (BaseHead).
+const bild = vorschau ?? heroImage;
+const bildUrl = bild
+	? new URL((await getImage({ src: bild, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' })).src, Astro.site).href
+	: undefined;
+const start = new URL('/', Astro.site).href;
+const autor = { '@type': 'Person', '@id': `${start}#person`, name: 'Daniel Graf', url: start };
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: title,
+	description,
+	url: new URL(Astro.url.pathname, Astro.site).href,
+	mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+	datePublished: pubDate.toISOString(),
+	...(updatedDate && { dateModified: updatedDate.toISOString() }),
+	...(bildUrl && { image: bildUrl }),
+	...(tags.length > 0 && { keywords: tags.join(', ') }),
+	inLanguage: 'de-CH',
+	author: autor,
+	publisher: autor,
+};
 ---
 
 <html lang="de-CH">
 	<head>
-		<BaseHead title={title} description={description} image={vorschau ?? heroImage} imageAlt={vorschauAlt} />
+		<BaseHead title={title} description={description} image={vorschau ?? heroImage} imageAlt={vorschauAlt} jsonLd={jsonLd} />
 		<style>
 			.hero-image img {
 				display: block;

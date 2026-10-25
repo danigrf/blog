@@ -3,12 +3,14 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
+import agentenDateien from './scripts/agenten-dateien.mjs';
 
 // https://astro.build/config
 export default defineConfig({
 	// Öffentliche Adresse des Blogs (für Sitemap, RSS und Vorschaubilder).
 	site: 'https://danielgraf.ch',
-	integrations: [mdx(), sitemap()],
+	// agentenDateien: Markdown-Kopien, llms.txt und Agent-Skills-Index für KI-Agenten (nach dem Build).
+	integrations: [mdx(), sitemap(), agentenDateien()],
 	// Schriften werden beim Build von Fontsource geholt und selbst ausgeliefert
 	// (keine Anfragen an Google Fonts im Browser der Besucher).
 	fonts: [

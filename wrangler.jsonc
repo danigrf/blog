@@ -3,9 +3,14 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "blog",
   "compatibility_date": "2026-10-01",
+  // Kleiner Worker vor den Seiten: liefert Agenten auf Wunsch Markdown statt HTML (siehe src/worker.js).
+  "main": "src/worker.js",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // Nur Seitenaufrufe laufen durch den Worker; Bilder, Schriften, Videos und .well-known direkt.
+    "run_worker_first": ["/*", "!/_astro/*", "!/logos/*", "!/videos/*", "!/.well-known/*"]
   },
   // Eigene Domain: Cloudflare legt DNS-Eintrag und Zertifikat beim Deploy selbst an.
   "routes": [
