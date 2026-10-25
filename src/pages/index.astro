@@ -7,12 +7,37 @@ import { getPosts } from '../lib/posts';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const posts = (await getPosts()).slice(0, 5);
+
+// Strukturierte Daten: nur Angaben, die auf dieser Seite stehen.
+const start = new URL('/', Astro.site).href;
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Person',
+			'@id': `${start}#person`,
+			name: 'Daniel Graf',
+			url: start,
+			description: 'Startete 2015 die Plattform WeCollect.ch und gründete die Stiftung für direkte Demokratie mit.',
+		},
+		{
+			'@type': 'WebSite',
+			'@id': `${start}#website`,
+			name: SITE_TITLE,
+			url: start,
+			description: SITE_DESCRIPTION,
+			inLanguage: 'de-CH',
+			author: { '@id': `${start}#person` },
+			publisher: { '@id': `${start}#person` },
+		},
+	],
+};
 ---
 
 <!doctype html>
 <html lang="de-CH">
 	<head>
-		<BaseHead title={`${SITE_TITLE} – Prototyping for democracy`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${SITE_TITLE} – Prototyping for democracy`} description={SITE_DESCRIPTION} jsonLd={jsonLd} />
 		<style>
 			.intro {
 				margin-bottom: 3rem;

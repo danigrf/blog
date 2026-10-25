@@ -1,0 +1,37 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Daniel Graf",
+    "identifier": "danielgraf.ch"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:danielgraf.ch:site:llms-txt",
+      "displayName": "llms.txt",
+      "description": "Übersicht über alle Seiten, Themen und Beiträge mit Links auf Markdown-Fassungen.",
+      "type": "text/plain",
+      "url": "https://danielgraf.ch/llms.txt"
+    },
+    {
+      "identifier": "urn:air:danielgraf.ch:site:sitemap",
+      "displayName": "XML-Sitemap",
+      "description": "Vollständige Liste aller Seiten.",
+      "type": "application/xml",
+      "url": "https://danielgraf.ch/sitemap-index.xml"
+    },
+    {
+      "identifier": "urn:air:danielgraf.ch:site:rss",
+      "displayName": "RSS-Feed",
+      "description": "Die neusten Beiträge.",
+      "type": "application/rss+xml",
+      "url": "https://danielgraf.ch/rss.xml"
+    },
+    {
+      "identifier": "urn:air:danielgraf.ch:skills:index",
+      "displayName": "Agent Skills",
+      "description": "Agent-Skills-Index mit einer SKILL.md, die erklärt, wie man Inhalte auf danielgraf.ch findet und liest.",
+      "type": "application/json",
+      "url": "https://danielgraf.ch/.well-known/agent-skills/index.json"
+    }
+  ]
+}

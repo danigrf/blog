@@ -12,11 +12,13 @@ interface Props {
 	description: string;
 	image?: ImageMetadata;
 	imageAlt?: string;
+	/** Strukturierte Daten (schema.org, JSON-LD); nur Angaben, die auf der Seite stehen. */
+	jsonLd?: object;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage, imageAlt } = Astro.props;
+const { title, description, image = FallbackImage, imageAlt, jsonLd } = Astro.props;
 
 // Social-Vorschau: 1200x630 (JPEG, breit gekachelt), absolute Adresse.
 const ogBild = await getImage({ src: image, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });
@@ -61,3 +63,11 @@ const ogUrl = new URL(ogBild.src, Astro.site ?? Astro.url);
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content={ogUrl} />
+
+<!-- Strukturierte Daten (schema.org) -->
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />}
+
+<!-- WebMCP: lesende Werkzeuge für KI-Agenten im Browser (siehe src/lib/webmcp.ts) -->
+<script>
+	import '../lib/webmcp';
+</script>

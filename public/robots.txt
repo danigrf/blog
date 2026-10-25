@@ -1,0 +1,27 @@
+# robots.txt für danielgraf.ch
+# Alle Crawler sind willkommen. Content Signals siehe https://contentsignals.org/
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# KI-Suche und KI-Assistenten: ausdrücklich erlaubt
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+Sitemap: https://danielgraf.ch/sitemap-index.xml
