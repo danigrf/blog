@@ -1,12 +1,15 @@
 ---
-// Fuss (Design A6). Styles in global.css (.fuss). «Beta v1.3» wohnt seit dem neuen Design hier.
+// Fuss (Design A6). Styles in global.css (.fuss).
+// Links: Name + Claim + ©, darunter Datenschutz. Rechts: Fussnavigation. Mobil gestapelt.
 import { SOZIAL } from '../consts';
 import SozialLink from './SozialLink.astro';
+
+const jahr = new Date().getFullYear(); // Build-Jahr
 ---
 
 <footer class="fuss wrap">
-	<div class="fuss-zeile">
-		<span>Daniel Graf · Basel · schreibt hier seit 2012</span>
+	<div class="fuss-raster">
+		<p class="fuss-titel">Daniel Graf <span aria-hidden="true">🚀</span> Prototyping for democracy © {jahr}</p>
 		<nav aria-label="Fussnavigation">
 			<a href="/blog/">Blog</a>
 			<a href="/medien/">Medien</a>
@@ -15,8 +18,7 @@ import SozialLink from './SozialLink.astro';
 			<a href="/kontakt/">Kontakt</a>
 			<a href="/rss.xml">RSS</a>
 			{SOZIAL.map((s) => <SozialLink name={s.name} url={s.url} />)}
-			<a href="/datenschutz/">Datenschutz</a>
 		</nav>
+		<p class="fuss-ds"><a href="/datenschutz/">Datenschutz</a></p>
 	</div>
-	<p class="fuss-klein">Porträt: Katharina Schillinger · Beta v1.3</p>
 </footer>

@@ -456,27 +456,48 @@ td {
 	font-weight: 500;
 	font-size: 14px;
 }
-.fuss-zeile {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 8px 24px;
+.fuss-raster {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	grid-template-areas:
+		'titel nav'
+		'ds    .';
+	gap: 0 24px;
+	align-items: start;
+}
+.fuss-titel {
+	grid-area: titel;
+	margin: 0;
+	padding-block: 12px;
 }
 .fuss nav {
+	grid-area: nav;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: flex-end;
 	gap: 0 16px;
 }
-.fuss nav a {
+.fuss nav a,
+.fuss-ds a {
 	color: var(--text);
 	padding-block: 12px;
 }
-.fuss-zeile > span {
-	padding-block: 12px;
+.fuss-ds {
+	grid-area: ds;
+	margin: 0;
 }
-.fuss-klein {
-	margin: 4px 0 0;
-	color: var(--muted);
+.fuss-ds a {
+	display: inline-block;
+}
+/* schmaler: untereinander (Titel, Links, Datenschutz) */
+@media (max-width: 960px) {
+	.fuss-raster {
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-areas: 'titel' 'nav' 'ds';
+	}
+	.fuss nav {
+		justify-content: flex-start;
+	}
 }
 
 @media (max-width: 760px) {
