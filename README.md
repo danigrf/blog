@@ -77,7 +77,7 @@ npx wrangler secret put KONTAKT_TO        # Empfängeradresse eingeben
 npx wrangler secret put TURNSTILE_SECRET  # Secret des Turnstile-Widgets
 ```
 
-Den öffentlichen Turnstile-Site-Key als Build-Variable `PUBLIC_TURNSTILE_SITEKEY` im Cloudflare-Build setzen (Workers & Pages > blog > Settings > Build > Variables). Ohne Site-Key und Secret antwortet der Endpunkt mit «nicht eingerichtet» (503).
+Der öffentliche Turnstile-Site-Key steht fest in `src/consts.ts` (Build-Variable `PUBLIC_TURNSTILE_SITEKEY` überschreibt ihn, z. B. für lokale Tests). Ohne die Secrets antwortet der Endpunkt mit «nicht eingerichtet» (503).
 
 Lokal testen (nichts wird verschickt, wrangler legt die Mail als Datei unter `.wrangler/tmp/email/` ab):
 

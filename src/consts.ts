@@ -18,7 +18,7 @@ export const EINBETTUNG_DIREKT = true;
 // online nur, wenn hier true steht.
 export const MEDIEN_UNGEPRUEFTE_ZEIGEN = false;
 
-// Kontaktformular: öffentlicher Turnstile-Site-Key (darf im HTML stehen, das Gegenstück
-// TURNSTILE_SECRET liegt nur als Secret im Worker). Leer = noch nicht eingerichtet.
-// Für lokale Tests: PUBLIC_TURNSTILE_SITEKEY=1x00000000000000000000AA npm run build
-export const TURNSTILE_SITEKEY = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '';
+// Kontaktformular: öffentlicher Turnstile-Site-Key des Widgets «danielgraf.ch Kontaktformular»
+// (darf im HTML stehen; das Gegenstück TURNSTILE_SECRET liegt nur als Secret im Worker).
+// Für lokale Tests überschreiben: PUBLIC_TURNSTILE_SITEKEY=1x00000000000000000000AA npm run build
+export const TURNSTILE_SITEKEY = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '0x4AAAAAAFvjI0eLQH4RwVnj';
