@@ -219,16 +219,22 @@ main.start > * {
 .hashtags {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0 12px;
-	margin: 8px 0 0;
+	gap: 0 0.6em;
+	margin: 2px 0 0;
 	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.4;
+	font-size: 13px;
+	line-height: 1.5;
 }
 .hashtags a {
 	color: var(--muted);
 	text-decoration: none;
-	padding-block: 6px;
+	padding-block: 4px;
+}
+@media (max-width: 760px) {
+	/* mobil grössere Tippfläche über Innenabstand, Schrift bleibt 13 px */
+	.hashtags a {
+		padding-block: 8px;
+	}
 }
 .hashtags a:hover {
 	color: var(--text);
