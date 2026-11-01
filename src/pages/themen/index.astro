@@ -48,7 +48,9 @@ const jahre = Array.from({ length: aktuellesJahr - 2012 + 1 }, (_, i) => 2012 + 
 			.zeit select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 			.suche .hinweis { margin: 0.5rem 0 0; }
 			.suche .hinweis[hidden] { display: none; }
-			@media (max-width: 30rem) { .zeit .feld { flex: 1; } .zeit select { width: 100%; } }
+			/* «Von»/«Bis» stehen auf allen Breiten kompakt links (nicht über die ganze Breite verteilt) */
+			.zeit { justify-content: flex-start; }
+			.zeit select { min-width: 7rem; }
 			/* Themen als Register (Design A6): 3 Spalten, mobil 1; Text mit grauer Zahl, keine Pills.
 			   Mit JS werden die Links zu Umschaltern; aktiv = 2-px-Unterstrich in Tinte. */
 			.themen { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 24px; border-top: 1px solid var(--line); }
