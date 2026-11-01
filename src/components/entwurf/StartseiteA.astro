@@ -12,8 +12,10 @@ interface Props {
 	label?: string;
 	klasse?: string;
 	fonts?: string[];
+	/** A6 (Daniels Wahl): «Neueste Beiträge» und «Medienberichte» je 3 im Aufbau der Live-Startseite, ohne Pressespiegel. */
+	kompakt?: boolean;
 }
-const { basis = '/entwurf/a/', label = 'A «Feuilleton»', klasse = 'va', fonts } = Astro.props;
+const { basis = '/entwurf/a/', label = 'A «Feuilleton»', klasse = 'va', fonts, kompakt = false } = Astro.props;
 const d = await startseitenDaten();
 const [aufmacher, ...weitere] = d.highlights;
 const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme verschränkt, vor einer hellen Wand';
@@ -83,66 +85,114 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 		)
 	}
 
-	<section class="abschnitt wrap" aria-labelledby="neu-titel">
-		<h2 id="neu-titel">Neu im Blog</h2>
-		<ol class="zeilen" role="list">
-			{
-				d.neue.map((p) => (
-					<li>
-						<a href={`/blog/${p.id}/`}>
-							<span class="z-datum">{datumLang(p.data.pubDate)}</span>
-							<span class="z-titel">{p.data.title}</span>
-							<span class="z-thema">
-								{p.data.tags.slice(0, 2).map((t, i) => (
-									<>
-										{i > 0 && ' '}
-										<span class="z-tag">{t}</span>
-									</>
-								))}
-							</span>
-						</a>
-					</li>
-				))
-			}
-		</ol>
-		<p class="alle"><a href="/blog/">Alle Beiträge →</a></p>
-	</section>
-
 	{
-		d.medienHighlights.length > 0 && (
-			<section class="abschnitt wrap" aria-labelledby="presse-titel">
-				<h2 id="presse-titel">Pressespiegel</h2>
-				<ul class={`presse presse-${d.medienHighlights.length}`} role="list">
-					{d.medienHighlights.map((m) => (
+		kompakt ? (
+			<>
+				<section class="abschnitt wrap" aria-labelledby="neueste-titel">
+					<div class="liste-kopf">
+						<h2 id="neueste-titel">Neueste Beiträge</h2>
+						<a href="/blog/">Alle Beiträge</a>
+					</div>
+					<ul class="pliste" role="list">
+						{d.neue.slice(0, 3).map((p) => (
+							<li>
+								<a href={`/blog/${p.id}/`}>
+									<span class="pl-text">
+										<span class="meta">{datumLang(p.data.pubDate)}</span>
+										<span class="pl-titel">{p.data.title}</span>
+										<span class="pl-desc">{p.data.description}</span>
+									</span>
+									<Titelbild post={p} class="r32 pl-bild" widths={[184, 368]} sizes="(max-width: 760px) 88px, 184px" />
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
+				<section class="abschnitt wrap" aria-labelledby="berichte-titel">
+					<div class="liste-kopf">
+						<h2 id="berichte-titel">Medienberichte</h2>
+						<a href="/medien/">Alle Medienberichte</a>
+					</div>
+					<ul class="pliste" role="list">
+						{d.medienNeuAlle.slice(0, 3).map((m) => (
+							<li>
+								<a href={m.link} rel="noopener">
+									<span class="pl-text">
+										<span class="meta">{medienDatum(m, 'lang')} · {FORMAT[m.format]}{m.abo ? ' · Abo' : ''}</span>
+										<span class="pl-titel">{m.titel}</span>
+										<span class="pl-desc">{m.medium}</span>
+									</span>
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
+			</>
+		) : (
+			<>
+		<section class="abschnitt wrap" aria-labelledby="neu-titel">
+			<h2 id="neu-titel">Neu im Blog</h2>
+			<ol class="zeilen" role="list">
+				{
+					d.neue.map((p) => (
 						<li>
-							<a href={m.link} rel="noopener">
-								<span class="p-medium">{m.medium}</span>
-								<span class="p-titel">«{m.titel}»</span>
-								<span class="meta">{medienMeta(m)}</span>
+							<a href={`/blog/${p.id}/`}>
+								<span class="z-datum">{datumLang(p.data.pubDate)}</span>
+								<span class="z-titel">{p.data.title}</span>
+								<span class="z-thema">
+									{p.data.tags.slice(0, 2).map((t, i) => (
+										<>
+											{i > 0 && ' '}
+											<span class="z-tag">{t}</span>
+										</>
+									))}
+								</span>
 							</a>
 						</li>
-					))}
-				</ul>
-			</section>
+					))
+				}
+			</ol>
+			<p class="alle"><a href="/blog/">Alle Beiträge →</a></p>
+		</section>
+
+		{
+			d.medienHighlights.length > 0 && (
+				<section class="abschnitt wrap" aria-labelledby="presse-titel">
+					<h2 id="presse-titel">Pressespiegel</h2>
+					<ul class={`presse presse-${d.medienHighlights.length}`} role="list">
+						{d.medienHighlights.map((m) => (
+							<li>
+								<a href={m.link} rel="noopener">
+									<span class="p-medium">{m.medium}</span>
+									<span class="p-titel">«{m.titel}»</span>
+									<span class="meta">{medienMeta(m)}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
+			)
+		}
+
+		<section class="abschnitt wrap" aria-labelledby="mneu-titel">
+			<h2 id="mneu-titel">Neu in den Medien</h2>
+			<ol class="zeilen zeilen-medien" role="list">
+				{
+					d.medienNeu.map((m) => (
+						<li>
+							<a href={m.link} rel="noopener">
+								<span class="z-datum">{medienDatum(m, 'lang')}</span>
+								<em class="z-medium">{m.medium}</em>
+								<span class="z-titel">{m.titel}</span>
+								<span class="z-thema">{FORMAT[m.format]}{m.abo ? ' · Abo' : ''}</span>
+							</a>
+						</li>
+					))
+				}
+			</ol>
+			<p class="alle"><a href="/medien/">Alle Medienbeiträge →</a></p>
+		</section>
+			</>
 		)
 	}
-
-	<section class="abschnitt wrap" aria-labelledby="mneu-titel">
-		<h2 id="mneu-titel">Neu in den Medien</h2>
-		<ol class="zeilen zeilen-medien" role="list">
-			{
-				d.medienNeu.map((m) => (
-					<li>
-						<a href={m.link} rel="noopener">
-							<span class="z-datum">{medienDatum(m, 'lang')}</span>
-							<em class="z-medium">{m.medium}</em>
-							<span class="z-titel">{m.titel}</span>
-							<span class="z-thema">{FORMAT[m.format]}{m.abo ? ' · Abo' : ''}</span>
-						</a>
-					</li>
-				))
-			}
-		</ol>
-		<p class="alle"><a href="/medien/">Alle Medienbeiträge →</a></p>
-	</section>
 </LayoutA>

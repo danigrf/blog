@@ -115,6 +115,12 @@ export async function startseitenDaten() {
 		.sort((a, b) => (b.datum ?? '').localeCompare(a.datum ?? ''))
 		.slice(0, 5);
 
+	// Alle geprüften, neueste zuerst (ohne Ausschluss der Highlights; für A6 ohne Pressespiegel).
+	const medienNeuAlle = medien
+		.filter((m) => m.datum)
+		.sort((a, b) => (b.datum ?? '').localeCompare(a.datum ?? ''))
+		.slice(0, 5);
+
 	const projekte: Projekt[] = (projekteDatei.projekte as Omit<Projekt, 'themaSlug' | 'themaAnzahl'>[])
 		.slice(0, 4)
 		.map((p) => {
@@ -137,6 +143,7 @@ export async function startseitenDaten() {
 		medienAnzahl: medien.length,
 		medienHighlights,
 		medienNeu,
+		medienNeuAlle,
 		projekte,
 		jahre,
 		heute: new Date(),

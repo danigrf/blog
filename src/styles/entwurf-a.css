@@ -152,6 +152,7 @@ h3 {
 h1,
 .abschnitt > h2,
 .band h2,
+.liste-kopf h2,
 .hl-titel-gross,
 .p-medium {
 	font-family: var(--f-display);
@@ -265,7 +266,8 @@ main {
 	margin-top: 96px;
 }
 .abschnitt > h2,
-.band h2 {
+.band h2,
+.liste-kopf h2 {
 	font-size: var(--s-h2);
 	line-height: 1.1;
 	letter-spacing: var(--track-h2);
@@ -526,6 +528,69 @@ main {
 	font-size: 16px;
 }
 
+/* A6 (Daniels Wahl): «Neueste Beiträge» / «Medienberichte» im Aufbau der Live-Startseite
+   (PostList: Datum, Titel, Beschreibung, Vorschaubild rechts; Kopf mit Link rechts) */
+.liste-kopf {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 0 24px;
+	margin-bottom: 24px;
+}
+.liste-kopf h2 {
+	margin: 0;
+}
+.liste-kopf a {
+	font-family: var(--f-meta);
+	font-weight: var(--w-meta);
+	font-size: 16px;
+	padding-block: 12px;
+}
+.pliste {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid var(--line);
+}
+.pliste li {
+	border-bottom: 1px solid var(--line);
+}
+.pliste a {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 184px;
+	gap: 0 24px;
+	align-items: start;
+	padding-block: 20px;
+	color: var(--text);
+	text-decoration: none;
+}
+.pl-text {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 0;
+}
+.pl-text:only-child {
+	grid-column: 1 / -1;
+}
+.pl-titel {
+	font-family: var(--f-title);
+	font-weight: var(--w-title);
+	font-size: var(--s-title);
+	line-height: 1.25;
+}
+.pl-desc {
+	font-size: 17px;
+	line-height: 1.5;
+	color: var(--muted);
+}
+.pliste a:hover .pl-titel {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+}
+
 /* Pressespiegel */
 .presse {
 	list-style: none;
@@ -688,7 +753,8 @@ main {
 		padding-block: 64px;
 	}
 	.abschnitt > h2,
-	.band h2 {
+	.band h2,
+	.liste-kopf h2 {
 		font-size: var(--s-h2-m);
 		margin-bottom: 24px;
 	}
@@ -767,6 +833,17 @@ main {
 	}
 	.p-medium {
 		font-size: var(--s-medium-m);
+	}
+	.pliste a {
+		grid-template-columns: minmax(0, 1fr) 88px;
+		gap: 0 16px;
+		padding-block: 16px;
+	}
+	.pl-titel {
+		font-size: var(--s-title-m);
+	}
+	.pl-desc {
+		font-size: 16px;
 	}
 	.artikel {
 		padding-top: 40px;
