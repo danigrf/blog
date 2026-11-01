@@ -6,8 +6,8 @@ import JahresUebersicht from '../components/JahresUebersicht.astro';
 import { MEDIEN_UNGEPRUEFTE_ZEIGEN } from '../consts';
 // Wird aus der Masterliste erzeugt: Projekte/Astro-Blog-Migration/medienliste/umwandeln.py
 import alle from '../data/medien.json';
-// Quellen-Icons: Zuordnung Medium -> Datei in public/logos (Pflege: scripts/logos-holen.py)
-import logos from '../data/medien-logos.json';
+// Quellen-Icons: Zuordnung Medium -> Datei in public/logos (gemeinsam mit der Startseite, lib/medienlogo.ts)
+import { logoFuer } from '../lib/medienlogo';
 
 type Eintrag = (typeof alle)[number];
 
@@ -31,12 +31,6 @@ const SYMBOL: Record<string, string> = {
 	video: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
 };
 
-function logoFuer(medium: string): string | null {
-	const m = logos.medien as Record<string, string>;
-	let key = m[medium];
-	if (!key) key = Object.entries(logos.praefix).find(([pre]) => medium.startsWith(pre))?.[1] as string;
-	return key ? `/logos/${key}.png` : null;
-}
 
 const FORMAT: Record<string, string> = { tv: 'TV', audio: 'Radio', podcast: 'Podcast', video: 'Video', text: 'Text' };
 

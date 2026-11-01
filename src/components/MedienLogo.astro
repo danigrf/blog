@@ -1,14 +1,14 @@
 ---
 // Logo eines Mediums für die Startseite (48 px, quadratisch).
-// Zuordnung in src/data/medien-logos-start.json; ohne Logo: graues Quadrat mit Initialen.
-import logos from '../data/medien-logos-start.json';
+// Zuordnung wie auf /medien/ (lib/medienlogo.ts, Dateien in public/logos/); ohne Logo: graues Quadrat mit Initialen.
+import { logoFuer } from '../lib/medienlogo';
 
 interface Props {
 	medium: string;
 }
 const { medium } = Astro.props;
-const datei = (logos.logos as Record<string, string>)[medium];
-// Initialen: Anfangsbuchstaben der ersten zwei Wörter, die mit Gross- oder Ziffer beginnen
+const pfad = logoFuer(medium);
+// Initialen: Anfangsbuchstaben der ersten zwei Wörter, die gross oder mit Ziffer beginnen
 const woerter = medium.split(/[\s\-–/]+/).filter((w) => /^[A-ZÄÖÜ0-9]/.test(w));
 const initialen = (woerter.length ? woerter : [medium])
 	.slice(0, 2)
@@ -18,8 +18,8 @@ const initialen = (woerter.length ? woerter : [medium])
 ---
 
 {
-	datei ? (
-		<img class="medien-logo" src={`/medien-logos/${datei}`} alt="" width="48" height="48" loading="lazy" decoding="async" />
+	pfad ? (
+		<img class="medien-logo" src={pfad} alt="" width="48" height="48" loading="lazy" decoding="async" />
 	) : (
 		<span class="medien-logo medien-logo-leer" aria-hidden="true">{initialen}</span>
 	)

@@ -248,11 +248,13 @@ main.start > * {
 	gap: 0 20px;
 }
 
-/* Logo des Mediums (MedienLogo.astro): 48 px, quadratisch, feiner Rahmen */
+/* Logo des Mediums (MedienLogo.astro): 48 px, quadratisch, weisser Grund, feiner Rahmen */
 .medien-logo {
 	display: block;
 	width: 48px;
 	height: 48px;
+	padding: 4px;
+	box-sizing: border-box;
 	object-fit: contain;
 	background: #ffffff;
 	border: 1px solid var(--line);
