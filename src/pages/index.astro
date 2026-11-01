@@ -1,74 +1,151 @@
 ---
+// Startseite (Design A6 «Hellblau», gewählt 01.11.2026).
+// Reihenfolge: Intro · Woran ich arbeite · Ausgewählte Texte · Neueste Beiträge (3) · Medienberichte (3).
+// Highlights: Frontmatter «highlight» (Rang). Projekte: src/data/projekte.json.
+import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import PostList from '../components/PostList.astro';
-import { getPosts } from '../lib/posts';
+import Titelbild from '../components/Titelbild.astro';
+import portrait from '../assets/ueber-mich/daniel-graf.jpg';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { datumLang, FORMAT, medienDatum, startseitenDaten } from '../lib/startseite';
+import { kurz } from '../lib/posts';
+import '../styles/start.css';
 
-const posts = (await getPosts()).slice(0, 5);
+const d = await startseitenDaten();
+const [aufmacher, ...weitere] = d.highlights;
+const hlIds = new Set(d.highlights.map((p) => p.id));
+const neueste = d.posts.filter((p) => !hlIds.has(p.id)).slice(0, 3);
+const medienNeu = d.medienNeuAlle.slice(0, 3);
+const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme verschränkt, vor einer hellen Wand';
+// Datum der Ausgabe = Build-Datum (Zürcher Zeit).
+const zh = { timeZone: 'Europe/Zurich' } as const;
+const datumVoll = new Intl.DateTimeFormat('de-CH', { ...zh, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d.heute);
+const datumKurz = new Intl.DateTimeFormat('de-CH', { ...zh, day: 'numeric', month: 'numeric', year: 'numeric' }).format(d.heute);
 ---
 
 <!doctype html>
 <html lang="de-CH">
 	<head>
 		<BaseHead title={`${SITE_TITLE} – Prototyping for democracy`} description={SITE_DESCRIPTION} />
-		<style>
-			.intro {
-				margin-bottom: 3rem;
-			}
-			.intro h1 {
-				font-size: 2.6rem;
-				margin-bottom: 0.4rem;
-			}
-			.lead {
-				font-size: 1.4rem;
-				line-height: 1.45;
-				color: var(--muted);
-				margin: 0;
-			}
-			.kurz {
-				margin: 1.25rem 0 0;
-			}
-			.section-head {
-				display: flex;
-				justify-content: space-between;
-				align-items: baseline;
-				margin: 0 0 0.75rem;
-			}
-			.section-head h2 {
-				margin: 0;
-				font-size: 1.1rem;
-			}
-			.section-head a {
-				font-family: var(--sans);
-				font-size: 0.95rem;
-			}
-			@media (max-width: 560px) {
-				.intro h1 {
-					font-size: 2.1rem;
-				}
-				.lead {
-					font-size: 1.2rem;
-				}
-			}
-		</style>
 	</head>
 	<body>
 		<Header />
-		<main id="inhalt">
-			<section class="intro">
-				<h1>Prototyping for democracy</h1>
-				<p class="kurz">
-					Ich beschäftige mich seit langem damit, wie ein Update der Demokratie aussehen könnte. 2015 habe ich die Plattform <a href="https://wecollect.ch">WeCollect.ch</a> gestartet und später die <a href="https://www.demokratie.ch">Stiftung für direkte Demokratie</a> mitgegründet. Aktuell engagiere ich mich für die Einführung von E-Collecting und begleite den Aufbau eines <a href="https://bevoelkerungsrat-basel.ch/">Bevölkerungsrats in Basel</a>. Hier teile ich meine Gedanken, Projekte und Prototypen für eine co-kreative Demokratie.
-				</p>
+		<div class="wrap">
+			<div class="zeitungskopf" aria-label="Ausgabe">
+				<span class="zk-ort">Basel</span>
+				<span class="zk-datum">{datumVoll}</span>
+				<span class="zk-nr">
+					Nr. {d.anzahl}<span class="zk-lang"> · seit 2012</span><span class="zk-kurz"> · {datumKurz}</span>
+				</span>
+			</div>
+		</div>
+		<main id="inhalt" class="start">
+			<section class="intro wrap raster" aria-labelledby="intro-titel">
+				<div class="intro-text">
+					<p class="dachzeile">Daniel Graf, Basel</p>
+					<h1 id="intro-titel">Wie gelingt das Update der Demokratie?</h1>
+					<p class="lead">
+						2015 habe ich die Plattform <a href="https://wecollect.ch">WeCollect.ch</a> gestartet und später die <a href="https://www.demokratie.ch">Stiftung für direkte Demokratie</a> mitgegründet. Aktuell engagiere ich mich für die Einführung von E-Collecting und begleite den Aufbau eines <a href="https://bevoelkerungsrat-basel.ch/">Bevölkerungsrats in Basel</a>. Hier teile ich meine Gedanken, Projekte und Prototypen für eine co-kreative Demokratie.
+					</p>
+				</div>
+				<figure class="intro-bild">
+					<Image src={portrait} alt={portraitAlt} widths={[360, 540, 800]} sizes="(max-width: 760px) 100vw, 320px" loading="eager" fetchpriority="high" />
+					<figcaption>Foto: Katharina Schillinger</figcaption>
+				</figure>
 			</section>
-			<section aria-labelledby="neueste">
-				<div class="section-head">
-					<h2 id="neueste">Neueste Beiträge</h2>
+
+			{
+				d.projekte.length > 0 && (
+					<section class="abschnitt wrap" aria-labelledby="projekte-titel">
+						<h2 id="projekte-titel">Woran ich arbeite</h2>
+						<ul class="projekte" role="list">
+							{d.projekte.map((p) => (
+								<li>
+									<h3>{p.name}</h3>
+									<p class="teaser">{p.kurz}</p>
+									<p class="meta">{p.status}{p.seit && ` · seit ${p.seit}`}</p>
+									{p.themaAnzahl > 0 && <a class="mehr-link" href={`/themen/${p.themaSlug}/`}>Beiträge zum Thema</a>}
+								</li>
+							))}
+						</ul>
+					</section>
+				)
+			}
+
+			{
+				aufmacher && (
+					<section class="band" aria-labelledby="hl-titel">
+						<div class="wrap">
+							<h2 id="hl-titel">Ausgewählte Texte</h2>
+							<div class={`hl hl-${d.highlights.length}`}>
+								<a class="hl-gross" href={`/blog/${aufmacher.id}/`}>
+									<Titelbild post={aufmacher} class="r32" sizes="(max-width: 760px) 100vw, 680px" />
+									<span class="meta">{datumLang(aufmacher.data.pubDate)}{aufmacher.data.tags[0] && ` · ${aufmacher.data.tags[0]}`}</span>
+									<span class="hl-titel-gross">{aufmacher.data.title}</span>
+									<span class="teaser">{kurz(aufmacher.data.description, 220)}</span>
+								</a>
+								{weitere.length > 0 && (
+									<div class="hl-klein">
+										{weitere.map((p) => (
+											<a href={`/blog/${p.id}/`}>
+												<Titelbild post={p} class="r32 nur-desktop" sizes="400px" />
+												<span class="meta">{datumLang(p.data.pubDate)}{p.data.tags[0] && ` · ${p.data.tags[0]}`}</span>
+												<span class="hl-titel-klein">{p.data.title}</span>
+											</a>
+										))}
+									</div>
+								)}
+							</div>
+						</div>
+					</section>
+				)
+			}
+
+			<section class="abschnitt wrap" aria-labelledby="neueste-titel">
+				<div class="liste-kopf">
+					<h2 id="neueste-titel">Neueste Beiträge</h2>
 					<a href="/blog/">Alle Beiträge</a>
 				</div>
-				<PostList posts={posts} />
+				<ul class="pliste" role="list">
+					{
+						neueste.map((p) => (
+							<li>
+								<a href={`/blog/${p.id}/`}>
+									<span class="pl-text">
+										<span class="meta">{datumLang(p.data.pubDate)}</span>
+										<span class="pl-titel">{p.data.title}</span>
+										<span class="pl-desc">{p.data.description}</span>
+									</span>
+									<Titelbild post={p} class="r32 pl-bild" widths={[184, 368]} sizes="(max-width: 760px) 88px, 184px" />
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="abschnitt wrap" aria-labelledby="berichte-titel">
+				<div class="liste-kopf">
+					<h2 id="berichte-titel">Medienberichte</h2>
+					<a href="/medien/">Alle Medienberichte</a>
+				</div>
+				<ul class="pliste" role="list">
+					{
+						medienNeu.map((m) => (
+							<li>
+								<a href={m.link} rel="noopener">
+									<span class="pl-text">
+										<span class="meta">{medienDatum(m, 'lang')} · {FORMAT[m.format]}{m.abo ? ' · Abo' : ''}</span>
+										<span class="pl-titel">{m.titel}</span>
+										<span class="pl-desc">{m.medium}</span>
+									</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
 			</section>
 		</main>
 		<Footer />

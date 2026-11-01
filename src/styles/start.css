@@ -1,0 +1,379 @@
+/* Startseite (Design A6). Nur auf / geladen; Tokens aus global.css. */
+
+main.start {
+	max-width: none;
+	padding: 0 0 96px;
+}
+main.start > * {
+	max-width: none;
+}
+.raster {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	column-gap: 24px;
+}
+
+/* Zeitungskopf: graue Zeile mit Ort, Datum, Nummer */
+.zeitungskopf {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 8px 12px;
+	background: var(--strip-bg);
+	color: var(--strip-text);
+	border-top: 1px solid var(--line);
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 0.01em;
+	font-variant-numeric: tabular-nums;
+}
+.zk-kurz {
+	display: none;
+}
+
+/* Abschnitte */
+.abschnitt {
+	margin-top: 96px;
+}
+.abschnitt > h2,
+.band h2,
+.liste-kopf h2 {
+	font-weight: 800;
+	font-variation-settings: var(--display-wdth);
+	font-size: 34px;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	margin: 0 0 32px;
+}
+
+/* Intro */
+.intro {
+	padding-top: 64px;
+	align-items: start;
+}
+.intro-text {
+	grid-column: 1 / span 7;
+}
+.dachzeile {
+	margin: 0 0 16px;
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--muted);
+}
+.intro h1 {
+	font-size: clamp(2.5rem, 4.4vw, 3.375rem); /* max. 54 px: zweizeilig */
+	line-height: 1.02;
+	margin-bottom: 32px;
+}
+.lead {
+	font-size: 18px;
+	line-height: 1.55;
+	margin: 0;
+	max-width: 36em;
+}
+.intro-bild {
+	grid-column: 9 / span 4;
+	margin: 0;
+}
+.intro-bild img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	object-position: 50% 25%;
+}
+.intro-bild figcaption {
+	margin-top: 8px;
+	font-weight: 500;
+	font-size: 13px;
+	color: var(--muted);
+}
+
+/* Woran ich arbeite */
+.projekte {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 32px 24px;
+}
+.projekte li {
+	margin: 0;
+	border-top: var(--rule-w) solid var(--rule);
+	padding-top: 16px;
+}
+.projekte h3 {
+	font-size: 20px;
+	line-height: 1.2;
+	margin: 0 0 8px;
+}
+.teaser {
+	display: block;
+	font-size: 17px;
+	line-height: 1.5;
+	color: var(--muted);
+	margin: 0 0 12px;
+}
+.projekte .meta {
+	margin: 0 0 8px;
+}
+.mehr-link {
+	font-weight: 500;
+	font-size: 15px;
+	display: inline-block;
+	padding-block: 4px;
+}
+
+/* Ausgewählte Texte: hellblaues Band, Tinte darauf (auch dunkel) */
+.band {
+	margin-top: 96px;
+	background: var(--band);
+	color: var(--on-band);
+	padding-block: 96px;
+}
+.band h2 {
+	color: var(--on-band);
+}
+.band .meta,
+.band .teaser {
+	color: var(--on-band-muted);
+}
+.band .teaser {
+	margin: 0;
+}
+.hl {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 32px 24px;
+}
+.hl a {
+	color: var(--on-band);
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.hl a:focus-visible {
+	outline-color: var(--on-band);
+}
+.hl a:hover .hl-titel-gross,
+.hl a:hover .hl-titel-klein {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+}
+.hl-gross {
+	grid-column: 1 / span 7;
+}
+.hl-1 .hl-gross {
+	grid-column: 1 / span 8;
+}
+.hl-klein {
+	grid-column: 8 / span 5;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+.hl-gross .tb {
+	margin-bottom: 8px;
+}
+.hl-klein .tb {
+	margin-bottom: 4px;
+}
+.hl-titel-gross {
+	font-weight: 800;
+	font-variation-settings: var(--display-wdth);
+	font-size: 32px;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+}
+.hl-titel-klein {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.25;
+}
+
+/* Titelbild (Komponente Titelbild.astro) */
+.tb {
+	display: block;
+	overflow: hidden;
+	background: var(--line);
+}
+.tb img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50% 40%;
+}
+.tb.r32 {
+	aspect-ratio: 3 / 2;
+}
+.tb-leer {
+	display: flex;
+	align-items: flex-end;
+	height: 100%;
+	padding: 12px;
+	font-size: 28px;
+	color: var(--muted);
+}
+
+/* Neueste Beiträge / Medienberichte (Aufbau wie früher die Beitragsliste) */
+.liste-kopf {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 0 24px;
+	margin-bottom: 24px;
+}
+.liste-kopf h2 {
+	margin: 0;
+}
+.liste-kopf a {
+	font-weight: 500;
+	font-size: 16px;
+	padding-block: 12px;
+}
+.pliste {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid var(--line);
+}
+.pliste li {
+	margin: 0;
+	border-bottom: 1px solid var(--line);
+}
+.pliste a {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 184px;
+	gap: 0 24px;
+	align-items: start;
+	padding-block: 20px;
+	color: var(--text);
+	text-decoration: none;
+}
+.pl-text {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 0;
+}
+.pl-text:only-child {
+	grid-column: 1 / -1;
+}
+.pl-titel {
+	max-width: 48rem;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.25;
+}
+.pl-desc {
+	max-width: 40rem;
+	font-size: 17px;
+	line-height: 1.5;
+	color: var(--muted);
+}
+.pliste a:hover .pl-titel {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+}
+
+@media (max-width: 760px) {
+	main.start {
+		padding-bottom: 64px;
+	}
+	.zk-ort,
+	.zk-datum,
+	.zk-lang {
+		display: none;
+	}
+	.zk-kurz {
+		display: inline;
+	}
+	.abschnitt,
+	.band {
+		margin-top: 64px;
+	}
+	.band {
+		padding-block: 64px;
+	}
+	.abschnitt > h2,
+	.band h2,
+	.liste-kopf h2 {
+		font-size: 26px;
+		margin-bottom: 24px;
+	}
+	.liste-kopf h2 {
+		margin-bottom: 0;
+	}
+	.intro {
+		padding-top: 40px;
+		row-gap: 32px;
+	}
+	.intro-text,
+	.intro-bild {
+		grid-column: 1 / -1;
+	}
+	.dachzeile {
+		display: none;
+	}
+	.intro h1 {
+		font-size: 40px;
+		margin-bottom: 24px;
+	}
+	.lead {
+		font-size: 17px;
+	}
+	.intro-bild img {
+		max-height: 70vh;
+	}
+	.intro-bild figcaption {
+		font-size: 14px;
+	}
+	.projekte {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.teaser {
+		font-size: 16px;
+	}
+	.hl {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 24px;
+	}
+	.hl-gross,
+	.hl-1 .hl-gross,
+	.hl-klein {
+		grid-column: 1 / -1;
+	}
+	.hl-klein {
+		gap: 0;
+		border-top: 1px solid var(--on-band-muted);
+	}
+	.hl-klein a {
+		padding-block: 16px;
+		border-bottom: 1px solid var(--on-band-muted);
+		gap: 4px;
+	}
+	.nur-desktop {
+		display: none;
+	}
+	.hl-titel-gross {
+		font-size: 24px;
+	}
+	.hl-titel-klein,
+	.pl-titel {
+		font-size: 18px;
+	}
+	.pliste a {
+		grid-template-columns: minmax(0, 1fr) 88px;
+		gap: 0 16px;
+		padding-block: 16px;
+	}
+	.pl-desc {
+		font-size: 16px;
+	}
+}
