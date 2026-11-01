@@ -18,8 +18,7 @@ main.start > * {
 	margin-top: 96px;
 }
 .abschnitt > h2,
-.band h2,
-.liste-kopf h2 {
+.band h2 {
 	font-weight: 800;
 	font-variation-settings: var(--display-wdth);
 	font-size: 34px;
@@ -202,22 +201,40 @@ main.start > * {
 	color: var(--muted);
 }
 
-/* Neueste Beiträge / Medienberichte (Aufbau wie früher die Beitragsliste) */
-.liste-kopf {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: baseline;
-	gap: 0 24px;
-	margin-bottom: 24px;
-}
-.liste-kopf h2 {
-	margin: 0;
-}
-.liste-kopf a {
+/* Neueste Beiträge / Medienberichte; «Alle … →» links unter der Liste */
+.alle-link {
+	margin: 24px 0 0;
 	font-weight: 500;
 	font-size: 16px;
-	padding-block: 12px;
+}
+.alle-link a {
+	display: inline-block;
+	padding-block: 10px;
+}
+.nw {
+	white-space: nowrap;
+}
+
+/* Themen-Hashtags unter den Projekten: kleine Textlinks, durch Leerraum getrennt */
+.hashtags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 12px;
+	margin: 8px 0 0;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.4;
+}
+.hashtags a {
+	color: var(--muted);
+	text-decoration: none;
+	padding-block: 6px;
+}
+.hashtags a:hover {
+	color: var(--text);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
 }
 .pliste {
 	list-style: none;
@@ -300,13 +317,9 @@ main.start > * {
 		padding-block: 64px;
 	}
 	.abschnitt > h2,
-	.band h2,
-	.liste-kopf h2 {
+	.band h2 {
 		font-size: 26px;
 		margin-bottom: 24px;
-	}
-	.liste-kopf h2 {
-		margin-bottom: 0;
 	}
 	.intro {
 		padding-top: 40px;

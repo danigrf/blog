@@ -33,7 +33,7 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 					<p class="dachzeile">Daniel Graf, Basel</p>
 					<h1 id="intro-titel">Prototyping for democracy</h1>
 					<p class="lead">
-						Wie gelingt das Update unseres politischen Systems? Diese Frage beschäftigt mich seit Jahren. Deshalb habe ich 2015 die Plattform <a href="https://wecollect.ch">WeCollect.ch</a> gestartet und später die <a href="https://www.demokratie.ch">Stiftung für direkte Demokratie</a> mitgegründet. Aktuell engagiere ich mich für die Einführung von E-Collecting und begleite den Aufbau eines <a href="https://bevoelkerungsrat-basel.ch/">Bevölkerungsrats in Basel</a>. Hier teile ich meine Gedanken, Projekte und Prototypen für eine co-kreative Demokratie.
+						Wie gelingt das Update unseres politischen Systems? Diese Frage beschäftigt mich seit Jahren. Deshalb habe ich 2015 die Plattform <a href="https://wecollect.ch">WeCollect.ch</a> gestartet und später die <a href="https://www.demokratie.ch">Stiftung für direkte Demokratie</a> mitgegründet. Aktuell engagiere ich mich für die Einführung von <span class="nw">E-Collecting</span> und begleite den Aufbau eines <a href="https://bevoelkerungsrat-basel.ch/">Bevölkerungsrats in Basel</a>. Hier teile ich meine Gedanken, Projekte und Prototypen für eine co-kreative Demokratie.
 					</p>
 					<Sozial />
 				</div>
@@ -46,14 +46,20 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 			{
 				d.projekte.length > 0 && (
 					<section class="abschnitt wrap" aria-labelledby="projekte-titel">
-						<h2 id="projekte-titel">Woran ich arbeite</h2>
+						<h2 id="projekte-titel">Woran ich dran bin</h2>
 						<ul class="projekte" role="list">
 							{d.projekte.map((p) => (
 								<li>
 									<h3>{p.name}</h3>
 									<p class="teaser">{p.kurz}</p>
-									<p class="meta">{p.status}{p.seit && ` · seit ${p.seit}`}</p>
 									{p.themaAnzahl > 0 && <a class="mehr-link" href={`/themen/${p.themaSlug}/`}>Beiträge zum Thema</a>}
+									{p.themenLinks.length > 0 && (
+										<p class="hashtags">
+											{p.themenLinks.map((t) => (
+												<a href={`/themen/${t.slug}/`}>#{t.name}</a>
+											))}
+										</p>
+									)}
 								</li>
 							))}
 						</ul>
@@ -91,10 +97,7 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 			}
 
 			<section class="abschnitt wrap" aria-labelledby="neueste-titel">
-				<div class="liste-kopf">
-					<h2 id="neueste-titel">Neueste Beiträge</h2>
-					<a href="/blog/">Alle Beiträge</a>
-				</div>
+				<h2 id="neueste-titel">Neueste Beiträge</h2>
 				<ul class="pliste" role="list">
 					{
 						d.neueste.map((p) => (
@@ -111,13 +114,11 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 						))
 					}
 				</ul>
+				<p class="alle-link"><a href="/blog/">Alle Beiträge →</a></p>
 			</section>
 
 			<section class="abschnitt wrap" aria-labelledby="berichte-titel">
-				<div class="liste-kopf">
-					<h2 id="berichte-titel">Medienberichte</h2>
-					<a href="/medien/">Alle Medienberichte</a>
-				</div>
+				<h2 id="berichte-titel">Medienberichte</h2>
 				<ul class="pliste pliste-medien" role="list">
 					{
 						d.medienNeu.map((m) => (
@@ -134,6 +135,7 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 						))
 					}
 				</ul>
+				<p class="alle-link"><a href="/medien/">Alle Medienberichte →</a></p>
 			</section>
 		</main>
 		<Footer />

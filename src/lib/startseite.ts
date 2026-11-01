@@ -3,7 +3,7 @@
 // Projekte: src/data/projekte.json. Medien: src/data/medien.json (nur geprüfte Einträge).
 import medienDatei from '../data/medien.json';
 import projekteDatei from '../data/projekte.json';
-import { getPosts, type Post, themaSlug } from './posts';
+import { getPosts, getThemen, type Post, themaSlug } from './posts';
 
 export interface Medium {
 	id: string;
@@ -23,13 +23,14 @@ export interface Projekt {
 	id: string;
 	name: string;
 	rolle: string;
-	status: string;
-	seit: string;
 	kurz: string;
 	link: string;
 	thema: string;
+	themen: string[];
 	themaSlug: string;
 	themaAnzahl: number;
+	/** Hashtags: nur bestehende Themen, höchstens 5 */
+	themenLinks: { slug: string; name: string; anzahl: number }[];
 }
 
 export const FORMAT: Record<string, string> = { tv: 'TV', audio: 'Radio', podcast: 'Podcast', video: 'Video', text: 'Text' };
@@ -63,12 +64,18 @@ export async function startseitenDaten() {
 		.sort((a, b) => (b.datum ?? '').localeCompare(a.datum ?? ''))
 		.slice(0, 3);
 
-	const projekte: Projekt[] = (projekteDatei.projekte as Omit<Projekt, 'themaSlug' | 'themaAnzahl'>[])
+	const themen = new Map((await getThemen()).map((t) => [t.slug, t]));
+	const projekte: Projekt[] = (projekteDatei.projekte as Omit<Projekt, 'themaSlug' | 'themaAnzahl' | 'themenLinks'>[])
 		.slice(0, 4)
 		.map((p) => ({
 			...p,
 			themaSlug: themaSlug(p.thema),
 			themaAnzahl: posts.filter((post) => post.data.tags.includes(p.thema)).length,
+			themenLinks: (p.themen ?? [])
+				.map((slug) => themen.get(slug))
+				.filter((t) => t !== undefined)
+				.slice(0, 5)
+				.map((t) => ({ slug: t.slug, name: t.name, anzahl: t.posts.length })),
 		}));
 
 	return { highlights, neueste, medienNeu, projekte };

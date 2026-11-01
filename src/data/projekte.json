@@ -1,45 +1,63 @@
 {
-	"_hinweis": "Von Daniel bestätigt am 01.11.2026 (Auswahl, Reihenfolge, Rollen). Kurztexte («kurz») von Clara mit Daniels Input, 01.11.2026. «seit» nur, wo belegt; leer = wird nicht angezeigt. Status erlaubt: «läuft», «Pilot», «ruht».",
+	"_hinweis": "Von Daniel bestätigt am 01.11.2026 (Auswahl, Reihenfolge, Rollen). Kurztexte («kurz») von Clara mit Daniels Input. «thema»: Link «Beiträge zum Thema». «themen»: bis 5 Themen-Slugs (wie /themen/<slug>/) als Hashtags unter dem Projekt; nur bestehende Themen werden angezeigt.",
 	"projekte": [
 		{
 			"id": "e-collecting",
 			"name": "E-Collecting",
 			"rolle": "für die Stiftung für direkte Demokratie",
-			"status": "läuft",
-			"seit": "ca. 2024",
 			"kurz": "Online unterschreiben statt Bogen ausdrucken. Ich räume die letzten Steine aus dem Weg für einen schweizweiten Versuchsbetrieb.",
 			"link": "https://www.bk.admin.ch/de/e-collecting",
-			"thema": "E-Collecting"
+			"thema": "E-Collecting",
+			"themen": [
+				"e-collecting",
+				"unterschriften-bschiss",
+				"e-id",
+				"wecollect",
+				"digitale-demokratie"
+			]
 		},
 		{
 			"id": "bevoelkerungsrat-basel",
 			"name": "Bevölkerungsrat Basel",
 			"rolle": "mit aufgebaut, begleitet für die Stiftung",
-			"status": "Pilot",
-			"seit": "",
 			"kurz": "Bürger:innen entwickeln Lösungen mit, statt nur abzustimmen. Ich habe das Basler Pilotprojekt mit aufgebaut und begleite es für die Stiftung.",
 			"link": "https://bevoelkerungsrat-basel.ch/",
-			"thema": "Bevölkerungsrat"
+			"thema": "Bevölkerungsrat",
+			"themen": [
+				"bevoelkerungsrat",
+				"basel",
+				"direkte-demokratie"
+			]
 		},
 		{
 			"id": "unterschriften-bschiss",
 			"name": "Hilfe beim Unterschreiben",
 			"rolle": "Petition, Recherche",
-			"status": "läuft",
-			"seit": "",
 			"kurz": "Selbst unterschrieben, den Namen hat der Sohn eingetragen: Seit November 2025 ist diese Unterschrift ungültig. Ich will, dass jede Unterschrift zählt.",
 			"link": "https://www.demokratie.ch/blog/dossier-amtlich-gestrichene-unterschriften",
-			"thema": "Unterschriften-Bschiss"
+			"thema": "Unterschriften-Bschiss",
+			"themen": [
+				"unterschriften-bschiss",
+				"e-collecting",
+				"direkte-demokratie",
+				"inklusion",
+				"volksinitiative"
+			]
 		},
 		{
 			"id": "inklusion",
 			"name": "Inklusion und Neurodivergenz",
 			"rolle": "Inklusions-Initiative, ADHS",
-			"status": "läuft",
-			"seit": "",
 			"kurz": "Inklusions-Initiative mitaufgebaut, Sammlung ins Ziel gebracht. Heute setze ich mich als ADHS-Selbstbetroffener für eine inklusive Gesellschaft ein.",
 			"link": "https://www.inklusions-initiative.ch/",
-			"thema": "Inklusion"
+			"thema": "Inklusion",
+			"themen": [
+				"inklusion",
+				"adhs-neurodiversitaet",
+				"unterschriften-bschiss",
+				"volksinitiative",
+				"e-id"
+			]
 		}
 	]
 }
