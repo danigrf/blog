@@ -509,6 +509,9 @@ main {
 .f-teil {
 	white-space: nowrap;
 }
+.f-teil:not(:last-child) {
+	margin-right: 0.6em; /* Abstand nach dem Trenner; Astro entfernt Leerraum zwischen den Spans */
+}
 .f-teil:not(:last-child)::after {
 	content: ' ·';
 }
