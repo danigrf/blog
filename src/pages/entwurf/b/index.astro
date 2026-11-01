@@ -35,7 +35,7 @@ function logoFuer(medium: string): string | null {
 			<Image src={portrait} alt={portraitAlt} widths={[300, 480, 720]} sizes="(max-width: 760px) 100vw, 300px" loading="eager" fetchpriority="high" />
 			<dl>
 				<dt>ort</dt><dd>Basel</dd>
-				<dt>seit</dt><dd>2012 · {d.anzahl} Beiträge · {d.medienAnzahl} Medien</dd>
+				<dt>seit</dt><dd><span class="nw">2012</span> · <span class="nw">{d.anzahl} Beiträge</span> · <span class="nw">{d.medienAnzahl} Medien</span></dd>
 				{gerade.length > 0 && <><dt>gerade</dt><dd>{gerade.join(', ')}</dd></>}
 				<dt>stand</dt><dd>{datumPunkt(d.heute)}</dd>
 				<dt>foto</dt><dd>Katharina Schillinger</dd>

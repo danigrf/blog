@@ -505,6 +505,16 @@ main {
 	color: var(--muted);
 	padding-block: 12px;
 }
+/* Eintrag und nachfolgender Trenner bleiben zusammen: keine Zeile beginnt mit «·» */
+.f-teil {
+	white-space: nowrap;
+}
+.f-teil:not(:last-child)::after {
+	content: ' ·';
+}
+.nw {
+	white-space: nowrap;
+}
 .fuss a:hover {
 	color: var(--accent);
 }

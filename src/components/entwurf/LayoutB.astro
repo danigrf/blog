@@ -35,7 +35,12 @@ const { title, build } = Astro.props;
 		</main>
 		<footer class="fuss">
 			<p class="wrap">
-				<span>build {build.datum} {build.zeit}</span> · <span>commit {build.commit}</span> · <span>astro</span> · <span>cloudflare</span> · <a href="/rss.xml">rss</a> · <a href="/datenschutz/">datenschutz</a>
+				<span class="f-teil">build {build.datum} {build.zeit}</span>
+				<span class="f-teil">commit {build.commit}</span>
+				<span class="f-teil">astro</span>
+				<span class="f-teil">cloudflare</span>
+				<span class="f-teil"><a href="/rss.xml">rss</a></span>
+				<span class="f-teil"><a href="/datenschutz/">datenschutz</a></span>
 			</p>
 		</footer>
 	</body>

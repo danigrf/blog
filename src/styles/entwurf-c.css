@@ -475,6 +475,8 @@ main {
 }
 .tafel-medien .t-medium {
 	width: 14em;
+}
+.tafel-medien td.t-medium {
 	font-weight: 500;
 	font-size: 16px;
 }
@@ -692,12 +694,25 @@ main {
 		font-size: 18px;
 	}
 	/* Linien werden senkrecht */
+	/* Name und «Beiträge →» in einer Zeile, Linie darunter */
 	.linie {
-		grid-template-columns: minmax(0, 1fr);
-		row-gap: 12px;
+		grid-template-columns: minmax(0, 1fr) auto;
+		column-gap: 16px;
+		row-gap: 8px;
+		align-items: center;
 	}
 	.linie-name {
+		grid-row: 1;
+		grid-column: 1;
 		padding-top: 0;
+	}
+	.linie-link {
+		grid-row: 1;
+		grid-column: 2;
+	}
+	.halte {
+		grid-row: 2;
+		grid-column: 1 / -1;
 	}
 	.halte {
 		flex-direction: column;
@@ -705,7 +720,8 @@ main {
 		padding-left: 0;
 	}
 	.halte::before {
-		left: 0;
+		/* Linie 4 px, Mitte bei 8 px: Querstriche (0–16 px) bleiben in der Inhaltskante */
+		left: 6px;
 		right: auto;
 		top: 6px;
 		bottom: 6px;
@@ -723,17 +739,17 @@ main {
 		order: -1;
 		width: 16px;
 		height: 2px;
-		margin: 0 4px 0 -6px;
+		margin: 0 4px 0 0;
 		flex: 0 0 16px;
 	}
 	.halt-heute {
 		text-align: left;
 	}
 	.halt-heute .halt-strich {
-		width: 20px;
+		width: 16px;
 		height: 4px;
-		margin: 0 0 0 -8px;
-		flex-basis: 20px;
+		margin: 0 4px 0 0;
+		flex-basis: 16px;
 	}
 	.halt-jahr {
 		align-self: auto;
@@ -743,7 +759,7 @@ main {
 		padding-top: 0;
 	}
 	.linie-link {
-		justify-self: start;
+		justify-self: end;
 		padding-top: 0;
 		display: inline-flex;
 		align-items: center;
@@ -813,7 +829,7 @@ main {
 	.t-thema {
 		display: none !important;
 	}
-	.tafel-medien .t-medium {
+	.tafel-medien td.t-medium {
 		font-size: 14px;
 	}
 	.tafel-medien td.t-thema {

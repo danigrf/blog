@@ -400,8 +400,19 @@ main {
 .z-medium {
 	font-weight: 400;
 	font-style: italic;
+	font-size: 18px;
+	line-height: 1.3;
 	color: var(--muted);
-	margin-right: 4px;
+}
+/* Medienliste: Datum · Medium · Titel · Format */
+.zeilen-medien .z-medium {
+	grid-column: 3 / span 3;
+}
+.zeilen-medien .z-titel {
+	grid-column: 6 / span 5;
+}
+.zeilen-medien .z-thema {
+	grid-column: 11 / span 2;
 }
 .z-thema {
 	grid-column: 10 / span 3;
@@ -652,6 +663,12 @@ main {
 	}
 	.zeilen-medien .z-thema {
 		display: block;
+	}
+	.z-medium {
+		font-size: 16px;
+	}
+	.dachzeile {
+		display: none;
 	}
 	.p-medium {
 		font-size: 20px;
