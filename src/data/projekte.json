@@ -10,7 +10,6 @@
 			"thema": "E-Collecting",
 			"themen": [
 				"e-collecting",
-				"unterschriften-bschiss",
 				"e-id",
 				"wecollect",
 				"digitale-demokratie"
@@ -38,15 +37,13 @@
 			"thema": "Unterschriften-Bschiss",
 			"themen": [
 				"unterschriften-bschiss",
-				"e-collecting",
 				"direkte-demokratie",
-				"inklusion",
-				"volksinitiative"
+				"inklusion"
 			]
 		},
 		{
 			"id": "inklusion",
-			"name": "Inklusion und Neurodivergenz",
+			"name": "Inklusive Gesellschaft",
 			"rolle": "Inklusions-Initiative, ADHS",
 			"kurz": "Inklusions-Initiative mitaufgebaut, Sammlung ins Ziel gebracht. Heute setze ich mich als ADHS-Selbstbetroffener für eine inklusive Gesellschaft ein.",
 			"link": "https://www.inklusions-initiative.ch/",
@@ -54,9 +51,7 @@
 			"themen": [
 				"inklusion",
 				"adhs-neurodiversitaet",
-				"unterschriften-bschiss",
-				"volksinitiative",
-				"e-id"
+				"direkte-demokratie"
 			]
 		}
 	]
