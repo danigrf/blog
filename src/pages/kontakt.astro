@@ -102,11 +102,20 @@ import { TURNSTILE_SITEKEY } from '../consts';
 			.status:empty {
 				display: none;
 			}
+			.status:not(.ok)::before {
+				content: '';
+				display: inline-block;
+				width: 0.55rem;
+				height: 0.55rem;
+				margin-right: 0.45rem;
+				background: var(--mark);
+			}
 			.status.ok {
 				border-left: var(--rule-w) solid var(--rule);
 				padding: 0.2rem 0 0.2rem 1rem;
 			}
 			.hinweis {
+				margin-top: 1.6rem;
 				font-size: 0.95rem;
 				color: var(--muted);
 			}
