@@ -38,7 +38,7 @@
 	--track-h2: -0.02em;
 	--medium-style: normal;
 	--w-medium: 800;
-	--s-h1: clamp(2.5rem, 4.4vw, 3.5rem); /* max. 56 px: H1 zweizeilig (Abnahme Iris) */
+	--s-h1: clamp(2.5rem, 4.4vw, 3.375rem); /* max. 54 px: bei 56 px bricht die H1 dreizeilig (gemessen bei 1280 px), ab 55 px zweizeilig */
 	--s-h1-m: 40px;
 	--lh-h1: 1.02;
 	--s-h2: 34px;
