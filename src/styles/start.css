@@ -372,6 +372,12 @@ main.start > * {
 	}
 	.pl-desc {
 		font-size: 16px;
+		/* mobil höchstens 3 Zeilen */
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		overflow: hidden;
 	}
 	.pliste-medien a {
 		grid-template-columns: 48px minmax(0, 1fr);
