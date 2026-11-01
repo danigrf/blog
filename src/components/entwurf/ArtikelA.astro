@@ -1,0 +1,46 @@
+---
+import { render } from 'astro:content';
+import * as bausteine from '../bausteine';
+import LayoutA from './LayoutA.astro';
+import { datumLang, startseitenDaten } from '../../lib/entwurf';
+import { themaSlug } from '../../lib/posts';
+
+interface Props {
+	basis?: string;
+	label?: string;
+	klasse?: string;
+	fonts?: string[];
+}
+const { basis = '/entwurf/a/', label = 'A «Feuilleton»', klasse = 'va', fonts } = Astro.props;
+const d = await startseitenDaten();
+const post = d.artikel;
+const { Content } = await render(post);
+---
+
+<LayoutA title={`${post.data.title} – Entwurf ${label}`} anzahl={d.anzahl} heute={d.heute} zeitungskopf={false} {basis} {label} {klasse} fonts={fonts as any}>
+	<article class="artikel wrap">
+		<header class="artikel-kopf">
+			<p class="meta">
+				<a href={basis}>← Startseite</a> · {datumLang(post.data.pubDate)}
+				{post.data.tags[0] && <> · <a href={`/themen/${themaSlug(post.data.tags[0])}/`}>{post.data.tags[0]}</a></>}
+			</p>
+			<h1>{post.data.title}</h1>
+		</header>
+		<div class="prose">
+			<Content components={bausteine} />
+		</div>
+		{
+			post.data.tags.length > 0 && (
+				<p class="artikel-themen">
+					<span>Themen: </span>
+					{post.data.tags.map((t, i) => (
+						<>
+							{i > 0 && ' · '}
+							<a href={`/themen/${themaSlug(t)}/`}>{t}</a>
+						</>
+					))}
+				</p>
+			)
+		}
+	</article>
+</LayoutA>

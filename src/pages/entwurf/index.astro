@@ -7,6 +7,12 @@ const varianten = [
 	{ k: 'b', name: 'B «Maschinenraum»', idee: 'Logbuch einer Werkstatt: Mono führt, echte Daten sind die Deko. Daniel als Bauender.' },
 	{ k: 'c', name: 'C «Wegweiser»', idee: 'Basler Strassenschild, Liniennetz der Projekte, Abfahrtstafel. Daniel als Ortskundiger. Empfehlung Iris.' },
 ];
+// Runde 2: Daniel wählt A, mit lebendigeren Farben und modernerer Schrift.
+const runde2 = [
+	{ k: 'a1', name: 'A1 «Zine»', idee: 'Laut: Fluo-Pink und Riso-Blau, breite Grotesk (Archivo).' },
+	{ k: 'a2', name: 'A2 «Sonntag»', idee: 'Etwas lebendiger: Sonnengelb und Burgund, Display-Serif Gloock + Hanken Grotesk. Empfehlung Iris.' },
+	{ k: 'a3', name: 'A3 «Garten»', idee: 'Frisch: Lime und Riso-Grün, Atkinson Hyperlegible (für Lesbarkeit gebaut).' },
+];
 ---
 
 <!doctype html>
@@ -28,6 +34,10 @@ const varianten = [
 			h1 {
 				font-size: 28px;
 				margin: 0 0 8px;
+			}
+			h2 {
+				font-size: 20px;
+				margin: 40px 0 4px;
 			}
 			p {
 				margin: 0 0 24px;
@@ -75,7 +85,21 @@ const varianten = [
 	</head>
 	<body>
 		<main>
-			<h1>Startseite: drei Entwürfe</h1>
+			<h1>Startseite: Entwürfe</h1>
+			<h2>Runde 2: Varianten von A</h2>
+			<p>Gleicher Aufbau wie A, andere Farben (Riso-Druckfarben) und Schriften.</p>
+			<ul>
+				{
+					runde2.map((v) => (
+						<li>
+							<strong>{v.name}</strong>
+							<span>{v.idee}</span>
+							<a href={`/entwurf/${v.k}/`}>Startseite</a> · <a href={`/entwurf/${v.k}/artikel/`}>Beispiel-Artikel</a>
+						</li>
+					))
+				}
+			</ul>
+			<h2>Runde 1: drei Richtungen</h2>
 			<p>Grund-Design für danielgraf.ch nach Iris’ Spezifikation vom 1.11.2026. Echte Daten, nicht öffentlich verlinkt. Projekte und Blog-Highlights sind vorläufig.</p>
 			<ul>
 				{

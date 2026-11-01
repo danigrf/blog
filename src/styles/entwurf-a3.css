@@ -1,0 +1,79 @@
+/* Entwurf A3 «Garten» (Iris-Spec Runde 2): nur Token-Overrides auf A.
+   Riso-Tinten: Light Lime #E3ED55, Green #00A95C. Schrift: Atkinson Hyperlegible Next + Mono. */
+:root.a3 {
+	--bg: #f8faf5;
+	--text: #121a14;
+	--muted: #4e5a51;
+	--line: #d5ddd0;
+	--accent: #00753f;
+	--accent-strong: #005c31;
+	--rule: #00a95c;
+	--surface: #e3ed55;
+	--on-surface: #121a14;
+	--on-surface-muted: #3a4a1c;
+	--on-surface-link: #005c31;
+	--band-line: #3a4a1c;
+	--band-edge: transparent;
+	--band-edge-w: 0px;
+	--strip-bg: transparent;
+	--strip-text: #121a14;
+	--medium-color: #00753f;
+	--rule-w: 4px;
+	--info-bg: #dfede3;
+	--info-line: #005c31;
+	--info-label: #005c31;
+	--kontext-bg: #ecefea;
+
+	--f-next: var(--entwurf-atkinson), Arial, sans-serif;
+	--f-display: var(--f-next);
+	--f-title: var(--f-next);
+	--f-text: var(--f-next);
+	--f-meta: var(--entwurf-atkinson-mono), ui-monospace, monospace;
+	--f-nav: var(--f-next);
+	--w-display: 800;
+	--w-title: 700;
+	--w-meta: 400;
+	--w-nav: 600;
+	--track-display: -0.01em;
+	--track-h2: -0.01em;
+	--medium-style: normal;
+	--w-medium: 800;
+	--s-h1: clamp(2.375rem, 4.7vw, 60px);
+	--s-h1-m: 38px;
+	--lh-h1: 1.05;
+	--s-h2: 34px;
+	--s-h2-m: 26px;
+	--s-title: 20px;
+	--s-title-m: 18px;
+	--s-proj: 20px;
+	--s-ptitel: 20px;
+	--s-text: 19px;
+	--s-text-m: 17px;
+	--lh-text: 1.6;
+	--lh-prose: 1.6;
+}
+@media (prefers-color-scheme: dark) {
+	:root.a3 {
+		--bg: #0d1510;
+		--text: #e8f0e6;
+		--muted: #a3b1a6;
+		--line: #24302a;
+		--accent: #5fd394;
+		--accent-strong: #9be6bc;
+		--rule: #00a95c;
+		--surface: #2a3310;
+		--on-surface: #e8f0e6;
+		--on-surface-muted: #cfda9a;
+		--on-surface-link: #5fd394;
+		--band-line: #cfda9a;
+		--band-edge: #e3ed55;
+		--band-edge-w: 4px;
+		--strip-bg: transparent;
+		--strip-text: #e8f0e6;
+		--medium-color: #5fd394;
+		--info-bg: #15281d;
+		--info-line: #9be6bc;
+		--info-label: #9be6bc;
+		--kontext-bg: #18201b;
+	}
+}

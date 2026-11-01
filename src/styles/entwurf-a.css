@@ -1,4 +1,6 @@
-/* Entwurf A «Feuilleton» (Iris-Spec 01.11.2026). Nur auf /entwurf/a/ geladen. */
+/* Entwurf A «Feuilleton» (Iris-Spec 01.11.2026). Geladen auf /entwurf/a/ und den Varianten a1–a3.
+   Runde 2: Schrift, Farbe und Grössen laufen über Tokens; die Standardwerte ergeben das unveränderte A.
+   Die Varianten (entwurf-a1/-a2/-a3.css) überschreiben nur Tokens unter :root.aN. */
 
 :root {
 	--bg: #f6f4ef;
@@ -12,10 +14,60 @@
 
 	--f-serif: var(--entwurf-serif), Georgia, serif;
 	--f-sans: var(--entwurf-sans), system-ui, sans-serif;
+
+	/* Runde 2: Tokens (Standard = A) */
+	--f-display: var(--f-serif); /* H1, H2, Aufmacher, Medienname Pressespiegel */
+	--f-title: var(--f-serif); /* Karten-/Listentitel, Pressespiegel-Titel */
+	--f-text: var(--f-serif); /* Lesetext, Teaser */
+	--f-meta: var(--f-sans); /* Metazeilen, Zeitungskopf, Daten */
+	--f-nav: var(--f-meta);
+	--w-display: 600;
+	--w-title: 600;
+	--w-meta: 500;
+	--w-nav: 500;
+	--track-display: -0.02em;
+	--track-h2: -0.01em;
+	--fvs-display: normal; /* z. B. "wdth" 112 */
+	--synth-display: weight style small-caps;
+	--on-surface: var(--text);
+	--on-surface-muted: #4b5254;
+	--on-surface-link: var(--accent);
+	--band-line: #d0c19b;
+	--band-edge: transparent;
+	--band-edge-w: 0px;
+	--strip-bg: transparent;
+	--strip-text: var(--text);
+	--strip-pad: 0px;
+	--rule-w: 2px;
+	--medium-color: var(--accent);
+	--medium-style: italic;
+	--w-medium: 400;
+	/* Grössen: Desktop / mobil */
+	--s-h1: clamp(2.5rem, 5vw, 4rem);
+	--s-h1-m: 40px;
+	--lh-h1: 1.06;
+	--s-h2: 36px;
+	--s-h2-m: 28px;
+	--s-auf: 32px;
+	--s-auf-m: 24px;
+	--s-title: 21px;
+	--s-title-m: 19px;
+	--s-proj: 22px;
+	--s-ptitel: 20px;
+	--s-medium: 22px;
+	--s-medium-m: 20px;
+	--s-text: 20px;
+	--s-text-m: 18px;
+	--lh-text: 1.55;
+	--lh-prose: 1.6;
+	--s-art-h1: clamp(2.25rem, 4.5vw, 3.5rem);
+	--s-art-h1-m: 34px;
+	--s-prose-h2: 28px;
+	--s-prose-h2-m: 24px;
 	/* Namen, die die Bausteine im Artikel erwarten */
-	--serif: var(--f-serif);
-	--sans: var(--f-sans);
-	--mono: var(--f-sans);
+	--serif: var(--f-text);
+	--sans: var(--f-meta);
+	--mono: var(--f-meta);
 	--info-bg: #e6eeec;
 	--info-line: #034c4f;
 	--info-label: #034c4f;
@@ -40,6 +92,8 @@
 		--kontext-bg: #132122;
 		--kontext-line: #4b6463;
 		--kontext-label: #a3ada9;
+		--on-surface-muted: var(--muted);
+		--band-line: var(--line);
 	}
 }
 
@@ -56,7 +110,7 @@ body {
 	margin: 0;
 	background: var(--bg);
 	color: var(--text);
-	font-family: var(--f-serif);
+	font-family: var(--f-text);
 	font-size: 18px;
 	line-height: 1.55;
 	overflow-wrap: break-word;
@@ -82,9 +136,20 @@ a:focus-visible {
 h1,
 h2,
 h3 {
-	font-family: var(--f-serif);
-	font-weight: 600;
+	font-family: var(--f-title);
+	font-weight: var(--w-title);
 	margin: 0;
+}
+/* Display-Schrift: H1, H2, Aufmacher, Medienname */
+h1,
+.abschnitt > h2,
+.band h2,
+.hl-titel-gross,
+.p-medium {
+	font-family: var(--f-display);
+	font-weight: var(--w-display);
+	font-variation-settings: var(--fvs-display);
+	font-synthesis: var(--synth-display);
 }
 
 .wrap {
@@ -99,8 +164,8 @@ h3 {
 	column-gap: 24px;
 }
 .meta {
-	font-family: var(--f-sans);
-	font-weight: 500;
+	font-family: var(--f-meta);
+	font-weight: var(--w-meta);
 	font-size: 14px;
 	line-height: 1.4;
 	letter-spacing: 0.01em;
@@ -114,7 +179,7 @@ h3 {
 	padding: 8px 12px;
 	background: var(--accent);
 	color: var(--bg);
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 }
 .skip:focus {
 	top: 8px;
@@ -136,12 +201,13 @@ h3 {
 	color: var(--text);
 }
 .marke-name {
-	font-weight: 600;
+	font-family: var(--f-title);
+	font-weight: var(--w-title);
 	font-size: 22px;
 	line-height: 1.2;
 }
 .marke-zeile {
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 14px;
 	color: var(--muted);
@@ -150,8 +216,8 @@ h3 {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0 24px;
-	font-family: var(--f-sans);
-	font-weight: 500;
+	font-family: var(--f-nav);
+	font-weight: var(--w-nav);
 	font-size: 16px;
 }
 .kopf nav a {
@@ -166,17 +232,18 @@ h3 {
 	display: flex;
 	justify-content: space-between;
 	gap: 16px;
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 14px;
 	font-variant-numeric: tabular-nums;
 	letter-spacing: 0.01em;
-	color: var(--text);
+	color: var(--strip-text);
 }
 .zeitungskopf {
-	padding-block: 8px;
+	padding: 8px var(--strip-pad);
+	background: var(--strip-bg);
 	border-top: 1px solid var(--line);
-	border-bottom: 2px solid var(--rule);
+	border-bottom: var(--rule-w) solid var(--rule);
 }
 .zk-kurz {
 	display: none;
@@ -191,9 +258,9 @@ main {
 }
 .abschnitt > h2,
 .band h2 {
-	font-size: 36px;
+	font-size: var(--s-h2);
 	line-height: 1.1;
-	letter-spacing: -0.01em;
+	letter-spacing: var(--track-h2);
 	margin-bottom: 32px;
 }
 
@@ -207,20 +274,20 @@ main {
 }
 .dachzeile {
 	margin: 0 0 16px;
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 14px;
 	color: var(--muted);
 }
 .intro h1 {
-	font-size: clamp(2.5rem, 5vw, 4rem);
-	line-height: 1.06;
-	letter-spacing: -0.02em;
+	font-size: var(--s-h1);
+	line-height: var(--lh-h1);
+	letter-spacing: var(--track-display);
 	margin-bottom: 32px;
 }
 .lead {
-	font-size: 20px;
-	line-height: 1.55;
+	font-size: var(--s-text);
+	line-height: var(--lh-text);
 	margin: 0;
 	max-width: 36em;
 }
@@ -236,7 +303,7 @@ main {
 }
 .intro-bild figcaption {
 	margin-top: 8px;
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 13px;
 	color: var(--muted);
@@ -252,11 +319,11 @@ main {
 	gap: 32px 24px;
 }
 .projekte li {
-	border-top: 2px solid var(--rule);
+	border-top: var(--rule-w) solid var(--rule);
 	padding-top: 16px;
 }
 .projekte h3 {
-	font-size: 22px;
+	font-size: var(--s-proj);
 	line-height: 1.2;
 	margin-bottom: 8px;
 }
@@ -271,7 +338,7 @@ main {
 	margin: 0 0 8px;
 }
 .mehr {
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 15px;
 	display: inline-block;
@@ -282,15 +349,25 @@ main {
 .band {
 	margin-top: 96px;
 	background: var(--surface);
+	color: var(--on-surface);
 	padding-block: 96px;
+	border-block: var(--band-edge-w) solid var(--band-edge);
+}
+.band h2 {
+	color: var(--on-surface);
+}
+.band a {
+	color: var(--on-surface-link);
 }
 .hl {
 	display: grid;
 	grid-template-columns: repeat(12, minmax(0, 1fr));
 	gap: 32px 24px;
 }
+.band .hl a {
+	color: var(--on-surface);
+}
 .hl a {
-	color: var(--text);
 	text-decoration: none;
 	display: flex;
 	flex-direction: column;
@@ -321,19 +398,18 @@ main {
 	margin-bottom: 4px;
 }
 .hl-titel-gross {
-	font-weight: 600;
-	font-size: 32px;
+	font-size: var(--s-auf);
 	line-height: 1.15;
 	letter-spacing: -0.01em;
 }
 .hl-titel-klein {
-	font-weight: 600;
-	font-size: 21px;
+	font-weight: var(--w-title);
+	font-size: var(--s-title);
 	line-height: 1.25;
 }
 .band .meta,
 .band .teaser {
-	color: #4b5254;
+	color: var(--on-surface-muted);
 }
 .band .teaser {
 	margin: 0;
@@ -385,7 +461,7 @@ main {
 }
 .z-datum {
 	grid-column: 1 / span 2;
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 14px;
 	font-variant-numeric: tabular-nums;
@@ -393,11 +469,12 @@ main {
 }
 .z-titel {
 	grid-column: 3 / span 7;
-	font-weight: 600;
-	font-size: 21px;
+	font-weight: var(--w-title);
+	font-size: var(--s-title);
 	line-height: 1.25;
 }
 .z-medium {
+	font-family: var(--f-text);
 	font-weight: 400;
 	font-style: italic;
 	font-size: 18px;
@@ -416,7 +493,7 @@ main {
 }
 .z-thema {
 	grid-column: 10 / span 3;
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 14px;
 	color: var(--muted);
@@ -428,7 +505,7 @@ main {
 }
 .alle {
 	margin: 24px 0 0;
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 16px;
 }
@@ -454,14 +531,16 @@ main {
 	text-decoration: none;
 }
 .p-medium {
-	font-style: italic;
-	font-size: 22px;
+	font-style: var(--medium-style);
+	font-weight: var(--w-medium);
+	font-size: var(--s-medium);
 	line-height: 1.2;
-	color: var(--accent);
+	color: var(--medium-color);
 }
 .p-titel {
-	font-weight: 600;
-	font-size: 20px;
+	font-family: var(--f-title);
+	font-weight: var(--w-title);
+	font-size: var(--s-ptitel);
 	line-height: 1.25;
 }
 .presse a:hover .p-titel {
@@ -475,7 +554,7 @@ main {
 	margin-top: 96px;
 	padding-block: 24px 48px;
 	border-top: 1px solid var(--line);
-	font-family: var(--f-sans);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 14px;
 }
@@ -513,9 +592,9 @@ main {
 	color: var(--muted);
 }
 .artikel h1 {
-	font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+	font-size: var(--s-art-h1);
 	line-height: 1.08;
-	letter-spacing: -0.02em;
+	letter-spacing: var(--track-display);
 	margin: 16px 0 24px;
 }
 .artikel-lead {
@@ -527,8 +606,8 @@ main {
 }
 .prose {
 	max-width: 40rem;
-	font-size: 20px;
-	line-height: 1.6;
+	font-size: var(--s-text);
+	line-height: var(--lh-prose);
 }
 .prose p,
 .prose ul,
@@ -536,7 +615,7 @@ main {
 	margin: 0 0 1.2em;
 }
 .prose h2 {
-	font-size: 28px;
+	font-size: var(--s-prose-h2);
 	line-height: 1.2;
 	margin: 1.8em 0 0.5em;
 }
@@ -557,8 +636,8 @@ main {
 	max-width: 40rem;
 	margin-top: 48px;
 	padding-top: 16px;
-	border-top: 2px solid var(--rule);
-	font-family: var(--f-sans);
+	border-top: var(--rule-w) solid var(--rule);
+	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 15px;
 }
@@ -594,7 +673,7 @@ main {
 	}
 	.abschnitt > h2,
 	.band h2 {
-		font-size: 28px;
+		font-size: var(--s-h2-m);
 		margin-bottom: 24px;
 	}
 	.intro {
@@ -606,11 +685,11 @@ main {
 		grid-column: 1 / -1;
 	}
 	.intro h1 {
-		font-size: 40px;
+		font-size: var(--s-h1-m);
 		margin-bottom: 24px;
 	}
 	.lead {
-		font-size: 18px;
+		font-size: var(--s-text-m);
 	}
 	.intro-bild img {
 		max-height: 70vh;
@@ -636,22 +715,22 @@ main {
 	}
 	.hl-klein {
 		gap: 0;
-		border-top: 1px solid #d0c19b;
+		border-top: 1px solid var(--band-line);
 	}
 	.hl-klein a {
 		padding-block: 16px;
-		border-bottom: 1px solid #d0c19b;
+		border-bottom: 1px solid var(--band-line);
 		gap: 4px;
 	}
 	.nur-desktop {
 		display: none;
 	}
 	.hl-titel-gross {
-		font-size: 24px;
+		font-size: var(--s-auf-m);
 	}
 	.hl-titel-klein,
 	.z-titel {
-		font-size: 19px;
+		font-size: var(--s-title-m);
 	}
 	.zeilen a {
 		display: flex;
@@ -671,32 +750,22 @@ main {
 		display: none;
 	}
 	.p-medium {
-		font-size: 20px;
+		font-size: var(--s-medium-m);
 	}
 	.artikel {
 		padding-top: 40px;
 	}
 	.artikel h1 {
-		font-size: 34px;
+		font-size: var(--s-art-h1-m);
 	}
 	.artikel-lead {
 		font-size: 19px;
 	}
 	.prose {
-		font-size: 18px;
+		font-size: var(--s-text-m);
 	}
 	.prose h2 {
-		font-size: 24px;
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.band .meta,
-	.band .teaser {
-		color: var(--muted);
-	}
-	.hl-klein,
-	.hl-klein a {
-		border-color: var(--line) !important;
+		font-size: var(--s-prose-h2-m);
 	}
 }
 @media (prefers-reduced-motion: reduce) {

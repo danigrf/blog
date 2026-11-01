@@ -1,5 +1,6 @@
 ---
 // Entwurf A «Feuilleton»: Source Serif 4 + IBM Plex Sans.
+// Runde 2: dieselbe Vorlage für A1–A3 (eigene Schriften, Klasse am <html> für die Token-Overrides).
 import '../../styles/entwurf-a.css';
 import EntwurfHead from './EntwurfHead.astro';
 import EntwurfLeiste from './EntwurfLeiste.astro';
@@ -9,8 +10,21 @@ interface Props {
 	anzahl: number;
 	heute: Date;
 	zeitungskopf?: boolean;
+	basis?: string;
+	label?: string;
+	klasse?: string;
+	fonts?: ('--entwurf-serif' | '--entwurf-sans' | '--entwurf-mono' | '--entwurf-grotesk' | '--entwurf-archivo' | '--entwurf-gloock' | '--entwurf-hanken' | '--entwurf-atkinson' | '--entwurf-atkinson-mono')[];
 }
-const { title, anzahl, heute, zeitungskopf = true } = Astro.props;
+const {
+	title,
+	anzahl,
+	heute,
+	zeitungskopf = true,
+	basis = '/entwurf/a/',
+	label = 'A «Feuilleton»',
+	klasse = 'va',
+	fonts = ['--entwurf-serif', '--entwurf-sans'],
+} = Astro.props;
 const WOCHENTAG = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
 const MONAT = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 const datumVoll = `${WOCHENTAG[heute.getDay()]}, ${heute.getDate()}. ${MONAT[heute.getMonth()]} ${heute.getFullYear()}`;
@@ -18,15 +32,15 @@ const datumKurz = `${heute.getDate()}.${heute.getMonth() + 1}.${heute.getFullYea
 ---
 
 <!doctype html>
-<html lang="de-CH" class="va">
+<html lang="de-CH" class={klasse}>
 	<head>
-		<EntwurfHead title={title} fonts={['--entwurf-serif', '--entwurf-sans']} />
+		<EntwurfHead title={title} fonts={fonts} />
 	</head>
 	<body>
-		<EntwurfLeiste variante="A «Feuilleton»" />
+		<EntwurfLeiste variante={label} />
 		<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 		<header class="kopf wrap">
-			<a class="marke" href="/entwurf/a/">
+			<a class="marke" href={basis}>
 				<span class="marke-name">Daniel Graf</span>
 				<span class="marke-zeile">Prototyping for democracy</span>
 			</a>

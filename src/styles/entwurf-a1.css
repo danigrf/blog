@@ -1,0 +1,83 @@
+/* Entwurf A1 «Zine» (Iris-Spec Runde 2, 01.11.2026): nur Token-Overrides auf A.
+   Riso-Tinten: Fluorescent Pink #FF48B0, Blue #0078BF, Medium Blue #3255A4. Schrift: Archivo (variabel, wght + wdth). */
+:root.a1 {
+	--bg: #fbf9f6;
+	--text: #14141a;
+	--muted: #55555f;
+	--line: #ddd8d0;
+	--accent: #3255a4;
+	--accent-strong: #22407f;
+	--rule: #0078bf;
+	--surface: #ff48b0;
+	--on-surface: #14141a;
+	--on-surface-muted: #2b1220;
+	--on-surface-link: #14141a;
+	--band-line: #2b1220;
+	--band-edge: transparent;
+	--band-edge-w: 0px;
+	--strip-bg: #3255a4;
+	--strip-text: #ffffff;
+	--strip-pad: 12px;
+	--medium-color: #3255a4;
+	--rule-w: 3px;
+	--info-bg: #e7e9ee;
+	--info-line: #22407f;
+	--info-label: #22407f;
+	--kontext-bg: #efeeeb;
+
+	--f-archivo: var(--entwurf-archivo), Arial, sans-serif;
+	--f-display: var(--f-archivo);
+	--f-title: var(--f-archivo);
+	--f-text: var(--f-archivo);
+	--f-meta: var(--f-archivo);
+	--w-display: 800;
+	--w-title: 700;
+	--w-meta: 500;
+	--fvs-display: 'wdth' 112;
+	--track-display: -0.02em;
+	--track-h2: -0.02em;
+	--medium-style: normal;
+	--w-medium: 800;
+	--s-h1: clamp(2.5rem, 5vw, 64px);
+	--s-h1-m: 40px;
+	--lh-h1: 1.02;
+	--s-h2: 34px;
+	--s-h2-m: 26px;
+	--s-title: 20px;
+	--s-title-m: 18px;
+	--s-proj: 20px;
+	--s-ptitel: 20px;
+	--s-text: 18px;
+	--s-text-m: 17px;
+	--lh-text: 1.55;
+	--lh-prose: 1.55;
+}
+@media (prefers-color-scheme: dark) {
+	:root.a1 {
+		--bg: #121218;
+		--text: #eceaf0;
+		--muted: #a9a8b4;
+		--line: #2c2c36;
+		--accent: #8fb4ff;
+		--accent-strong: #c2d5ff;
+		--rule: #3d9be0;
+		--surface: #3a1630;
+		--on-surface: #eceaf0;
+		--on-surface-muted: #e2bfd3;
+		--on-surface-link: #8fb4ff;
+		--band-line: #e2bfd3;
+		--band-edge: #ff6fc2;
+		--band-edge-w: 4px;
+		--strip-bg: #22407f;
+		--strip-text: #eceaf0;
+		--medium-color: #8fb4ff;
+		--info-bg: #1e222f;
+		--info-line: #c2d5ff;
+		--info-label: #c2d5ff;
+		--kontext-bg: #1d1d23;
+	}
+}
+:root.a1 ::selection {
+	background: #fcc4e1;
+	color: #14141a;
+}

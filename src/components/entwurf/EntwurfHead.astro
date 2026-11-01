@@ -6,7 +6,7 @@ import { Font } from 'astro:assets';
 interface Props {
 	title: string;
 	description?: string;
-	fonts: ('--entwurf-serif' | '--entwurf-sans' | '--entwurf-mono' | '--entwurf-grotesk')[];
+	fonts: string[];
 }
 const { title, description = 'Design-Entwurf, nicht öffentlich', fonts } = Astro.props;
 ---
