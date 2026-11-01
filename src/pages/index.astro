@@ -95,14 +95,15 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 				)
 			}
 
-			<section class="abschnitt wrap" aria-labelledby="neueste-titel">
+			<div class="listen wrap">
+			<section class="abschnitt liste-neueste" aria-labelledby="neueste-titel">
 				<h2 id="neueste-titel">Neueste Beiträge</h2>
 				<ul class="pliste" role="list">
 					{
 						d.neueste.map((p) => (
 							<li>
 								<a href={`/blog/${p.id}/`}>
-									<Titelbild post={p} class="r32 pl-bild" widths={[184, 368]} sizes="(max-width: 760px) 88px, 184px" />
+									<Titelbild post={p} class="r32 pl-bild" widths={[184, 368]} sizes="(max-width: 760px) 88px, (min-width: 1024px) 120px, 184px" />
 									<span class="pl-text">
 										<span class="meta">{datumLang(p.data.pubDate)}</span>
 										<span class="pl-titel">{p.data.title}</span>
@@ -116,7 +117,7 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 				<p class="alle-link"><a href="/blog/">Alle Beiträge →</a></p>
 			</section>
 
-			<section class="abschnitt wrap" aria-labelledby="berichte-titel">
+			<section class="abschnitt liste-medien" aria-labelledby="berichte-titel">
 				<h2 id="berichte-titel">Medienberichte</h2>
 				<ul class="pliste pliste-medien" role="list">
 					{
@@ -136,6 +137,7 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 				</ul>
 				<p class="alle-link"><a href="/medien/">Alle Medienberichte →</a></p>
 			</section>
+			</div>
 		</main>
 		<Footer />
 	</body>

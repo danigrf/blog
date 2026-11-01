@@ -197,6 +197,36 @@ main.start > *:not(.wrap) {
 }
 
 /* Neueste Beiträge / Medienberichte; «Alle … →» links unter der Liste */
+/* ab 1024 px nebeneinander: Neueste in Spalten 1–6, Medienberichte in 7–12 (H2 auf gleicher Höhe) */
+@media (min-width: 1024px) {
+	.listen {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		column-gap: 24px;
+		align-items: start;
+		margin-top: 96px;
+	}
+	.listen > .abschnitt {
+		margin-top: 0;
+	}
+	.liste-neueste {
+		grid-column: 1 / 7;
+	}
+	.liste-medien {
+		grid-column: 7 / 13;
+	}
+	.liste-neueste .pliste a {
+		grid-template-columns: 120px minmax(0, 1fr);
+		gap: 0 20px;
+	}
+	.liste-neueste .pl-desc {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		overflow: hidden;
+	}
+}
 .alle-link {
 	margin: 24px 0 0;
 	font-weight: 500;
