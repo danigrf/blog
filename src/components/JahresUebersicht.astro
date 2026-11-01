@@ -13,9 +13,18 @@ interface Props {
 	prefix: string;
 	/** Mehrere Serien -> gestapelt, mit Legende. Ohne Angabe: eine Serie. */
 	serien?: Serie[];
+	/** Grafik erst ab diesem Jahr zeigen (bis zum Build-Jahr); die Liste darunter bleibt vollständig. */
+	abJahr?: number;
 }
-const { jahre, prefix, serien } = Astro.props;
+const { jahre: alleJahre, prefix, serien, abJahr } = Astro.props;
 const reihen = serien ?? [{ key: 'alle', label: 'Beiträge' }];
+const bisJahr = Math.max(new Date().getFullYear(), ...alleJahre.map((j) => j.jahr));
+const jahre = abJahr
+	? Array.from({ length: bisJahr - abJahr + 1 }, (_, i) => {
+			const jahr = abJahr + i;
+			return alleJahre.find((j) => j.jahr === jahr) ?? { jahr, werte: reihen.map(() => 0) };
+		})
+	: alleJahre;
 const gestapelt = reihen.length > 1;
 const summe = (w: number[]) => w.reduce((a, b) => a + b, 0);
 const max = Math.max(1, ...jahre.map((j) => summe(j.werte)));

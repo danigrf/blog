@@ -236,7 +236,7 @@ function datumKurz(d: string | null) {
 			}
 
 			{AUSWAHL_ZEIGEN && <h2 id="alle-titel">Alle Beiträge</h2>}
-			<JahresUebersicht jahre={uebersicht} prefix="j-" serien={FORMATE.map((f) => ({ key: f, label: FORMAT[f] }))} />
+			<JahresUebersicht jahre={uebersicht} abJahr={2016} prefix="j-" serien={FORMATE.map((f) => ({ key: f, label: FORMAT[f] }))} />
 			<div class="filter" id="filter" hidden>
 				<button type="button" data-format="" aria-pressed="true">Alle <span class="anzahl">{eintraege.length}</span></button>
 				<button type="button" data-format="tv" aria-pressed="false">TV <span class="anzahl">{anzahl.tv}</span></button>
