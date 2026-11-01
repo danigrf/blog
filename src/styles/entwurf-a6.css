@@ -29,7 +29,7 @@
 	--band-edge-w: 0px;
 
 	/* Schrift und Grössen wie A1 (Archivo, Breite 112) */
-	--f-archivo: var(--entwurf-archivo), Arial, sans-serif;
+	--f-archivo: var(--font-archivo), Arial, sans-serif;
 	--f-display: var(--f-archivo);
 	--f-title: var(--f-archivo);
 	--f-text: var(--f-archivo);

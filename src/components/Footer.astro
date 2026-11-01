@@ -1,33 +1,18 @@
 ---
-const today = new Date();
+// Fuss (Design A6). Styles in global.css (.fuss). «Beta v1.3» wohnt seit dem neuen Design hier.
 ---
 
-<footer>
-	<div class="inner meta">
-		<span>&copy; {today.getFullYear()} Daniel Graf</span>
-		<span class="links"><a href="/datenschutz/">Datenschutz</a> <a href="/rss.xml">RSS</a></span>
+<footer class="fuss wrap">
+	<div class="fuss-zeile">
+		<span>Daniel Graf · Basel · schreibt hier seit 2012</span>
+		<nav aria-label="Fussnavigation">
+			<a href="/blog/">Blog</a>
+			<a href="/medien/">Medien</a>
+			<a href="/themen/">Themen</a>
+			<a href="/about/">Über mich</a>
+			<a href="/rss.xml">RSS</a>
+			<a href="/datenschutz/">Datenschutz</a>
+		</nav>
 	</div>
+	<p class="fuss-klein">Porträt: Katharina Schillinger · Beta v1.3</p>
 </footer>
-<style>
-	footer {
-		border-top: 1px solid var(--line);
-	}
-	.inner {
-		max-width: calc(var(--measure) + 3rem);
-		margin: 0 auto;
-		padding: 1.5rem;
-		display: flex;
-		justify-content: space-between;
-		gap: 1rem;
-	}
-	.links {
-		display: flex;
-		gap: 1rem;
-	}
-	a {
-		color: var(--muted);
-	}
-	a:hover {
-		color: var(--accent);
-	}
-</style>

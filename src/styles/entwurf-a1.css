@@ -25,7 +25,7 @@
 	--info-label: #22407f;
 	--kontext-bg: #efeeeb;
 
-	--f-archivo: var(--entwurf-archivo), Arial, sans-serif;
+	--f-archivo: var(--font-archivo), Arial, sans-serif;
 	--f-display: var(--f-archivo);
 	--f-title: var(--f-archivo);
 	--f-text: var(--f-archivo);

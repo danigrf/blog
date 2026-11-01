@@ -15,34 +15,8 @@ export default defineConfig({
 	],
 	// Schriften werden beim Build von Fontsource geholt und selbst ausgeliefert
 	// (keine Anfragen an Google Fonts im Browser der Besucher).
+	// Site: Archivo (--font-archivo). Die übrigen Einträge dienen nur den Entwürfen unter /entwurf/.
 	fonts: [
-		{
-			provider: fontProviders.fontsource(),
-			name: 'Source Serif 4',
-			cssVariable: '--font-serif',
-			weights: [400, 700],
-			styles: ['normal', 'italic'],
-			subsets: ['latin'],
-			fallbacks: ['Georgia', 'serif'],
-		},
-		{
-			provider: fontProviders.fontsource(),
-			name: 'IBM Plex Sans',
-			cssVariable: '--font-sans',
-			weights: [500, 600, 700],
-			styles: ['normal'],
-			subsets: ['latin'],
-			fallbacks: ['system-ui', 'sans-serif'],
-		},
-		{
-			provider: fontProviders.fontsource(),
-			name: 'IBM Plex Mono',
-			cssVariable: '--font-mono',
-			weights: [400],
-			styles: ['normal'],
-			subsets: ['latin'],
-			fallbacks: ['ui-monospace', 'monospace'],
-		},
 		// --- Nur für die Design-Entwürfe unter /entwurf/ (eigene Variablen, bestehende Seiten unberührt) ---
 		{
 			provider: fontProviders.fontsource(),
@@ -82,10 +56,11 @@ export default defineConfig({
 		},
 		// --- Runde 2: Schriften für A1–A3 ---
 		{
-			// A1 «Zine»: variabel, Gewicht 100–900 und Breite 62–125 (Datei «standard» von Fontsource)
+			// Archivo: Grundschrift der Site (Design A6, gewählt 01.11.2026) und Entwurf A1/A4–A6.
+			// Variabel, Gewicht 100–900 und Breite 62–125 (Datei «standard» von Fontsource).
 			provider: fontProviders.fontsource(),
 			name: 'Archivo',
-			cssVariable: '--entwurf-archivo',
+			cssVariable: '--font-archivo',
 			weights: ['100 900'],
 			styles: ['normal', 'italic'],
 			subsets: ['latin'],
