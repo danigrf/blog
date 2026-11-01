@@ -1,7 +1,7 @@
-// Gemeinsame Daten für die Design-Entwürfe unter /entwurf/ (A, B, C).
+// Daten für die Startseite (/) und die Design-Entwürfe unter /entwurf/.
 // Alles wird beim Build berechnet; nichts davon ist von Hand gezählt.
+// Highlights: Frontmatter-Feld «highlight» (Rang), die drei mit kleinstem Rang.
 import { execSync } from 'node:child_process';
-import highlightsDatei from '../data/entwurf-highlights.json';
 import medienDatei from '../data/medien.json';
 import projekteDatei from '../data/projekte.json';
 import { getPosts, type Post, themaSlug } from './posts';
@@ -98,9 +98,10 @@ export async function startseitenDaten() {
 	const nummer = new Map<string, number>();
 	posts.forEach((p, i) => nummer.set(p.id, anzahl - i));
 
-	const highlights = highlightsDatei.blog
-		.map((slug) => posts.find((p) => p.id === slug))
-		.filter((p): p is Post => !!p);
+	const highlights = posts
+		.filter((p) => typeof p.data.highlight === 'number')
+		.sort((a, b) => (a.data.highlight ?? 0) - (b.data.highlight ?? 0))
+		.slice(0, 3);
 	const hlIds = new Set(highlights.map((p) => p.id));
 	const neue = posts.filter((p) => !hlIds.has(p.id)).slice(0, 5);
 

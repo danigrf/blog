@@ -4,7 +4,7 @@ import LayoutB from '../../../components/entwurf/LayoutB.astro';
 import Titelbild from '../../../components/entwurf/Titelbild.astro';
 import portrait from '../../../assets/ueber-mich/daniel-graf.jpg';
 import logos from '../../../data/medien-logos.json';
-import { datumIso, datumPunkt, FORMAT, medienDatum, startseitenDaten } from '../../../lib/entwurf';
+import { datumIso, datumPunkt, FORMAT, medienDatum, startseitenDaten } from '../../../lib/startseite';
 import { kurz, themaSlug } from '../../../lib/posts';
 
 const d = await startseitenDaten();
@@ -57,7 +57,7 @@ function logoFuer(medium: string): string | null {
 								<th scope="row"><a href={`/themen/${p.themaSlug}/`}>{p.name}</a></th>
 								<td>{p.rolle}</td>
 								<td><span class={`quadrat ${p.status === 'ruht' ? 'ruht' : 'aktiv'}`} aria-hidden="true" />{p.status}</td>
-								<td>{p.seit}</td>
+								<td>{p.seit || '–'}</td>
 								<td>{p.letzterBeitrag ? <a href={`/blog/${p.letzterBeitrag.id}/`}>{datumIso(p.letzterBeitrag.data.pubDate)}</a> : '–'}</td>
 							</tr>
 						))}

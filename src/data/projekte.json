@@ -1,5 +1,5 @@
 {
-	"_hinweis": "ENTWURF, alles Annahme (Iris-Spec 01.11.2026, Abschnitt 5). Rollen und Kurzsätze sinngemäss aus about.astro bzw. Beitragsbeschreibungen. Jahreszahlen nur, wo about.astro sie belegt; sonst «[Daniel ergänzt]». Daniel bestätigt Auswahl, Reihenfolge, Rollen, Jahre und Stationen. Status erlaubt: «läuft», «Pilot», «ruht».",
+	"_hinweis": "Von Daniel bestätigt am 01.11.2026 (Auswahl, Reihenfolge, Rollen). Kurztexte («kurz») werden noch von Clara geschärft. «seit» nur, wo belegt; leer = wird nicht angezeigt. Status erlaubt: «läuft», «Pilot», «ruht». «stationen» nur für Entwurf C.",
 	"projekte": [
 		{
 			"id": "e-collecting",
@@ -11,8 +11,14 @@
 			"link": "https://www.bk.admin.ch/de/e-collecting",
 			"thema": "E-Collecting",
 			"stationen": [
-				{ "jahr": "2015", "label": "WeCollect.ch" },
-				{ "jahr": "ca. 2024", "label": "Versuchsbetrieb" }
+				{
+					"jahr": "2015",
+					"label": "WeCollect.ch"
+				},
+				{
+					"jahr": "ca. 2024",
+					"label": "Versuchsbetrieb"
+				}
 			]
 		},
 		{
@@ -20,7 +26,7 @@
 			"name": "Bevölkerungsrat Basel",
 			"rolle": "mit aufgebaut, begleitet für die Stiftung",
 			"status": "Pilot",
-			"seit": "[Daniel ergänzt]",
+			"seit": "",
 			"kurz": "Basler Pilotprojekt: Bürger:innen entwickeln Lösungen mit.",
 			"link": "https://bevoelkerungsrat-basel.ch/",
 			"thema": "Bevölkerungsrat",
@@ -31,7 +37,7 @@
 			"name": "Hilfe beim Unterschreiben",
 			"rolle": "Petition, Recherche",
 			"status": "läuft",
-			"seit": "[Daniel ergänzt]",
+			"seit": "",
 			"kurz": "Wie stark die verschärften Regeln der Bundeskanzlei gültige Unterschriften treffen, vor allem bei Menschen, die Hilfe brauchen.",
 			"link": "https://www.demokratie.ch/blog/dossier-amtlich-gestrichene-unterschriften",
 			"thema": "Unterschriften-Bschiss",
@@ -42,7 +48,7 @@
 			"name": "Inklusion und Neurodivergenz",
 			"rolle": "Inklusions-Initiative, ADHS",
 			"status": "läuft",
-			"seit": "[Daniel ergänzt]",
+			"seit": "",
 			"kurz": "Inklusion ist mir ein sehr persönliches Anliegen.",
 			"link": "https://www.inklusions-initiative.ch/",
 			"thema": "Inklusion",

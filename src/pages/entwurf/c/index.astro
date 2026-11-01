@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import LayoutC from '../../../components/entwurf/LayoutC.astro';
 import Titelbild from '../../../components/entwurf/Titelbild.astro';
 import portrait from '../../../assets/ueber-mich/daniel-graf.jpg';
-import { datumPunkt, FORMAT, medienDatum, medienMeta, startseitenDaten } from '../../../lib/entwurf';
+import { datumPunkt, FORMAT, medienDatum, medienMeta, startseitenDaten } from '../../../lib/startseite';
 import { kurz } from '../../../lib/posts';
 
 const d = await startseitenDaten();
@@ -13,7 +13,7 @@ const jetzt = String(d.heute.getFullYear());
 // Stationen: aus projekte.json; fehlen sie, nur Start («seit …») und «heute» (Spec C, Abschnitt 2).
 const linien = d.projekte.map((p) => ({
 	...p,
-	halte: [...(p.stationen.length ? p.stationen : [{ jahr: p.seit, label: 'Start' }]), { jahr: jetzt, label: 'heute', heute: true }],
+	halte: [...(p.stationen.length ? p.stationen : [{ jahr: p.seit || '–', label: 'Start' }]), { jahr: jetzt, label: 'heute', heute: true }],
 }));
 ---
 

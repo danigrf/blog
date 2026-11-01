@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import LayoutA from './LayoutA.astro';
 import Titelbild from './Titelbild.astro';
 import portrait from '../../assets/ueber-mich/daniel-graf.jpg';
-import { datumLang, medienDatum, medienMeta, startseitenDaten, FORMAT } from '../../lib/entwurf';
+import { datumLang, medienDatum, medienMeta, startseitenDaten, FORMAT } from '../../lib/startseite';
 import { kurz } from '../../lib/posts';
 
 interface Props {
@@ -45,7 +45,7 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 						<li>
 							<h3>{p.name}</h3>
 							<p class="teaser">{p.kurz}</p>
-							<p class="meta">{p.status} · seit {p.seit}</p>
+							<p class="meta">{p.status}{p.seit && ` · seit ${p.seit}`}</p>
 							{p.themaAnzahl > 0 && (
 								<a class="mehr" href={`/themen/${p.themaSlug}/`}>Beiträge zum Thema</a>
 							)}

@@ -21,6 +21,9 @@ const blog = defineCollection({
 			vorschauAlt: z.string().optional(),
 			// Schlagwörter; jedes führt zu einer Themenseite unter /themen/.
 			tags: z.array(z.string()).default([]),
+			// Highlight auf der Startseite: Rang (1 = zuerst). Die drei mit kleinstem Rang erscheinen
+			// unter «Ausgewählte Texte». Ohne Feld kein Highlight.
+			highlight: z.number().int().positive().optional(),
 			// Entwurf: wird nicht gebaut und taucht in keiner Liste, im RSS und in der Sitemap nicht auf.
 			draft: z.boolean().default(false),
 		}),
