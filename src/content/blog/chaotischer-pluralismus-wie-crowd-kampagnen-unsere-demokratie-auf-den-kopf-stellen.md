@@ -3,6 +3,7 @@ title: "Chaotischer Pluralismus: Wie Crowd-Kampagnen unsere Demokratie auf den K
 description: "Wie kann die Zivilgesellschaft effizienter und mit Erfolg dazu beitragen, die Demokratie weiter zu entwicklen? Diese Frage beschäftig mich gerade."
 pubDate: '2017-04-23'
 heroImage: '../../assets/blog/chaotischer-pluralismus-wie-crowd-kampagnen-unsere-demokratie-auf-den-kopf-stellen/tumblr_mc8ltjqteh1r4rcy6o1_5001.jpg'
+vorschauFokus: '50% 0%'
 tags: ['Campaigning', 'Digitale Demokratie']
 ---
 

@@ -3,6 +3,7 @@ title: "Fluchthilfe statt Schlepperbanden: Asyl mit einem Klick"
 description: "Nachdem Flüchtlingsdrama in Österreich trommeln die Politikerinnen und Politiker zum Kampf gegen die Schlepper."
 pubDate: '2015-08-28'
 heroImage: '../../assets/blog/fluchthilfe-statt-schlepperbanden-asyl-mit-einem-klick/klick.png'
+vorschauFokus: '50% 50%'
 tags: ['Menschenrechte']
 ---
 

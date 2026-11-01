@@ -3,6 +3,7 @@ title: "Trump’s Troll-Kampagne: Mit Shitstorm ins Weisse Haus"
 description: "Die digitale Demokratie hat zugeschlagen, aber nicht so, wie alle erwartet haben."
 pubDate: '2016-11-10'
 heroImage: '../../assets/blog/trumps-troll-kampagne-mit-shitstorm-ins-weisse-haus/potus.png'
+vorschauFokus: '0% 50%'
 tags: ['Wahlen', 'Social Media']
 ---
 

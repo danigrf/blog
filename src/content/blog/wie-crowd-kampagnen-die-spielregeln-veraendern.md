@@ -3,6 +3,7 @@ title: "Wie Crowd-Kampagnen die Spielregeln verändern"
 description: "Schlafende Riesen zu wecken, ist heute das Ziel jeder erfolgreichen Kampagne."
 pubDate: '2018-02-24'
 heroImage: '../../assets/blog/wie-crowd-kampagnen-die-spielregeln-veraendern/sleeping_giants1-958x559.jpg'
+vorschauFokus: '50% 50%'
 tags: ['Campaigning', 'Digitale Demokratie']
 ---
 

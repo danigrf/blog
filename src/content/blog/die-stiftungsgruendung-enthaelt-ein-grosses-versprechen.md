@@ -4,6 +4,7 @@ description: 'Interview von Adrian Meyer zur Gründung der Stiftung für direkte
 pubDate: '2020-06-21'
 tags: ['Direkte Demokratie', 'WeCollect', 'Lobbying']
 heroImage: '../../assets/blog/die-stiftungsgruendung-enthaelt-ein-grosses-versprechen/buch-macht-direkte-demokratie.jpg'
+vorschauFokus: '50% 50%'
 vorschauAlt: 'Das Buch «Macht direkte Demokratie», von zwei Händen aufgeschlagen gehalten'
 ---
 

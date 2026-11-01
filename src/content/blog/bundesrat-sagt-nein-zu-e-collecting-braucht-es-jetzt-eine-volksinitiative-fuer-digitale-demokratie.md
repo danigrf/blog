@@ -3,6 +3,7 @@ title: "Bundesrat sagt Nein zu E-Collecting. Braucht es jetzt eine Volksinitiati
 description: "Heute ist ein schlechter Tag für die direkte Demokratie. Der Bundesrat hat entschieden, E-Collecting definitiv auf Eis zu legen."
 pubDate: '2017-04-05'
 heroImage: '../../assets/blog/bundesrat-sagt-nein-zu-e-collecting-braucht-es-jetzt-eine-volksinitiative-fuer-digitale-demokratie/now.png'
+vorschauFokus: '100% 50%'
 tags: ['E-Collecting', 'Digitale Demokratie']
 ---
 
