@@ -40,6 +40,11 @@
 	--strip-pad: 0px;
 	--rule-w: 2px;
 	--medium-color: var(--accent);
+	/* Runde 3: Unterstrich der Links (Farbe, Dicke, Hover) */
+	--link-underline: currentColor;
+	--link-ul-w: 1px;
+	--link-ul-w-hover: 2px;
+	--band-underline: currentColor;
 	--medium-style: italic;
 	--w-medium: 400;
 	/* Grössen: Desktop / mobil */
@@ -122,12 +127,13 @@ img {
 }
 a {
 	color: var(--accent);
-	text-decoration-thickness: 1px;
+	text-decoration-color: var(--link-underline);
+	text-decoration-thickness: var(--link-ul-w);
 	text-underline-offset: 0.18em;
 	transition: color 120ms, text-decoration-thickness 120ms;
 }
 a:hover {
-	text-decoration-thickness: 2px;
+	text-decoration-thickness: var(--link-ul-w-hover);
 }
 a:focus-visible {
 	outline: 2px solid var(--accent);
@@ -358,6 +364,7 @@ main {
 }
 .band a {
 	color: var(--on-surface-link);
+	text-decoration-color: var(--band-underline);
 }
 .hl {
 	display: grid;

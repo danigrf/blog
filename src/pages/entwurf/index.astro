@@ -7,6 +7,12 @@ const varianten = [
 	{ k: 'b', name: 'B «Maschinenraum»', idee: 'Logbuch einer Werkstatt: Mono führt, echte Daten sind die Deko. Daniel als Bauender.' },
 	{ k: 'c', name: 'C «Wegweiser»', idee: 'Basler Strassenschild, Liniennetz der Projekte, Abfahrtstafel. Daniel als Ortskundiger. Empfehlung Iris.' },
 ];
+// Runde 3: Signalfarben (Signalgelb, Orange, Hellblau), Schrift Archivo wie A1.
+const runde3 = [
+	{ k: 'a4', name: 'A4 «Signalgelb»', idee: 'Gelb führt: Band Signalgelb, Zeitungskopf Hellblau, Projekt-Balken Orange.' },
+	{ k: 'a5', name: 'A5 «Orange»', idee: 'Orange führt: Band Orange, Zeitungskopf Signalgelb, Projekt-Balken Hellblau.' },
+	{ k: 'a6', name: 'A6 «Hellblau»', idee: 'Hellblau führt: Band Hellblau, Zeitungskopf Orange, Projekt-Balken Signalgelb. Empfehlung Iris für «lebendig, aber nicht laut».' },
+];
 // Runde 2: Daniel wählt A, mit lebendigeren Farben und modernerer Schrift.
 const runde2 = [
 	{ k: 'a1', name: 'A1 «Zine»', idee: 'Laut: Fluo-Pink und Riso-Blau, breite Grotesk (Archivo).' },
@@ -86,6 +92,19 @@ const runde2 = [
 	<body>
 		<main>
 			<h1>Startseite: Entwürfe</h1>
+			<h2>Runde 3: Signalfarben</h2>
+			<p>Aufbau wie A, Schrift Archivo wie A1, Farben Signalgelb, Orange und Hellblau.</p>
+			<ul>
+				{
+					runde3.map((v) => (
+						<li>
+							<strong>{v.name}</strong>
+							<span>{v.idee}</span>
+							<a href={`/entwurf/${v.k}/`}>Startseite</a> · <a href={`/entwurf/${v.k}/artikel/`}>Beispiel-Artikel</a>
+						</li>
+					))
+				}
+			</ul>
 			<h2>Runde 2: Varianten von A</h2>
 			<p>Gleicher Aufbau wie A, andere Farben (Riso-Druckfarben) und Schriften.</p>
 			<ul>
