@@ -1,0 +1,26 @@
+---
+// Logo eines Mediums für die Startseite (48 px, quadratisch).
+// Zuordnung in src/data/medien-logos-start.json; ohne Logo: graues Quadrat mit Initialen.
+import logos from '../data/medien-logos-start.json';
+
+interface Props {
+	medium: string;
+}
+const { medium } = Astro.props;
+const datei = (logos.logos as Record<string, string>)[medium];
+// Initialen: Anfangsbuchstaben der ersten zwei Wörter, die mit Gross- oder Ziffer beginnen
+const woerter = medium.split(/[\s\-–/]+/).filter((w) => /^[A-ZÄÖÜ0-9]/.test(w));
+const initialen = (woerter.length ? woerter : [medium])
+	.slice(0, 2)
+	.map((w) => w[0])
+	.join('')
+	.toUpperCase();
+---
+
+{
+	datei ? (
+		<img class="medien-logo" src={`/medien-logos/${datei}`} alt="" width="48" height="48" loading="lazy" decoding="async" />
+	) : (
+		<span class="medien-logo medien-logo-leer" aria-hidden="true">{initialen}</span>
+	)
+}

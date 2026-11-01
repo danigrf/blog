@@ -1,0 +1,4 @@
+{
+	"_hinweis": "Logos für «Medienberichte» auf der Startseite: Medium (wie in medien.json) -> Datei in public/medien-logos/. Quelle: offizielle Website des Mediums (apple-touch-icon bzw. Favicon in guter Auflösung, quadratisch), lokal abgelegt, kein Hotlinking. Fehlt ein Eintrag, zeigt die Startseite ein graues Quadrat mit Initialen.",
+	"logos": {}
+}

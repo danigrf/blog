@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import MedienLogo from '../components/MedienLogo.astro';
 import Sozial from '../components/Sozial.astro';
 import Titelbild from '../components/Titelbild.astro';
 import portrait from '../assets/ueber-mich/daniel-graf.jpg';
@@ -16,14 +17,7 @@ import '../styles/start.css';
 
 const d = await startseitenDaten();
 const [aufmacher, ...weitere] = d.highlights;
-const hlIds = new Set(d.highlights.map((p) => p.id));
-const neueste = d.posts.filter((p) => !hlIds.has(p.id)).slice(0, 3);
-const medienNeu = d.medienNeuAlle.slice(0, 3);
 const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme verschränkt, vor einer hellen Wand';
-// Datum der Ausgabe = Build-Datum (Zürcher Zeit).
-const zh = { timeZone: 'Europe/Zurich' } as const;
-const datumVoll = new Intl.DateTimeFormat('de-CH', { ...zh, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(d.heute);
-const datumKurz = new Intl.DateTimeFormat('de-CH', { ...zh, day: 'numeric', month: 'numeric', year: 'numeric' }).format(d.heute);
 ---
 
 <!doctype html>
@@ -33,15 +27,6 @@ const datumKurz = new Intl.DateTimeFormat('de-CH', { ...zh, day: 'numeric', mont
 	</head>
 	<body>
 		<Header />
-		<div class="wrap">
-			<div class="zeitungskopf" aria-label="Ausgabe">
-				<span class="zk-ort">Basel</span>
-				<span class="zk-datum">{datumVoll}</span>
-				<span class="zk-nr">
-					Nr. {d.anzahl}<span class="zk-lang"> · seit 2012</span><span class="zk-kurz"> · {datumKurz}</span>
-				</span>
-			</div>
-		</div>
 		<main id="inhalt" class="start">
 			<section class="intro wrap raster" aria-labelledby="intro-titel">
 				<div class="intro-text">
@@ -112,15 +97,15 @@ const datumKurz = new Intl.DateTimeFormat('de-CH', { ...zh, day: 'numeric', mont
 				</div>
 				<ul class="pliste" role="list">
 					{
-						neueste.map((p) => (
+						d.neueste.map((p) => (
 							<li>
 								<a href={`/blog/${p.id}/`}>
+									<Titelbild post={p} class="r32 pl-bild" widths={[184, 368]} sizes="(max-width: 760px) 88px, 184px" />
 									<span class="pl-text">
 										<span class="meta">{datumLang(p.data.pubDate)}</span>
 										<span class="pl-titel">{p.data.title}</span>
 										<span class="pl-desc">{p.data.description}</span>
 									</span>
-									<Titelbild post={p} class="r32 pl-bild" widths={[184, 368]} sizes="(max-width: 760px) 88px, 184px" />
 								</a>
 							</li>
 						))
@@ -133,13 +118,14 @@ const datumKurz = new Intl.DateTimeFormat('de-CH', { ...zh, day: 'numeric', mont
 					<h2 id="berichte-titel">Medienberichte</h2>
 					<a href="/medien/">Alle Medienberichte</a>
 				</div>
-				<ul class="pliste" role="list">
+				<ul class="pliste pliste-medien" role="list">
 					{
-						medienNeu.map((m) => (
+						d.medienNeu.map((m) => (
 							<li>
 								<a href={m.link} rel="noopener">
+									<MedienLogo medium={m.medium} />
 									<span class="pl-text">
-										<span class="meta">{medienDatum(m, 'lang')} · {FORMAT[m.format]}{m.abo ? ' · Abo' : ''}</span>
+										<span class="meta">{medienDatum(m)} · {FORMAT[m.format]}{m.abo ? ' · Abo' : ''}</span>
 										<span class="pl-titel">{m.titel}</span>
 										<span class="pl-desc">{m.medium}</span>
 									</span>

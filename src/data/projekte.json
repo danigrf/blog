@@ -1,5 +1,5 @@
 {
-	"_hinweis": "Von Daniel bestätigt am 01.11.2026 (Auswahl, Reihenfolge, Rollen). Kurztexte («kurz») von Clara mit Daniels Input, 01.11.2026. «seit» nur, wo belegt; leer = wird nicht angezeigt. Status erlaubt: «läuft», «Pilot», «ruht». «stationen» nur für Entwurf C.",
+	"_hinweis": "Von Daniel bestätigt am 01.11.2026 (Auswahl, Reihenfolge, Rollen). Kurztexte («kurz») von Clara mit Daniels Input, 01.11.2026. «seit» nur, wo belegt; leer = wird nicht angezeigt. Status erlaubt: «läuft», «Pilot», «ruht».",
 	"projekte": [
 		{
 			"id": "e-collecting",
@@ -9,17 +9,7 @@
 			"seit": "ca. 2024",
 			"kurz": "Online unterschreiben statt Bogen ausdrucken. Ich räume die letzten Steine aus dem Weg für einen schweizweiten Versuchsbetrieb.",
 			"link": "https://www.bk.admin.ch/de/e-collecting",
-			"thema": "E-Collecting",
-			"stationen": [
-				{
-					"jahr": "2015",
-					"label": "WeCollect.ch"
-				},
-				{
-					"jahr": "ca. 2024",
-					"label": "Versuchsbetrieb"
-				}
-			]
+			"thema": "E-Collecting"
 		},
 		{
 			"id": "bevoelkerungsrat-basel",
@@ -29,8 +19,7 @@
 			"seit": "",
 			"kurz": "Bürger:innen entwickeln Lösungen mit, statt nur abzustimmen. Ich habe das Basler Pilotprojekt mit aufgebaut und begleite es für die Stiftung.",
 			"link": "https://bevoelkerungsrat-basel.ch/",
-			"thema": "Bevölkerungsrat",
-			"stationen": []
+			"thema": "Bevölkerungsrat"
 		},
 		{
 			"id": "unterschriften-bschiss",
@@ -40,8 +29,7 @@
 			"seit": "",
 			"kurz": "Selbst unterschrieben, den Namen hat der Sohn eingetragen: Seit November 2025 ist diese Unterschrift ungültig. Ich will, dass jede Unterschrift zählt.",
 			"link": "https://www.demokratie.ch/blog/dossier-amtlich-gestrichene-unterschriften",
-			"thema": "Unterschriften-Bschiss",
-			"stationen": []
+			"thema": "Unterschriften-Bschiss"
 		},
 		{
 			"id": "inklusion",
@@ -51,8 +39,7 @@
 			"seit": "",
 			"kurz": "Inklusions-Initiative mitaufgebaut, Sammlung ins Ziel gebracht. Heute setze ich mich als ADHS-Selbstbetroffener für eine inklusive Gesellschaft ein.",
 			"link": "https://www.inklusions-initiative.ch/",
-			"thema": "Inklusion",
-			"stationen": []
+			"thema": "Inklusion"
 		}
 	]
 }

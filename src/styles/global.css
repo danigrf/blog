@@ -26,7 +26,7 @@
 	--band: #a9d6f5; /* Hellblau: Highlights-Band */
 	--on-band: #141414;
 	--on-band-muted: #3d3a33;
-	--strip-bg: #e3e5e8; /* Zeitungskopf-Zeile */
+	--strip-bg: #e3e5e8; /* graue Fläche (Logo-Platzhalter auf der Startseite) */
 	--strip-text: #141414;
 	--rule: #f9a900; /* Signalgelb: Projekt-Balken, Linie über Themen */
 	--rule-w: 8px;

@@ -13,24 +13,6 @@ main.start > * {
 	column-gap: 24px;
 }
 
-/* Zeitungskopf: graue Zeile mit Ort, Datum, Nummer */
-.zeitungskopf {
-	display: flex;
-	justify-content: space-between;
-	gap: 16px;
-	padding: 8px 12px;
-	background: var(--strip-bg);
-	color: var(--strip-text);
-	border-top: 1px solid var(--line);
-	font-weight: 500;
-	font-size: 14px;
-	letter-spacing: 0.01em;
-	font-variant-numeric: tabular-nums;
-}
-.zk-kurz {
-	display: none;
-}
-
 /* Abschnitte */
 .abschnitt {
 	margin-top: 96px;
@@ -248,7 +230,7 @@ main.start > * {
 }
 .pliste a {
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) 184px;
+	grid-template-columns: 184px minmax(0, 1fr); /* Bild links, Text rechts */
 	gap: 0 24px;
 	align-items: start;
 	padding-block: 20px;
@@ -261,8 +243,29 @@ main.start > * {
 	gap: 4px;
 	min-width: 0;
 }
-.pl-text:only-child {
-	grid-column: 1 / -1;
+.pliste-medien a {
+	grid-template-columns: 48px minmax(0, 1fr); /* Logo links, Text rechts */
+	gap: 0 20px;
+}
+
+/* Logo des Mediums (MedienLogo.astro): 48 px, quadratisch, feiner Rahmen */
+.medien-logo {
+	display: block;
+	width: 48px;
+	height: 48px;
+	object-fit: contain;
+	background: #ffffff;
+	border: 1px solid var(--line);
+}
+.medien-logo-leer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--strip-bg);
+	color: var(--strip-text);
+	font-weight: 700;
+	font-size: 16px;
+	letter-spacing: 0.02em;
 }
 .pl-titel {
 	max-width: 48rem;
@@ -285,14 +288,6 @@ main.start > * {
 @media (max-width: 760px) {
 	main.start {
 		padding-bottom: 64px;
-	}
-	.zk-ort,
-	.zk-datum,
-	.zk-lang {
-		display: none;
-	}
-	.zk-kurz {
-		display: inline;
 	}
 	.abschnitt,
 	.band {
@@ -369,11 +364,14 @@ main.start > * {
 		font-size: 18px;
 	}
 	.pliste a {
-		grid-template-columns: minmax(0, 1fr) 88px;
+		grid-template-columns: 88px minmax(0, 1fr);
 		gap: 0 16px;
 		padding-block: 16px;
 	}
 	.pl-desc {
 		font-size: 16px;
+	}
+	.pliste-medien a {
+		grid-template-columns: 48px minmax(0, 1fr);
 	}
 }
