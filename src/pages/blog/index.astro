@@ -2,18 +2,11 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
-import JahresUebersicht from '../../components/JahresUebersicht.astro';
 import PostList from '../../components/PostList.astro';
 import { getPosts } from '../../lib/posts';
 import { SITE_DESCRIPTION } from '../../consts';
 
 const posts = await getPosts();
-const jahrMin = Math.min(...posts.map((p) => p.data.pubDate.getFullYear()));
-const jahrMax = Math.max(...posts.map((p) => p.data.pubDate.getFullYear()));
-const jahre = Array.from({ length: jahrMax - jahrMin + 1 }, (_, i) => {
-	const jahr = jahrMin + i;
-	return { jahr, werte: [posts.filter((p) => p.data.pubDate.getFullYear() === jahr).length] };
-});
 ---
 
 <!doctype html>
@@ -56,7 +49,6 @@ const jahre = Array.from({ length: jahrMax - jahrMin + 1 }, (_, i) => {
 		<main id="inhalt">
 			<h1>Blog</h1>
 			<p class="meta"><a href="/themen/">Themen und Beiträge durchsuchen</a></p>
-			<JahresUebersicht jahre={jahre} prefix="jahr-" />
 			<div id="liste"><PostList posts={posts} nachJahr /></div>
 			<div class="mehr" id="f-mehr" hidden>
 				<button type="button" id="f-mehr-btn">Mehr anzeigen</button>
@@ -85,22 +77,6 @@ const jahre = Array.from({ length: jahrMax - jahrMin + 1 }, (_, i) => {
 					return (!filter.von || jahr >= Number(filter.von)) && (!filter.bis || jahr <= Number(filter.bis));
 				}
 				function passt(li) { return themaOk(li) && jahrOk(Number(li.getAttribute('data-jahr'))); }
-				var uebersicht = document.querySelector('.ju');
-
-				// Balken: alle Treffer je Jahr (nicht nur die geladenen); Jahre ausserhalb Von-Bis abgeschwächt.
-				function balken() {
-					if (!uebersicht || !uebersicht.juUpdate) return;
-					var werte = {}, aus = {};
-					items.forEach(function (li) {
-						if (!themaOk(li)) return;
-						var j = li.getAttribute('data-jahr');
-						werte[j] = werte[j] || [0];
-						werte[j][0]++;
-						if (!jahrOk(Number(j))) aus[j] = true;
-					});
-					uebersicht.juUpdate(werte, aus);
-				}
-
 				function zeichnen(fokusAb) {
 					var gezeigt = 0, ersterNeu = null;
 					items.forEach(function (li) {
@@ -119,24 +95,7 @@ const jahre = Array.from({ length: jahrMax - jahrMin + 1 }, (_, i) => {
 					return ersterNeu;
 				}
 
-				document.addEventListener('blog:filter', function () { limit = paket(); zeichnen(); balken(); });
-
-				// Klick auf einen Balken: genug Pakete einblenden, bis der Jahres-Titel da ist, dann hinscrollen.
-				document.addEventListener('ju:wahl', function (e) {
-					var jahr = e.detail.jahr;
-					var davor = items.filter(function (li) { return passt(li) && Number(li.getAttribute('data-jahr')) > jahr; }).length;
-					var drin = items.some(function (li) { return passt(li) && Number(li.getAttribute('data-jahr')) === jahr; });
-					var titel = document.getElementById('jahr-' + jahr);
-					if (!drin || !titel) return;
-					e.preventDefault();
-					while (limit < davor + 1) limit += paket();
-					zeichnen();
-					titel.setAttribute('tabindex', '-1');
-					var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-					titel.scrollIntoView({ behavior: ruhig ? 'auto' : 'smooth', block: 'start' });
-					titel.focus({ preventScroll: true });
-					speichern();
-				});
+				document.addEventListener('blog:filter', function () { limit = paket(); zeichnen(); });
 
 				function weiter(mitFokus) {
 					var vorher = Math.min(limit, items.length);
@@ -156,7 +115,6 @@ const jahre = Array.from({ length: jahrMax - jahrMin + 1 }, (_, i) => {
 
 				limit = paket();
 				zeichnen();
-				balken();
 
 				// Ansicht merken (Anzahl sichtbar + Scrollposition) und nach «Zurück» wiederherstellen.
 				var key = function () { return 'blogview:' + location.pathname + location.search; };
