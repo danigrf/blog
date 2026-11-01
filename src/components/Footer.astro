@@ -1,6 +1,7 @@
 ---
 // Fuss (Design A6). Styles in global.css (.fuss). «Beta v1.3» wohnt seit dem neuen Design hier.
 import { SOZIAL } from '../consts';
+import SozialLink from './SozialLink.astro';
 ---
 
 <footer class="fuss wrap">
@@ -13,7 +14,7 @@ import { SOZIAL } from '../consts';
 			<a href="/about/">Über mich</a>
 			<a href="/kontakt/">Kontakt</a>
 			<a href="/rss.xml">RSS</a>
-			{SOZIAL.map((s) => <a href={s.url} rel="me noopener">{s.name}</a>)}
+			{SOZIAL.map((s) => <SozialLink name={s.name} url={s.url} />)}
 			<a href="/datenschutz/">Datenschutz</a>
 		</nav>
 	</div>

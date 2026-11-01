@@ -374,30 +374,24 @@ td {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: center;
+	align-items: baseline;
 	gap: 12px 32px;
 	padding-block: 24px 16px;
 }
 .kopf-marke {
-	display: flex;
-	flex-direction: column;
+	/* gleiche Grösse und Box wie die Navigationslinks (HeaderLink), nur fetter */
+	font-weight: 700;
+	font-size: 16px;
+	padding-block: 12px;
+	border-bottom: 2px solid transparent;
 	text-decoration: none;
 	color: var(--text);
 }
-.kopf-marke:hover .marke-name {
+.kopf-marke:hover {
+	color: var(--text);
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
-	text-underline-offset: 0.15em;
-}
-.marke-name {
-	font-weight: 700;
-	font-size: 22px;
-	line-height: 1.2;
-}
-.marke-zeile {
-	font-weight: 500;
-	font-size: 14px;
-	color: var(--muted);
+	text-underline-offset: 0.18em;
 }
 .kopf nav {
 	display: flex;
@@ -417,8 +411,34 @@ td {
 	display: inline-block;
 	padding-block: 10px;
 }
-.sozial span {
+.sozial > span {
 	color: var(--muted);
+}
+/* Profil-Links mit Icon: Unterstrich nur unter dem Text */
+.mit-icon {
+	text-decoration: none;
+	white-space: nowrap;
+}
+.mit-icon .icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin-right: 0.35em;
+	vertical-align: -0.14em;
+	fill: currentColor;
+}
+.mit-icon .linktext {
+	text-decoration: underline;
+	text-decoration-color: var(--link-underline);
+	text-decoration-thickness: var(--link-ul-w);
+	text-underline-offset: 0.18em;
+}
+.mit-icon:hover .linktext {
+	text-decoration-thickness: var(--link-ul-w-hover);
+}
+.fuss .mit-icon .icon {
+	width: 0.95em;
+	height: 0.95em;
 }
 
 /* ---------- Fuss ---------- */
