@@ -1,0 +1,15 @@
+---
+// Schlichte Textlinks zu Daniels Profilen (Design A6: keine Icons, keine Markenfarben).
+import { SOZIAL } from '../consts';
+---
+
+<p class="sozial">
+	{
+		SOZIAL.map((s, i) => (
+			<>
+				{i > 0 && <span aria-hidden="true"> · </span>}
+				<a href={s.url} rel="me noopener">{s.name}</a>
+			</>
+		))
+	}
+</p>

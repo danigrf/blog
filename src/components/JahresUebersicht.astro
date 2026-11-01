@@ -78,39 +78,15 @@ const text = (j: { jahr: number; werte: number[] }) => {
 		}
 		<div class="ju-tip" role="tooltip" hidden></div>
 	</div>
-	{
-		gestapelt && (
-			<ul class="ju-legende" aria-label="Formate">
-				{reihen.map((r, i) => (
-					<li>
-						<i class={`ju-key s${i}`} aria-hidden="true" /> {r.label}
-					</li>
-				))}
-			</ul>
-		)
-	}
 </figure>
 
 <style is:global>
 	.ju {
 		--ju-h: 64px;
 		--ju-kopf: 2.2rem;
-		--s0: #2a78d6;
-		--s1: #eb6834;
-		--s2: #1baf7a;
-		--s3: #eda100;
-		--s4: #e87ba4;
+		/* Design A6: Balken einfarbig in Tinte (auch gestapelt); Anteile stehen im Tooltip. */
 		margin: 1.25rem 0 0.5rem;
 		font-family: var(--sans);
-	}
-	@media (prefers-color-scheme: dark) {
-		.ju {
-			--s0: #3987e5;
-			--s1: #d95926;
-			--s2: #199e70;
-			--s3: #c98500;
-			--s4: #d55181;
-		}
 	}
 	.ju-kopf {
 		display: flex;
@@ -120,7 +96,7 @@ const text = (j: { jahr: number; werte: number[] }) => {
 		margin-bottom: 0.4rem;
 	}
 	.ju-titel { font-size: 0.9rem; font-weight: 600; color: var(--muted); }
-	.ju-max { font-size: 0.75rem; font-family: var(--mono); }
+	.ju-max { font-size: 13px; font-family: var(--mono); color: var(--muted); }
 	.ju-plot {
 		position: relative;
 		display: flex;
@@ -138,12 +114,11 @@ const text = (j: { jahr: number; werte: number[] }) => {
 		justify-content: flex-end;
 		text-decoration: none;
 		color: var(--muted);
-		border-radius: 2px;
 	}
 	.ju-col .ju-bar {
 		display: flex;
 		flex-direction: column-reverse;
-		gap: 2px;
+		gap: 0;
 		min-height: 2px;
 		transition: height 0.25s ease;
 	}
@@ -151,21 +126,14 @@ const text = (j: { jahr: number; werte: number[] }) => {
 		display: block;
 		flex-basis: 0;
 		min-height: 0;
-		background: var(--s0);
-		border-radius: 2px 2px 0 0;
+		background: var(--text);
 	}
 	.ju-seg[hidden] { display: none; }
-	.ju-seg.s1 { background: var(--s1); }
-	.ju-seg.s2 { background: var(--s2); }
-	.ju-seg.s3 { background: var(--s3); }
-	.ju-seg.s4 { background: var(--s4); }
-	.ju[data-ein='alle'] .ju-seg { background: var(--accent); }
 	.ju-col.leer .ju-bar { height: 1px !important; background: var(--line); }
 	.ju-col.leer .ju-seg { display: none; }
 	.ju-col[aria-disabled='true'] { cursor: default; }
 	.ju-col.dim .ju-bar { opacity: 0.3; }
-	.ju-col:hover .ju-seg, .ju-col:focus-visible .ju-seg { filter: brightness(0.82); }
-	.ju[data-ein='alle'] .ju-col:hover .ju-seg { background: var(--accent-strong); filter: none; }
+	.ju-col:hover .ju-seg, .ju-col:focus-visible .ju-seg { background: var(--muted); }
 	.ju-col:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
 	.ju-lbl {
 		position: absolute;
@@ -177,7 +145,7 @@ const text = (j: { jahr: number; werte: number[] }) => {
 		align-items: flex-end;
 		padding-bottom: 0.15rem;
 		font-family: var(--mono);
-		font-size: 0.7rem;
+		font-size: 13px;
 		line-height: 1;
 		color: var(--muted);
 		white-space: nowrap;
@@ -212,22 +180,6 @@ const text = (j: { jahr: number; werte: number[] }) => {
 		white-space: normal;
 	}
 	.ju-tip[hidden] { display: none; }
-	.ju-legende {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.15rem 1rem;
-		list-style: none;
-		margin: 0.3rem 0 0;
-		padding: 0;
-		font-size: 0.8rem;
-		color: var(--muted);
-	}
-	.ju-legende li { margin: 0; }
-	.ju-key { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; vertical-align: -1px; background: var(--s0); }
-	.ju-key.s1 { background: var(--s1); }
-	.ju-key.s2 { background: var(--s2); }
-	.ju-key.s3 { background: var(--s3); }
-	.ju-key.s4 { background: var(--s4); }
 	@media (prefers-reduced-motion: reduce) { .ju-col .ju-bar { transition: none; } }
 </style>
 

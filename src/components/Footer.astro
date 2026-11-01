@@ -1,5 +1,6 @@
 ---
 // Fuss (Design A6). Styles in global.css (.fuss). «Beta v1.3» wohnt seit dem neuen Design hier.
+import { SOZIAL } from '../consts';
 ---
 
 <footer class="fuss wrap">
@@ -11,6 +12,7 @@
 			<a href="/themen/">Themen</a>
 			<a href="/about/">Über mich</a>
 			<a href="/rss.xml">RSS</a>
+			{SOZIAL.map((s) => <a href={s.url} rel="me noopener">{s.name}</a>)}
 			<a href="/datenschutz/">Datenschutz</a>
 		</nav>
 	</div>

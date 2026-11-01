@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Sozial from '../components/Sozial.astro';
 import Titelbild from '../components/Titelbild.astro';
 import portrait from '../assets/ueber-mich/daniel-graf.jpg';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
@@ -49,6 +50,7 @@ const datumKurz = new Intl.DateTimeFormat('de-CH', { ...zh, day: 'numeric', mont
 					<p class="lead">
 						2015 habe ich die Plattform <a href="https://wecollect.ch">WeCollect.ch</a> gestartet und später die <a href="https://www.demokratie.ch">Stiftung für direkte Demokratie</a> mitgegründet. Aktuell engagiere ich mich für die Einführung von E-Collecting und begleite den Aufbau eines <a href="https://bevoelkerungsrat-basel.ch/">Bevölkerungsrats in Basel</a>. Hier teile ich meine Gedanken, Projekte und Prototypen für eine co-kreative Demokratie.
 					</p>
+					<Sozial />
 				</div>
 				<figure class="intro-bild">
 					<Image src={portrait} alt={portraitAlt} widths={[360, 540, 800]} sizes="(max-width: 760px) 100vw, 320px" loading="eager" fetchpriority="high" />

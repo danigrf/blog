@@ -36,8 +36,8 @@
 	--info-line: #f9a900;
 	--info-label: #141414;
 	--kontext-bg: #f0f0ec;
-	--kontext-line: #8a9a96;
-	--kontext-label: #3c4a48;
+	--kontext-line: #8a8a8e;
+	--kontext-label: #3d3d40;
 
 	/* Schrift: Archivo für alles; Titel mit Breite 112 */
 	--font: var(--font-archivo), Arial, sans-serif;
@@ -51,10 +51,10 @@
 	--gutter: clamp(20px, 4vw, 48px);
 
 	/* Platzhalter-Kacheln in Listen (Beiträge ohne Bild) */
-	--kachel-0: #a9d6f5;
+	--kachel-0: #deedf6;
 	--kachel-1: #e3e5e8;
-	--kachel-2: #deedf6;
-	--kachel-3: #f0f0ec;
+	--kachel-2: #f0f0ec;
+	--kachel-3: #e8e8e3;
 	--kachel-text: #141414;
 	--kachel-line: #dcdcd6;
 	color-scheme: light dark;
@@ -76,8 +76,8 @@
 		--info-line: #f9a900;
 		--info-label: #edebe6;
 		--kontext-bg: #1c1d20;
-		--kontext-line: #4b6463;
-		--kontext-label: #a3ada9;
+		--kontext-line: #4a4c52;
+		--kontext-label: #a7a9ad;
 		--kachel-0: #242a30;
 		--kachel-1: #2a2d31;
 		--kachel-2: #1c1d20;
@@ -405,6 +405,20 @@ td {
 	gap: 0 24px;
 	font-weight: 500;
 	font-size: 16px;
+}
+
+/* Profil-Links (LinkedIn · Instagram) */
+.sozial {
+	margin: 24px 0 0;
+	font-weight: 500;
+	font-size: 16px;
+}
+.sozial a {
+	display: inline-block;
+	padding-block: 10px;
+}
+.sozial span {
+	color: var(--muted);
 }
 
 /* ---------- Fuss ---------- */

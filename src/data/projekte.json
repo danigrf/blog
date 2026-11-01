@@ -1,5 +1,5 @@
 {
-	"_hinweis": "Von Daniel bestätigt am 01.11.2026 (Auswahl, Reihenfolge, Rollen). Kurztexte («kurz») werden noch von Clara geschärft. «seit» nur, wo belegt; leer = wird nicht angezeigt. Status erlaubt: «läuft», «Pilot», «ruht». «stationen» nur für Entwurf C.",
+	"_hinweis": "Von Daniel bestätigt am 01.11.2026 (Auswahl, Reihenfolge, Rollen). Kurztexte («kurz») von Clara mit Daniels Input, 01.11.2026. «seit» nur, wo belegt; leer = wird nicht angezeigt. Status erlaubt: «läuft», «Pilot», «ruht». «stationen» nur für Entwurf C.",
 	"projekte": [
 		{
 			"id": "e-collecting",
@@ -7,7 +7,7 @@
 			"rolle": "für die Stiftung für direkte Demokratie",
 			"status": "läuft",
 			"seit": "ca. 2024",
-			"kurz": "Die letzten Steine aus dem Weg räumen und einen schweizweiten Versuchsbetrieb möglich machen.",
+			"kurz": "Online unterschreiben statt Bogen ausdrucken. Ich räume die letzten Steine aus dem Weg für einen schweizweiten Versuchsbetrieb.",
 			"link": "https://www.bk.admin.ch/de/e-collecting",
 			"thema": "E-Collecting",
 			"stationen": [
@@ -27,7 +27,7 @@
 			"rolle": "mit aufgebaut, begleitet für die Stiftung",
 			"status": "Pilot",
 			"seit": "",
-			"kurz": "Basler Pilotprojekt: Bürger:innen entwickeln Lösungen mit.",
+			"kurz": "Bürger:innen entwickeln Lösungen mit, statt nur abzustimmen. Ich habe das Basler Pilotprojekt mit aufgebaut und begleite es für die Stiftung.",
 			"link": "https://bevoelkerungsrat-basel.ch/",
 			"thema": "Bevölkerungsrat",
 			"stationen": []
@@ -38,7 +38,7 @@
 			"rolle": "Petition, Recherche",
 			"status": "läuft",
 			"seit": "",
-			"kurz": "Wie stark die verschärften Regeln der Bundeskanzlei gültige Unterschriften treffen, vor allem bei Menschen, die Hilfe brauchen.",
+			"kurz": "Selbst unterschrieben, den Namen hat der Sohn eingetragen: Seit November 2025 ist diese Unterschrift ungültig. Ich will, dass jede Unterschrift zählt.",
 			"link": "https://www.demokratie.ch/blog/dossier-amtlich-gestrichene-unterschriften",
 			"thema": "Unterschriften-Bschiss",
 			"stationen": []
@@ -49,7 +49,7 @@
 			"rolle": "Inklusions-Initiative, ADHS",
 			"status": "läuft",
 			"seit": "",
-			"kurz": "Inklusion ist mir ein sehr persönliches Anliegen.",
+			"kurz": "Inklusions-Initiative mitaufgebaut, Sammlung ins Ziel gebracht. Heute setze ich mich als ADHS-Selbstbetroffener für eine inklusive Gesellschaft ein.",
 			"link": "https://www.inklusions-initiative.ch/",
 			"thema": "Inklusion",
 			"stationen": []
