@@ -92,7 +92,14 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 						<a href={`/blog/${p.id}/`}>
 							<span class="z-datum">{datumLang(p.data.pubDate)}</span>
 							<span class="z-titel">{p.data.title}</span>
-							<span class="z-thema">{p.data.tags.slice(0, 2).join(' · ')}</span>
+							<span class="z-thema">
+								{p.data.tags.slice(0, 2).map((t, i) => (
+									<>
+										{i > 0 && ' '}
+										<span class="z-tag">{t}</span>
+									</>
+								))}
+							</span>
 						</a>
 					</li>
 				))

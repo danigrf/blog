@@ -498,6 +498,13 @@ main {
 	font-size: 14px;
 	color: var(--muted);
 }
+/* Schlagwörter: je ganz, Trenner vor dem Wort, damit keine Zeile mit «·» endet */
+.z-tag {
+	white-space: nowrap;
+}
+.z-tag + .z-tag::before {
+	content: '· ';
+}
 .zeilen a:hover .z-titel {
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
