@@ -65,6 +65,15 @@ main.start > *:not(.wrap) {
 	font-size: 13px;
 	color: var(--muted);
 }
+/* ab 1024 px grösseres Porträt: Text Spalten 1–7, Porträt 8–12 (rechts bündig mit der Inhaltskante) */
+@media (min-width: 1024px) {
+	.intro-text {
+		grid-column: 1 / span 7;
+	}
+	.intro-bild {
+		grid-column: 8 / span 5;
+	}
+}
 
 /* Woran ich arbeite */
 .projekte {
