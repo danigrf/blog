@@ -35,12 +35,6 @@ main.start > * {
 .intro-text {
 	grid-column: 1 / span 8; /* breiter, damit der grosse Lead 55–70 Zeichen pro Zeile hat */
 }
-.dachzeile {
-	margin: 0 0 16px;
-	font-weight: 500;
-	font-size: 14px;
-	color: var(--muted);
-}
 .intro h1 {
 	font-size: clamp(2.5rem, 4.4vw, 3.375rem); /* max. 54 px */
 	line-height: 1.02;
@@ -334,9 +328,6 @@ main.start > * {
 	.intro-text,
 	.intro-bild {
 		grid-column: 1 / -1;
-	}
-	.dachzeile {
-		display: none;
 	}
 	.intro h1 {
 		font-size: 40px;

@@ -371,12 +371,14 @@ td {
 	color: var(--bg);
 }
 .kopf {
+	/* volle Fensterbreite, fester Seitenabstand (nicht an der Inhaltsspalte ausgerichtet) */
+	--kopf-rand: 24px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: center;
 	gap: 12px 32px;
-	padding-block: 24px 16px;
+	padding: 24px var(--kopf-rand) 16px;
 }
 .kopf-marke {
 	/* gleiche Grösse und Box wie die Navigationslinks (HeaderLink), nur fetter */
@@ -406,6 +408,89 @@ td {
 	gap: 0 24px;
 	font-weight: 500;
 	font-size: 16px;
+}
+/* Hamburger-Knopf: nur mit JavaScript und nur schmal sichtbar */
+.kopf-menue {
+	display: none;
+	width: 44px;
+	height: 44px;
+	margin-right: -11px; /* Striche enden auf dem Seitenabstand */
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: var(--text);
+	cursor: pointer;
+}
+.kopf-striche,
+.kopf-striche::before,
+.kopf-striche::after {
+	display: block;
+	width: 22px;
+	height: 2px;
+	background: currentColor;
+	transition: transform 120ms, background-color 120ms;
+}
+.kopf-striche {
+	position: relative;
+	margin: 0 auto;
+}
+.kopf-striche::before,
+.kopf-striche::after {
+	content: '';
+	position: absolute;
+	left: 0;
+}
+.kopf-striche::before {
+	top: -7px;
+}
+.kopf-striche::after {
+	top: 7px;
+}
+.kopf.offen .kopf-striche {
+	background: transparent;
+}
+.kopf.offen .kopf-striche::before {
+	transform: translateY(7px) rotate(45deg);
+}
+.kopf.offen .kopf-striche::after {
+	transform: translateY(-7px) rotate(-45deg);
+}
+@media (max-width: 720px) {
+	.kopf {
+		--kopf-rand: 20px;
+	}
+	.kopf.js-menue {
+		padding-bottom: 12px;
+	}
+	.kopf.js-menue .kopf-menue {
+		display: block;
+	}
+	/* Panel unter dem Kopf: volle Breite, Einträge untereinander */
+	.kopf.js-menue nav {
+		display: none;
+		flex-basis: calc(100% + 2 * var(--kopf-rand));
+		flex-direction: column;
+		margin: 0 calc(-1 * var(--kopf-rand));
+		border-top: 1px solid var(--line);
+		gap: 0;
+	}
+	.kopf.js-menue.offen nav {
+		display: flex;
+	}
+	.kopf.js-menue nav a {
+		display: flex;
+		align-items: center;
+		min-height: 48px;
+		padding: 0 var(--kopf-rand);
+		border-bottom: 1px solid var(--line);
+	}
+	.kopf.js-menue nav a.active {
+		border-bottom-color: var(--line);
+		font-weight: 700;
+		border-left: 3px solid var(--text);
+		padding-left: calc(var(--kopf-rand) - 3px);
+	}
 }
 
 /* Profil-Links (LinkedIn · Instagram) */

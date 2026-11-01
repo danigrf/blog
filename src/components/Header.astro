@@ -1,16 +1,42 @@
 ---
-// Kopf (Design A6): Name (+ Rakete, nur Deko) links (gleich gross wie die Navigation), Navigation rechts. Styles in global.css (.kopf).
+// Kopf (Design A6): volle Fensterbreite, Name (+ Rakete, nur Deko) ganz links, Navigation ganz rechts.
+// Mobil (≤ 720 px) Hamburger-Menü; ohne JavaScript bleibt die Navigation sichtbar. Styles in global.css (.kopf).
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
-<header class="kopf wrap">
+<header class="kopf">
 	<a class="kopf-marke" href="/">{SITE_TITLE}<span class="kopf-rakete" aria-hidden="true">🚀</span></a>
-	<nav aria-label="Hauptnavigation">
+	<button class="kopf-menue" type="button" aria-label="Menü" aria-expanded="false" aria-controls="kopf-nav" hidden>
+		<span class="kopf-striche" aria-hidden="true"></span>
+	</button>
+	<nav id="kopf-nav" aria-label="Hauptnavigation">
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/medien">Medien</HeaderLink>
 		<HeaderLink href="/themen">Themen</HeaderLink>
 		<HeaderLink href="/about">Über mich</HeaderLink>
+		<HeaderLink href="/kontakt">Kontakt</HeaderLink>
 	</nav>
 </header>
+
+<script is:inline>
+	(() => {
+		const kopf = document.querySelector('.kopf');
+		const knopf = kopf && kopf.querySelector('.kopf-menue');
+		if (!knopf) return;
+		kopf.classList.add('js-menue');
+		knopf.hidden = false;
+		const setzen = (offen) => {
+			kopf.classList.toggle('offen', offen);
+			knopf.setAttribute('aria-expanded', String(offen));
+		};
+		knopf.addEventListener('click', () => setzen(knopf.getAttribute('aria-expanded') !== 'true'));
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && kopf.classList.contains('offen')) {
+				setzen(false);
+				knopf.focus();
+			}
+		});
+	})();
+</script>
