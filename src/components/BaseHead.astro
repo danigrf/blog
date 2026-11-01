@@ -16,7 +16,9 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage, imageAlt } = Astro.props;
+const { title, description, image = FallbackImage } = Astro.props;
+// Standardkarte (scripts/og-standard.mjs) hat einen festen Alt-Text; eigene Bilder bringen ihren mit.
+const imageAlt = Astro.props.imageAlt ?? (Astro.props.image ? undefined : 'Daniel Graf, Porträt, mit dem Satz Prototyping for democracy');
 
 // Social-Vorschau: 1200x630 (JPEG, breit gekachelt), absolute Adresse.
 const ogBild = await getImage({ src: image, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });

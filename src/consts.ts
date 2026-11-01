@@ -1,7 +1,7 @@
 // Globale Angaben, die überall auf der Seite verwendet werden.
 
 export const SITE_TITLE = 'Daniel Graf';
-export const SITE_DESCRIPTION = 'Notizen zu direkter und digitaler Demokratie';
+export const SITE_DESCRIPTION = 'Wie gelingt das Update unseres politischen Systems? Diese Frage treibt mich an.';
 
 // Profile auf anderen Plattformen (Startseite, Über mich, Fuss). Reihenfolge = Anzeige.
 export const SOZIAL = [

@@ -1,0 +1,91 @@
+<!doctype html>
+<!--
+	Sharing-Karte (og:image) 1200×630, Design A6 (Iris-Spec 02.11.2026).
+	Wird von scripts/og-standard.mjs mit Headless-Chrome fotografiert.
+	{{FONT}} und {{BILD}} ersetzt das Skript durch file://-Pfade.
+-->
+<html lang="de-CH">
+<head>
+<meta charset="utf-8" />
+<style>
+	@font-face {
+		font-family: 'Archivo OG';
+		src: url('{{FONT}}') format('woff2');
+		font-weight: 100 900;
+		font-stretch: 62% 125%;
+	}
+	html, body { margin: 0; padding: 0; }
+	body {
+		width: 1200px;
+		height: 630px;
+		overflow: hidden;
+		position: relative;
+		background: #fafaf7;
+		color: #141414;
+		/* bewusst KEIN Fallback: fehlt die Schrift, bricht das Skript ab */
+		font-family: 'Archivo OG';
+		font-stretch: 100%;
+		-webkit-font-smoothing: antialiased;
+	}
+	.t { position: absolute; left: 64px; margin: 0; line-height: 1; white-space: nowrap; }
+	#name { font-weight: 700; font-size: 32px; }
+	#titel { font-weight: 800; font-size: 80px; line-height: 0.95; letter-spacing: -0.02em; }
+	#adresse { font-weight: 500; font-size: 26px; color: #57575a; }
+	#streifen { position: absolute; left: 0; top: 606px; width: 600px; height: 24px; background: #a9d6f5; }
+	#bild { position: absolute; left: 600px; top: 0; width: 600px; height: 630px; object-fit: cover; object-position: 75% 50%; display: block; }
+</style>
+</head>
+<body>
+	<p class="t" id="name">Daniel Graf</p>
+	<p class="t" id="titel">Prototyping<br />for<br />democracy</p>
+	<p class="t" id="adresse">danielgraf.ch</p>
+	<div id="streifen"></div>
+	<img id="bild" src="{{BILD}}" alt="" />
+	<pre id="mess" style="display:none"></pre>
+<script>
+	// Feinsatz nach dem Laden der Schrift: Oberkanten (Versalhöhe) und Grundlinie exakt setzen.
+	(async () => {
+		await document.fonts.ready;
+		const ok = document.fonts.check("800 80px 'Archivo OG'") && [...document.fonts].some((f) => f.status === 'loaded');
+		const ctx = document.createElement('canvas').getContext('2d');
+		const kappe = (el) => {
+			const cs = getComputedStyle(el);
+			ctx.font = `${cs.fontWeight} ${cs.fontSize} 'Archivo OG'`;
+			return ctx.measureText('H').actualBoundingBoxAscent; // Versalhöhe über der Grundlinie
+		};
+		const grundlinie = (el) => {
+			const m = document.createElement('span');
+			m.style.cssText = 'display:inline-block;width:0;height:0;vertical-align:baseline';
+			el.insertBefore(m, el.firstChild);
+			const y = m.getBoundingClientRect().top;
+			m.remove();
+			return y;
+		};
+		const setze = (el, y, art) => {
+			el.style.top = '0px';
+			const g = grundlinie(el);
+			const ziel = art === 'grundlinie' ? y : y + kappe(el);
+			el.style.top = ziel - g + 'px';
+		};
+		// «Prototyping» muss in x 64–536 passen, sonst 76 px
+		const titel = document.getElementById('titel');
+		ctx.font = "800 80px 'Archivo OG'";
+		const breite80 = ctx.measureText('Prototyping').width - 0.02 * 80 * 'Prototyping'.length;
+		if (64 + breite80 > 536) titel.style.fontSize = '76px';
+		setze(document.getElementById('name'), 64, 'oberkante');
+		setze(titel, 230, 'oberkante');
+		setze(document.getElementById('adresse'), 556, 'grundlinie');
+		const r = document.createRange();
+		r.selectNodeContents(titel.firstChild);
+		const proto = r.getBoundingClientRect();
+		document.getElementById('mess').textContent = JSON.stringify({
+			schriftGeladen: ok,
+			titelGroesse: getComputedStyle(titel).fontSize,
+			prototypingRechts: Math.round(proto.right * 10) / 10,
+			bildGeladen: document.getElementById('bild').complete && document.getElementById('bild').naturalWidth > 0,
+		});
+		document.body.dataset.fertig = '1';
+	})();
+</script>
+</body>
+</html>
