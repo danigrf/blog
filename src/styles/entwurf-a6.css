@@ -16,7 +16,7 @@
 	--themen-rule-w: 2px; /* Linie über «Themen:» dünn (Projekt-Balken bleiben 8 px) */
 	--band-underline: #141414;
 	--info-bg: #deedf6;
-	--info-line: #f26a1b;
+	--info-line: #f9a900; /* Daniels Wahl: kein Orange in A6 */
 	--info-label: #141414;
 	--kontext-bg: #f0f0ec;
 	--on-surface: #141414;
@@ -74,7 +74,7 @@
 		--link-underline: #edebe6;
 		--band-underline: #141414;
 		--info-bg: #242a30;
-		--info-line: #f26a1b;
+		--info-line: #f9a900;
 		--info-label: #edebe6;
 		--kontext-bg: #1c1d20;
 		--on-surface: #141414;

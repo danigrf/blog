@@ -575,12 +575,14 @@ main {
 	grid-column: 1 / -1;
 }
 .pl-titel {
+	max-width: 48rem; /* Zeilenlänge Desktop (Abnahme Iris) */
 	font-family: var(--f-title);
 	font-weight: var(--w-title);
 	font-size: var(--s-title);
 	line-height: 1.25;
 }
 .pl-desc {
+	max-width: 40rem;
 	font-size: 17px;
 	line-height: 1.5;
 	color: var(--muted);
