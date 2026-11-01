@@ -22,6 +22,7 @@
 	--medium-color: #141414;
 	--strip-text: #141414;
 	--strip-pad: 12px;
+	--kopf-rule-w: 0px; /* Zeitungskopf ohne Unterkante; --rule-w nur Projekt-Balken */
 	--band-edge: transparent;
 	--band-edge-w: 0px;
 

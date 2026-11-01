@@ -38,7 +38,8 @@
 	--strip-bg: transparent;
 	--strip-text: var(--text);
 	--strip-pad: 0px;
-	--rule-w: 2px;
+	--rule-w: 2px; /* Projekt-Balken */
+	--kopf-rule-w: var(--rule-w); /* Unterkante Zeitungskopf (Standard: wie Projekt-Balken) */
 	--medium-color: var(--accent);
 	/* Runde 3: Unterstrich der Links (Farbe, Dicke, Hover) */
 	--link-underline: currentColor;
@@ -249,7 +250,7 @@ h1,
 	padding: 8px var(--strip-pad);
 	background: var(--strip-bg);
 	border-top: 1px solid var(--line);
-	border-bottom: var(--rule-w) solid var(--rule);
+	border-bottom: var(--kopf-rule-w) solid var(--rule);
 }
 .zk-kurz {
 	display: none;
