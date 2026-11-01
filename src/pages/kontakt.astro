@@ -50,11 +50,6 @@ import { TURNSTILE_SITEKEY } from '../consts';
 			.feld [aria-invalid='true'] {
 				border-width: 2px;
 			}
-			.feld-hilfe {
-				margin: 0.35rem 0 0;
-				font-size: 0.95rem;
-				color: var(--muted);
-			}
 			.feld-fehler {
 				margin: 0.35rem 0 0;
 				font-size: 0.95rem;
@@ -124,6 +119,9 @@ import { TURNSTILE_SITEKEY } from '../consts';
 				font-size: 0.95rem;
 				color: var(--muted);
 			}
+			.hinweis a {
+				color: inherit;
+			}
 		</style>
 	</head>
 	<body>
@@ -131,7 +129,7 @@ import { TURNSTILE_SITEKEY } from '../consts';
 		<main id="inhalt">
 			<h1>Kontakt</h1>
 			<div class="kontakt">
-				<p>Du hast eine Frage, eine Idee oder willst etwas zusammen anpacken? Schreib mir. Die Nachricht kommt direkt bei mir an, und ich antworte an die E-Mail-Adresse, die du angibst.</p>
+				<p>Du hast eine Frage, Feedback oder willst etwas zusammen anpacken? Schreib mir.</p>
 
 				<form id="kontakt-form" novalidate data-sitekey={TURNSTILE_SITEKEY}>
 					<div class="feld">
@@ -146,8 +144,7 @@ import { TURNSTILE_SITEKEY } from '../consts';
 					</div>
 					<div class="feld">
 						<label for="k-telefon">Telefon (optional)</label>
-						<input id="k-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="k-telefon-h k-telefon-f" />
-						<p class="feld-hilfe" id="k-telefon-h">Falls du lieber einen Anruf oder eine SMS möchtest.</p>
+						<input id="k-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="k-telefon-f" />
 						<p class="feld-fehler" id="k-telefon-f" aria-live="polite"></p>
 					</div>
 					<div class="feld">
@@ -165,7 +162,7 @@ import { TURNSTILE_SITEKEY } from '../consts';
 				</form>
 				<noscript><p>Das Formular braucht JavaScript (für den Spamschutz). Ohne JavaScript erreichst du mich über <a href="https://www.linkedin.com/in/grafdaniel/">LinkedIn</a>.</p></noscript>
 
-				<p class="hinweis">Was mit deinen Angaben passiert, steht in der <a href="/datenschutz/#kontaktformular">Datenschutzerklärung</a>. Kurz: Ich nutze sie nur, um dir zu antworten.</p>
+				<p class="hinweis"><a href="/datenschutz/#kontaktformular">Datenschutzerklärung</a></p>
 			</div>
 		</main>
 		<Footer />
