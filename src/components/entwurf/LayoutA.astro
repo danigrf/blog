@@ -1,0 +1,69 @@
+---
+// Entwurf A «Feuilleton»: Source Serif 4 + IBM Plex Sans.
+import '../../styles/entwurf-a.css';
+import EntwurfHead from './EntwurfHead.astro';
+import EntwurfLeiste from './EntwurfLeiste.astro';
+
+interface Props {
+	title: string;
+	anzahl: number;
+	heute: Date;
+	zeitungskopf?: boolean;
+}
+const { title, anzahl, heute, zeitungskopf = true } = Astro.props;
+const WOCHENTAG = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+const MONAT = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+const datumVoll = `${WOCHENTAG[heute.getDay()]}, ${heute.getDate()}. ${MONAT[heute.getMonth()]} ${heute.getFullYear()}`;
+const datumKurz = `${heute.getDate()}.${heute.getMonth() + 1}.${heute.getFullYear()}`;
+---
+
+<!doctype html>
+<html lang="de-CH" class="va">
+	<head>
+		<EntwurfHead title={title} fonts={['--entwurf-serif', '--entwurf-sans']} />
+	</head>
+	<body>
+		<EntwurfLeiste variante="A «Feuilleton»" />
+		<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+		<header class="kopf wrap">
+			<a class="marke" href="/entwurf/a/">
+				<span class="marke-name">Daniel Graf</span>
+				<span class="marke-zeile">Prototyping for democracy</span>
+			</a>
+			<nav aria-label="Hauptnavigation">
+				<a href="/blog/">Blog</a>
+				<a href="/medien/">Medien</a>
+				<a href="/themen/">Themen</a>
+				<a href="/about/">Über mich</a>
+			</nav>
+		</header>
+		{
+			zeitungskopf && (
+				<div class="wrap"><div class="zeitungskopf" aria-label="Ausgabe">
+					<span class="zk-ort">Basel</span>
+					<span class="zk-datum">{datumVoll}</span>
+					<span class="zk-nr">
+						Nr. {anzahl}<span class="zk-lang"> · seit 2012</span><span class="zk-kurz"> · {datumKurz}</span>
+					</span>
+				</div></div>
+			)
+		}
+		<main id="inhalt">
+			<slot />
+		</main>
+		<footer class="fuss wrap">
+			<div class="fuss-zeile">
+				<span>Daniel Graf · Basel · schreibt hier seit 2012</span>
+				<nav aria-label="Fussnavigation">
+					<a href="/blog/">Blog</a>
+					<a href="/medien/">Medien</a>
+					<a href="/themen/">Themen</a>
+					<a href="/about/">Über mich</a>
+					<a href="/rss.xml">RSS</a>
+					<a href="/datenschutz/">Datenschutz</a>
+				</nav>
+			</div>
+			<p class="fuss-klein">Porträt: Katharina Schillinger · Beta v1.3</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+{
+	"_hinweis": "ENTWURF, alles Annahme (Iris-Spec 01.11.2026, Abschnitt 5). Rollen und Kurzsätze sinngemäss aus about.astro bzw. Beitragsbeschreibungen. Jahreszahlen nur, wo about.astro sie belegt; sonst «[Daniel ergänzt]». Daniel bestätigt Auswahl, Reihenfolge, Rollen, Jahre und Stationen. Status erlaubt: «läuft», «Pilot», «ruht».",
+	"projekte": [
+		{
+			"id": "e-collecting",
+			"name": "E-Collecting",
+			"rolle": "für die Stiftung für direkte Demokratie",
+			"status": "läuft",
+			"seit": "ca. 2024",
+			"kurz": "Die letzten Steine aus dem Weg räumen und einen schweizweiten Versuchsbetrieb möglich machen.",
+			"link": "https://www.bk.admin.ch/de/e-collecting",
+			"thema": "E-Collecting",
+			"stationen": [
+				{ "jahr": "2015", "label": "WeCollect.ch" },
+				{ "jahr": "ca. 2024", "label": "Versuchsbetrieb" }
+			]
+		},
+		{
+			"id": "bevoelkerungsrat-basel",
+			"name": "Bevölkerungsrat Basel",
+			"rolle": "mit aufgebaut, begleitet für die Stiftung",
+			"status": "Pilot",
+			"seit": "[Daniel ergänzt]",
+			"kurz": "Basler Pilotprojekt: Bürger:innen entwickeln Lösungen mit.",
+			"link": "https://bevoelkerungsrat-basel.ch/",
+			"thema": "Bevölkerungsrat",
+			"stationen": []
+		},
+		{
+			"id": "unterschriften-bschiss",
+			"name": "Hilfe beim Unterschreiben",
+			"rolle": "Petition, Recherche",
+			"status": "läuft",
+			"seit": "[Daniel ergänzt]",
+			"kurz": "Wie stark die verschärften Regeln der Bundeskanzlei gültige Unterschriften treffen, vor allem bei Menschen, die Hilfe brauchen.",
+			"link": "https://www.demokratie.ch/blog/dossier-amtlich-gestrichene-unterschriften",
+			"thema": "Unterschriften-Bschiss",
+			"stationen": []
+		},
+		{
+			"id": "inklusion",
+			"name": "Inklusion und Neurodivergenz",
+			"rolle": "Inklusions-Initiative, ADHS",
+			"status": "läuft",
+			"seit": "[Daniel ergänzt]",
+			"kurz": "Inklusion ist mir ein sehr persönliches Anliegen.",
+			"link": "https://www.inklusions-initiative.ch/",
+			"thema": "Inklusion",
+			"stationen": []
+		}
+	]
+}

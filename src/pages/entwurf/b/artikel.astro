@@ -1,0 +1,39 @@
+---
+import { render } from 'astro:content';
+import * as bausteine from '../../../components/bausteine';
+import LayoutB from '../../../components/entwurf/LayoutB.astro';
+import { datumIso, startseitenDaten } from '../../../lib/entwurf';
+import { themaSlug } from '../../../lib/posts';
+
+const d = await startseitenDaten();
+const post = d.artikel;
+const { Content } = await render(post);
+---
+
+<LayoutB title={`${post.data.title} – Entwurf B`} build={d.build}>
+	<article class="artikel wrap">
+		<header class="artikel-kopf">
+			<p class="meta">
+				<a href="/entwurf/b/">← start</a> · #{d.nummer.get(post.id)} · {datumIso(post.data.pubDate)}
+				{post.data.tags[0] && <> · <a href={`/themen/${themaSlug(post.data.tags[0])}/`}>{themaSlug(post.data.tags[0])}</a></>}
+			</p>
+			<h1>{post.data.title}</h1>
+		</header>
+		<div class="prose">
+			<Content components={bausteine} />
+		</div>
+		{
+			post.data.tags.length > 0 && (
+				<p class="artikel-themen">
+					<span>themen: </span>
+					{post.data.tags.map((t, i) => (
+						<>
+							{i > 0 && ' · '}
+							<a href={`/themen/${themaSlug(t)}/`}>{t}</a>
+						</>
+					))}
+				</p>
+			)
+		}
+	</article>
+</LayoutB>

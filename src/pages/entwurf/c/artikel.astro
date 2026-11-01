@@ -1,0 +1,39 @@
+---
+import { render } from 'astro:content';
+import * as bausteine from '../../../components/bausteine';
+import LayoutC from '../../../components/entwurf/LayoutC.astro';
+import { datumPunkt, startseitenDaten } from '../../../lib/entwurf';
+import { themaSlug } from '../../../lib/posts';
+
+const d = await startseitenDaten();
+const post = d.artikel;
+const { Content } = await render(post);
+---
+
+<LayoutC title={`${post.data.title} – Entwurf C`} anzahl={d.anzahl} mitSerif>
+	<article class="artikel wrap">
+		<header class="artikel-kopf">
+			<p class="meta">
+				<a href="/entwurf/c/">← Startseite</a> · {datumPunkt(post.data.pubDate)}
+				{post.data.tags[0] && <> · <a href={`/themen/${themaSlug(post.data.tags[0])}/`}>{post.data.tags[0]}</a></>}
+			</p>
+			<h1>{post.data.title}</h1>
+		</header>
+		<div class="prose">
+			<Content components={bausteine} />
+		</div>
+		{
+			post.data.tags.length > 0 && (
+				<p class="artikel-themen">
+					<span>Themen: </span>
+					{post.data.tags.map((t, i) => (
+						<>
+							{i > 0 && ' · '}
+							<a href={`/themen/${themaSlug(t)}/`}>{t}</a>
+						</>
+					))}
+				</p>
+			)
+		}
+	</article>
+</LayoutC>

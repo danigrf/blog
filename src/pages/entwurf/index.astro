@@ -1,0 +1,93 @@
+---
+// Übersicht der Design-Entwürfe (nicht verlinkt, noindex, nicht in der Sitemap).
+import EntwurfHead from '../../components/entwurf/EntwurfHead.astro';
+
+const varianten = [
+	{ k: 'a', name: 'A «Feuilleton»', idee: 'Wochenzeitung: grosse Serif-Titel, Aufmacher, Pressespiegel. Daniel als Autor.' },
+	{ k: 'b', name: 'B «Maschinenraum»', idee: 'Logbuch einer Werkstatt: Mono führt, echte Daten sind die Deko. Daniel als Bauender.' },
+	{ k: 'c', name: 'C «Wegweiser»', idee: 'Basler Strassenschild, Liniennetz der Projekte, Abfahrtstafel. Daniel als Ortskundiger. Empfehlung Iris.' },
+];
+---
+
+<!doctype html>
+<html lang="de-CH">
+	<head>
+		<EntwurfHead title="Entwürfe Startseite – danielgraf.ch" fonts={[]} />
+		<style>
+			body {
+				margin: 0;
+				padding: 48px 20px;
+				font: 17px/1.5 system-ui, sans-serif;
+				background: #fafafa;
+				color: #161616;
+			}
+			main {
+				max-width: 40rem;
+				margin: 0 auto;
+			}
+			h1 {
+				font-size: 28px;
+				margin: 0 0 8px;
+			}
+			p {
+				margin: 0 0 24px;
+				color: #555;
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				border-top: 1px solid #ddd;
+			}
+			li {
+				padding: 16px 0;
+				border-bottom: 1px solid #ddd;
+			}
+			a {
+				color: #173fb9;
+			}
+			strong {
+				display: block;
+				font-size: 19px;
+			}
+			span {
+				display: block;
+				color: #555;
+			}
+			@media (prefers-color-scheme: dark) {
+				body {
+					background: #111;
+					color: #eee;
+				}
+				p,
+				span {
+					color: #aaa;
+				}
+				ul,
+				li {
+					border-color: #333;
+				}
+				a {
+					color: #8fa8ff;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Startseite: drei Entwürfe</h1>
+			<p>Grund-Design für danielgraf.ch nach Iris’ Spezifikation vom 1.11.2026. Echte Daten, nicht öffentlich verlinkt. Projekte und Blog-Highlights sind vorläufig.</p>
+			<ul>
+				{
+					varianten.map((v) => (
+						<li>
+							<strong>{v.name}</strong>
+							<span>{v.idee}</span>
+							<a href={`/entwurf/${v.k}/`}>Startseite</a> · <a href={`/entwurf/${v.k}/artikel/`}>Beispiel-Artikel</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+	</body>
+</html>

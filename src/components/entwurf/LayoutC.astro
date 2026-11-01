@@ -1,0 +1,57 @@
+---
+// Entwurf C «Wegweiser»: Inter Tight (+ Source Serif 4 nur für Artikeltext).
+import '../../styles/entwurf-c.css';
+import EntwurfHead from './EntwurfHead.astro';
+import EntwurfLeiste from './EntwurfLeiste.astro';
+
+interface Props {
+	title: string;
+	anzahl: number;
+	mitSerif?: boolean;
+}
+const { title, anzahl, mitSerif = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de-CH" class="vc">
+	<head>
+		<EntwurfHead title={title} fonts={mitSerif ? ['--entwurf-grotesk', '--entwurf-serif'] : ['--entwurf-grotesk']} />
+	</head>
+	<body>
+		<EntwurfLeiste variante="C «Wegweiser»" />
+		<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+		<header class="kopf">
+			<div class="wrap kopf-innen">
+				<a class="marke" href="/entwurf/c/">Daniel Graf</a>
+				<nav aria-label="Hauptnavigation">
+					<a href="/blog/">Blog</a>
+					<a href="/medien/">Medien</a>
+					<a href="/themen/">Themen</a>
+					<a href="/about/">Über mich</a>
+				</nav>
+			</div>
+		</header>
+		<main id="inhalt">
+			<slot />
+		</main>
+		<footer class="fuss">
+			<div class="wrap fuss-raster">
+				<div>
+					<p>Daniel Graf · Basel</p>
+					<p>Foto: Katharina Schillinger</p>
+				</div>
+				<nav aria-label="Fussnavigation">
+					<a href="/blog/">Blog</a>
+					<a href="/medien/">Medien</a>
+					<a href="/themen/">Themen</a>
+					<a href="/about/">Über mich</a>
+					<a href="/datenschutz/">Datenschutz</a>
+				</nav>
+				<div>
+					<a href="/rss.xml">RSS</a>
+				</div>
+				<p class="fuss-klein">Beta v1.3 · {anzahl} Beiträge seit 2012</p>
+			</div>
+		</footer>
+	</body>
+</html>
