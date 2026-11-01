@@ -40,9 +40,18 @@ function chrome(args) {
 
 try {
 	// 1. Standardkarte
+	// Porträt: Ausschnitt aus dem Hochformat (mehr Umfeld), Seitenverhältnis 600:630 wie der Rahmen.
+	// Gewählt am 02.11.2026: Kopf ganz drin, ≥ 40 px Luft links (zur Kante x 600) und über dem Haar.
+	const PORTRAET = { quelle: 'src/assets/ueber-mich/daniel-graf.jpg', left: 381, top: 118, width: 900, height: 945 };
+	const portraet = join(tmp, 'portraet.png');
+	await sharp(join(ROOT, PORTRAET.quelle))
+		.extract({ left: PORTRAET.left, top: PORTRAET.top, width: PORTRAET.width, height: PORTRAET.height })
+		.resize(600, 630)
+		.png()
+		.toFile(portraet);
 	const html = readFileSync(join(ROOT, 'scripts/og/karte.html'), 'utf8')
 		.replaceAll('{{FONT}}', pathToFileURL(join(ROOT, 'scripts/og/archivo-latin-variabel.woff2')).href)
-		.replaceAll('{{BILD}}', pathToFileURL(join(ROOT, 'src/assets/ueber-mich/daniel-graf-quer.jpg')).href);
+		.replaceAll('{{BILD}}', pathToFileURL(portraet).href);
 	const seite = join(tmp, 'karte.html');
 	writeFileSync(seite, html);
 
