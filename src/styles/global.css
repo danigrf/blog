@@ -387,6 +387,13 @@ td {
 	text-decoration: none;
 	color: var(--text);
 }
+.kopf-rakete {
+	/* Deko hinter dem Namen: gleiche Grösse, inline-block, damit die Hover-Unterstreichung sie nicht erfasst */
+	display: inline-block;
+	margin-left: 0.3em;
+	font-size: 1em;
+	line-height: 1;
+}
 .kopf-marke:hover {
 	color: var(--text);
 	text-decoration: underline;

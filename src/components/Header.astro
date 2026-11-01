@@ -1,12 +1,12 @@
 ---
-// Kopf (Design A6): Name links (gleich gross wie die Navigation), Navigation rechts. Styles in global.css (.kopf).
+// Kopf (Design A6): Name (+ Rakete, nur Deko) links (gleich gross wie die Navigation), Navigation rechts. Styles in global.css (.kopf).
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf wrap">
-	<a class="kopf-marke" href="/">{SITE_TITLE}</a>
+	<a class="kopf-marke" href="/">{SITE_TITLE}<span class="kopf-rakete" aria-hidden="true">🚀</span></a>
 	<nav aria-label="Hauptnavigation">
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/medien">Medien</HeaderLink>
