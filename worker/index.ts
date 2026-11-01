@@ -26,7 +26,7 @@ interface Env {
 	DEV_MODE?: string; // nur lokal in .dev.vars: "true"
 }
 
-const MAX = { name: 100, email: 200, nachricht: 5000 };
+const MAX = { name: 100, email: 200, telefon: 40, nachricht: 5000 };
 const MIN_NACHRICHT = 10;
 const MIN_SEKUNDEN = 3; // schneller ausgefüllt = Bot
 const MAX_STUNDEN = 24;
@@ -41,6 +41,8 @@ function json(status: number, body: Record<string, unknown>): Response {
 const istDev = (env: Env) => env.DEV_MODE === 'true';
 // Zeilenumbrüche und Steuerzeichen raus (Betreff, Name), Länge kappen
 const einzeilig = (s: string, max: number) => s.replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
+// Telefon: nur Ziffern, Leerzeichen und + ( ) - / . erlaubt, mindestens 5 Ziffern
+const istTelefon = (s: string) => s.length <= MAX.telefon && /^[0-9 +()\-\/.]+$/.test(s) && (s.match(/[0-9]/g) || []).length >= 5;
 const istEmail = (s: string) => /^[^\s@<>"(),;:]+@[^\s@<>"(),;:]+\.[a-z]{2,}$/i.test(s);
 
 async function turnstileOk(env: Env, token: string, ip: string | null): Promise<'ok' | 'failed' | 'misconfigured'> {
@@ -93,10 +95,12 @@ async function kontakt(req: Request, env: Env): Promise<Response> {
 
 	const name = einzeilig(str('name'), MAX.name);
 	const email = einzeilig(str('email'), MAX.email);
+	const telefon = str('telefon').replace(/[\r\n\t]+/g, ' ').trim();
 	const nachricht = str('nachricht').replace(/\r\n?/g, '\n').trim();
 	const felder: string[] = [];
 	if (!name) felder.push('name');
 	if (!istEmail(email)) felder.push('email');
+	if (telefon && !istTelefon(telefon)) felder.push('telefon');
 	if (nachricht.length < MIN_NACHRICHT || nachricht.length > MAX.nachricht) felder.push('nachricht');
 	if (felder.length) return json(422, { ok: false, fehler: 'felder', felder });
 
@@ -117,6 +121,7 @@ async function kontakt(req: Request, env: Env): Promise<Response> {
 		``,
 		`Name: ${name}`,
 		`E-Mail: ${email}`,
+		...(telefon ? [`Telefon: ${telefon}`] : []),
 		`Zeit: ${zeit}`,
 		``,
 		nachricht,

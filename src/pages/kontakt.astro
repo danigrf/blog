@@ -50,6 +50,11 @@ import { TURNSTILE_SITEKEY } from '../consts';
 			.feld [aria-invalid='true'] {
 				border-width: 2px;
 			}
+			.feld-hilfe {
+				margin: 0.35rem 0 0;
+				font-size: 0.95rem;
+				color: var(--muted);
+			}
 			.feld-fehler {
 				margin: 0.35rem 0 0;
 				font-size: 0.95rem;
@@ -140,6 +145,12 @@ import { TURNSTILE_SITEKEY } from '../consts';
 						<p class="feld-fehler" id="k-email-f" aria-live="polite"></p>
 					</div>
 					<div class="feld">
+						<label for="k-telefon">Telefon (optional)</label>
+						<input id="k-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="k-telefon-h k-telefon-f" />
+						<p class="feld-hilfe" id="k-telefon-h">Falls du lieber einen Anruf oder eine SMS möchtest.</p>
+						<p class="feld-fehler" id="k-telefon-f" aria-live="polite"></p>
+					</div>
+					<div class="feld">
 						<label for="k-nachricht">Nachricht</label>
 						<textarea id="k-nachricht" name="nachricht" required minlength="10" maxlength="5000" aria-describedby="k-nachricht-f"></textarea>
 						<p class="feld-fehler" id="k-nachricht-f" aria-live="polite"></p>
@@ -187,6 +198,7 @@ import { TURNSTILE_SITEKEY } from '../consts';
 			const meldungen: Record<string, string> = {
 				name: 'Bitte gib deinen Namen an.',
 				email: 'Bitte gib eine gültige E-Mail-Adresse an, damit ich antworten kann.',
+				telefon: 'Bitte gib eine gültige Telefonnummer an oder lass das Feld leer.',
 				nachricht: 'Die Nachricht braucht mindestens 10 und höchstens 5000 Zeichen.',
 			};
 			function feldFehler(namen: string[]) {
@@ -203,6 +215,8 @@ import { TURNSTILE_SITEKEY } from '../consts';
 				const f: string[] = [];
 				if (!d.name.trim()) f.push('name');
 				if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(d.email.trim())) f.push('email');
+				const tel = d.telefon.trim();
+				if (tel && (tel.length > 40 || !/^[0-9 +()\-\/.]+$/.test(tel) || (tel.match(/[0-9]/g) || []).length < 5)) f.push('telefon');
 				const l = d.nachricht.trim().length;
 				if (l < 10 || l > 5000) f.push('nachricht');
 				return f;
@@ -222,6 +236,7 @@ import { TURNSTILE_SITEKEY } from '../consts';
 				const d = {
 					name: String(fd.get('name') || ''),
 					email: String(fd.get('email') || ''),
+					telefon: String(fd.get('telefon') || ''),
 					nachricht: String(fd.get('nachricht') || ''),
 					website: String(fd.get('website') || ''),
 					t: String(geladen),
