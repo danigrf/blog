@@ -1,0 +1,6 @@
+# Nur für lokale Tests mit «npx wrangler dev». Kopieren nach .dev.vars (wird nicht eingecheckt).
+DEV_MODE=true
+# Offizieller Turnstile-Test-Schlüssel von Cloudflare: besteht immer (2x0000000000000000000000000000000AA schlägt immer fehl)
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+# Lokal wird nichts verschickt: wrangler dev schreibt die Mail in eine Datei und nennt den Pfad im Log.
+KONTAKT_TO=test@example.com

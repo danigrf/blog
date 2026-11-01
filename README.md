@@ -61,3 +61,28 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+## Kontaktformular (/kontakt/)
+
+Seite `src/pages/kontakt.astro` schickt per `fetch` an `POST /api/kontakt`. Den Endpunkt beantwortet ein kleiner Worker (`worker/index.ts`); alle anderen Adressen liefert Cloudflare wie bisher direkt aus `dist/` aus (`run_worker_first: ["/api/*"]`).
+
+Schutz: Honeypot-Feld `website`, Zeitfalle (mind. 3 s), Cloudflare Turnstile, höchstens 5 Versuche pro IP und Minute (`ratelimits`), nur Anfragen von der eigenen Domain. Versand über Cloudflare Email Service (Binding `EMAIL`), Absender `kontakt@danielgraf.ch`, Reply-To = Adresse aus dem Formular.
+
+**Die Empfängeradresse steht nirgends im Repo** (es ist öffentlich), nur im Secret `KONTAKT_TO`.
+
+Einmalig online einrichten:
+
+```sh
+npx wrangler secret put KONTAKT_TO        # Empfängeradresse eingeben
+npx wrangler secret put TURNSTILE_SECRET  # Secret des Turnstile-Widgets
+```
+
+Den öffentlichen Turnstile-Site-Key als Build-Variable `PUBLIC_TURNSTILE_SITEKEY` im Cloudflare-Build setzen (Workers & Pages > blog > Settings > Build > Variables). Ohne Site-Key und Secret antwortet der Endpunkt mit «nicht eingerichtet» (503).
+
+Lokal testen (nichts wird verschickt, wrangler legt die Mail als Datei unter `.wrangler/tmp/email/` ab):
+
+```sh
+cp .dev.vars.example .dev.vars
+PUBLIC_TURNSTILE_SITEKEY=1x00000000000000000000AA npm run build
+npx wrangler dev --port 8799     # http://127.0.0.1:8799/kontakt/
+```

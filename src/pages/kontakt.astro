@@ -1,0 +1,261 @@
+---
+// Kontaktformular (Design A6). Schickt an den Worker /api/kontakt (worker/index.ts).
+// Die Empfängeradresse steht nirgends im HTML/JS, nur als Secret im Worker.
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { TURNSTILE_SITEKEY } from '../consts';
+---
+
+<!doctype html>
+<html lang="de-CH">
+	<head>
+		<BaseHead title="Kontakt – Daniel Graf" description="Schreib mir eine Nachricht. Sie kommt direkt bei mir an." />
+		{TURNSTILE_SITEKEY && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>}
+		<style>
+			.kontakt {
+				max-width: var(--measure);
+			}
+			.feld {
+				margin: 0 0 1.4rem;
+			}
+			.feld label {
+				display: block;
+				font-weight: 600;
+				margin-bottom: 0.35rem;
+			}
+			.feld input,
+			.feld textarea {
+				display: block;
+				width: 100%;
+				box-sizing: border-box;
+				font: inherit;
+				font-size: 1.0625rem;
+				color: var(--text);
+				background: var(--bg);
+				border: 1px solid var(--text);
+				border-radius: 0;
+				padding: 0.6rem 0.75rem;
+			}
+			.feld textarea {
+				min-height: 11rem;
+				resize: vertical;
+				line-height: 1.5;
+			}
+			.feld input:focus-visible,
+			.feld textarea:focus-visible {
+				outline: 2px solid var(--accent);
+				outline-offset: 2px;
+			}
+			.feld [aria-invalid='true'] {
+				border-width: 2px;
+			}
+			.feld-fehler {
+				margin: 0.35rem 0 0;
+				font-size: 0.95rem;
+			}
+			.feld-fehler:empty {
+				display: none;
+			}
+			.feld-fehler::before {
+				content: '';
+				display: inline-block;
+				width: 0.55rem;
+				height: 0.55rem;
+				margin-right: 0.45rem;
+				background: var(--mark);
+			}
+			/* Honeypot: für Menschen unsichtbar, auch für Screenreader */
+			.hp {
+				position: absolute;
+				left: -10000px;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+			}
+			.knopf {
+				font: inherit;
+				font-weight: 700;
+				font-size: 1.0625rem;
+				color: var(--bg);
+				background: var(--text);
+				border: 0;
+				border-radius: 0;
+				padding: 0.75rem 1.4rem;
+				cursor: pointer;
+			}
+			.knopf:hover {
+				text-decoration: underline;
+				text-underline-offset: 0.18em;
+			}
+			.knopf[disabled] {
+				opacity: 0.55;
+				cursor: progress;
+			}
+			.ts {
+				margin: 0 0 1.2rem;
+				min-height: 0;
+			}
+			.status {
+				margin: 1.2rem 0 1.6rem;
+			}
+			.status:empty {
+				display: none;
+			}
+			.status.ok {
+				border-left: var(--rule-w) solid var(--rule);
+				padding: 0.2rem 0 0.2rem 1rem;
+			}
+			.hinweis {
+				font-size: 0.95rem;
+				color: var(--muted);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main id="inhalt">
+			<h1>Kontakt</h1>
+			<div class="kontakt">
+				<p>Du hast eine Frage, eine Idee oder willst etwas zusammen anpacken? Schreib mir. Die Nachricht kommt direkt bei mir an, und ich antworte an die E-Mail-Adresse, die du angibst.</p>
+
+				<form id="kontakt-form" novalidate data-sitekey={TURNSTILE_SITEKEY}>
+					<div class="feld">
+						<label for="k-name">Name</label>
+						<input id="k-name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="k-name-f" />
+						<p class="feld-fehler" id="k-name-f" aria-live="polite"></p>
+					</div>
+					<div class="feld">
+						<label for="k-email">E-Mail</label>
+						<input id="k-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" aria-describedby="k-email-f" />
+						<p class="feld-fehler" id="k-email-f" aria-live="polite"></p>
+					</div>
+					<div class="feld">
+						<label for="k-nachricht">Nachricht</label>
+						<textarea id="k-nachricht" name="nachricht" required minlength="10" maxlength="5000" aria-describedby="k-nachricht-f"></textarea>
+						<p class="feld-fehler" id="k-nachricht-f" aria-live="polite"></p>
+					</div>
+					<div class="hp" aria-hidden="true">
+						<label for="k-website">Website (bitte leer lassen)</label>
+						<input id="k-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+					</div>
+					<div class="ts" id="k-turnstile"></div>
+					<button class="knopf" type="submit">Nachricht senden</button>
+					<p class="status" id="k-status" role="status" aria-live="polite"></p>
+				</form>
+				<noscript><p>Das Formular braucht JavaScript (für den Spamschutz). Ohne JavaScript erreichst du mich über <a href="https://www.linkedin.com/in/grafdaniel/">LinkedIn</a>.</p></noscript>
+
+				<p class="hinweis">Was mit deinen Angaben passiert, steht in der <a href="/datenschutz/#kontaktformular">Datenschutzerklärung</a>. Kurz: Ich nutze sie nur, um dir zu antworten.</p>
+			</div>
+		</main>
+		<Footer />
+
+		<script>
+			const form = document.getElementById('kontakt-form') as HTMLFormElement;
+			const status = document.getElementById('k-status') as HTMLElement;
+			const knopf = form.querySelector('button[type=submit]') as HTMLButtonElement;
+			const geladen = Date.now();
+			const sitekey = form.dataset.sitekey || '';
+			let tsToken = '';
+			let tsId: string | undefined;
+
+			type TS = { render: (el: string, o: Record<string, unknown>) => string; reset: (id?: string) => void };
+			function tsStart() {
+				const ts = (window as unknown as { turnstile?: TS }).turnstile;
+				if (!sitekey) return;
+				if (!ts) return void setTimeout(tsStart, 200);
+				tsId = ts.render('#k-turnstile', {
+					sitekey,
+					language: 'de',
+					appearance: 'interaction-only',
+					callback: (t: string) => (tsToken = t),
+					'expired-callback': () => (tsToken = ''),
+					'error-callback': () => (tsToken = ''),
+				});
+			}
+			tsStart();
+
+			const meldungen: Record<string, string> = {
+				name: 'Bitte gib deinen Namen an.',
+				email: 'Bitte gib eine gültige E-Mail-Adresse an, damit ich antworten kann.',
+				nachricht: 'Die Nachricht braucht mindestens 10 und höchstens 5000 Zeichen.',
+			};
+			function feldFehler(namen: string[]) {
+				for (const n of Object.keys(meldungen)) {
+					const el = form.elements.namedItem(n) as HTMLInputElement;
+					const f = document.getElementById(`k-${n}-f`) as HTMLElement;
+					const fehlt = namen.includes(n);
+					el.setAttribute('aria-invalid', String(fehlt));
+					f.textContent = fehlt ? meldungen[n] : '';
+				}
+				if (namen.length) (form.elements.namedItem(namen[0]) as HTMLElement).focus();
+			}
+			function pruefen(d: Record<string, string>) {
+				const f: string[] = [];
+				if (!d.name.trim()) f.push('name');
+				if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(d.email.trim())) f.push('email');
+				const l = d.nachricht.trim().length;
+				if (l < 10 || l > 5000) f.push('nachricht');
+				return f;
+			}
+			const fehlerText: Record<string, string> = {
+				spamschutz: 'Der Spamschutz hat nicht geklappt. Bitte lade die Seite neu und versuch es nochmals.',
+				zeit: 'Das ging etwas schnell. Bitte warte einen Moment und schick die Nachricht nochmals.',
+				'zu-viele': 'Zu viele Versuche in kurzer Zeit. Bitte versuch es in einer Minute nochmals.',
+				'nicht-eingerichtet': 'Das Formular ist gerade nicht in Betrieb. Bitte versuch es später nochmals.',
+			};
+
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				status.className = 'status';
+				status.textContent = '';
+				const fd = new FormData(form);
+				const d = {
+					name: String(fd.get('name') || ''),
+					email: String(fd.get('email') || ''),
+					nachricht: String(fd.get('nachricht') || ''),
+					website: String(fd.get('website') || ''),
+					t: String(geladen),
+					turnstile: tsToken,
+				};
+				const f = pruefen(d);
+				feldFehler(f);
+				if (f.length) return;
+				if (sitekey && !tsToken) {
+					status.textContent = 'Einen Moment, der Spamschutz prüft noch. Bitte gleich nochmals auf «Nachricht senden».';
+					return;
+				}
+				knopf.disabled = true;
+				knopf.textContent = 'Wird gesendet …';
+				try {
+					const r = await fetch('/api/kontakt', {
+						method: 'POST',
+						headers: { 'content-type': 'application/json' },
+						body: JSON.stringify(d),
+					});
+					const j = (await r.json().catch(() => ({}))) as { ok?: boolean; fehler?: string; felder?: string[] };
+					if (j.ok) {
+						form.reset();
+						feldFehler([]);
+						status.className = 'status ok';
+						status.textContent = 'Danke, deine Nachricht ist angekommen. Ich melde mich.';
+						return;
+					}
+					if (j.fehler === 'felder' && j.felder) feldFehler(j.felder);
+					else status.textContent = fehlerText[j.fehler || ''] || 'Das hat leider nicht geklappt. Bitte versuch es später nochmals.';
+				} catch {
+					status.textContent = 'Keine Verbindung. Bitte prüf dein Internet und versuch es nochmals.';
+				} finally {
+					knopf.disabled = false;
+					knopf.textContent = 'Nachricht senden';
+					// Turnstile-Token gilt nur einmal
+					const ts = (window as unknown as { turnstile?: TS }).turnstile;
+					if (ts && tsId !== undefined) {
+						tsToken = '';
+						ts.reset(tsId);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

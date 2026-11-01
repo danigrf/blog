@@ -1,11 +1,16 @@
 // Einstellungen für Cloudflare: veröffentlicht den gebauten Ordner dist/ als statische Website.
+// Seit dem Kontaktformular (Branch kontaktformular) gibt es dazu einen kleinen Worker (worker/index.ts),
+// der nur /api/* beantwortet. Alle anderen Adressen gehen wie bisher direkt an dist/.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "blog",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
   },
   // Eigene Domain: Cloudflare legt DNS-Eintrag und Zertifikat beim Deploy selbst an.
   "routes": [
@@ -13,5 +18,17 @@
     { "pattern": "www.danielgraf.ch", "custom_domain": true }
   ],
   // Die bisherige Adresse blog.daniel-graf.workers.dev bleibt erreichbar.
-  "workers_dev": true
+  "workers_dev": true,
+
+  // Kontaktformular: Versand über Cloudflare Email Service (Binding EMAIL).
+  // Voraussetzung: danielgraf.ch ist unter Compute > Email Service > Email Sending «onboarded»
+  // und die Zieladresse ist als verifizierte Destination Address hinterlegt.
+  // Die Zieladresse selbst steht nur im Secret KONTAKT_TO (Repo ist öffentlich), darum hier keine destination_address.
+  "send_email": [{ "name": "EMAIL", "allowed_sender_addresses": ["kontakt@danielgraf.ch"] }],
+  // Höchstens 5 Formular-Versuche pro IP und Minute
+  "ratelimits": [{ "name": "KONTAKT_RL", "namespace_id": "2026110101", "simple": { "limit": 5, "period": 60 } }],
+  "vars": {
+    "KONTAKT_FROM": "kontakt@danielgraf.ch"
+  }
+  // Secrets (nicht hier, sondern einmalig per «npx wrangler secret put …»): KONTAKT_TO, TURNSTILE_SECRET
 }

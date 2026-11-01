@@ -7,7 +7,7 @@ import Header from '../components/Header.astro';
 <!doctype html>
 <html lang="de-CH">
 	<head>
-		<BaseHead title="Datenschutz – Daniel Graf" description="Was beim Besuch von danielgraf.ch mit deinen Daten geschieht und was nicht." />
+		<BaseHead title="Datenschutz – Daniel Graf" description="Was beim Besuch von danielgraf.ch und beim Kontaktformular mit deinen Daten geschieht und was nicht." />
 	</head>
 	<body>
 		<Header />
@@ -18,11 +18,16 @@ import Header from '../components/Header.astro';
 			<p>Daniel Graf, Basel, Schweiz<br />
 				Kontakt: <a href="mailto:daniel.graf@me.com">daniel.graf@me.com</a></p>
 			<h2>Was ich nicht mache</h2>
-			<p>Der Blog ist eine statische Website. Es gibt keine Kommentare, kein Kontaktformular, keinen Newsletter und keine Benutzerkonten. Ich setze keine Analyse- oder Statistikwerkzeuge ein, zeige keine Werbung und verwende keine Tracking-Pixel. Der Blog selbst setzt keine Cookies. Die Schriften liegen auf dem eigenen Server, es gibt also keine Verbindung zu Google Fonts.</p>
-			<p>Kurz: Ich selbst speichere keine Personendaten über dich.</p>
+			<p>Der Blog ist eine statische Website. Es gibt keine Kommentare, keinen Newsletter und keine Benutzerkonten. Ich setze keine Analyse- oder Statistikwerkzeuge ein, zeige keine Werbung und verwende keine Tracking-Pixel. Der Blog selbst setzt keine Cookies. Die Schriften liegen auf dem eigenen Server, es gibt also keine Verbindung zu Google Fonts.</p>
+			<p>Kurz: Auf der Website speichere ich keine Personendaten über dich. Die einzige Ausnahme ist eine Nachricht, die du mir selbst über das Kontaktformular schickst (siehe unten).</p>
 			<h2>Hosting bei Cloudflare</h2>
 			<p>Damit die Seite bei dir ankommt, braucht es einen Anbieter. Der Blog wird über Cloudflare, Inc. (USA) ausgeliefert, und zwar über Rechenzentren weltweit. Beim Aufruf verarbeitet Cloudflare technisch notwendige Daten: deine IP-Adresse, den Zeitpunkt, die aufgerufene Seite und Angaben zu deinem Browser. Das dient dazu, die Seite auszuliefern und vor Angriffen zu schützen.</p>
 			<p>Dabei können Daten in die USA übermittelt werden. Cloudflare ist nach eigenen Angaben unter dem Swiss-U.S. Data Privacy Framework zertifiziert. Einzelheiten findest du in der <a href="https://www.cloudflare.com/privacypolicy/">Datenschutzerklärung von Cloudflare</a>.</p>
+			<h2 id="kontaktformular">Kontaktformular</h2>
+			<p>Wenn du mir über das <a href="/kontakt/">Kontaktformular</a> schreibst, verarbeite ich deinen Namen, deine E-Mail-Adresse und deine Nachricht. Ich nutze diese Angaben nur, um deine Anfrage zu beantworten. Ich gebe sie nicht weiter und nutze sie nicht für Werbung oder einen Newsletter.</p>
+			<p>So läuft es technisch: Ein kleines Programm bei Cloudflare nimmt das Formular entgegen und schickt es mir als E-Mail. Auf der Website und bei Cloudflare wird die Nachricht dabei nicht dauerhaft gespeichert. Sie landet in meinem persönlichen E-Mail-Postfach bei Apple (iCloud). Dort bleibt sie, solange ich sie für die Antwort und allfällige weitere Kontakte brauche. Danach lösche ich sie. Wenn du willst, dass ich deine Nachricht früher lösche, sag es mir.</p>
+			<p>Gegen Spam nutze ich Cloudflare Turnstile. Das prüft im Hintergrund, ob ein Mensch das Formular ausfüllt, meist ohne dass du etwas anklicken musst. Dafür werden technische Angaben wie deine IP-Adresse und Merkmale deines Browsers an Cloudflare übermittelt. Turnstile wird erst geladen, wenn du die Kontaktseite öffnest. Damit niemand das Formular massenhaft missbraucht, zählt der Server ausserdem kurzzeitig die Anfragen pro IP-Adresse.</p>
+			<p>Grundlage ist dein Wunsch, mit mir in Kontakt zu treten, und mein Interesse, das Formular vor Missbrauch zu schützen. Die Übermittlung ist freiwillig.</p>
 			<h2>Eingebettete Inhalte</h2>
 			<p>Das ist der eigentliche Grund für diese Seite. Einzelne Beiträge zeigen Videos von YouTube, künftig auch Beiträge von Instagram (Meta Platforms) und LinkedIn. Für YouTube nutze ich die datensparsamere Adresse youtube-nocookie.com.</p>
 			<p>Diese Inhalte werden direkt angezeigt und geladen, sobald du in ihre Nähe scrollst. Dann überträgt dein Browser Daten an den jeweiligen Anbieter, unter anderem deine IP-Adresse und die aufgerufene Seite. Der Anbieter kann eigene Cookies setzen und dein Verhalten auswerten, besonders wenn du dort eingeloggt bist. Darauf habe ich keinen Einfluss.</p>
@@ -36,8 +41,8 @@ import Header from '../components/Header.astro';
 			<h2>Links und RSS-Feed</h2>
 			<p>Links zu anderen Websites führen dich aus diesem Blog hinaus. Dort gelten die Regeln der jeweiligen Betreiber. Der RSS-Feed wird wie eine normale Seite abgerufen, es gilt also dasselbe wie beim Hosting.</p>
 			<h2>Deine Rechte</h2>
-			<p>Du hast das Recht auf Auskunft über deine Daten, auf Berichtigung und auf Löschung. Weil ich selbst keine Personendaten speichere, betreffen diese Rechte in der Praxis vor allem die oben genannten Anbieter. Dort kannst du sie auch direkt geltend machen.</p>
-			<p>Stand: Oktober 2026</p>
+			<p>Du hast das Recht auf Auskunft über deine Daten, auf Berichtigung und auf Löschung. Bei Nachrichten über das Kontaktformular kannst du dich dafür direkt an mich wenden. Sonst betreffen diese Rechte in der Praxis vor allem die oben genannten Anbieter. Dort kannst du sie auch direkt geltend machen.</p>
+			<p>Stand: November 2026</p>
 		</main>
 		<Footer />
 	</body>
