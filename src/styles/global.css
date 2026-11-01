@@ -30,6 +30,7 @@
 	--strip-text: #141414;
 	--rule: #f9a900; /* Signalgelb: Projekt-Balken, Linie über Themen */
 	--rule-w: 8px;
+	--signal-orange: #f26a1b; /* Signalorange: Rahmen Medienberichte-Kasten (hell und dunkel gleich) */
 
 	/* Info- und Kontext-Boxen (Bausteine) */
 	--info-bg: #deedf6;
