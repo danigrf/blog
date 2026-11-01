@@ -1,12 +1,13 @@
 ---
-// Kopf (Design A6): volle Fensterbreite, Name (+ Rakete, nur Deko) ganz links, Navigation ganz rechts.
+// Kopf (Design A6): auf der Inhaltsbox (.wrap, wie der Startseiten-Inhalt): Name (+ Rakete, nur Deko)
+// bündig mit dem Titel links, letzter Menüpunkt bündig mit dem rechten Rand (Porträt auf der Startseite).
 // Mobil (≤ 720 px) Hamburger-Menü; ohne JavaScript bleibt die Navigation sichtbar. Styles in global.css (.kopf).
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
-<header class="kopf">
+<header class="kopf wrap">
 	<a class="kopf-marke" href="/">{SITE_TITLE}<span class="kopf-rakete" aria-hidden="true">🚀</span></a>
 	<button class="kopf-menue" type="button" aria-label="Menü" aria-expanded="false" aria-controls="kopf-nav" hidden>
 		<span class="kopf-striche" aria-hidden="true"></span>

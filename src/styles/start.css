@@ -4,7 +4,8 @@ main.start {
 	max-width: none;
 	padding: 0 0 96px;
 }
-main.start > * {
+/* volle Breite nur für Bänder; .wrap-Abschnitte bleiben auf der Inhaltsbox (wie Kopf und übrige Seiten) */
+main.start > *:not(.wrap) {
 	max-width: none;
 }
 .raster {

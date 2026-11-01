@@ -371,14 +371,14 @@ td {
 	color: var(--bg);
 }
 .kopf {
-	/* volle Fensterbreite, fester Seitenabstand (nicht an der Inhaltsspalte ausgerichtet) */
-	--kopf-rand: 24px;
+	/* auf der Inhaltsbox (.wrap): seitlicher Rand = --gutter, wie der Inhalt */
+	--kopf-rand: var(--gutter);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	gap: 12px 32px;
-	padding: 24px var(--kopf-rand) 16px;
+	padding-block: 24px 16px;
 }
 .kopf-marke {
 	/* gleiche Grösse und Box wie die Navigationslinks (HeaderLink), nur fetter */
