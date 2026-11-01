@@ -378,13 +378,13 @@ td {
 	gap: 12px 32px;
 	padding-block: 24px 16px;
 }
-.marke {
+.kopf-marke {
 	display: flex;
 	flex-direction: column;
 	text-decoration: none;
 	color: var(--text);
 }
-.marke:hover .marke-name {
+.kopf-marke:hover .marke-name {
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 0.15em;
