@@ -19,6 +19,9 @@ const blog = defineCollection({
 			vorschau: z.optional(image()),
 			// Beschreibt das Vorschaubild für die Social-Media-Vorschau (in Listen ist es dekorativ).
 			vorschauAlt: z.string().optional(),
+			// Bildausschnitt des Vorschaubilds in Kacheln (CSS object-position, z. B. '50% 22%').
+			// Wird von scripts/vorschau-fokus.mjs per Gesichtserkennung gesetzt; von Hand gesetzte Werte bleiben.
+			vorschauFokus: z.string().regex(/^\d{1,3}% \d{1,3}%$/).optional(),
 			// Schlagwörter; jedes führt zu einer Themenseite unter /themen/.
 			tags: z.array(z.string()).default([]),
 			// Highlight auf der Startseite: Rang (1 = zuerst). Die drei mit kleinstem Rang erscheinen

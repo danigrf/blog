@@ -18,7 +18,14 @@ const bild = vorschauBild(post);
 <span class={`tb ${klasse}`}>
 	{
 		bild ? (
-			<Image src={bild.src} alt="" widths={widths} sizes={sizes} loading={eager ? 'eager' : 'lazy'} />
+			<Image
+				src={bild.src}
+				alt=""
+				widths={widths}
+				sizes={sizes}
+				loading={eager ? 'eager' : 'lazy'}
+				style={bild.fokus ? `object-position: ${bild.fokus}` : undefined}
+			/>
 		) : (
 			<span class="tb-leer" aria-hidden="true">{post.data.pubDate.getFullYear()}</span>
 		)

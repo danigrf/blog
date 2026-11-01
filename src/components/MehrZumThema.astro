@@ -2,7 +2,7 @@
 // Box unter dem Beitrag: bis zu drei verwandte Beiträge (Auswahl: verwandtePosts in lib/posts.ts).
 import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
-import { kachelVariante, kurz, type Post, vorschauBild } from '../lib/posts';
+import { deckBreite, kachelVariante, kurz, type Post, vorschauBild } from '../lib/posts';
 
 interface Props {
 	posts: Post[];
@@ -21,7 +21,17 @@ const titel = 'Auch interessant für dich';
 					<li>
 						<span class="thumb" aria-hidden="true">
 							{bild ? (
-								<Image src={bild.src} alt="" width={160} height={107} densities={[1, 2]} fit="cover" position="top" format="webp" loading="lazy" decoding="async" />
+								<Image
+									src={bild.src}
+									alt=""
+									{...(bild.fokus
+										? { width: deckBreite(bild.src, 160, 107), style: `object-position: ${bild.fokus}` }
+										: { width: 160, height: 107, fit: 'cover', position: 'top' })}
+									densities={[1, 2]}
+									format="webp"
+									loading="lazy"
+									decoding="async"
+								/>
 							) : (
 								<span class={`kachel kachel-${kachelVariante(post.id)}`}>
 									<span class="kachel-jahr">{post.data.pubDate.getFullYear()}</span>

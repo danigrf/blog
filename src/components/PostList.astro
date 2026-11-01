@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from './FormattedDate.astro';
-import { kachelVariante, themaSlug, vorschauBild } from '../lib/posts';
+import { deckBreite, kachelVariante, themaSlug, vorschauBild } from '../lib/posts';
 
 interface Props {
 	posts: CollectionEntry<'blog'>[];
@@ -47,11 +47,10 @@ if (nachJahr) {
 											<Image
 												src={bild.src}
 												alt=""
-												width={184}
-												height={123}
+												{...(bild.fokus
+													? { width: deckBreite(bild.src, 184, 123), style: `object-position: ${bild.fokus}` }
+													: { width: 184, height: 123, fit: 'cover', position: 'top' })}
 												densities={[1, 2]}
-												fit="cover"
-												position="top"
 												format="webp"
 												loading={i < 2 ? 'eager' : 'lazy'}
 												decoding="async"
@@ -90,11 +89,10 @@ if (nachJahr) {
 								<Image
 									src={bild.src}
 									alt=""
-									width={184}
-									height={123}
+									{...(bild.fokus
+										? { width: deckBreite(bild.src, 184, 123), style: `object-position: ${bild.fokus}` }
+										: { width: 184, height: 123, fit: 'cover', position: 'top' })}
 									densities={[1, 2]}
-									fit="cover"
-									position="top"
 									format="webp"
 									loading={i < 2 ? 'eager' : 'lazy'}
 									decoding="async"

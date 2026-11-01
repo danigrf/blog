@@ -49,9 +49,17 @@ export async function getThemen(): Promise<Thema[]> {
 }
 
 /** Vorschaubild eines Beitrags: erst `vorschau`, dann `heroImage`; sonst nichts (-> Platzhalter-Kachel). */
-export function vorschauBild(post: Post): { src: ImageMetadata; alt: string } | undefined {
+export function vorschauBild(post: Post): { src: ImageMetadata; alt: string; fokus?: string } | undefined {
 	const src = post.data.vorschau ?? post.data.heroImage;
-	return src ? { src, alt: post.data.vorschauAlt ?? '' } : undefined;
+	return src ? { src, alt: post.data.vorschauAlt ?? '', fokus: post.data.vorschauFokus } : undefined;
+}
+
+/**
+ * Breite, in der ein Vorschaubild unbeschnitten erzeugt werden muss, damit es eine Kachel
+ * von `w`×`h` per CSS (object-fit: cover) füllt. Der Ausschnitt kommt dann aus `fokus`.
+ */
+export function deckBreite(src: ImageMetadata, w: number, h: number): number {
+	return Math.min(src.width, Math.ceil(Math.max(w, (h * src.width) / src.height)));
 }
 
 /** Stabile Kachelvariante 0-3 je Beitrag (gleiche Adresse, gleiche Farbe). */
