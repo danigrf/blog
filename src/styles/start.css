@@ -75,6 +75,17 @@ main.start > *:not(.wrap) {
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 32px 24px;
 }
+/* «Woran ich dran bin»: ab 1024 vier Spalten, 600–1023 als 2×2, darunter eine Spalte */
+@media (max-width: 1023px) {
+	.projekte {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+@media (max-width: 599px) {
+	.projekte {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
 .projekte li {
 	margin: 0;
 	border-top: var(--rule-w) solid var(--rule);
@@ -393,9 +404,6 @@ main.start > *:not(.wrap) {
 	}
 	.intro-bild figcaption {
 		font-size: 14px;
-	}
-	.projekte {
-		grid-template-columns: minmax(0, 1fr);
 	}
 	.teaser {
 		font-size: 16px;
