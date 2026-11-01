@@ -1,4 +1,5 @@
 /* Entwurf A6 «Hellblau» (Iris-Spec Runde 3, 01.11.2026): nur Token-Overrides auf A.
+   Daniels Wahl (01.11.2026): Zeitungskopf grau statt Orange, Link-Unterstrich in Tinte (1 px, Hover 2 px).
    Hellblau führt: Band Hellblau, Zeitungskopf Orange, Projekt-Balken Signalgelb.
    Signalfarben nur als Flächen und Balken, nie als Schrift. Links: Tinte mit orangem Unterstrich.
    Dunkelmodus: Signalflächen bleiben voll und tragen dunkle Tinte. */
@@ -9,9 +10,10 @@
 	--line: #dcdcd6;
 	--accent: #141414;
 	--accent-strong: #141414;
-	--link-underline: #f26a1b;
-	--link-ul-w: 2px;
-	--link-ul-w-hover: 3px;
+	--link-underline: #141414;
+	--link-ul-w: 1px;
+	--link-ul-w-hover: 2px;
+	--themen-rule-w: 2px; /* Linie über «Themen:» dünn (Projekt-Balken bleiben 8 px) */
 	--band-underline: #141414;
 	--info-bg: #deedf6;
 	--info-line: #f26a1b;
@@ -57,7 +59,7 @@
 	--surface: #a9d6f5;
 	--on-surface-muted: #3d3a33;
 	--band-line: #3d3a33;
-	--strip-bg: #f26a1b;
+	--strip-bg: #e3e5e8;
 	--rule: #f9a900;
 	--rule-w: 8px;
 }
@@ -69,7 +71,7 @@
 		--line: #2c2d31;
 		--accent: #edebe6;
 		--accent-strong: #ffffff;
-		--link-underline: #f26a1b;
+		--link-underline: #edebe6;
 		--band-underline: #141414;
 		--info-bg: #242a30;
 		--info-line: #f26a1b;
@@ -78,13 +80,13 @@
 		--on-surface: #141414;
 		--on-surface-link: #141414;
 		--medium-color: #edebe6;
-		--strip-text: #141414;
+		--strip-text: #edebe6;
 		--band-edge: transparent;
 		--band-edge-w: 0px;
 		--surface: #a9d6f5;
 		--on-surface-muted: #3d3a33;
 		--band-line: #3d3a33;
-		--strip-bg: #f26a1b;
+		--strip-bg: #2a2d31;
 		--rule: #f9a900;
 	}
 }

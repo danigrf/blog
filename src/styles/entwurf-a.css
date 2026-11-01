@@ -40,6 +40,7 @@
 	--strip-pad: 0px;
 	--rule-w: 2px; /* Projekt-Balken */
 	--kopf-rule-w: var(--rule-w); /* Unterkante Zeitungskopf (Standard: wie Projekt-Balken) */
+	--themen-rule-w: var(--rule-w); /* Linie über «Themen:» auf der Artikelseite */
 	--medium-color: var(--accent);
 	/* Runde 3: Unterstrich der Links (Farbe, Dicke, Hover) */
 	--link-underline: currentColor;
@@ -651,7 +652,7 @@ main {
 	max-width: 40rem;
 	margin-top: 48px;
 	padding-top: 16px;
-	border-top: var(--rule-w) solid var(--rule);
+	border-top: var(--themen-rule-w) solid var(--rule);
 	font-family: var(--f-meta);
 	font-weight: 500;
 	font-size: 15px;
