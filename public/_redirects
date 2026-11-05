@@ -302,3 +302,4 @@
 # Alle uebrigen (nicht uebernommenen) Schlagwoerter/Kategorien -> Themenuebersicht
 /tag/* /themen/ 301
 /category/* /themen/ 301
+/tamedia https://rettet-unsere-medien.ch/tamedia 302

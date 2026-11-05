@@ -463,3 +463,41 @@ main.start > *:not(.wrap) {
 		grid-template-columns: 48px minmax(0, 1fr);
 	}
 }
+
+/* Aktion Tamedia-Warnstreik (befristet, 05.11.2026) */
+.aktion {
+	margin-top: 24px;
+	margin-bottom: 40px;
+}
+.aktion-bild {
+	display: block;
+	text-decoration: none;
+}
+.aktion-bild img {
+	display: block;
+	width: 100%;
+	max-width: 860px;
+	height: auto;
+}
+.aktion-text {
+	padding: 20px 0 0;
+}
+.aktion-text h2 {
+	margin: 0 0 6px;
+}
+.aktion-text p {
+	margin: 0 0 16px;
+}
+.aktion-knopf {
+	display: inline-block;
+	padding: 12px 28px;
+	background: var(--text);
+	color: var(--bg);
+	font-weight: 700;
+	text-decoration: none;
+}
+.aktion-knopf:hover,
+.aktion-knopf:focus-visible {
+	background: var(--mark);
+	color: var(--text);
+}
