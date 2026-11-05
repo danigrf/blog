@@ -503,3 +503,11 @@ main.start > *:not(.wrap) {
 	background: #fafaf7;
 	color: #141414;
 }
+.aktion-text .aktion-datum {
+	margin: 20px 0 0;
+}
+.aktion-datum a {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: currentColor;
+}
