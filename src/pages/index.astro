@@ -29,14 +29,16 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 	<body>
 		<Header />
 		<main id="inhalt" class="start">
-			<section class="aktion wrap" aria-labelledby="aktion-titel">
-				<a class="aktion-bild" href="https://rettet-unsere-medien.ch/tamedia" tabindex="-1" aria-hidden="true">
-					<Image src={tamediaBild} alt="" widths={[480, 800, 1200]} sizes="(max-width: 760px) 100vw, 1100px" loading="eager" />
-				</a>
-				<div class="aktion-text">
-					<h2 id="aktion-titel">Heute, 11 Uhr: Warnstreik bei Tamedia</h2>
-					<p>Solidarität zeigen, vor Ort oder online.</p>
-					<a class="aktion-knopf" href="https://rettet-unsere-medien.ch/tamedia">Mitmachen</a>
+			<section class="aktion" aria-labelledby="aktion-titel">
+				<div class="wrap">
+					<a class="aktion-bild" href="https://rettet-unsere-medien.ch/tamedia" tabindex="-1" aria-hidden="true">
+						<Image src={tamediaBild} alt="" widths={[480, 800, 1200]} sizes="(max-width: 760px) 100vw, 1100px" loading="eager" />
+					</a>
+					<div class="aktion-text">
+						<h2 id="aktion-titel">Heute, 11 Uhr: Warnstreik bei Tamedia</h2>
+						<p>Solidarität zeigen, vor Ort oder online.</p>
+						<a class="aktion-knopf" href="https://rettet-unsere-medien.ch/tamedia">Mitmachen</a>
+					</div>
 				</div>
 			</section>
 

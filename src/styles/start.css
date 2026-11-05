@@ -466,8 +466,9 @@ main.start > *:not(.wrap) {
 
 /* Aktion Tamedia-Warnstreik (befristet, 05.11.2026) */
 .aktion {
-	margin-top: 24px;
-	margin-bottom: 40px;
+	padding: 32px 0;
+	background: var(--mark);
+	color: #141414; /* Signalgelb bleibt auch im Dunkelmodus, Text deshalb fest dunkel */
 }
 .aktion-bild {
 	display: block;
@@ -484,6 +485,7 @@ main.start > *:not(.wrap) {
 }
 .aktion-text h2 {
 	margin: 0 0 6px;
+	color: inherit;
 }
 .aktion-text p {
 	margin: 0 0 16px;
@@ -491,13 +493,13 @@ main.start > *:not(.wrap) {
 .aktion-knopf {
 	display: inline-block;
 	padding: 12px 28px;
-	background: var(--text);
-	color: var(--bg);
+	background: #141414;
+	color: #fafaf7;
 	font-weight: 700;
 	text-decoration: none;
 }
 .aktion-knopf:hover,
 .aktion-knopf:focus-visible {
-	background: var(--mark);
-	color: var(--text);
+	background: #fafaf7;
+	color: #141414;
 }
