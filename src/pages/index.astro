@@ -19,6 +19,9 @@ import '../styles/start.css';
 const d = await startseitenDaten();
 const [aufmacher, ...weitere] = d.highlights;
 const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme verschränkt, vor einer hellen Wand';
+// Aktion Tamedia (befristet): spätere Builds lassen sie weg, das Skript blendet sie im bereits gebauten Stand aus
+const AKTION_ENDE = '2026-11-05T23:59:00+01:00';
+const aktionAktiv = Date.now() < Date.parse(AKTION_ENDE);
 ---
 
 <!doctype html>
@@ -29,18 +32,23 @@ const portraitAlt = 'Daniel Graf mit Brille und schwarzem T-Shirt, die Arme vers
 	<body>
 		<Header />
 		<main id="inhalt" class="start">
-			<section class="aktion" aria-labelledby="aktion-titel">
-				<div class="wrap">
-					<a class="aktion-bild" href="https://rettet-unsere-medien.ch/tamedia" tabindex="-1" aria-hidden="true">
-						<Image src={tamediaBild} alt="" widths={[480, 800, 1200]} sizes="(max-width: 760px) 100vw, 1100px" loading="eager" />
-					</a>
-					<div class="aktion-text">
-						<h2 id="aktion-titel">Heute, 11 Uhr: Warnstreik bei Tamedia</h2>
-						<p>Solidarität zeigen, vor Ort oder online.</p>
-						<a class="aktion-knopf" href="https://rettet-unsere-medien.ch/tamedia">Mitmachen</a>
+			{aktionAktiv && (
+				<section class="aktion" aria-labelledby="aktion-titel">
+					<div class="wrap">
+						<a class="aktion-bild" href="https://rettet-unsere-medien.ch/tamedia" tabindex="-1" aria-hidden="true">
+							<Image src={tamediaBild} alt="" widths={[480, 800, 1200]} sizes="(max-width: 760px) 100vw, 1100px" loading="eager" />
+						</a>
+						<div class="aktion-text">
+							<h2 id="aktion-titel">Heute, 11 Uhr: Warnstreik bei Tamedia</h2>
+							<p>Solidarität zeigen, vor Ort oder online.</p>
+							<a class="aktion-knopf" href="https://rettet-unsere-medien.ch/tamedia">Mitmachen</a>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+				<script is:inline define:vars={{ ende: AKTION_ENDE }}>
+					if (Date.now() >= Date.parse(ende)) document.querySelector('.aktion')?.remove();
+				</script>
+			)}
 
 			<section class="intro wrap raster" aria-labelledby="intro-titel">
 				<div class="intro-text">
