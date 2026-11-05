@@ -34,11 +34,12 @@ const aktionAktiv = Date.now() < Date.parse(AKTION_ENDE);
 		<main id="inhalt" class="start">
 			{aktionAktiv && (
 				<section class="aktion" aria-labelledby="aktion-titel">
-					<div class="wrap">
+					<div class="wrap aktion-innen">
 						<a class="aktion-bild" href="https://rettet-unsere-medien.ch/bern" tabindex="-1" aria-hidden="true">
-							<Image src={aktionBild} alt="" widths={[480, 800, 1200]} sizes="(max-width: 760px) 100vw, 1100px" loading="eager" />
+							<Image src={aktionBild} alt="" widths={[480, 800, 1200]} sizes="(max-width: 1023px) 100vw, 800px" loading="eager" />
 						</a>
 						<div class="aktion-text">
+							<p class="aktion-label">Aktuell</p>
 							<h2 id="aktion-titel">Save the date: 21.11., 15 Uhr in Bern</h2>
 							<p>Kundgebung «Journalismus retten – Demokratie verteidigen»</p>
 							<a class="aktion-knopf" href="https://rettet-unsere-medien.ch/bern">Mitmachen</a>

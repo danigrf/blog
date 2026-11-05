@@ -483,6 +483,13 @@ main.start > *:not(.wrap) {
 .aktion-text {
 	padding: 20px 0 0;
 }
+.aktion-text .aktion-label {
+	margin: 0 0 8px;
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
 .aktion-text h2 {
 	margin: 0 0 6px;
 	color: inherit;
@@ -502,4 +509,31 @@ main.start > *:not(.wrap) {
 .aktion-knopf:focus-visible {
 	background: #fafaf7;
 	color: #141414;
+}
+/* ab 1024 px Bild links, Text rechts: gleiche Spalten wie das Raster */
+@media (min-width: 1024px) {
+	.aktion-innen {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(0, 1fr));
+		column-gap: 24px;
+		align-items: center;
+	}
+	.aktion-bild {
+		grid-column: 1 / span 8;
+	}
+	.aktion-bild img {
+		max-width: none;
+	}
+	.aktion-text {
+		grid-column: 9 / span 4;
+		padding: 0;
+	}
+	.aktion-text h2 {
+		margin-bottom: 12px;
+		font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+		line-height: 1.1;
+	}
+	.aktion-text p {
+		margin-bottom: 24px;
+	}
 }
