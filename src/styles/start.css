@@ -464,7 +464,7 @@ main.start > *:not(.wrap) {
 	}
 }
 
-/* Aktion Tamedia-Warnstreik (befristet, 05.11.2026) */
+/* Aktion Kundgebung Bern (befristet bis 21.11.2026) */
 .aktion {
 	padding: 32px 0;
 	background: var(--mark);
@@ -502,12 +502,4 @@ main.start > *:not(.wrap) {
 .aktion-knopf:focus-visible {
 	background: #fafaf7;
 	color: #141414;
-}
-.aktion-text .aktion-datum {
-	margin: 20px 0 0;
-}
-.aktion-datum a {
-	color: inherit;
-	text-decoration: underline;
-	text-decoration-color: currentColor;
 }
