@@ -466,6 +466,7 @@ main.start > *:not(.wrap) {
 
 /* Aktion Kundgebung Bern (befristet bis 21.11.2026) */
 .aktion {
+	margin-top: 64px; /* zweites Element, unter dem Intro */
 	padding: 32px 0;
 	background: var(--mark);
 	color: #141414; /* Signalgelb bleibt auch im Dunkelmodus, Text deshalb fest dunkel */
